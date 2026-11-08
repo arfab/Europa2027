@@ -1386,6 +1386,104 @@
       color: #86efac;
     }
 
+    /* Live World Clocks */
+    .clock-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin: 18px 0 22px;
+    }
+    .clock-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 18px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+      transition: transform 0.2s ease;
+    }
+    .clock-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+    }
+    .clock-card.active-dest {
+      border-color: #93c5fd;
+      background: #eff6ff;
+    }
+    .clock-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+    .clock-place {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1e3a8a;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .clock-diff-badge {
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 12px;
+      background: #e2e8f0;
+      color: #334155;
+    }
+    .clock-diff-badge.lead {
+      background: #fef3c7;
+      color: #92400e;
+    }
+    .clock-time {
+      font-size: 2.1rem;
+      font-weight: 800;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      color: #0f172a;
+      letter-spacing: 1px;
+      margin: 4px 0;
+    }
+    .clock-date {
+      font-size: 0.82rem;
+      color: #64748b;
+      font-weight: 500;
+      text-transform: capitalize;
+    }
+    .clock-subnote {
+      font-size: 0.76rem;
+      color: #475569;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 3px 8px;
+      margin-top: 8px;
+      display: inline-block;
+    }
+
+    .time-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0 10px;
+      font-size: 0.88rem;
+    }
+    .time-table th {
+      background: #eff6ff;
+      color: #1e3a8a;
+      padding: 10px 12px;
+      text-align: left;
+      font-weight: 700;
+      border-bottom: 2px solid #bfdbfe;
+    }
+    .time-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .time-table tr:hover td {
+      background: #ffffff;
+    }
+
     /* Responsive navigation & layouts */
     @media (max-width: 900px) {
       .hero-showcase {
@@ -3538,6 +3636,120 @@
           Fechas especiales de calendario, feriados locales en Italia y Grecia, ventanas de reserva obligatorias y decisiones prácticas para definir juntos:
         </p>
 
+        <!-- Live World Clocks Card -->
+        <div style="background: white; border: 1px solid #bfdbfe; border-radius: 14px; padding: 22px; margin-bottom: 26px; box-shadow: 0 3px 10px rgba(37,99,235,0.06);">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom: 6px;">
+            <h3 style="font-size: 1.25rem; font-weight: 800; color: #1e3a8a; margin: 0; display:flex; align-items:center; gap:8px;">
+              🕒 Relojes en Vivo & Diferencias Horarias
+            </h3>
+            <span style="font-size: 0.78rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; padding: 3px 10px; border-radius: 20px;">
+              Horario de Verano Europeo (Abril/Mayo)
+            </span>
+          </div>
+          <p style="font-size: 0.92rem; color: #64748b; margin-bottom: 16px;">
+            En abril y mayo Europa ya aplicó el horario de verano (<em>ora legale</em>). Grecia tiene <strong>1 hora más que Italia</strong> y ambos están adelantados respecto a Buenos Aires:
+          </p>
+
+          <!-- 3 Digital Clocks -->
+          <div class="clock-grid">
+            <!-- Buenos Aires -->
+            <div class="clock-card">
+              <div class="clock-header">
+                <span class="clock-place">🇦🇷 Buenos Aires</span>
+                <span class="clock-diff-badge">Hora en Casa (UTC-3)</span>
+              </div>
+              <div id="clock-time-ba" class="clock-time">--:--:--</div>
+              <div id="clock-date-ba" class="clock-date">Cargando fecha...</div>
+              <div class="clock-subnote">Hora de referencia familiar</div>
+            </div>
+
+            <!-- Roma / Italia -->
+            <div class="clock-card active-dest">
+              <div class="clock-header">
+                <span class="clock-place">🇮🇹 Roma (Italia)</span>
+                <span class="clock-diff-badge lead">+5 Horas vs. Bs As</span>
+              </div>
+              <div id="clock-time-rome" class="clock-time" style="color: #1e3a8a;">--:--:--</div>
+              <div id="clock-date-rome" class="clock-date">Cargando fecha...</div>
+              <div class="clock-subnote" style="color: #1d4ed8; background: #e0f2fe; border-color: #bae6fd;">
+                Misma hora en Roma, Nápoles y Puglia (CEST)
+              </div>
+            </div>
+
+            <!-- Atenas / Grecia -->
+            <div class="clock-card active-dest">
+              <div class="clock-header">
+                <span class="clock-place">🇬🇷 Atenas (Grecia)</span>
+                <span class="clock-diff-badge lead">+6 Horas vs. Bs As</span>
+              </div>
+              <div id="clock-time-athens" class="clock-time" style="color: #0369a1;">--:--:--</div>
+              <div id="clock-date-athens" class="clock-date">Cargando fecha...</div>
+              <div class="clock-subnote" style="color: #0369a1; background: #e0f2fe; border-color: #bae6fd;">
+                Misma hora en Atenas, Naxos y Santorini (+1h que Italia)
+              </div>
+            </div>
+          </div>
+
+          <!-- Equivalencias horarias y Tips de vuelo -->
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; margin-top: 15px;">
+            <div style="font-weight: 700; color: #1e293b; margin-bottom: 8px; font-size: 0.95rem;">
+              📅 Tabla Rápida de Equivalencias para Llamar a Casa:
+            </div>
+            <div style="overflow-x: auto;">
+              <table class="time-table">
+                <thead>
+                  <tr>
+                    <th>Momento del Día</th>
+                    <th>🇦🇷 Buenos Aires</th>
+                    <th>🇮🇹 Italia (Roma / Puglia)</th>
+                    <th>🇬🇷 Grecia (Atenas / Islas)</th>
+                    <th>Consejo Práctico</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Mañana Bs As</strong></td>
+                    <td>08:00 hs</td>
+                    <td>13:00 hs (Almuerzo)</td>
+                    <td>14:00 hs (Playa / Siesta)</td>
+                    <td>✓ Buen momento para escribir a Europa</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Mediodía Bs As</strong></td>
+                    <td>12:00 hs</td>
+                    <td>17:00 hs (Paseo de tarde)</td>
+                    <td>18:00 hs (Atardecer)</td>
+                    <td>✓ El mejor horario para videollamadas</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Tarde Bs As</strong></td>
+                    <td>16:00 hs</td>
+                    <td>21:00 hs (Cena trattoria)</td>
+                    <td>22:00 hs (Cena taberna)</td>
+                    <td>✓ En Europa están terminando de cenar</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Noche Bs As</strong></td>
+                    <td>20:00 hs</td>
+                    <td>01:00 AM (Madrugada +1)</td>
+                    <td>02:00 AM (Madrugada +1)</td>
+                    <td>⚠️ En Europa ya duermen (no llamar)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Alerta Salto de 1 hora entre Italia y Grecia -->
+            <div style="margin-top: 12px; font-size: 0.88rem; line-height: 1.45; color: #0f172a; border-top: 1px dashed #cbd5e1; padding-top: 10px;">
+              ✈️ <strong>El "Salto de 1 Hora" entre Italia y Grecia en los Vuelos:</strong>
+              <ul style="margin: 6px 0 0 16px; line-height: 1.45; color: #475569;">
+                <li><strong>Al ir a Grecia (26 abr - Bari ➔ Atenas):</strong> El vuelo dura apenas 1h 15m, pero al aterrizar en Grecia deben <strong>adelantar el reloj 1 hora</strong> (se "pierde" una hora). Todos los pasajes aéreos indican la hora local de cada aeropuerto.</li>
+                <li><strong>Al volver a Argentina (8 may - Atenas ➔ Roma ➔ EZE):</strong> Al salir de Atenas y llegar a Roma FCO, deben <strong>atrasar el reloj 1 hora</strong> (se "gana" una hora). Esto hace que la escala de 1h 50m en Roma esté perfectamente coordinada.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
         <div class="card-grid-2">
           <!-- 1. Pascua Ortodoxa -->
           <div class="notice-card">
@@ -4983,10 +5195,53 @@
 
     // Auto-init packlist on page load
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initPacklist);
+      document.addEventListener('DOMContentLoaded', () => {
+        initPacklist();
+        updateWorldClocks();
+      });
     } else {
       initPacklist();
+      updateWorldClocks();
     }
+
+    /* Live World Clocks */
+    function updateWorldClocks() {
+      const now = new Date();
+      const timeFormat = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+      const dateFormat = { weekday: 'short', day: 'numeric', month: 'short' };
+
+      // Buenos Aires
+      try {
+        const timeBA = new Intl.DateTimeFormat('es-AR', { ...timeFormat, timeZone: 'America/Argentina/Buenos_Aires' }).format(now);
+        const dateBA = new Intl.DateTimeFormat('es-AR', { ...dateFormat, timeZone: 'America/Argentina/Buenos_Aires' }).format(now);
+        const elTimeBA = document.getElementById('clock-time-ba');
+        const elDateBA = document.getElementById('clock-date-ba');
+        if (elTimeBA) elTimeBA.textContent = timeBA;
+        if (elDateBA) elDateBA.textContent = dateBA;
+      } catch(e) {}
+
+      // Rome
+      try {
+        const timeRome = new Intl.DateTimeFormat('es-ES', { ...timeFormat, timeZone: 'Europe/Rome' }).format(now);
+        const dateRome = new Intl.DateTimeFormat('es-ES', { ...dateFormat, timeZone: 'Europe/Rome' }).format(now);
+        const elTimeRome = document.getElementById('clock-time-rome');
+        const elDateRome = document.getElementById('clock-date-rome');
+        if (elTimeRome) elTimeRome.textContent = timeRome;
+        if (elDateRome) elDateRome.textContent = dateRome;
+      } catch(e) {}
+
+      // Athens
+      try {
+        const timeAthens = new Intl.DateTimeFormat('es-ES', { ...timeFormat, timeZone: 'Europe/Athens' }).format(now);
+        const dateAthens = new Intl.DateTimeFormat('es-ES', { ...dateFormat, timeZone: 'Europe/Athens' }).format(now);
+        const elTimeAthens = document.getElementById('clock-time-athens');
+        const elDateAthens = document.getElementById('clock-date-athens');
+        if (elTimeAthens) elTimeAthens.textContent = timeAthens;
+        if (elDateAthens) elDateAthens.textContent = dateAthens;
+      } catch(e) {}
+    }
+
+    setInterval(updateWorldClocks, 1000);
   </script>
 </body>
 </html>
