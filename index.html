@@ -154,6 +154,62 @@
     .price-col { font-weight: 700; color: #1e293b; white-space: nowrap; }
 
     /* Itinerary variants */
+    .itinerary-selector-wrap {
+      margin-bottom: 25px;
+    }
+    .itinerary-selector {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .itin-btn {
+      background: #ffffff;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .itin-btn:hover {
+      border-color: var(--primary-light);
+      background: #f8fafc;
+    }
+    .itin-btn.active {
+      border-color: var(--primary);
+      background: #eff6ff;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.12);
+    }
+    .itin-btn-badge {
+      align-self: flex-start;
+      background: var(--primary);
+      color: white;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 6px;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .itin-btn-title {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+    .itin-btn-sub {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+    .itin-option-card {
+      animation: fadeIn 0.3s ease;
+    }
+
     .variant-card {
       border: 1px solid var(--border);
       border-left: 5px solid var(--primary-light);
@@ -459,12 +515,33 @@
     <section id="itinerarios" class="tab-content">
       <div class="card">
         <h2>🗺️ Todas las Opciones Expandidas con Fotos de Atracciones</h2>
-        <p style="margin-bottom: 22px; color: var(--text-muted);">
-          21 noches netas en Europa. A continuación el desglose completo de <strong>todas las opciones (A, B y C)</strong> con qué ver exactamente en cada ciudad/isla, fotos de referencia y valores aproximados:
+        <p style="margin-bottom: 18px; color: var(--text-muted);">
+          21 noches netas en Europa. Hacé clic en cualquiera de las 3 opciones para ver su recorrido detallado con fotos y paradas sin necesidad de hacer scroll largo:
         </p>
 
+        <!-- SELECTOR DE ITINERARIO (A, B o C) -->
+        <div class="itinerary-selector-wrap">
+          <div class="itinerary-selector">
+            <button class="itin-btn active" onclick="switchItinerary('opt-a')">
+              <span class="itin-btn-badge">⭐ Recomendada</span>
+              <span class="itin-btn-title">Opción A: Clásica Equilibrada</span>
+              <span class="itin-btn-sub">Roma (4n) · Florencia (3n) · Venecia (3n) · Atenas (3n) · Paros/Naxos (4n) · Santorini (3n)</span>
+            </button>
+            <button class="itin-btn" onclick="switchItinerary('opt-b')">
+              <span class="itin-btn-badge" style="background:#ea580c;">🏛️ Centro-Sur</span>
+              <span class="itin-btn-title">Opción B: Foco Nápoles & Pompeya</span>
+              <span class="itin-btn-sub">Roma (4n) · Florencia (3n) · Nápoles & Pompeya (4n) · Atenas (3n) · 2 Cícladas (6n)</span>
+            </button>
+            <button class="itin-btn" onclick="switchItinerary('opt-c')">
+              <span class="itin-btn-badge" style="background:#0284c7;">🌊 Más Mar & Relax</span>
+              <span class="itin-btn-title">Opción C: 13 Noches en Grecia</span>
+              <span class="itin-btn-sub">Roma (4n) · Base Toscana o Venecia (4n) · Atenas (3n) · Paros (3n) + Naxos (3n) + Santorini (3n)</span>
+            </button>
+          </div>
+        </div>
+
         <!-- ==================== OPCIÓN A ==================== -->
-        <div class="variant-card">
+        <div id="opt-a" class="variant-card itin-option-card active">
           <div class="variant-header">
             <div class="variant-title">Opción A: La Clásica Equilibrada (Recomendada)</div>
             <span class="variant-pill">11n Italia + 10n Grecia</span>
@@ -655,7 +732,7 @@
         </div>
 
         <!-- ==================== OPCIÓN B (TOTALMENTE EXPANDIDA) ==================== -->
-        <div class="variant-card">
+        <div id="opt-b" class="variant-card itin-option-card" style="display: none;">
           <div class="variant-header">
             <div class="variant-title">Opción B: Foco Centro-Sur & Pompeya</div>
             <span class="variant-pill">12n Italia + 9n Grecia</span>
@@ -813,7 +890,7 @@
         </div>
 
         <!-- ==================== OPCIÓN C (TOTALMENTE EXPANDIDA) ==================== -->
-        <div class="variant-card">
+        <div id="opt-c" class="variant-card itin-option-card" style="display: none;">
           <div class="variant-header">
             <div class="variant-title">Opción C: Relax Cícladas & Menos Hoteles</div>
             <span class="variant-pill">8n Italia + 13n Grecia</span>
@@ -1446,6 +1523,26 @@
       const activeBtn = Array.from(document.querySelectorAll('.tab-btn')).find(b => {
         const attr = b.getAttribute('onclick') || '';
         return attr.includes(tabId);
+      });
+      if (activeBtn) activeBtn.classList.add('active');
+    }
+
+    function switchItinerary(optId) {
+      document.querySelectorAll('.itin-option-card').forEach(el => {
+        el.style.display = 'none';
+        el.classList.remove('active');
+      });
+      document.querySelectorAll('.itin-btn').forEach(btn => btn.classList.remove('active'));
+      
+      const target = document.getElementById(optId);
+      if (target) {
+        target.style.display = 'block';
+        target.classList.add('active');
+      }
+      
+      const activeBtn = Array.from(document.querySelectorAll('.itin-btn')).find(b => {
+        const attr = b.getAttribute('onclick') || '';
+        return attr.includes(optId);
       });
       if (activeBtn) activeBtn.classList.add('active');
     }
