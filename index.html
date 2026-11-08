@@ -184,12 +184,12 @@
     /* Tab Buttons Navigation */
     .nav-tabs {
       display: grid;
-      grid-template-columns: repeat(10, 1fr);
+      grid-template-columns: repeat(11, 1fr);
       gap: 5px;
     }
-    @media (max-width: 1150px) and (min-width: 901px) {
+    @media (max-width: 1250px) and (min-width: 901px) {
       .nav-tabs {
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(6, 1fr);
         gap: 6px;
       }
     }
@@ -1237,6 +1237,155 @@
       line-height: 1.4;
     }
 
+    /* Packlist Styles */
+    .packlist-header-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 25px;
+    }
+    .pack-progress-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .pack-progress-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1e3a8a;
+    }
+    .pack-progress-count {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .pack-progress-bar-bg {
+      width: 100%;
+      height: 12px;
+      background: #dbeafe;
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 14px;
+    }
+    .pack-progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #2563eb, #10b981);
+      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .pack-actions-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .pack-filter-pills {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .pack-filter-btn {
+      background: white;
+      border: 1px solid #cbd5e1;
+      border-radius: 16px;
+      padding: 5px 12px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #475569;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .pack-filter-btn:hover { background: #f1f5f9; }
+    .pack-filter-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+    .pack-btn-sec {
+      background: transparent;
+      border: none;
+      color: #64748b;
+      font-size: 0.82rem;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    .pack-btn-sec:hover { color: #dc2626; }
+
+    .pack-category-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    }
+    .pack-cat-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #1e3a8a;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      border-bottom: 1px solid #f1f5f9;
+      padding-bottom: 8px;
+    }
+    .pack-items-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 10px;
+    }
+    .pack-item-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 9px 12px;
+      border-radius: 8px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      user-select: none;
+    }
+    .pack-item-label:hover {
+      background: #f1f5f9;
+      border-color: #cbd5e1;
+    }
+    .pack-item-label.checked {
+      background: #f0fdf4;
+      border-color: #bbf7d0;
+    }
+    .pack-checkbox {
+      margin-top: 3px;
+      width: 17px;
+      height: 17px;
+      cursor: pointer;
+      accent-color: #16a34a;
+      flex-shrink: 0;
+    }
+    .pack-item-text {
+      font-size: 0.88rem;
+      color: #1e293b;
+      line-height: 1.35;
+    }
+    .pack-item-label.checked .pack-item-text {
+      color: #15803d;
+      text-decoration: line-through;
+    }
+    .pack-item-sub {
+      font-size: 0.74rem;
+      color: #64748b;
+      margin-top: 2px;
+    }
+    .pack-item-label.checked .pack-item-sub {
+      color: #86efac;
+    }
+
     /* Responsive navigation & layouts */
     @media (max-width: 900px) {
       .hero-showcase {
@@ -1366,6 +1515,7 @@
             <option value="recordar">💡 8. Puntos Clave & A Recordar</option>
             <option value="gastronomia">🍝 9. Guía Gastronómica & Vinos</option>
             <option value="clima">🌤️ 10. Clima & Temperaturas</option>
+            <option value="packlist">🎒 11. Equipaje & Packlist</option>
           </select>
           <span class="mobile-select-arrow">▼</span>
         </div>
@@ -1412,6 +1562,10 @@
         <button class="tab-btn" data-tab="clima" onclick="openTab('clima')">
           <span class="tab-icon">🌤️</span>
           <span class="tab-btn-title">10. Clima</span>
+        </button>
+        <button class="tab-btn" data-tab="packlist" onclick="openTab('packlist')">
+          <span class="tab-icon">🎒</span>
+          <span class="tab-btn-title">11. Equipaje</span>
         </button>
       </nav>
 
@@ -4089,6 +4243,402 @@
           <button class="tab-footer-btn" onclick="openTab('gastronomia')">
             ← Anterior: 9. Gastronomía & Vinos
           </button>
+          <button class="tab-footer-btn primary" onclick="openTab('packlist')">
+            Siguiente: 11. Equipaje & Packlist ➔
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TAB 11: CHECKLIST DE EQUIPAJE (PACKLIST) -->
+    <section id="packlist" class="tab-content">
+      <div class="card">
+        <h2>🎒 Checklist Interactivo de Equipaje (Packlist para 3 Semanas)</h2>
+        <p style="margin-bottom: 20px; color: var(--text-muted);">
+          Diseñado para el viaje de las 2 parejas. Hacé clic en cada elemento para marcarlo a medida que lo guardás en la valija o mochila. <strong>Tu progreso se guarda automáticamente en este dispositivo</strong> para que no pierdas nada:
+        </p>
+
+        <!-- Progress Box -->
+        <div class="packlist-header-box">
+          <div class="pack-progress-row">
+            <span class="pack-progress-title">📦 Estado del Armado de Valijas:</span>
+            <span id="pack-progress-text" class="pack-progress-count">0 de 48 elementos listos (0%)</span>
+          </div>
+          <div class="pack-progress-bar-bg">
+            <div id="pack-progress-bar" class="pack-progress-bar-fill"></div>
+          </div>
+          <div class="pack-actions-row">
+            <div class="pack-filter-pills">
+              <button class="pack-filter-btn active" onclick="filterPacklist('all')">Todos</button>
+              <button class="pack-filter-btn" onclick="filterPacklist('docs')">📄 Documentos</button>
+              <button class="pack-filter-btn" onclick="filterPacklist('tech')">🔌 Tecnología</button>
+              <button class="pack-filter-btn" onclick="filterPacklist('clothes')">👟 Ropa & Calzado</button>
+              <button class="pack-filter-btn" onclick="filterPacklist('warm')">🧥 Abrigo</button>
+              <button class="pack-filter-btn" onclick="filterPacklist('beach')">🏖️ Playa & Barco</button>
+              <button class="pack-filter-btn" onclick="filterPacklist('meds')">💊 Botiquín</button>
+            </div>
+            <div style="display:flex; gap:12px;">
+              <button class="pack-btn-sec" onclick="markAllPacklist(true)">Marcar todos</button>
+              <button class="pack-btn-sec" onclick="resetPacklist()">Desmarcar todos</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 1. Documentación & Dinero -->
+        <div class="pack-category-card" data-cat="docs">
+          <div class="pack-cat-title">📄 1. Documentación, Pasajes & Finanzas</div>
+          <div class="pack-items-list">
+            <label class="pack-item-label" for="pack-doc-1">
+              <input type="checkbox" id="pack-doc-1" class="pack-checkbox" onchange="togglePackItem('pack-doc-1')">
+              <div>
+                <div class="pack-item-text">Pasaporte vigente original</div>
+                <div class="pack-item-sub">Vencimiento posterior a Nov 2027 (mínimo 6 meses de vigencia).</div>
+              </div>
+            </label>
+            <label class="pack-item-label" for="pack-doc-2">
+              <input type="checkbox" id="pack-doc-2" class="pack-checkbox" onchange="togglePackItem('pack-doc-2')">
+              <div>
+                <div class="pack-item-text">Vouchers de vuelo ITA Airways</div>
+                <div class="pack-item-sub">EZE ↔ FCO ↔ ATH (impresos y descargados en PDF en el celular).</div>
+              </div>
+            </label>
+            <label class="pack-item-label" for="pack-doc-3">
+              <input type="checkbox" id="pack-doc-3" class="pack-checkbox" onchange="togglePackItem('pack-doc-3')">
+              <div>
+                <div class="pack-item-text">Seguro médico internacional de viaje</div>
+                <div class="pack-item-sub">Cobertura de al menos €30.000 (requisito del Espacio Schengen).</div>
+              </div>
+            </label>
+            <label class="pack-item-label" for="pack-doc-4">
+              <input type="checkbox" id="pack-doc-4" class="pack-checkbox" onchange="togglePackItem('pack-doc-4')">
+              <div>
+                <div class="pack-item-text">Tarjetas de crédito/débito habilitadas</div>
+                <div class="pack-item-sub">Dar aviso de viaje a Visa/Mastercard días antes de volar.</div>
+              </div>
+            </label>
+            <label class="pack-item-label" for="pack-doc-5">
+              <input type="checkbox" id="pack-doc-5" class="pack-checkbox" onchange="togglePackItem('pack-doc-5')">
+              <div>
+                <div class="pack-item-text">Euros en efectivo (€150–€200 por pareja)</div>
+                <div class="pack-item-sub">Para propinas, taxis iniciales o compras pequeñas al paso.</div>
+              </div>
+            </label>
+            <label class="pack-item-label" for="pack-doc-6">
+              <input type="checkbox" id="pack-doc-6" class="pack-checkbox" onchange="togglePackItem('pack-doc-6')">
+              <div>
+                <div class="pack-item-text">Copia digital de pasaportes en la nube</div>
+                <div class="pack-item-sub">En Google Drive / iCloud por cualquier extravío.</div>
+              </div>
+            </label>
+            <label class="pack-item-label" for="pack-doc-7">
+              <input type="checkbox" id="pack-doc-7" class="pack-checkbox" onchange="togglePackItem('pack-doc-7')">
+              <div>
+                <div class="pack-item-text">Reservas de hoteles y ferrys</div>
+                <div class="pack-item-sub">Comprobantes descargados sin necesidad de conexión wifi.</div>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- 2. Tecnología & Electrónica -->
+        <div class="pack-category-card" data-cat="tech">
+          <div class="pack-cat-title">🔌 2. Tecnología, Conectividad & Adaptadores</div>
+          <div class="pack-items-list">
+            <label class="pack-item-label" for="pack-tech-1">
+              <input type="checkbox" id="pack-tech-1" class="pack-checkbox" onchange="togglePackItem('pack-tech-1')">
+              <div>
+                <div class="pack-item-text">Adaptadores de enchufe (Tipo L/C y C/F)</div>
+                <div class="pack-item-sub">Italia usa 3 patitas en línea (L) o 2 redondas (C); Grecia usa 2 redondas (C/F).</div>
+              </div>
+            </label>
+            <label class="pack-item-label" for="pack-tech-2">
+              <input type="checkbox" id="pack-tech-2" class="pack-checkbox" onchange="togglePackItem('pack-tech-2')">
+              <div>
+                <div class="pack-item-text">Cargador múltiple USB / zapatilla compacta</div>
+                <div class="pack-item-sub">Para cargar 2 celulares y relojes con un solo enchufe en el hotel.</div>
+              </div>
+            </label>
+            <label class="pack-item-label" for="pack-tech-3">
+              <input type="checkbox" id="pack-tech-3" class="pack-checkbox" onchange="togglePackItem('pack-tech-3')">
+              <div>
+                <div class="pack-item-text">Power Bank / Batería portátil (10k/20k mAh)</div>
+                <div class="pack-item-sub">Debe viajar siempre en el equipaje de mano (prohibido despachar).</div>
+              </div>
+            </label>
+            <label class="pack-item-label" for="pack-tech-4">
+              <input type="checkbox" id="pack-tech-4" class="pack-checkbox" onchange="togglePackItem('pack-tech-4')">
+              <div>
+                <div class="pack-item-text">Cables de carga largos (2 metros)</div>
+                <div class="pack-item-sub">Los enchufes en hoteles antiguos de Italia suelen estar lejos de la cama.</div>
+              </div>
+            </label>
+            <label class="pack-item-label" for="pack-tech-5">
+              <input type="checkbox" id="pack-tech-5" class="pack-checkbox" onchange="togglePackItem('pack-tech-5')">
+              <div>
+                <div class="pack-item-text">Auriculares con cancelación de ruido</div>
+                <div class="pack-item-sub">Fundamentales para las 12h 45m del vuelo directo a Roma.</div>
+              </div>
+            </label>
+            <label class="pack-item-label" for="pack-tech-6">
+              <input type="checkbox" id="pack-tech-6" class="pack-checkbox" onchange="togglePackItem('pack-tech-6')">
+              <div>
+                <div class="pack-item-text">Correa o cordón de seguridad para celular</div>
+                <div class="pack-item-sub">Evita caídas accidentales al sacar fotos en acantilados o ferrys.</div>
+              </div>
+            </label>
+            <label class="pack-item-label" for="pack-tech-7">
+              <input type="checkbox" id="pack-tech-7" class="pack-checkbox" onchange="togglePackItem('pack-tech-7')">
+              <div>
+                <div class="pack-item-text">eSIM internacional o chip de datos</div>
+                <div class="pack-item-sub">Configurada para tener internet apenas aterrizan en Roma (FCO).</div>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- 3. Ropa & Calzado -->
+        <div class="pack-category-card" data-cat="clothes">
+          <div class="pack-cat-title">👟 3. Calzado & Ropa Diurna (Estrategia Adoquines)</div>
+          <div class="pack-items-list">
+            <label class="pack-item-label" for="pack-clo-1">
+              <input type="checkbox" id="pack-clo-1" class="pack-checkbox" onchange="togglePackItem('pack-clo-1')">
+              <div>
+                <div class="pack-item-text">2 pares de zapatillas deportivas amortiguadas</div>
+                <div class="pack-item-sub">Caminar 15.000 a 20.000 pasos diarios en adoquines romanos y ruinas.</div>
+              </div>
+            </label>
+            <label class="pack-item-label" for="pack-clo-2">
+              <input type="checkbox" id="pack-clo-2" class="pack-checkbox" onchange="togglePackItem('pack-clo-2')">
+              <div>
+                <div class="pack-item-text">Calzado náutico o sandalias todoterreno</div>
+                <div class="pack-item-sub">Con suela de goma con buen agarre para islas y paseos en barco.</div>
+              </div>
+            </label>
+            <label class="pack-item-label" for="pack-clo-3">
+              <input type="checkbox" id="pack-clo-3" class="pack-checkbox" onchange="togglePackItem('pack-clo-3')">
+              <div>
+                <div class="pack-item-text">7 a 9 remeras / chombas / musculosas</div>
+                <div class="pack-item-sub">Algodón o lino respirable para temperaturas de 21°C a 25°C.</div>
+              </div>
+            </label>
+            <label class="pack-item-label" for="pack-clo-4">
+              <input type="checkbox" id="pack-clo-4" class="pack-checkbox" onchange="togglePackItem('pack-clo-4')">
+              <div>
+                <div class="pack-item-text">3 a 4 bermudas, shorts o pantalones livianos</div>
+                <div class="pack-item-sub">Cómodos para subir cuestas y escalinatas en Santorini y Naxos.</div>
+              </div>
+            </label>
+            <label class="pack-item-label" for="pack-clo-5">
+              <input type="checkbox" id="pack-clo-5" class="pack-checkbox" onchange="togglePackItem('pack-clo-5')">
+              <div>
+                <div class="pack-item-text">2 a 3 vestidos frescos o camisas de lino</div>
+                <div class="pack-item-sub">Ideales para pasear de tarde y cenas en trattorias y tabernas.</div>
+              </div>
+            </label>
+            <label class="pack-item-label" for="pack-clo-6">
+              <input type="checkbox" id="pack-clo-6" class="pack-checkbox" onchange="togglePackItem('pack-clo-6')">
+              <div>
+                <div class="pack-item-text">7 a 8 mudas de ropa interior y medias</div>
+                <div class="pack-item-sub">Se hace un lavado rápido a mitad de viaje en lavandería express.</div>
+              </div>
+            </label>
+            <label class="pack-item-label" for="pack-clo-7">
+              <input type="checkbox" id="pack-clo-7" class="pack-checkbox" onchange="togglePackItem('pack-clo-7')">
+              <div>
+                <div class="pack-item-text">Pijama o ropa cómoda para hotel</div>
+                <div class="pack-item-sub">Liviano para descansar bien entre etapas.</div>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- 4. Abrigo & Noche -->
+        <div class="pack-category-card" data-cat="warm">
+          <div class="pack-cat-title">🧥 4. Abrigo de Media Estación & Viento del Egeo</div>
+          <div class="pack-items-list">
+            <label class="pack-item-label" for="pack-wrm-1">
+              <input type="checkbox" id="pack-wrm-1" class="pack-checkbox" onchange="togglePackItem('pack-wrm-1')">
+              <div>
+                <div class="pack-item-text">1 campera liviana (denim, cuero o trench)</div>
+                <div class="pack-item-sub">Para las noches frescas de Roma y Nápoles (11°C a 13°C).</div>
+              </div>
+            </label>
+            <label class="pack-item-label" for="pack-wrm-2">
+              <input type="checkbox" id="pack-wrm-2" class="pack-checkbox" onchange="togglePackItem('pack-wrm-2')">
+              <div>
+                <div class="pack-item-text">1 cortavientos impermeable liviano con capucha</div>
+                <div class="pack-item-sub">Indispensable en la cubierta exterior de los ferrys y catamarán.</div>
+              </div>
+            </label>
+            <label class="pack-item-label" for="pack-wrm-3">
+              <input type="checkbox" id="pack-wrm-3" class="pack-checkbox" onchange="togglePackItem('pack-wrm-3')">
+              <div>
+                <div class="pack-item-text">2 sweaters finos de hilo o cárdigans</div>
+                <div class="pack-item-sub">Para vestir en capas según suba o baje la temperatura.</div>
+              </div>
+            </label>
+            <label class="pack-item-label" for="pack-wrm-4">
+              <input type="checkbox" id="pack-wrm-4" class="pack-checkbox" onchange="togglePackItem('pack-wrm-4')">
+              <div>
+                <div class="pack-item-text">1 fular / pañuelo liviano para el cuello</div>
+                <div class="pack-item-sub">Cubre hombros al entrar al Vaticano o iglesias y frena la brisa de mar.</div>
+              </div>
+            </label>
+            <label class="pack-item-label" for="pack-wrm-5">
+              <input type="checkbox" id="pack-wrm-5" class="pack-checkbox" onchange="togglePackItem('pack-wrm-5')">
+              <div>
+                <div class="pack-item-text">1 o 2 pantalones largos cómodos / jeans</div>
+                <div class="pack-item-sub">Para viajar en avión y cenas formales.</div>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- 5. Playa, Aguas Termales & Catamarán -->
+        <div class="pack-category-card" data-cat="beach">
+          <div class="pack-cat-title">🏖️ 5. Playa, Aguas Termales & Catamarán</div>
+          <div class="pack-items-list">
+            <label class="pack-item-label" for="pack-bch-1">
+              <input type="checkbox" id="pack-bch-1" class="pack-checkbox" onchange="togglePackItem('pack-bch-1')">
+              <div>
+                <div class="pack-item-text">2 trajes de baño / mallas por persona</div>
+                <div class="pack-item-sub">Para que uno se seque mientras usan el otro.</div>
+              </div>
+            </label>
+            <label class="pack-item-label" for="pack-bch-2">
+              <input type="checkbox" id="pack-bch-2" class="pack-checkbox" onchange="togglePackItem('pack-bch-2')">
+              <div>
+                <div class="pack-item-text">Traje de baño oscuro para el volcán de Santorini</div>
+                <div class="pack-item-sub">Las aguas termales azufradas del volcán manchan de óxido las mallas claras.</div>
+              </div>
+            </label>
+            <label class="pack-item-label" for="pack-bch-3">
+              <input type="checkbox" id="pack-bch-3" class="pack-checkbox" onchange="togglePackItem('pack-bch-3')">
+              <div>
+                <div class="pack-item-text">Toalla de microfibra de secado rápido</div>
+                <div class="pack-item-sub">Ocupa un 80% menos de espacio y seca en 20 minutos.</div>
+              </div>
+            </label>
+            <label class="pack-item-label" for="pack-bch-4">
+              <input type="checkbox" id="pack-bch-4" class="pack-checkbox" onchange="togglePackItem('pack-bch-4')">
+              <div>
+                <div class="pack-item-text">Gafas de sol con filtro UV de buena calidad</div>
+                <div class="pack-item-sub">En las islas griegas el reflejo blanco de las casas y el mar es muy intenso.</div>
+              </div>
+            </label>
+            <label class="pack-item-label" for="pack-bch-5">
+              <input type="checkbox" id="pack-bch-5" class="pack-checkbox" onchange="togglePackItem('pack-bch-5')">
+              <div>
+                <div class="pack-item-text">Funda impermeable estanca para celular</div>
+                <div class="pack-item-sub">Para sacar fotos seguros arriba del catamarán y lanchas.</div>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- 6. Botiquín & Neceser -->
+        <div class="pack-category-card" data-cat="meds">
+          <div class="pack-cat-title">💊 6. Botiquín de Primeros Auxilios & Neceser</div>
+          <div class="pack-items-list">
+            <label class="pack-item-label" for="pack-med-1">
+              <input type="checkbox" id="pack-med-1" class="pack-checkbox" onchange="togglePackItem('pack-med-1')">
+              <div>
+                <div class="pack-item-text">Medicación personal habitual (con receta)</div>
+                <div class="pack-item-sub">Llevarla siempre en el equipaje de mano, nunca en la valija despachada.</div>
+              </div>
+            </label>
+            <label class="pack-item-label" for="pack-med-2">
+              <input type="checkbox" id="pack-med-2" class="pack-checkbox" onchange="togglePackItem('pack-med-2')">
+              <div>
+                <div class="pack-item-text">Ibuprofeno, Paracetamol y Antiespasmódico</div>
+                <div class="pack-item-sub">Para dolores musculares tras caminatas o digestiones pesadas.</div>
+              </div>
+            </label>
+            <label class="pack-item-label" for="pack-med-3">
+              <input type="checkbox" id="pack-med-3" class="pack-checkbox" onchange="togglePackItem('pack-med-3')">
+              <div>
+                <div class="pack-item-text">Pastillas para el mareo (Biodramina / Dramamine)</div>
+                <div class="pack-item-sub">Para los ferrys rápidos en el Egeo si llega a haber oleaje.</div>
+              </div>
+            </label>
+            <label class="pack-item-label" for="pack-med-4">
+              <input type="checkbox" id="pack-med-4" class="pack-checkbox" onchange="togglePackItem('pack-med-4')">
+              <div>
+                <div class="pack-item-text">Curitas y apósitos para ampollas (tipo Compeed)</div>
+                <div class="pack-item-sub">Salvan los pies si las zapatillas rozan en subidas y adoquines.</div>
+              </div>
+            </label>
+            <label class="pack-item-label" for="pack-med-5">
+              <input type="checkbox" id="pack-med-5" class="pack-checkbox" onchange="togglePackItem('pack-med-5')">
+              <div>
+                <div class="pack-item-text">Protector solar facial y corporal (FPS 50+)</div>
+                <div class="pack-item-sub">El sol de mayo en el sur y las islas quema sin que te des cuenta.</div>
+              </div>
+            </label>
+            <label class="pack-item-label" for="pack-med-6">
+              <input type="checkbox" id="pack-med-6" class="pack-checkbox" onchange="togglePackItem('pack-med-6')">
+              <div>
+                <div class="pack-item-text">Lágrimas artificiales / Gotas para ojos</div>
+                <div class="pack-item-sub">Para aliviar la sequedad del aire acondicionado del avión y el viento.</div>
+              </div>
+            </label>
+            <label class="pack-item-label" for="pack-med-7">
+              <input type="checkbox" id="pack-med-7" class="pack-checkbox" onchange="togglePackItem('pack-med-7')">
+              <div>
+                <div class="pack-item-text">Líquidos de menos de 100 ml en bolsa transparente</div>
+                <div class="pack-item-sub">Para los controles de seguridad en Ezeiza, Roma y Atenas.</div>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- 7. Accesorios & Valija -->
+        <div class="pack-category-card" data-cat="all">
+          <div class="pack-cat-title">🎒 7. Accesorios Prácticos de Viaje</div>
+          <div class="pack-items-list">
+            <label class="pack-item-label" for="pack-acc-1">
+              <input type="checkbox" id="pack-acc-1" class="pack-checkbox" onchange="togglePackItem('pack-acc-1')">
+              <div>
+                <div class="pack-item-text">Mochila pequeña diurna (15–20 litros)</div>
+                <div class="pack-item-sub">Para llevar agua, abrigo liviano y cámara en las excursiones diarias.</div>
+              </div>
+            </label>
+            <label class="pack-item-label" for="pack-acc-2">
+              <input type="checkbox" id="pack-acc-2" class="pack-checkbox" onchange="togglePackItem('pack-acc-2')">
+              <div>
+                <div class="pack-item-text">Botella térmica reutilizable</div>
+                <div class="pack-item-sub">Roma tiene fuentes públicas de agua potable helada (nasoni) en cada esquina.</div>
+              </div>
+            </label>
+            <label class="pack-item-label" for="pack-acc-3">
+              <input type="checkbox" id="pack-acc-3" class="pack-checkbox" onchange="togglePackItem('pack-acc-3')">
+              <div>
+                <div class="pack-item-text">Candados con combinación TSA</div>
+                <div class="pack-item-sub">Para proteger las 4 valijas despachadas de 23 kg en los vuelos.</div>
+              </div>
+            </label>
+            <label class="pack-item-label" for="pack-acc-4">
+              <input type="checkbox" id="pack-acc-4" class="pack-checkbox" onchange="togglePackItem('pack-acc-4')">
+              <div>
+                <div class="pack-item-text">Balanza digital de mano para valijas</div>
+                <div class="pack-item-sub">Para controlar el peso antes del vuelo de regreso (límite 23 kg por bulto).</div>
+              </div>
+            </label>
+            <label class="pack-item-label" for="pack-acc-5">
+              <input type="checkbox" id="pack-acc-5" class="pack-checkbox" onchange="togglePackItem('pack-acc-5')">
+              <div>
+                <div class="pack-item-text">1 paraguas de bolsillo plegable por pareja</div>
+                <div class="pack-item-sub">Por si toca algún chaparrón primaveral aislado en Roma o Nápoles.</div>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="tab-nav-footer">
+          <button class="tab-footer-btn" onclick="openTab('clima')">
+            ← Anterior: 10. Clima & Temperaturas
+          </button>
           <button class="tab-footer-btn primary" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
             ⬆ Volver al Inicio
           </button>
@@ -4325,6 +4875,117 @@
       const activeBtn = document.getElementById(btnId);
       if (activeBtn) activeBtn.classList.add('active');
       renderRouteLayers(mode);
+    }
+
+    /* Packlist Interactive Management & LocalStorage */
+    const PACKLIST_STORAGE_KEY = 'europa2027_packlist_v1';
+
+    function togglePackItem(id) {
+      const checkbox = document.getElementById(id);
+      if (!checkbox) return;
+      const label = checkbox.closest('.pack-item-label');
+      if (label) {
+        if (checkbox.checked) {
+          label.classList.add('checked');
+        } else {
+          label.classList.remove('checked');
+        }
+      }
+      savePacklistState();
+      updatePackProgress();
+    }
+
+    function savePacklistState() {
+      const state = {};
+      document.querySelectorAll('.pack-checkbox').forEach(cb => {
+        state[cb.id] = cb.checked;
+      });
+      try {
+        localStorage.setItem(PACKLIST_STORAGE_KEY, JSON.stringify(state));
+      } catch(e) {}
+    }
+
+    function updatePackProgress() {
+      const allCheckboxes = document.querySelectorAll('.pack-checkbox');
+      const total = allCheckboxes.length;
+      if (total === 0) return;
+      let checked = 0;
+      allCheckboxes.forEach(cb => {
+        if (cb.checked) checked++;
+      });
+      const pct = Math.round((checked / total) * 100);
+      const progressBar = document.getElementById('pack-progress-bar');
+      const progressText = document.getElementById('pack-progress-text');
+      if (progressBar) progressBar.style.width = pct + '%';
+      if (progressText) {
+        if (pct === 100) {
+          progressText.innerHTML = `🎉 <strong>¡${checked} de ${total} elementos listos (100%)! Valijas listas</strong>`;
+          progressText.style.color = '#16a34a';
+        } else {
+          progressText.innerHTML = `${checked} de ${total} elementos listos (<strong>${pct}%</strong>)`;
+          progressText.style.color = '#1e3a8a';
+        }
+      }
+    }
+
+    function initPacklist() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(PACKLIST_STORAGE_KEY) || '{}');
+        document.querySelectorAll('.pack-checkbox').forEach(cb => {
+          if (saved[cb.id] !== undefined) {
+            cb.checked = saved[cb.id];
+            const label = cb.closest('.pack-item-label');
+            if (label) {
+              if (cb.checked) label.classList.add('checked');
+              else label.classList.remove('checked');
+            }
+          }
+        });
+      } catch(e) {}
+      updatePackProgress();
+    }
+
+    function filterPacklist(category) {
+      document.querySelectorAll('.pack-filter-btn').forEach(btn => btn.classList.remove('active'));
+      const activeBtn = Array.from(document.querySelectorAll('.pack-filter-btn')).find(b => {
+        const attr = b.getAttribute('onclick') || '';
+        return attr.includes(`'${category}'`);
+      });
+      if (activeBtn) activeBtn.classList.add('active');
+
+      document.querySelectorAll('.pack-category-card').forEach(card => {
+        if (category === 'all' || card.getAttribute('data-cat') === category) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function markAllPacklist(mark) {
+      document.querySelectorAll('.pack-checkbox').forEach(cb => {
+        cb.checked = mark;
+        const label = cb.closest('.pack-item-label');
+        if (label) {
+          if (mark) label.classList.add('checked');
+          else label.classList.remove('checked');
+        }
+      });
+      savePacklistState();
+      updatePackProgress();
+    }
+
+    function resetPacklist() {
+      if (confirm('¿Querés desmarcar todos los elementos del checklist de equipaje?')) {
+        markAllPacklist(false);
+      }
+    }
+
+    // Auto-init packlist on page load
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initPacklist);
+    } else {
+      initPacklist();
     }
   </script>
 </body>
