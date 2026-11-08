@@ -32,72 +32,249 @@
     }
 
     header {
-      background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 58, 138, 0.88) 100%), 
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(30, 58, 138, 0.88) 100%), 
                   url('https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
       color: white;
-      padding: 50px 20px 45px;
+      padding: 42px 20px 34px;
       text-align: center;
       position: relative;
     }
-    header h1 { font-size: 2.2rem; margin-bottom: 10px; font-weight: 800; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
-    header p { color: #e2e8f0; font-size: 1.15rem; max-width: 720px; margin: 0 auto; text-shadow: 0 1px 3px rgba(0,0,0,0.3); }
-
-    .badge-bar {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 18px;
-      flex-wrap: wrap;
-    }
-    .badge {
-      background: rgba(255,255,255,0.22);
-      backdrop-filter: blur(6px);
-      border: 1px solid rgba(255,255,255,0.3);
-      padding: 5px 14px;
+    .hero-top-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 5px 15px;
       border-radius: 20px;
-      font-size: 0.85rem;
-      letter-spacing: 0.5px;
-      font-weight: 500;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    header h1 {
+      font-size: 2.3rem;
+      margin-bottom: 8px;
+      font-weight: 800;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.4);
+      letter-spacing: -0.5px;
+    }
+    header .hero-subtitle {
+      color: #e2e8f0;
+      font-size: 1.05rem;
+      max-width: 780px;
+      margin: 0 auto 22px;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+      line-height: 1.5;
+    }
+
+    /* Hero Destinations Showcase Strip */
+    .hero-showcase {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .hero-dest-card {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 115px;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      transition: all 0.25s ease;
+      background: #1e293b;
+    }
+    .hero-dest-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.42);
+      border-color: rgba(255, 255, 255, 0.65);
+    }
+    .hero-dest-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .hero-dest-card:hover img {
+      transform: scale(1.08);
+    }
+    .hero-dest-info {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(15,23,42,0.88) 85%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 8px 10px;
+      text-align: left;
+    }
+    .hero-dest-name {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.2;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+    }
+    .hero-dest-meta {
+      font-size: 0.7rem;
+      color: #cbd5e1;
+      margin-top: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Sticky Navigation Bar */
+    .nav-sticky-wrapper {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+      padding: 8px 0;
+    }
+    .nav-inner-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* Mobile selector (hidden on desktop) */
+    .mobile-nav-selector {
+      display: none;
+      margin-bottom: 6px;
+    }
+    .mobile-select-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .mobile-nav-select {
+      width: 100%;
+      appearance: none;
+      -webkit-appearance: none;
+      background: #eff6ff;
+      border: 1.5px solid var(--primary-light);
+      border-radius: 10px;
+      padding: 10px 38px 10px 14px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary);
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(37,99,235,0.08);
+    }
+    .mobile-select-arrow {
+      position: absolute;
+      right: 14px;
+      pointer-events: none;
+      font-size: 0.8rem;
+      color: var(--primary-light);
+    }
+
+    /* Tab Buttons Navigation */
+    .nav-tabs {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 6px;
+    }
+    .tab-btn {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 3px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+    .tab-btn:hover {
+      background: #f1f5f9;
+      color: var(--primary);
+      border-color: #cbd5e1;
+    }
+    .tab-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      box-shadow: 0 3px 8px rgba(30, 58, 138, 0.22);
+    }
+    .tab-icon { font-size: 1.15rem; line-height: 1; }
+    .tab-btn-title {
+      font-size: 0.76rem;
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+    }
+    .tab-btn.active .tab-btn-title {
+      color: #ffffff;
     }
 
     .container {
       max-width: 1100px;
-      margin: 30px auto;
+      margin: 24px auto 30px;
       padding: 0 20px;
-    }
-
-    /* Tabs */
-    .tabs {
-      display: flex;
-      border-bottom: 2px solid var(--border);
-      gap: 8px;
-      margin-bottom: 25px;
-      overflow-x: auto;
-      padding-bottom: 2px;
-    }
-    .tab-btn {
-      background: none;
-      border: none;
-      padding: 12px 16px;
-      font-size: 0.96rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      cursor: pointer;
-      border-bottom: 3px solid transparent;
-      margin-bottom: -4px;
-      white-space: nowrap;
-      transition: all 0.2s;
-    }
-    .tab-btn:hover {
-      color: var(--primary-light);
-    }
-    .tab-btn.active {
-      color: var(--primary);
-      border-color: var(--primary);
     }
 
     .tab-content { display: none; }
     .tab-content.active { display: block; animation: fadeIn 0.3s ease; }
+
+    /* Tab Footer Navigation */
+    .tab-nav-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-top: 35px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+    .tab-footer-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 18px;
+      border-radius: 9px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: white;
+      color: var(--text);
+      transition: all 0.2s ease;
+    }
+    .tab-footer-btn:hover {
+      background: #f8fafc;
+      border-color: #cbd5e1;
+    }
+    .tab-footer-btn.primary {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+      margin-left: auto;
+    }
+    .tab-footer-btn.primary:hover {
+      background: var(--primary-light);
+    }
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(4px); }
@@ -808,16 +985,57 @@
       line-height: 1.4;
     }
 
+    /* Responsive navigation & layouts */
+    @media (max-width: 900px) {
+      .hero-showcase {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+      .mobile-nav-selector {
+        display: block;
+      }
+      .nav-tabs {
+        display: flex;
+        overflow-x: auto;
+        gap: 6px;
+        padding: 4px 0 6px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+      .nav-tabs::-webkit-scrollbar {
+        display: none;
+      }
+      .tab-btn {
+        flex: 0 0 auto;
+        flex-direction: row;
+        gap: 6px;
+        padding: 8px 14px;
+        border-radius: 20px;
+      }
+      .tab-icon { font-size: 1rem; }
+      .tab-btn-title { font-size: 0.82rem; }
+    }
+
     /* Media queries for small screens */
     @media (max-width: 640px) {
       #route-map { height: 350px; }
+      header { padding: 30px 14px 24px; }
       header h1 { font-size: 1.6rem; }
-      header p { font-size: 0.98rem; }
+      header .hero-subtitle { font-size: 0.94rem; margin-bottom: 16px; }
+      .hero-showcase {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+      }
+      .hero-dest-card { height: 95px; }
+      .hero-dest-name { font-size: 0.82rem; }
+      .hero-dest-meta { font-size: 0.68rem; }
       .container { padding: 0 12px; margin: 15px auto; }
       .card { padding: 18px 14px; }
       .card h2 { font-size: 1.2rem; }
-      .tabs { gap: 4px; }
-      .tab-btn { padding: 10px 12px; font-size: 0.88rem; }
+      .tab-nav-footer { flex-direction: column; align-items: stretch; }
+      .tab-footer-btn { justify-content: center; width: 100%; text-align: center; }
+      .tab-footer-btn.primary { margin-left: 0; }
       .res-card-img { height: 160px; }
       .budget-stat-val { font-size: 1.3rem; }
       .budget-item-amount { text-align: left; width: 100%; border-top: 1px dashed #e2e8f0; padding-top: 8px; margin-top: 4px; }
@@ -827,28 +1045,118 @@
 <body>
 
   <header>
-    <h1>Viaje 2 Parejas: Italia & Grecia 2027</h1>
-    <p>3 Semanas | 17 de Abril al 8 de Mayo de 2027</p>
-    <div class="badge-bar">
-      <span class="badge">✈️ ITA Airways Multidestino</span>
-      <span class="badge">🛏️ 2 Habitaciones Dobles Separadas</span>
-      <span class="badge">🚆 100% Sin Manejar Autos</span>
-      <span class="badge">👥 Presupuesto para 2 Parejas</span>
-      <span class="badge">🎟️ Entradas Oficiales vs. Civitatis</span>
+    <div class="hero-top-badge">✨ GUÍA COMPLETA • 2 PAREJAS</div>
+    <h1>Viaje Italia & Grecia 2027</h1>
+    <p class="hero-subtitle">17 de Abril al 8 de Mayo de 2027 • 21 Noches • 100% Trenes de Alta Velocidad, Vuelos Directos & Ferrys</p>
+
+    <!-- Visual Showcase of Destinations -->
+    <div class="hero-showcase">
+      <div class="hero-dest-card" onclick="openTab('destinos')" title="Ver fotos y detalles de Roma">
+        <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=500&q=80" alt="Roma" loading="lazy">
+        <div class="hero-dest-info">
+          <span class="hero-dest-name">🇮🇹 Roma</span>
+          <span class="hero-dest-meta">Coliseo & Vaticano</span>
+        </div>
+      </div>
+      <div class="hero-dest-card" onclick="openTab('destinos')" title="Ver fotos y detalles de Nápoles y Costa">
+        <img src="https://images.unsplash.com/photo-1555992828-ca4dbe41d294?auto=format&fit=crop&w=500&q=80" alt="Nápoles & Pompeya" loading="lazy">
+        <div class="hero-dest-info">
+          <span class="hero-dest-name">🇮🇹 Nápoles & Costa</span>
+          <span class="hero-dest-meta">Pompeya, Ischia o Capri</span>
+        </div>
+      </div>
+      <div class="hero-dest-card" onclick="openTab('destinos')" title="Ver fotos y detalles de Puglia">
+        <img src="img/puglia-polignano.jpg" alt="Puglia" loading="lazy">
+        <div class="hero-dest-info">
+          <span class="hero-dest-name">🇮🇹 Puglia</span>
+          <span class="hero-dest-meta">Polignano & Trulli</span>
+        </div>
+      </div>
+      <div class="hero-dest-card" onclick="openTab('destinos')" title="Ver fotos y detalles de Atenas">
+        <img src="https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?auto=format&fit=crop&w=500&q=80" alt="Atenas" loading="lazy">
+        <div class="hero-dest-info">
+          <span class="hero-dest-name">🇬🇷 Atenas</span>
+          <span class="hero-dest-meta">Acrópolis & Plaka</span>
+        </div>
+      </div>
+      <div class="hero-dest-card" onclick="openTab('destinos')" title="Ver fotos y detalles de Naxos">
+        <img src="https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?auto=format&fit=crop&w=500&q=80" alt="Naxos" loading="lazy">
+        <div class="hero-dest-info">
+          <span class="hero-dest-name">🇬🇷 Naxos</span>
+          <span class="hero-dest-meta">Pascua Griega & Playas</span>
+        </div>
+      </div>
+      <div class="hero-dest-card" onclick="openTab('destinos')" title="Ver fotos y detalles de Santorini">
+        <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=500&q=80" alt="Santorini" loading="lazy">
+        <div class="hero-dest-info">
+          <span class="hero-dest-name">🇬🇷 Santorini</span>
+          <span class="hero-dest-meta">Oia, Caldera & Fira</span>
+        </div>
+      </div>
     </div>
   </header>
 
+  <!-- STICKY NAVIGATION BAR -->
+  <div class="nav-sticky-wrapper">
+    <div class="nav-inner-container">
+      
+      <!-- Mobile Quick Select -->
+      <div class="mobile-nav-selector">
+        <div class="mobile-select-wrap">
+          <select id="mobile-tab-select" class="mobile-nav-select" onchange="openTab(this.value)">
+            <option value="vuelos">✈️ 1. Vuelos Confirmados (ITA Airways)</option>
+            <option value="itinerarios">🗺️ 2. Itinerarios & Rutas Comparativas</option>
+            <option value="precios-atracciones">🎟️ 3. Entradas, Ferrys & Civitatis</option>
+            <option value="alojamiento">🏨 4. Hoteles (Habitaciones Separadas)</option>
+            <option value="destinos">📸 5. Fotos de Destinos</option>
+            <option value="logistica">📍 6. Mapa de Ruta & Logística</option>
+            <option value="presupuesto">💰 7. Presupuesto Consolidado</option>
+            <option value="recordar">💡 8. Puntos Clave & A Recordar</option>
+          </select>
+          <span class="mobile-select-arrow">▼</span>
+        </div>
+      </div>
+
+      <!-- Segmented Grid / Pill Nav -->
+      <nav class="nav-tabs" id="main-nav-tabs">
+        <button class="tab-btn active" data-tab="vuelos" onclick="openTab('vuelos')">
+          <span class="tab-icon">✈️</span>
+          <span class="tab-btn-title">1. Vuelos</span>
+        </button>
+        <button class="tab-btn" data-tab="itinerarios" onclick="openTab('itinerarios')">
+          <span class="tab-icon">🗺️</span>
+          <span class="tab-btn-title">2. Itinerarios</span>
+        </button>
+        <button class="tab-btn" data-tab="precios-atracciones" onclick="openTab('precios-atracciones')">
+          <span class="tab-icon">🎟️</span>
+          <span class="tab-btn-title">3. Entradas</span>
+        </button>
+        <button class="tab-btn" data-tab="alojamiento" onclick="openTab('alojamiento')">
+          <span class="tab-icon">🏨</span>
+          <span class="tab-btn-title">4. Hoteles</span>
+        </button>
+        <button class="tab-btn" data-tab="destinos" onclick="openTab('destinos')">
+          <span class="tab-icon">📸</span>
+          <span class="tab-btn-title">5. Fotos</span>
+        </button>
+        <button class="tab-btn" data-tab="logistica" onclick="openTab('logistica')">
+          <span class="tab-icon">📍</span>
+          <span class="tab-btn-title">6. Mapa & Ruta</span>
+        </button>
+        <button class="tab-btn" data-tab="presupuesto" onclick="openTab('presupuesto')">
+          <span class="tab-icon">💰</span>
+          <span class="tab-btn-title">7. Presupuesto</span>
+        </button>
+        <button class="tab-btn" data-tab="recordar" onclick="openTab('recordar')">
+          <span class="tab-icon">💡</span>
+          <span class="tab-btn-title">8. Puntos Clave</span>
+        </button>
+      </nav>
+
+    </div>
+  </div>
+
   <div class="container">
-    <nav class="tabs">
-      <button class="tab-btn active" onclick="openTab('vuelos')">1. Vuelos Confirmados</button>
-      <button class="tab-btn" onclick="openTab('itinerarios')">2. Itinerarios & Atracciones</button>
-      <button class="tab-btn" onclick="openTab('precios-atracciones')">3. Entradas, Ferrys & Civitatis</button>
-      <button class="tab-btn" onclick="openTab('alojamiento')">4. Hoteles (Habitaciones Separadas)</button>
-      <button class="tab-btn" onclick="openTab('destinos')">5. Fotos de Destinos</button>
-      <button class="tab-btn" onclick="openTab('logistica')">6. Mapa de Ruta & Logística</button>
-      <button class="tab-btn" onclick="openTab('presupuesto')">7. Presupuesto Consolidado</button>
-      <button class="tab-btn" onclick="openTab('recordar')">8. Puntos Clave & A Recordar</button>
-    </nav>
 
     <!-- TAB 1: VUELOS -->
     <section id="vuelos" class="tab-content active">
@@ -879,6 +1187,13 @@
         <div class="callout">
           <strong>Tarifa total para las 2 parejas (4 pasajeros):</strong> USD 6.354,00 (Tarifa Economy Comfort con 4 valijas despachadas de 23 kg y asientos reservados).<br>
           <strong>Costo por pareja:</strong> <strong>USD 3.177,00</strong>.
+        </div>
+
+        <div class="tab-nav-footer">
+          <div></div>
+          <button class="tab-footer-btn primary" onclick="openTab('itinerarios')">
+            Siguiente: 2. Itinerarios & Rutas ➔
+          </button>
         </div>
       </div>
     </section>
@@ -1575,6 +1890,15 @@
             </div>
           </div>
         </div>
+
+        <div class="tab-nav-footer">
+          <button class="tab-footer-btn" onclick="openTab('vuelos')">
+            ← Anterior: 1. Vuelos
+          </button>
+          <button class="tab-footer-btn primary" onclick="openTab('precios-atracciones')">
+            Siguiente: 3. Entradas & Civitatis ➔
+          </button>
+        </div>
       </div>
     </section>
 
@@ -2014,6 +2338,15 @@
             </div>
           </div>
         </div>
+
+        <div class="tab-nav-footer">
+          <button class="tab-footer-btn" onclick="openTab('itinerarios')">
+            ← Anterior: 2. Itinerarios
+          </button>
+          <button class="tab-footer-btn primary" onclick="openTab('alojamiento')">
+            Siguiente: 4. Hoteles (Habitaciones Separadas) ➔
+          </button>
+        </div>
       </div>
     </section>
 
@@ -2064,6 +2397,15 @@
         <div class="callout">
           💡 <strong>Estrategia Mixta Óptima:</strong><br>
           En <strong>Italia (ciudades)</strong> conviene contratar <strong>2 habitaciones dobles en hoteles céntricos con desayuno</strong> para estar al lado de las estaciones de tren y museos. En las <strong>Islas Griegas (Paros / Santorini)</strong> conviene alquilar una <strong>casa/villa típica cicládica de 2 dormitorios independientes con terraza vista al mar</strong> para disfrutar atardeceres juntos con privacidad en cada habitación.
+        </div>
+
+        <div class="tab-nav-footer">
+          <button class="tab-footer-btn" onclick="openTab('precios-atracciones')">
+            ← Anterior: 3. Entradas & Civitatis
+          </button>
+          <button class="tab-footer-btn primary" onclick="openTab('destinos')">
+            Siguiente: 5. Fotos de Destinos ➔
+          </button>
         </div>
       </div>
     </section>
@@ -2238,6 +2580,15 @@
               </div>
             </div>
           </div>
+        </div>
+
+        <div class="tab-nav-footer">
+          <button class="tab-footer-btn" onclick="openTab('alojamiento')">
+            ← Anterior: 4. Hoteles
+          </button>
+          <button class="tab-footer-btn primary" onclick="openTab('logistica')">
+            Siguiente: 6. Mapa de Ruta & Logística ➔
+          </button>
         </div>
       </div>
     </section>
@@ -2639,6 +2990,15 @@
             </div>
           </div>
         </div>
+
+        <div class="tab-nav-footer">
+          <button class="tab-footer-btn" onclick="openTab('destinos')">
+            ← Anterior: 5. Fotos de Destinos
+          </button>
+          <button class="tab-footer-btn primary" onclick="openTab('presupuesto')">
+            Siguiente: 7. Presupuesto Consolidado ➔
+          </button>
+        </div>
       </div>
     </section>
 
@@ -2741,6 +3101,15 @@
         <div class="callout" style="margin-top: 20px;">
           <strong>Resumen Global para las 2 Parejas (4 personas en total):</strong><br>
           Gasto estimado promedio: <strong>USD 7.600 por pareja</strong> (USD 15.200 en total para los 4 pasajeros). El viaje queda completamente cubierto con vuelos internacionales, 2 habitaciones privadas independientes, traslados sin manejar autos, las mejores atracciones y navegación en catamarán.
+        </div>
+
+        <div class="tab-nav-footer">
+          <button class="tab-footer-btn" onclick="openTab('logistica')">
+            ← Anterior: 6. Mapa de Ruta & Logística
+          </button>
+          <button class="tab-footer-btn primary" onclick="openTab('recordar')">
+            Siguiente: 8. Puntos Clave & Recordar ➔
+          </button>
         </div>
       </div>
     </section>
@@ -2906,6 +3275,15 @@
             </div>
           </div>
         </div>
+
+        <div class="tab-nav-footer">
+          <button class="tab-footer-btn" onclick="openTab('presupuesto')">
+            ← Anterior: 7. Presupuesto Consolidado
+          </button>
+          <button class="tab-footer-btn primary" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+            ⬆ Volver al Inicio
+          </button>
+        </div>
       </div>
     </section>
   </div>
@@ -2914,13 +3292,32 @@
     function openTab(tabId) {
       document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
       document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+      
       const targetContent = document.getElementById(tabId);
       if (targetContent) targetContent.classList.add('active');
-      const activeBtn = Array.from(document.querySelectorAll('.tab-btn')).find(b => {
-        const attr = b.getAttribute('onclick') || '';
-        return attr.includes(tabId);
+      
+      // Sync desktop grid and mobile swipe pills
+      document.querySelectorAll(`.tab-btn[data-tab="${tabId}"]`).forEach(btn => {
+        btn.classList.add('active');
+        try {
+          btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        } catch(e) {}
       });
-      if (activeBtn) activeBtn.classList.add('active');
+
+      // Sync mobile select dropdown
+      const mobileSelect = document.getElementById('mobile-tab-select');
+      if (mobileSelect && mobileSelect.value !== tabId) {
+        mobileSelect.value = tabId;
+      }
+
+      // Smooth scroll if user was scrolled down past the navigation
+      const navWrapper = document.querySelector('.nav-sticky-wrapper');
+      if (navWrapper) {
+        const navRect = navWrapper.getBoundingClientRect();
+        if (navRect.top < -20) {
+          window.scrollTo({ top: navWrapper.offsetTop - 6, behavior: 'smooth' });
+        }
+      }
 
       if (tabId === 'logistica') {
         setTimeout(() => {
