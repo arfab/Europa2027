@@ -1484,6 +1484,77 @@
       background: #ffffff;
     }
 
+    /* Daily Price Index Table / Cards */
+    .daily-prices-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+      margin: 25px 0 20px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.02);
+    }
+    .price-compare-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .price-cat-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .price-cat-title {
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: #1e3a8a;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 6px;
+    }
+    .price-row-item-daily {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 7px 0;
+      border-bottom: 1px dashed #e2e8f0;
+      font-size: 0.88rem;
+    }
+    .price-row-item-daily:last-child {
+      border-bottom: none;
+    }
+    .price-item-name {
+      font-weight: 600;
+      color: #1e293b;
+    }
+    .price-item-sub {
+      font-size: 0.74rem;
+      color: #64748b;
+    }
+    .price-dual-tags {
+      text-align: right;
+      white-space: nowrap;
+    }
+    .price-eur {
+      font-weight: 800;
+      color: #0369a1;
+      font-size: 0.94rem;
+    }
+    .price-usd {
+      font-size: 0.74rem;
+      color: #166534;
+      font-weight: 700;
+      background: #dcfce7;
+      padding: 2px 6px;
+      border-radius: 4px;
+      display: block;
+      margin-top: 2px;
+    }
+
     /* Responsive navigation & layouts */
     @media (max-width: 900px) {
       .hero-showcase {
@@ -3609,6 +3680,290 @@
           <div class="budget-item-amount">
             <div class="budget-item-price">USD 200 – 300</div>
             <span class="budget-item-unit">Por pareja</span>
+          </div>
+        </div>
+
+        <!-- DAILY PRICE INDEX CARD -->
+        <div class="daily-prices-card">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom: 6px;">
+            <h3 style="font-size: 1.25rem; font-weight: 800; color: #1e3a8a; margin: 0; display:flex; align-items:center; gap:8px;">
+              🛒 Termómetro de Precios Cotidianos (Euros € & Dólares USD)
+            </h3>
+            <span style="font-size: 0.78rem; font-weight: 700; background: #ecfdf5; color: #047857; border: 1px solid #a7f3d0; padding: 3px 10px; border-radius: 20px;">
+              Referencia Oficial 1 EUR ≈ 1.09 USD
+            </span>
+          </div>
+          <p style="font-size: 0.92rem; color: #64748b; margin-bottom: 14px;">
+            Para tener noción de bolsillo de cuánto cuesta el día a día real en Italia y Grecia en consumos medibles, frecuentes y tangibles:
+          </p>
+
+          <div class="price-compare-grid">
+
+            <!-- 1. Desayunos & Café -->
+            <div class="price-cat-box">
+              <div class="price-cat-title">☕ 1. Café & Desayuno</div>
+              <div class="price-row-item-daily">
+                <div>
+                  <div class="price-item-name">Espresso "al banco" (en barra)</div>
+                  <div class="price-item-sub">De pie en bar italiano</div>
+                </div>
+                <div class="price-dual-tags">
+                  <div class="price-eur">€1,20 – €1,50</div>
+                  <span class="price-usd">~$1,30 – $1,65 USD</span>
+                </div>
+              </div>
+              <div class="price-row-item-daily">
+                <div>
+                  <div class="price-item-name">Cappuccino + Cornetto / Sfogliatella</div>
+                  <div class="price-item-sub">Desayuno dulce tradicional</div>
+                </div>
+                <div class="price-dual-tags">
+                  <div class="price-eur">€2,80 – €3,80</div>
+                  <span class="price-usd">~$3,05 – $4,15 USD</span>
+                </div>
+              </div>
+              <div class="price-row-item-daily">
+                <div>
+                  <div class="price-item-name">Café sentado en mesa de plaza histórica</div>
+                  <div class="price-item-sub">Piazza Navona / San Marco</div>
+                </div>
+                <div class="price-dual-tags">
+                  <div class="price-eur">€3,50 – €6,00</div>
+                  <span class="price-usd">~$3,80 – $6,50 USD</span>
+                </div>
+              </div>
+              <div class="price-row-item-daily">
+                <div>
+                  <div class="price-item-name">Freddo Espresso / Cappuccino</div>
+                  <div class="price-item-sub">Café batido con hielo en Grecia</div>
+                </div>
+                <div class="price-dual-tags">
+                  <div class="price-eur">€3,00 – €4,50</div>
+                  <span class="price-usd">~$3,25 – $4,90 USD</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. Almuerzos Rápidos & Street Food -->
+            <div class="price-cat-box">
+              <div class="price-cat-title">🍕 2. Comida al Paso & Street Food</div>
+              <div class="price-row-item-daily">
+                <div>
+                  <div class="price-item-name">Pizza Napoletana Margherita</div>
+                  <div class="price-item-sub">Pizza entera individual en Nápoles</div>
+                </div>
+                <div class="price-dual-tags">
+                  <div class="price-eur">€5,50 – €8,00</div>
+                  <span class="price-usd">~$6,00 – $8,70 USD</span>
+                </div>
+              </div>
+              <div class="price-row-item-daily">
+                <div>
+                  <div class="price-item-name">Gyros Pita / Souvlaki al paso</div>
+                  <div class="price-item-sub">Carne, tzatziki y papas en pita (Grecia)</div>
+                </div>
+                <div class="price-dual-tags">
+                  <div class="price-eur">€3,50 – €4,80</div>
+                  <span class="price-usd">~$3,80 – $5,20 USD</span>
+                </div>
+              </div>
+              <div class="price-row-item-daily">
+                <div>
+                  <div class="price-item-name">Pizza al Taglio en Roma (2 porciones)</div>
+                  <div class="price-item-sub">Al corte por peso al paso</div>
+                </div>
+                <div class="price-dual-tags">
+                  <div class="price-eur">€4,50 – €6,50</div>
+                  <span class="price-usd">~$4,90 – $7,10 USD</span>
+                </div>
+              </div>
+              <div class="price-row-item-daily">
+                <div>
+                  <div class="price-item-name">Focaccia Barese / Panzerotto frito</div>
+                  <div class="price-item-sub">Puglia (panadería tradicional)</div>
+                </div>
+                <div class="price-dual-tags">
+                  <div class="price-eur">€2,00 – €3,50</div>
+                  <span class="price-usd">~$2,20 – $3,80 USD</span>
+                </div>
+              </div>
+              <div class="price-row-item-daily">
+                <div>
+                  <div class="price-item-name">Cuoppo de mariscos fritos</div>
+                  <div class="price-item-sub">Cono de calamares/pescaditos (Nápoles)</div>
+                </div>
+                <div class="price-dual-tags">
+                  <div class="price-eur">€7,00 – €10,00</div>
+                  <span class="price-usd">~$7,60 – $10,90 USD</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Restaurantes & Cenas -->
+            <div class="price-cat-box">
+              <div class="price-cat-title">🍝 3. Trattorias & Tabernas (Sentados)</div>
+              <div class="price-row-item-daily">
+                <div>
+                  <div class="price-item-name">Plato de pasta tradicional</div>
+                  <div class="price-item-sub">Carbonara, Cacio e Pepe o Orecchiette</div>
+                </div>
+                <div class="price-dual-tags">
+                  <div class="price-eur">€10,00 – €14,00</div>
+                  <span class="price-usd">~$10,90 – $15,25 USD</span>
+                </div>
+              </div>
+              <div class="price-row-item-daily">
+                <div>
+                  <div class="price-item-name">Moussaka griega casera al horno</div>
+                  <div class="price-item-sub">Porción generosa en taberna</div>
+                </div>
+                <div class="price-dual-tags">
+                  <div class="price-eur">€9,00 – €13,00</div>
+                  <span class="price-usd">~$9,80 – $14,15 USD</span>
+                </div>
+              </div>
+              <div class="price-row-item-daily">
+                <div>
+                  <div class="price-item-name">Ensalada Griega con bloque de Feta</div>
+                  <div class="price-item-sub">Para compartir al centro entre 2-4</div>
+                </div>
+                <div class="price-dual-tags">
+                  <div class="price-eur">€7,00 – €9,00</div>
+                  <span class="price-usd">~$7,60 – $9,80 USD</span>
+                </div>
+              </div>
+              <div class="price-row-item-daily">
+                <div>
+                  <div class="price-item-name">Pulpo a la brasa / Pescado fresco</div>
+                  <div class="price-item-sub">En taberna marinera de Naxos</div>
+                </div>
+                <div class="price-dual-tags">
+                  <div class="price-eur">€13,00 – €18,00</div>
+                  <span class="price-usd">~$14,15 – $19,60 USD</span>
+                </div>
+              </div>
+              <div class="price-row-item-daily">
+                <div>
+                  <div class="price-item-name">"Coperto" obligatorio en Italia</div>
+                  <div class="price-item-sub">Servicio de pan y mesa (por persona)</div>
+                </div>
+                <div class="price-dual-tags">
+                  <div class="price-eur">€1,50 – €3,00</div>
+                  <span class="price-usd">~$1,65 – $3,25 USD</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4. Bebidas, Helados & Tragos -->
+            <div class="price-cat-box">
+              <div class="price-cat-title">🍷 4. Bebidas, Helados & Tragos</div>
+              <div class="price-row-item-daily">
+                <div>
+                  <div class="price-item-name">Gelato artesanal (2 sabores)</div>
+                  <div class="price-item-sub">Cucurucho o vasito mediano</div>
+                </div>
+                <div class="price-dual-tags">
+                  <div class="price-eur">€3,00 – €4,50</div>
+                  <span class="price-usd">~$3,25 – $4,90 USD</span>
+                </div>
+              </div>
+              <div class="price-row-item-daily">
+                <div>
+                  <div class="price-item-name">Aperol Spritz con picadita</div>
+                  <div class="price-item-sub">Aperitivo con papas, olivas o snacks</div>
+                </div>
+                <div class="price-dual-tags">
+                  <div class="price-eur">€6,00 – €8,50</div>
+                  <span class="price-usd">~$6,50 – $9,25 USD</span>
+                </div>
+              </div>
+              <div class="price-row-item-daily">
+                <div>
+                  <div class="price-item-name">Cerveza local 500ml (Peroni / Mythos)</div>
+                  <div class="price-item-sub">Tirada o botella en restaurante</div>
+                </div>
+                <div class="price-dual-tags">
+                  <div class="price-eur">€4,00 – €5,50</div>
+                  <span class="price-usd">~$4,35 – $6,00 USD</span>
+                </div>
+              </div>
+              <div class="price-row-item-daily">
+                <div>
+                  <div class="price-item-name">Jarra de vino de la casa (1/2 litro)</div>
+                  <div class="price-item-sub">Vino bianco / rosso sfuso en trattoria</div>
+                </div>
+                <div class="price-dual-tags">
+                  <div class="price-eur">€6,00 – €9,00</div>
+                  <span class="price-usd">~$6,50 – $9,80 USD</span>
+                </div>
+              </div>
+              <div class="price-row-item-daily">
+                <div>
+                  <div class="price-item-name">Botella agua mineral 1L en kiosco</div>
+                  <div class="price-item-sub">En la calle (en súper: €0,40)</div>
+                </div>
+                <div class="price-dual-tags">
+                  <div class="price-eur">€0,80 – €1,20</div>
+                  <span class="price-usd">~$0,90 – $1,30 USD</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 5. Transporte & Cotidianos -->
+            <div class="price-cat-box">
+              <div class="price-cat-title">🚇 5. Movilidad Urbana & Servicios</div>
+              <div class="price-row-item-daily">
+                <div>
+                  <div class="price-item-name">Boleto de Metro/Bus (Roma / Atenas)</div>
+                  <div class="price-item-sub">Válido 90–100 minutos con transbordos</div>
+                </div>
+                <div class="price-dual-tags">
+                  <div class="price-eur">€1,20 – €1,50</div>
+                  <span class="price-usd">~$1,30 – $1,65 USD</span>
+                </div>
+              </div>
+              <div class="price-row-item-daily">
+                <div>
+                  <div class="price-item-name">Pase diario ilimitado 24 hs transporte</div>
+                  <div class="price-item-sub">Metro, tranvía y buses urbanos</div>
+                </div>
+                <div class="price-dual-tags">
+                  <div class="price-eur">€4,10 – €7,00</div>
+                  <span class="price-usd">~$4,50 – $7,60 USD</span>
+                </div>
+              </div>
+              <div class="price-row-item-daily">
+                <div>
+                  <div class="price-item-name">Taxi urbano viaje corto (10–15 min)</div>
+                  <div class="price-item-sub">Dentro del centro de la ciudad</div>
+                </div>
+                <div class="price-dual-tags">
+                  <div class="price-eur">€10,00 – €15,00</div>
+                  <span class="price-usd">~$10,90 – $16,35 USD</span>
+                </div>
+              </div>
+              <div class="price-row-item-daily">
+                <div>
+                  <div class="price-item-name">Set 2 reposeras + sombrilla en playa</div>
+                  <div class="price-item-sub">Naxos o Santorini por el día entero</div>
+                </div>
+                <div class="price-dual-tags">
+                  <div class="price-eur">€15,00 – €25,00</div>
+                  <span class="price-usd">~$16,35 – $27,25 USD</span>
+                </div>
+              </div>
+              <div class="price-row-item-daily">
+                <div>
+                  <div class="price-item-name">Lavado + secado express (8–10 kg)</div>
+                  <div class="price-item-sub">Lavandería autoservicio en 1 hora</div>
+                </div>
+                <div class="price-dual-tags">
+                  <div class="price-eur">€9,00 – €13,00</div>
+                  <span class="price-usd">~$9,80 – $14,15 USD</span>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
 
