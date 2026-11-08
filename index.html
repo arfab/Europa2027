@@ -635,7 +635,7 @@
   <div class="container">
     <nav class="tabs">
       <button class="tab-btn active" onclick="openTab('vuelos')">1. Vuelos Confirmados</button>
-      <button class="tab-btn" onclick="openTab('itinerarios')">2. Itinerarios & Atracciones (A, B y C)</button>
+      <button class="tab-btn" onclick="openTab('itinerarios')">2. Itinerarios & Atracciones</button>
       <button class="tab-btn" onclick="openTab('precios-atracciones')">3. Entradas, Ferrys & Civitatis</button>
       <button class="tab-btn" onclick="openTab('alojamiento')">4. Hoteles (Habitaciones Separadas)</button>
       <button class="tab-btn" onclick="openTab('destinos')">5. Fotos de Destinos</button>
@@ -676,44 +676,212 @@
       </div>
     </section>
 
-    <!-- TAB 2: ITINERARIOS CON ATRACCIONES Y FOTOS (EXPANDIDO PARA A, B Y C) -->
+    <!-- TAB 2: ITINERARIOS CON ATRACCIONES Y FOTOS -->
     <section id="itinerarios" class="tab-content">
       <div class="card">
-        <h2>🗺️ Todas las Opciones Expandidas con Fotos de Atracciones</h2>
+        <h2>🗺️ Propuestas de Itinerario con Fotos de Atracciones</h2>
         <p style="margin-bottom: 18px; color: var(--text-muted);">
-          21 noches netas en Europa. Hacé clic en cualquiera de las 3 opciones para ver su recorrido detallado con fotos y paradas sin necesidad de hacer scroll largo:
+          21 noches netas en Europa. Hacé clic en cualquiera de los 4 recorridos para ver su detalle día por día con fotos y paradas sin necesidad de hacer scroll largo:
         </p>
 
-        <!-- SELECTOR DE ITINERARIO (A, B, C o D) -->
+        <!-- SELECTOR DE ITINERARIO -->
         <div class="itinerary-selector-wrap">
           <div class="itinerary-selector">
-            <button class="itin-btn active" onclick="switchItinerary('opt-a')">
-              <span class="itin-btn-badge">⭐ Clásica</span>
-              <span class="itin-btn-title">Opción A: Clásica Equilibrada</span>
+            <button class="itin-btn active" onclick="switchItinerary('opt-d')">
+              <span class="itin-btn-badge">⭐ Recomendada · Sur & Puglia</span>
+              <span class="itin-btn-title">Gran Sur, Puglia & Grecia Profunda</span>
+              <span class="itin-btn-sub">Roma llegada (1n) · Nápoles & Pompeya (4n) · Puglia & Trulli (4n) · Vuelo Bari-Atenas (1h 15m) · Grecia profunda (11n)</span>
+            </button>
+            <button class="itin-btn" onclick="switchItinerary('opt-a')">
+              <span class="itin-btn-badge" style="background:#475569;">🏛️ Ruta Clásica</span>
+              <span class="itin-btn-title">Clásica Norte & Islas Griegas</span>
               <span class="itin-btn-sub">Roma (4n) · Florencia (3n) · Venecia (3n) · Atenas (3n) · Paros/Naxos (4n) · Santorini (3n)</span>
             </button>
             <button class="itin-btn" onclick="switchItinerary('opt-b')">
-              <span class="itin-btn-badge" style="background:#ea580c;">🏛️ Centro-Sur</span>
-              <span class="itin-btn-title">Opción B: Foco Nápoles & Pompeya</span>
+              <span class="itin-btn-badge" style="background:#ea580c;">🌋 Centro-Sur</span>
+              <span class="itin-btn-title">Roma, Florencia & Nápoles + Grecia</span>
               <span class="itin-btn-sub">Roma (4n) · Florencia (3n) · Nápoles & Pompeya (4n) · Atenas (3n) · 2 Cícladas (6n)</span>
             </button>
             <button class="itin-btn" onclick="switchItinerary('opt-c')">
-              <span class="itin-btn-badge" style="background:#0284c7;">🌊 Más Mar</span>
-              <span class="itin-btn-title">Opción C: 13 Noches en Grecia</span>
+              <span class="itin-btn-badge" style="background:#0284c7;">🌊 Más Mar & Relax</span>
+              <span class="itin-btn-title">13 Noches en Grecia (Menos Hoteles)</span>
               <span class="itin-btn-sub">Roma (4n) · Base única Toscana o Venecia (4n) · Atenas (3n) · 3 Islas Cícladas (9n)</span>
-            </button>
-            <button class="itin-btn" onclick="switchItinerary('opt-d')">
-              <span class="itin-btn-badge" style="background:#7c3aed;">✨ Novedad (Sin Repetir)</span>
-              <span class="itin-btn-title">Opción D: Gran Sur & Puglia + Grecia</span>
-              <span class="itin-btn-sub">Roma llegada (1n) · Nápoles & Pompeya (4n) · Puglia & Trulli (4n) · Vuelo Bari-Atenas (1h 15m) · Grecia profunda (11n)</span>
             </button>
           </div>
         </div>
 
-        <!-- ==================== OPCIÓN A ==================== -->
-        <div id="opt-a" class="variant-card itin-option-card active">
+        <!-- ==================== GRAN SUR ITALIANO & PUGLIA + GRECIA PROFUNDA ==================== -->
+        <div id="opt-d" class="variant-card itin-option-card active">
           <div class="variant-header">
-            <div class="variant-title">Opción A: La Clásica Equilibrada (Recomendada)</div>
+            <div class="variant-title">El Gran Sur Italiano, Puglia & Grecia Profunda (Recomendada)</div>
+            <span class="variant-pill" style="background: #dbeafe; color: #1e40af;">10n Italia + 11n Grecia</span>
+          </div>
+          <div class="variant-summary">
+            Ideal si ya conocen Roma, Florencia y Venecia: Roma llegada (1n) ➔ Nápoles & Pompeya (4n) ➔ Puglia costera: Polignano, Monopoli & Alberobello (4n) ➔ Vuelo directo Bari-Atenas (1h 15m) ➔ Atenas (3n) ➔ Naxos con Pascua (4n) ➔ Santorini (3n) ➔ Atenas regreso (1n)
+          </div>
+          <div class="callout" style="background: #eff6ff; border-color: #93c5fd; color: #1e3a8a; margin-bottom: 20px;">
+            ⭐ <strong>¿Por qué es la propuesta ideal si ya conocen las ciudades clásicas?</strong><br>
+            Aterrizan en Roma de noche, duermen en un hotel céntrico al lado de Termini y el domingo por la mañana toman el Frecciarossa directo al sur. No repiten circuitos masivos ya vistos, descubren los acantilados sobre el Adriático y los <em>trulli</em> de Puglia, y saltan directo en vuelo de 75 min desde Bari a Atenas sin tener que regresar a Roma.
+          </div>
+
+          <!-- D1: Roma -->
+          <div class="stop-block">
+            <div class="stop-header">
+              <span class="stop-city">🛬 1. Roma: Llegada y Descanso Logístico (1 noche | 17 - 18 Abril)</span>
+              <span class="stop-nights">Hotel pegado a Roma Termini</span>
+            </div>
+            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
+              Llegada a Roma FCO (18:40 PM). Traslado directo en tren Leonardo Express a Termini, check-in en 2 habitaciones dobles, cena romana relajada (pasta cacio e pepe / carbonara) y a descansar para arrancar el viaje frescos el domingo.
+            </p>
+            <div class="attractions-grid">
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=400&q=80" alt="Roma nocturna" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Cena & Noche en Roma</div>
+                  <div class="attr-detail">Trattoria tradicional cerca de Termini sin tours obligados.</div>
+                  <div class="attr-price">Cena relajada de bienvenida</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- D2: Nápoles, Pompeya & Costa -->
+          <div class="stop-block">
+            <div class="stop-header">
+              <span class="stop-city">🌋 2. Nápoles, Pompeya & Costa (4 noches | 18 - 22 Abril)</span>
+              <span class="stop-nights">Frecciarossa Termini ➔ Napoli (1h 10m)</span>
+            </div>
+            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
+              Base en Nápoles centro histórico. Ruinas de Pompeya en tren local, Museo Arqueológico Nacional (los mosaicos reales) y un día en barco público a la isla termal de Ischia o Sorrento.
+            </p>
+            <div class="attractions-grid">
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1555992828-ca4dbe41d294?auto=format&fit=crop&w=400&q=80" alt="Pompeya" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Parque Arqueológico Pompeya</div>
+                  <div class="attr-detail">Día completo recorriendo las calles y villas romanas congeladas por el Vesubio.</div>
+                  <div class="attr-price">Oficial: €18 | Tren local: €3</div>
+                </div>
+              </div>
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80" alt="Pizza Napolitana" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Spaccanapoli & Pizza Auténtica</div>
+                  <div class="attr-detail">Pizzería Da Michele, Sorbillo, Cristo Velado y Museo Arqueológico.</div>
+                  <div class="attr-price">Cristo Velado: €10 | Pizza: €8-€12</div>
+                </div>
+              </div>
+              <div class="attr-card">
+                <img src="img/italia-ischia.jpg" alt="Isla de Ischia y Castillo Aragonés" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Paseo a Ischia o Sorrento</div>
+                  <div class="attr-detail">Barco público de 50 min a la isla volcánica de Ischia: aguas termales, jardines y el Castillo Aragonés.</div>
+                  <div class="attr-price">Ferry i/v: €38 – €45</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- D3: Puglia Costera en Tren -->
+          <div class="stop-block">
+            <div class="stop-header">
+              <span class="stop-city">🌊 3. Puglia Costera: Polignano a Mare, Monopoli & Alberobello (4 noches | 22 - 26 Abril)</span>
+              <span class="stop-nights">Tren Frecciargento Nápoles ➔ Bari (3h 30m)</span>
+            </div>
+            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
+              Puglia es el secreto mejor guardado de Italia: pueblos de pescadores de cal blanca sobre acantilados esmeralda, cocina pugliese (burrata fresca, orecchiette, focaccia) y los legendarios trulli. La red de trenes regionales corre pegada a la costa conectando todo sin auto.
+            </p>
+            <div class="attractions-grid">
+              <div class="attr-card">
+                <img src="img/puglia-polignano.jpg" alt="Polignano a Mare acantilados" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Polignano a Mare & Monopoli</div>
+                  <div class="attr-detail">Casas blancas colgadas de los acantilados sobre la cala Lama Monachile, puerto de Monopoli y mar Adriático.</div>
+                  <div class="attr-price">Tren regional: €2,50 a €4</div>
+                </div>
+              </div>
+              <div class="attr-card">
+                <img src="img/puglia-alberobello.jpg" alt="Trulli de Alberobello" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Alberobello & Los Trulli</div>
+                  <div class="attr-detail">Pueblo de cuento Patrimonio UNESCO con más de 1.500 casas de piedra caliza con techos cónicos.</div>
+                  <div class="attr-price">Excursión en tren/bus local</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- D4: Salto a Grecia -->
+          <div class="stop-block">
+            <div class="stop-header">
+              <span class="stop-city">✈️ 4. Salto Directo a Grecia: Vuelo Bari ➔ Atenas (Lunes 26 Abril)</span>
+              <span class="stop-nights">Vuelo directo exprés (1h 15m)</span>
+            </div>
+            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
+              La gran ventaja geográfica de Puglia: desde el aeropuerto de Bari (BRI) hay vuelos directos a Atenas (ATH) por Volotea o Ryanair. En 75 minutos cruzan el mar y ya están almorzando en Grecia, sin perder un día entero volviendo a Roma.
+            </p>
+            <div class="attractions-grid">
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=400&q=80" alt="Vuelo Bari a Atenas" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Vuelo Bari ➔ Atenas</div>
+                  <div class="attr-detail">75 min de vuelo directo con valijas despachadas incluidas.</div>
+                  <div class="attr-price">Vuelo: €65 – €95 / persona</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- D5: Grecia Profunda -->
+          <div class="stop-block">
+            <div class="stop-header">
+              <span class="stop-city">🇬🇷 5. Grecia Profunda: Atenas, Naxos con Pascua & Santorini (11 noches | 26 Abr - 8 Mayo)</span>
+              <span class="stop-nights">Atenas (3n) + Naxos (4n) + Santorini (3n) + Atenas (1n)</span>
+            </div>
+            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
+              11 días completos para sumergirse en la historia helénica, vivir la Pascua Ortodoxa el domingo 2 de mayo en una isla auténtica y cerrar con el lujo volcánico de Santorini:
+            </p>
+            <div class="attractions-grid">
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?auto=format&fit=crop&w=400&q=80" alt="Acrópolis Atenas" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Atenas (3 noches | 26 - 29 Abr)</div>
+                  <div class="attr-detail">Acrópolis, Museo de las Cariátides y cenas en Plaka.</div>
+                  <div class="attr-price">Entradas €20 / €15</div>
+                </div>
+              </div>
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?auto=format&fit=crop&w=400&q=80" alt="Naxos Pascua" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Naxos (4 noches | 29 Abr - 3 May)</div>
+                  <div class="attr-detail">Portara de Apolo, velas en procesión de Pascua Ortodoxa y calas vírgenes.</div>
+                  <div class="attr-price">Ferry Blue Star desde Pireo</div>
+                </div>
+              </div>
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=400&q=80" alt="Santorini Oia" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Santorini (3 noches | 3 - 6 May)</div>
+                  <div class="attr-detail">Acantilados de Oia y crucero en catamarán con barbacoa al atardecer.</div>
+                  <div class="attr-price">Catamarán sunset: €120/pax</div>
+                </div>
+              </div>
+              <div class="attr-card">
+                <img src="img/atenas-plaka.jpg" alt="Atenas despedida" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Atenas Final (1 noche | 6 - 8 May)</div>
+                  <div class="attr-detail">Regreso a Atenas para compras, última cena y vuelo ITA 19:30.</div>
+                  <div class="attr-price">Conexión relajada sin apuros</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== RUTA CLÁSICA ==================== -->
+        <div id="opt-a" class="variant-card itin-option-card" style="display: none;">
+          <div class="variant-header">
+            <div class="variant-title">Clásica Norte & Islas Griegas</div>
             <span class="variant-pill">11n Italia + 10n Grecia</span>
           </div>
           <div class="variant-summary">Roma (4n) ➔ Florencia (3n) ➔ Venecia (3n) ➔ Atenas (3n) ➔ Paros/Naxos (4n) ➔ Santorini (3n) ➔ Regreso</div>
@@ -901,10 +1069,10 @@
           </div>
         </div>
 
-        <!-- ==================== OPCIÓN B (TOTALMENTE EXPANDIDA) ==================== -->
+        <!-- ==================== CENTRO-SUR & POMPEYA ==================== -->
         <div id="opt-b" class="variant-card itin-option-card" style="display: none;">
           <div class="variant-header">
-            <div class="variant-title">Opción B: Foco Centro-Sur & Pompeya</div>
+            <div class="variant-title">Roma, Florencia & Nápoles + Islas Griegas</div>
             <span class="variant-pill">12n Italia + 9n Grecia</span>
           </div>
           <div class="variant-summary">Roma (4n) ➔ Florencia (3n) ➔ Nápoles & Pompeya (4n) ➔ Vuelo Nápoles-Atenas (3n) ➔ Cícladas (6n)</div>
@@ -1059,10 +1227,10 @@
           </div>
         </div>
 
-        <!-- ==================== OPCIÓN C (TOTALMENTE EXPANDIDA) ==================== -->
+        <!-- ==================== RELAX CÍCLADAS ==================== -->
         <div id="opt-c" class="variant-card itin-option-card" style="display: none;">
           <div class="variant-header">
-            <div class="variant-title">Opción C: Relax Cícladas & Menos Hoteles</div>
+            <div class="variant-title">13 Noches en Grecia & Menos Mudanzas de Hotel</div>
             <span class="variant-pill">8n Italia + 13n Grecia</span>
           </div>
           <div class="variant-summary">Roma (4n) ➔ Base única Florencia o Venecia (4n) ➔ Atenas (3n) ➔ Paros (3n) + Naxos (3n) + Santorini (3n)</div>
@@ -1183,174 +1351,6 @@
                   <div class="attr-title">Santorini (3 noches)</div>
                   <div class="attr-detail">Cierre de lujo con acantilados de Oia y catamarán al atardecer.</div>
                   <div class="attr-price">Catamarán sunset: €120/pax</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- ==================== OPCIÓN D (GRAN SUR ITALIANO & PUGLIA + GRECIA PROFUNDA) ==================== -->
-        <div id="opt-d" class="variant-card itin-option-card" style="display: none;">
-          <div class="variant-header">
-            <div class="variant-title">Opción D: El Gran Sur Italiano & Puglia + Grecia Profunda (Sin Repetir lo Clásico)</div>
-            <span class="variant-pill" style="background: #ede9fe; color: #6d28d9;">10n Italia + 11n Grecia</span>
-          </div>
-          <div class="variant-summary">
-            Especial si ya conocen Roma, Florencia y Venecia: Roma llegada (1n) ➔ Nápoles & Pompeya (4n) ➔ Puglia costera: Polignano, Monopoli & Alberobello (4n) ➔ Vuelo directo Bari-Atenas (1h 15m) ➔ Atenas (3n) ➔ Naxos con Pascua (4n) ➔ Santorini (3n) ➔ Atenas regreso (1n)
-          </div>
-          <div class="callout" style="background: #fdf4ff; border-color: #f0abfc; color: #86198f; margin-bottom: 20px;">
-            ✨ <strong>¿Por qué es la opción ganadora si ya conocen lo clásico?</strong><br>
-            Aterrizan en Roma de noche, duermen en un hotel céntrico al lado de Termini y el domingo por la mañana toman el Frecciarossa directo al sur. No repiten circuitos masivos ya vistos, descubren los acantilados sobre el Adriático y los <em>trulli</em> de Puglia, y saltan directo en vuelo de 75 min desde Bari a Atenas sin tener que regresar a Roma.
-          </div>
-
-          <!-- D1: Roma -->
-          <div class="stop-block">
-            <div class="stop-header">
-              <span class="stop-city">🛬 1. Roma: Llegada y Descanso Logístico (1 noche | 17 - 18 Abril)</span>
-              <span class="stop-nights">Hotel pegado a Roma Termini</span>
-            </div>
-            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
-              Llegada a Roma FCO (18:40 PM). Traslado directo en tren Leonardo Express a Termini, check-in en 2 habitaciones dobles, cena romana relajada (pasta cacio e pepe / carbonara) y a descansar para arrancar el viaje frescos el domingo.
-            </p>
-            <div class="attractions-grid">
-              <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=400&q=80" alt="Roma nocturna" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Cena & Noche en Roma</div>
-                  <div class="attr-detail">Trattoria tradicional cerca de Termini sin tours obligados.</div>
-                  <div class="attr-price">Cena relajada de bienvenida</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- D2: Nápoles, Pompeya & Costa -->
-          <div class="stop-block">
-            <div class="stop-header">
-              <span class="stop-city">🌋 2. Nápoles, Pompeya & Costa (4 noches | 18 - 22 Abril)</span>
-              <span class="stop-nights">Frecciarossa Termini ➔ Napoli (1h 10m)</span>
-            </div>
-            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
-              Base en Nápoles centro histórico. Ruinas de Pompeya en tren local, Museo Arqueológico Nacional (los mosaicos reales) y un día en barco público a la isla termal de Ischia o Sorrento.
-            </p>
-            <div class="attractions-grid">
-              <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1555992828-ca4dbe41d294?auto=format&fit=crop&w=400&q=80" alt="Pompeya" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Parque Arqueológico Pompeya</div>
-                  <div class="attr-detail">Día completo recorriendo las calles y villas romanas congeladas por el Vesubio.</div>
-                  <div class="attr-price">Oficial: €18 | Tren local: €3</div>
-                </div>
-              </div>
-              <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80" alt="Pizza Napolitana" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Spaccanapoli & Pizza Auténtica</div>
-                  <div class="attr-detail">Pizzería Da Michele, Sorbillo, Cristo Velado y Museo Arqueológico.</div>
-                  <div class="attr-price">Cristo Velado: €10 | Pizza: €8-€12</div>
-                </div>
-              </div>
-              <div class="attr-card">
-                <img src="img/italia-ischia.jpg" alt="Isla de Ischia y Castillo Aragonés" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Paseo a Ischia o Sorrento</div>
-                  <div class="attr-detail">Barco público de 50 min a la isla volcánica de Ischia: aguas termales, jardines y el Castillo Aragonés.</div>
-                  <div class="attr-price">Ferry i/v: €38 – €45</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- D3: Puglia Costera en Tren -->
-          <div class="stop-block">
-            <div class="stop-header">
-              <span class="stop-city">🌊 3. Puglia Costera: Polignano a Mare, Monopoli & Alberobello (4 noches | 22 - 26 Abril)</span>
-              <span class="stop-nights">Tren Frecciargento Nápoles ➔ Bari (3h 30m)</span>
-            </div>
-            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
-              Puglia es el secreto mejor guardado de Italia: pueblos de pescadores de cal blanca sobre acantilados esmeralda, cocina pugliese (burrata fresca, orecchiette, focaccia) y los legendarios trulli. La red de trenes regionales corre pegada a la costa conectando todo sin auto.
-            </p>
-            <div class="attractions-grid">
-              <div class="attr-card">
-                <img src="img/puglia-polignano.jpg" alt="Polignano a Mare acantilados" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Polignano a Mare & Monopoli</div>
-                  <div class="attr-detail">Casas blancas colgadas de los acantilados sobre la cala Lama Monachile, puerto de Monopoli y mar Adriático.</div>
-                  <div class="attr-price">Tren regional: €2,50 a €4</div>
-                </div>
-              </div>
-              <div class="attr-card">
-                <img src="img/puglia-alberobello.jpg" alt="Trulli de Alberobello" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Alberobello & Los Trulli</div>
-                  <div class="attr-detail">Pueblo de cuento Patrimonio UNESCO con más de 1.500 casas de piedra caliza con techos cónicos.</div>
-                  <div class="attr-price">Excursión en tren/bus local</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- D4: Salto a Grecia -->
-          <div class="stop-block">
-            <div class="stop-header">
-              <span class="stop-city">✈️ 4. Salto Directo a Grecia: Vuelo Bari ➔ Atenas (Lunes 26 Abril)</span>
-              <span class="stop-nights">Vuelo directo exprés (1h 15m)</span>
-            </div>
-            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
-              La gran ventaja geográfica de Puglia: desde el aeropuerto de Bari (BRI) hay vuelos directos a Atenas (ATH) por Volotea o Ryanair. En 75 minutos cruzan el mar y ya están almorzando en Grecia, sin perder un día entero volviendo a Roma.
-            </p>
-            <div class="attractions-grid">
-              <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=400&q=80" alt="Vuelo Bari a Atenas" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Vuelo Bari ➔ Atenas</div>
-                  <div class="attr-detail">75 min de vuelo directo con valijas despachadas incluidas.</div>
-                  <div class="attr-price">Vuelo: €65 – €95 / persona</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- D5: Grecia Profunda -->
-          <div class="stop-block">
-            <div class="stop-header">
-              <span class="stop-city">🇬🇷 5. Grecia Profunda: Atenas, Naxos con Pascua & Santorini (11 noches | 26 Abr - 8 Mayo)</span>
-              <span class="stop-nights">Atenas (3n) + Naxos (4n) + Santorini (3n) + Atenas (1n)</span>
-            </div>
-            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
-              11 días completos para sumergirse en la historia helénica, vivir la Pascua Ortodoxa el domingo 2 de mayo en una isla auténtica y cerrar con el lujo volcánico de Santorini:
-            </p>
-            <div class="attractions-grid">
-              <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?auto=format&fit=crop&w=400&q=80" alt="Acrópolis Atenas" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Atenas (3 noches | 26 - 29 Abr)</div>
-                  <div class="attr-detail">Acrópolis, Museo de las Cariátides y cenas en Plaka.</div>
-                  <div class="attr-price">Entradas €20 / €15</div>
-                </div>
-              </div>
-              <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?auto=format&fit=crop&w=400&q=80" alt="Naxos Pascua" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Naxos (4 noches | 29 Abr - 3 May)</div>
-                  <div class="attr-detail">Portara de Apolo, velas en procesión de Pascua Ortodoxa y calas vírgenes.</div>
-                  <div class="attr-price">Ferry Blue Star desde Pireo</div>
-                </div>
-              </div>
-              <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=400&q=80" alt="Santorini Oia" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Santorini (3 noches | 3 - 6 May)</div>
-                  <div class="attr-detail">Acantilados de Oia y crucero en catamarán con barbacoa al atardecer.</div>
-                  <div class="attr-price">Catamarán sunset: €120/pax</div>
-                </div>
-              </div>
-              <div class="attr-card">
-                <img src="img/atenas-plaka.jpg" alt="Atenas despedida" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Atenas Final (1 noche | 6 - 8 May)</div>
-                  <div class="attr-detail">Regreso a Atenas para compras, última cena y vuelo ITA 19:30.</div>
-                  <div class="attr-price">Conexión relajada sin apuros</div>
                 </div>
               </div>
             </div>
@@ -1624,7 +1624,7 @@
           <div class="res-card">
             <div class="res-card-img">
               <img src="img/tren-frecciarossa.jpg" alt="Frecciarossa a Nápoles" loading="lazy">
-              <span class="res-badge">1h 10m · OPCIÓN B</span>
+              <span class="res-badge">1h 10m · ALTA VELOCIDAD</span>
             </div>
             <div class="res-card-body">
               <div class="res-title">Roma ➔ Nápoles</div>
@@ -1639,7 +1639,7 @@
                   <span class="price-val" style="color: #1e3a8a;">€40 – €70</span>
                 </div>
               </div>
-              <small style="color: #64748b;">Conexión inmediata con tren local a las ruinas de Pompeya.</small>
+              <small style="color: #64748b;">Conexión inmediata con tren local a Pompeya y Frecciargento a Puglia.</small>
             </div>
           </div>
 
@@ -1647,11 +1647,11 @@
           <div class="res-card">
             <div class="res-card-img">
               <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=600&q=80" alt="Vuelo Italia a Atenas" loading="lazy">
-              <span class="res-badge">2h 00m · VUELO DIRECTO</span>
+              <span class="res-badge">1h 15m a 2h · VUELO DIRECTO</span>
             </div>
             <div class="res-card-body">
-              <div class="res-title">Italia (Roma / Venecia / Bari) ➔ Atenas</div>
-              <div class="res-sub">Vuelo directo (Aegean Airlines / Volotea / Ryanair). En Opción D: Bari ➔ Atenas en solo 1h 15m.</div>
+              <div class="res-title">Italia (Bari / Roma / Venecia) ➔ Atenas</div>
+              <div class="res-sub">Vuelo directo (Volotea / Ryanair / Aegean Airlines). Desde Bari a Atenas son solo 1h 15m.</div>
               <div class="price-box">
                 <div class="price-row-item">
                   <span class="price-label">Por Persona:</span>
@@ -1889,7 +1889,7 @@
               <div class="dest-tags">
                 <span class="dest-tag">3-4 Noches</span>
                 <span class="dest-tag">Tren Frecciarossa</span>
-                <span class="dest-tag">Opción A, B o C</span>
+                <span class="dest-tag">Ruta Clásica</span>
               </div>
             </div>
           </div>
@@ -1907,7 +1907,7 @@
               <div class="dest-tags">
                 <span class="dest-tag">3 Noches</span>
                 <span class="dest-tag">Vaporetto & A pie</span>
-                <span class="dest-tag">Opción A o C</span>
+                <span class="dest-tag">Ruta Clásica</span>
               </div>
             </div>
           </div>
@@ -1925,7 +1925,7 @@
               <div class="dest-tags">
                 <span class="dest-tag">4 Noches</span>
                 <span class="dest-tag">Tren local directo</span>
-                <span class="dest-tag">Opción B</span>
+                <span class="dest-tag">Sur & Puglia</span>
               </div>
             </div>
           </div>
@@ -1943,7 +1943,7 @@
               <div class="dest-tags">
                 <span class="dest-tag">3 Noches</span>
                 <span class="dest-tag">Metro directo</span>
-                <span class="dest-tag">Todas las opciones</span>
+                <span class="dest-tag">Todas las rutas</span>
               </div>
             </div>
           </div>
@@ -1961,7 +1961,7 @@
               <div class="dest-tags">
                 <span class="dest-tag">4 Noches</span>
                 <span class="dest-tag">Ferry & Colectivo KTEL</span>
-                <span class="dest-tag">Opción A, B y C</span>
+                <span class="dest-tag">Todas las rutas</span>
               </div>
             </div>
           </div>
@@ -1979,7 +1979,7 @@
               <div class="dest-tags">
                 <span class="dest-tag">3 Noches</span>
                 <span class="dest-tag">Ferry rápido & Bus</span>
-                <span class="dest-tag">Todas las opciones</span>
+                <span class="dest-tag">Todas las rutas</span>
               </div>
             </div>
           </div>
@@ -1997,7 +1997,7 @@
               <div class="dest-tags">
                 <span class="dest-tag">4 Noches</span>
                 <span class="dest-tag">Tren regional costero</span>
-                <span class="dest-tag">Opción D</span>
+                <span class="dest-tag">Sur & Puglia</span>
               </div>
             </div>
           </div>
@@ -2015,7 +2015,7 @@
               <div class="dest-tags">
                 <span class="dest-tag">Excursión en tren</span>
                 <span class="dest-tag">Pueblo UNESCO</span>
-                <span class="dest-tag">Opción D</span>
+                <span class="dest-tag">Sur & Puglia</span>
               </div>
             </div>
           </div>
@@ -2058,7 +2058,7 @@
           <div class="res-card">
             <div class="res-card-img">
               <img src="https://images.unsplash.com/photo-1555992828-ca4dbe41d294?auto=format&fit=crop&w=600&q=80" alt="Pompeya y Vesubio" loading="lazy">
-              <span class="res-badge">1h 10m + 30m · OPCIÓN B</span>
+              <span class="res-badge">1h 10m + 30m · SUR DE ITALIA</span>
             </div>
             <div class="res-card-body">
               <div class="res-title">Nápoles & Ruinas de Pompeya</div>
@@ -2146,11 +2146,11 @@
             </div>
           </div>
 
-          <!-- 6. Puglia & Salto Directo a Grecia (Opción D) -->
+          <!-- 6. Puglia & Salto Directo a Grecia -->
           <div class="res-card">
             <div class="res-card-img">
               <img src="img/puglia-polignano.jpg" alt="Puglia en tren costero" loading="lazy">
-              <span class="res-badge">PUGLIA & VUELO BRI-ATH · OPCIÓN D</span>
+              <span class="res-badge">PUGLIA & VUELO BRI-ATH · RUTA SUR</span>
             </div>
             <div class="res-card-body">
               <div class="res-title">Puglia en Tren Costero & Salto Directo a Grecia</div>
