@@ -603,6 +603,67 @@
       display: block;
     }
 
+    /* Notice / Key Points cards */
+    .notice-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .notice-card:hover {
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+      transform: translateY(-2px);
+    }
+    .notice-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .notice-card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .notice-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .notice-badge-red { background: #fee2e2; color: #b91c1c; }
+    .notice-badge-amber { background: #fef3c7; color: #b45309; }
+    .notice-badge-blue { background: #e0f2fe; color: #0369a1; }
+    .notice-badge-purple { background: #f3e8ff; color: #7e22ce; }
+    .notice-badge-green { background: #dcfce7; color: #15803d; }
+    .notice-body {
+      font-size: 0.9rem;
+      color: #334155;
+      line-height: 1.55;
+      margin-bottom: 12px;
+    }
+    .notice-takeaway {
+      margin-top: auto;
+      background: #f8fafc;
+      border-left: 3px solid var(--primary);
+      padding: 10px 12px;
+      border-radius: 0 6px 6px 0;
+      font-size: 0.85rem;
+      color: #1e3a8a;
+      font-weight: 600;
+    }
+
     /* Media queries for small screens */
     @media (max-width: 640px) {
       header h1 { font-size: 1.6rem; }
@@ -641,6 +702,7 @@
       <button class="tab-btn" onclick="openTab('destinos')">5. Fotos de Destinos</button>
       <button class="tab-btn" onclick="openTab('logistica')">6. Logística & Movilidad</button>
       <button class="tab-btn" onclick="openTab('presupuesto')">7. Presupuesto Consolidado</button>
+      <button class="tab-btn" onclick="openTab('recordar')">8. Puntos Clave & A Recordar</button>
     </nav>
 
     <!-- TAB 1: VUELOS -->
@@ -2287,6 +2349,170 @@
         <div class="callout" style="margin-top: 20px;">
           <strong>Resumen Global para las 2 Parejas (4 personas en total):</strong><br>
           Gasto estimado promedio: <strong>USD 7.600 por pareja</strong> (USD 15.200 en total para los 4 pasajeros). El viaje queda completamente cubierto con vuelos internacionales, 2 habitaciones privadas independientes, traslados sin manejar autos, las mejores atracciones y navegación en catamarán.
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 8: PUNTOS CLAVE & A RECORDAR -->
+    <section id="recordar" class="tab-content">
+      <div class="card">
+        <h2>📌 Puntos Clave, Fechas y Aspectos a Analizar</h2>
+        <p style="margin-bottom: 22px; color: var(--text-muted);">
+          Fechas especiales de calendario, feriados locales en Italia y Grecia, ventanas de reserva obligatorias y decisiones prácticas para definir juntos:
+        </p>
+
+        <div class="card-grid-2">
+          <!-- 1. Pascua Ortodoxa -->
+          <div class="notice-card">
+            <div class="notice-card-header">
+              <div class="notice-card-title">🇬🇷 Domingo 2 de Mayo: Pascua Ortodoxa</div>
+              <span class="notice-badge notice-badge-red">Fecha Crítica · Grecia</span>
+            </div>
+            <div class="notice-body">
+              <p>En Grecia la Pascua Ortodoxa (<em>Megali Pascha</em>) es la fiesta religiosa y cultural más convocante del año, superando a la Navidad:</p>
+              <ul style="margin: 8px 0 0 18px; line-height: 1.5;">
+                <li><strong>Cierres:</strong> El domingo 2 de mayo cierran casi todas las tiendas, supermercados y yacimientos arqueológicos. Las familias se reúnen en tabernas y casas a asar cordero al espetón.</li>
+                <li><strong>Semana Santa previa:</strong> El Viernes Santo (30 abr) y Sábado Santo (1 may) se viven procesiones nocturnas con velas por los pueblos y fuegos artificiales a medianoche al proclamar <em>Christós Anésti</em>.</li>
+                <li><strong>Movilidad masiva:</strong> Hay un gran éxodo de griegos viajando desde Atenas hacia las islas Cícladas. Los pasajes de ferry se agotan semanas antes.</li>
+              </ul>
+            </div>
+            <div class="notice-takeaway">
+              💡 Acción: Reservar ferrys y alojamiento en Naxos/Paros en cuanto abran las ventas en enero/febrero 2027. Vivirlo en una isla auténtica es una experiencia cultural inolvidable.
+            </div>
+          </div>
+
+          <!-- 2. Dia de la Liberacion Italia -->
+          <div class="notice-card">
+            <div class="notice-card-header">
+              <div class="notice-card-title">🇮🇹 Domingo 25 de Abril: Día de la Liberación</div>
+              <span class="notice-badge notice-badge-amber">Feriado Nacional · Italia</span>
+            </div>
+            <div class="notice-body">
+              <p>Feriado nacional en toda Italia (<em>Festa della Liberazione</em>) que conmemora el fin de la ocupación nazi y del régimen fascista en 1945:</p>
+              <ul style="margin: 8px 0 0 18px; line-height: 1.5;">
+                <li><strong>Fin de semana largo (ponte):</strong> Mucho turismo interno de familias italianas viajando hacia ciudades de arte y destinos del sur o la costa.</li>
+                <li><strong>Ocupación de trenes:</strong> Los trenes de alta velocidad Frecciarossa e Italo operan con ocupación casi plena y las tarifas más económicas (Super Economy) se agotan rápido.</li>
+                <li><strong>Monumentos:</strong> La mayoría de monumentos y museos abren con normalidad, pero con gran afluencia de público local.</li>
+              </ul>
+            </div>
+            <div class="notice-takeaway">
+              💡 Acción: Comprar los pasajes de tren Frecciarossa apenas se habilite la venta oficial 90 a 120 días antes.
+            </div>
+          </div>
+
+          <!-- 3. Dia del Trabajador -->
+          <div class="notice-card">
+            <div class="notice-card-header">
+              <div class="notice-card-title">🇮🇹🇬🇷 Sábado 1 de Mayo: Día del Trabajador</div>
+              <span class="notice-badge notice-badge-red">Cierres & Posibles Huelgas</span>
+            </div>
+            <div class="notice-body">
+              <p>Feriado internacional estricto en ambos países (<em>Primo Maggio</em> en Italia y <em>Protomagia</em> en Grecia):</p>
+              <ul style="margin: 8px 0 0 18px; line-height: 1.5;">
+                <li><strong>Cierre de museos estatales:</strong> El Coliseo, las ruinas de Pompeya, la Acrópolis de Atenas y el Museo de la Acrópolis permanecen cerrados por ley laboral.</li>
+                <li><strong>Transporte en Grecia:</strong> Es habitual que los sindicatos convoquen huelgas de 24 horas (<em>apergía</em>) que afectan el metro de Atenas y servicios de ferrys marítimos.</li>
+                <li><strong>Fiesta de las flores:</strong> En Grecia es tradicional salir al campo y colgar coronas de flores silvestres en las puertas de las casas.</li>
+              </ul>
+            </div>
+            <div class="notice-takeaway">
+              💡 Acción: El itinerario está diseñado para que este día estemos ya instalados en las islas (Naxos) disfrutando del mar y la gastronomía, sin depender de conexiones de transporte críticas.
+            </div>
+          </div>
+
+          <!-- 4. Ventana de compra entradas -->
+          <div class="notice-card">
+            <div class="notice-card-header">
+              <div class="notice-card-title">🎟️ Ventanas Críticas de Reserva de Entradas</div>
+              <span class="notice-badge notice-badge-amber">Cupos Limitados</span>
+            </div>
+            <div class="notice-body">
+              <p>Los monumentos más visitados del mundo exigen anticipación milimétrica para no quedarse afuera:</p>
+              <ul style="margin: 8px 0 0 18px; line-height: 1.5;">
+                <li><strong>Coliseo y Foro Romano:</strong> Las entradas oficiales se habilitan exactamente 30 días antes a la hora exacta de la visita y se agotan en minutos.</li>
+                <li><strong>Museos Vaticanos:</strong> Abre cupos oficiales 60 días antes. Ir sin reserva implica más de 3 horas de fila al rayo del sol.</li>
+                <li><strong>Acrópolis de Atenas:</strong> Funciona con franjas horarias obligatorias (time slots). El turno sugerido es el primero (08:00 AM) para visitarla con clima fresco y antes de la llegada de los cruceros.</li>
+              </ul>
+            </div>
+            <div class="notice-takeaway">
+              💡 Acción: Agendar en Google Calendar los días de apertura de venta oficial 30 y 60 días antes. Si algo se agota en la web oficial, recurrir a Civitatis como respaldo inmediato.
+            </div>
+          </div>
+
+          <!-- 5. Equipaje sin auto -->
+          <div class="notice-card">
+            <div class="notice-card-header">
+              <div class="notice-card-title">🧳 Criterio de Equipaje: 100% Cero Manejo</div>
+              <span class="notice-badge notice-badge-blue">Logística Confort</span>
+            </div>
+            <div class="notice-body">
+              <p>Al movernos exclusivamente en trenes bala, ferrys, metro y caminatas peatonales, el equipaje define la comodidad del viaje:</p>
+              <ul style="margin: 8px 0 0 18px; line-height: 1.5;">
+                <li><strong>En trenes Frecciarossa y ferrys:</strong> No hay que despachar valijas como en un avión; cada uno sube con su equipaje y lo coloca en los maleteros del vagón.</li>
+                <li><strong>En las islas (Oia, Fira, Naoussa):</strong> Los accesos a los alojamientos suelen tener adoquines, desniveles y escaleras donde no circulan autos.</li>
+                <li><strong>Regla de oro:</strong> 1 valija mediana con 4 ruedas giratorias (máx. 20-23 kg) + 1 mochila de mano por persona.</li>
+              </ul>
+            </div>
+            <div class="notice-takeaway">
+              💡 Acción: Viajar livianos permite subir y bajar de andenes en 2 minutos y caminar relajados hasta el hotel sin depender de fletes ni taxis caros.
+            </div>
+          </div>
+
+          <!-- 6. Tasas turisticas -->
+          <div class="notice-card">
+            <div class="notice-card-header">
+              <div class="notice-card-title">💶 Tasas Turísticas Municipales (City Tax)</div>
+              <span class="notice-badge notice-badge-green">Pago en el Hotel</span>
+            </div>
+            <div class="notice-body">
+              <p>Un costo habitual en Europa que no viene incluido en las plataformas de reserva (Booking, Airbnb o agencias):</p>
+              <ul style="margin: 8px 0 0 18px; line-height: 1.5;">
+                <li><strong>Italia (Tassa di Soggiorno):</strong> Entre €4,00 y €7,50 por persona por noche en hoteles 3★ sup / 4★ (se paga en recepción por ley local).</li>
+                <li><strong>Grecia (Climate Resilience Tax):</strong> Varía de €3,00 a €10,00 por habitación por noche según categoría y estrellas.</li>
+                <li><strong>Total estimado:</strong> Alrededor de €100 a €150 por pareja en las 3 semanas de viaje.</li>
+              </ul>
+            </div>
+            <div class="notice-takeaway">
+              💡 Acción: Ya está contemplado dentro del rubro "Seguro & Tasas" de nuestro presupuesto; se abona directamente en recepción con tarjeta o efectivo.
+            </div>
+          </div>
+
+          <!-- 7. Conectividad y Moneda -->
+          <div class="notice-card">
+            <div class="notice-card-header">
+              <div class="notice-card-title">📱 Conectividad, Pagos & Requisitos de Salud</div>
+              <span class="notice-badge notice-badge-blue">Datos Prácticos</span>
+            </div>
+            <div class="notice-body">
+              <p>Aspectos tecnológicos y bancarios para que todo funcione desde el primer minuto:</p>
+              <ul style="margin: 8px 0 0 18px; line-height: 1.5;">
+                <li><strong>eSIM Regional Europa:</strong> Comprar una eSIM prepaga (Holafly o Airalo) antes de volar. Funciona sin cambiar de chip tanto en Italia como en Grecia con datos ilimitados.</li>
+                <li><strong>Pagos Contactless:</strong> Se paga con tarjeta o celular (Apple Pay / Google Pay) en el 98% de los sitios. Llevar €50 a €100 en billetes físicos por pareja para propinas o taxis pequeños de isla.</li>
+                <li><strong>Seguro Schengen:</strong> La Unión Europea exige cobertura médica internacional de al menos €30.000 para ingresar como turista.</li>
+              </ul>
+            </div>
+            <div class="notice-takeaway">
+              💡 Acción: Activar la eSIM en el avión antes del despegue para aterrizar en Roma con WhatsApp y Google Maps funcionando al 100%.
+            </div>
+          </div>
+
+          <!-- 8. Decisiones de Grupo -->
+          <div class="notice-card">
+            <div class="notice-card-header">
+              <div class="notice-card-title">💬 Puntos a Consensuar entre las 2 Parejas</div>
+              <span class="notice-badge notice-badge-purple">Para Charlar Juntos</span>
+            </div>
+            <div class="notice-body">
+              <p>Los tres únicos temas que conviene charlar y definir en la próxima reunión:</p>
+              <ul style="margin: 8px 0 0 18px; line-height: 1.5;">
+                <li><strong>1. Elección de la variante:</strong> Confirmar si van por la propuesta de Roma + Gran Sur y Puglia (sin repetir lo clásico) o prefieren la Ruta Clásica con Florencia y Venecia.</li>
+                <li><strong>2. Hoteles vs. Villa en las Islas:</strong> Definir si en las islas (Naxos y Santorini) prefieren 2 habitaciones dobles en hotel con desayuno o alquilar una casa/villa cicládica entera para los 4 con terraza y vista al mar.</li>
+                <li><strong>3. Catamarán Sunset en Santorini:</strong> Es la excursión estrella de Grecia (crucero al volcán con barbacoa y vino blanco al atardecer). Confirmar que los 4 están de acuerdo en contratarla.</li>
+              </ul>
+            </div>
+            <div class="notice-takeaway">
+              💡 Acción: Con estos 3 acuerdos definidos, queda el camino 100% libre para empezar a emitir vuelos y reservar los primeros hoteles.
+            </div>
+          </div>
         </div>
       </div>
     </section>
