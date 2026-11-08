@@ -2254,16 +2254,23 @@
         <div class="map-container-wrap">
           <div class="map-toggle-bar">
             <button id="map-btn-sur" class="map-toggle-btn active" onclick="switchMapRoute('sur')">
-              ⭐ Ver Ruta Sur & Puglia (Recomendada)
+              ⭐ Ver Ruta Sur & Puglia (Italia & Grecia)
             </button>
             <button id="map-btn-clasica" class="map-toggle-btn" onclick="switchMapRoute('clasica')">
-              🏛️ Ver Ruta Clásica (Florencia & Venecia)
+              🏛️ Ver Ruta Clásica (Norte & Grecia)
+            </button>
+            <button id="map-btn-global" class="map-toggle-btn" onclick="switchMapRoute('global')">
+              ✈️ Ver Vuelo Global (Ezeiza ↔ Europa)
             </button>
           </div>
 
           <div id="route-map"></div>
 
           <div class="map-legend">
+            <div class="map-legend-item">
+              <span class="map-legend-line" style="background: #059669; border-top: 2px dashed #059669; height: 0;"></span>
+              <span>Vuelo Transatlántico ITA (EZE ↔ Roma)</span>
+            </div>
             <div class="map-legend-item">
               <span class="map-legend-line" style="background: #ef4444;"></span>
               <span>Tren Bala Frecciarossa (300 km/h)</span>
@@ -2949,44 +2956,106 @@
     let routeMap = null;
     let mapLayerGroup = null;
 
+    // Vuelo transatlántico Buenos Aires (Ezeiza) ↔ Roma
+    const ezeStop = {
+      name: "Buenos Aires (Ezeiza)",
+      coords: [-34.8222, -58.5358],
+      icon: "🇦🇷",
+      desc: "<strong>🛫 Buenos Aires: Aeropuerto Ezeiza (EZE)</strong><br>• <strong>Salida:</strong> Sáb 17/04 00:50 AM directo a Roma (12h 45m).<br>• <strong>Regreso:</strong> Dom 09/05 07:30 AM (escala protegida Roma 1h 50m).<br><i>ITA Airways en avión Airbus intercontinental con valijas despachadas.</i>"
+    };
+
+    const transatlanticLegs = [
+      {
+        coords: [
+          [-34.8222, -58.5358], // Ezeiza
+          [-27.5, -49.5],
+          [-18.0, -41.5],
+          [-7.0, -34.8],        // Natal
+          [4.0, -28.5],         // Atlantic
+          [15.5, -23.5],        // Cape Verde
+          [26.5, -16.5],        // Canarias
+          [34.5, -8.5],         // Gibraltar / Marruecos
+          [39.5, 3.0],          // Mediterráneo
+          [41.7999, 12.2462]    // Roma FCO
+        ],
+        color: "#059669",
+        weight: 4,
+        dash: "6, 8",
+        label: "Vuelo Ida Directo: Ezeiza ➔ Roma (ITA Airways · 12h 45m)"
+      },
+      {
+        coords: [
+          [37.9364, 23.9445],   // Atenas ATH
+          [39.8, 18.0],
+          [41.7999, 12.2462],   // Roma FCO (escala)
+          [39.0, 2.5],
+          [34.0, -9.0],
+          [26.0, -17.0],
+          [15.0, -24.0],
+          [3.5, -29.0],
+          [-7.5, -35.2],
+          [-18.5, -42.0],
+          [-28.0, -50.0],
+          [-34.8222, -58.5358]  // Ezeiza
+        ],
+        color: "#10b981",
+        weight: 3,
+        dash: "5, 7",
+        label: "Vuelo Regreso: Atenas ➔ Roma (escala 1h 50m) ➔ Ezeiza"
+      }
+    ];
+
+    const europeStopsSur = [
+      { name: "Roma", coords: [41.9028, 12.4964], icon: "🏛️", desc: "<strong>🏛️ Roma (3 noches | 17 - 20 Abr)</strong><br>Llegada en vuelo directo ITA desde Ezeiza.<br>Coliseo, Vaticano, Fontana di Trevi y Trastevere.<br><span style='color:#ef4444;font-weight:700;'>🚆 Siguiente: Frecciarossa a Nápoles (1h 10m)</span>" },
+      { name: "Nápoles & Pompeya", coords: [40.8518, 14.2681], icon: "🌋", desc: "<strong>🌋 Nápoles & Pompeya (3 noches | 20 - 23 Abr)</strong><br>Base en centro histórico.<br>Parque arqueológico en tren local, Spaccanapoli y pizza.<br><span style='color:#f59e0b;font-weight:700;'>🚆 Siguiente: Frecciargento a Bari (3h 30m)</span>" },
+      { name: "Puglia & Alberobello", coords: [40.9964, 17.2186], icon: "🌊", desc: "<strong>🌊 Puglia: Polignano & Trulli (3 noches | 23 - 26 Abr)</strong><br>Pueblos blancos sobre acantilados del Adriático.<br>Excursión en tren regional a los trulli de Alberobello.<br><span style='color:#8b5cf6;font-weight:700;'>✈️ Siguiente: Vuelo directo Bari ➔ Atenas (1h 15m)</span>" },
+      { name: "Atenas", coords: [37.9753, 23.7261], icon: "🏛️", desc: "<strong>🏛️ Atenas (3 noches iniciales + 2 finales)</strong><br>Acrópolis, Museo de las Cariátides y cenas en Plaka.<br><span style='color:#0284c7;font-weight:700;'>🚢 Siguiente: Ferry Blue Star a Naxos (3h 30m)</span>" },
+      { name: "Naxos", coords: [37.1062, 25.3768], icon: "🏝️", desc: "<strong>🏝️ Isla de Naxos (4 noches | 29 Abr - 3 May)</strong><br>Portara de Apolo y celebración de la Pascua Ortodoxa (2 de mayo).<br><span style='color:#0284c7;font-weight:700;'>🚢 Siguiente: Catamarán rápido a Santorini (1h 45m)</span>" },
+      { name: "Santorini", coords: [36.3932, 25.4615], icon: "🌅", desc: "<strong>🌅 Santorini (3 noches | 3 - 6 May)</strong><br>Cúpulas azules de Oia y crucero catamarán sunset con barbacoa.<br><span style='color:#0284c7;font-weight:700;'>🚢/✈️ Siguiente: Regreso a Atenas (2n de cierre) y vuelo EZE</span>" }
+    ];
+
+    const europeLegsSur = [
+      { coords: [[41.9028, 12.4964], [40.8518, 14.2681]], color: "#ef4444", weight: 5, label: "Tren Bala Frecciarossa (1h 10m)" },
+      { coords: [[40.8518, 14.2681], [41.1171, 16.8719], [40.9964, 17.2186]], color: "#f59e0b", weight: 5, label: "Tren Frecciargento a Puglia (3h 30m)" },
+      { coords: [[41.1171, 16.8719], [39.5, 20.0], [37.9753, 23.7261]], color: "#8b5cf6", weight: 4, dash: "6, 8", label: "Vuelo Directo Bari ➔ Atenas (1h 15m)" },
+      { coords: [[37.9429, 23.6469], [37.5, 24.5], [37.1062, 25.3768]], color: "#0284c7", weight: 4, dash: "4, 6", label: "Ferry Pireo ➔ Naxos (3h 30m)" },
+      { coords: [[37.1062, 25.3768], [36.7, 25.4], [36.3932, 25.4615]], color: "#0284c7", weight: 4, dash: "4, 6", label: "Catamarán Naxos ➔ Santorini (1h 45m)" },
+      { coords: [[36.3932, 25.4615], [37.15, 24.55], [37.9753, 23.7261]], color: "#0284c7", weight: 4, dash: "4, 6", label: "Ferry / Vuelo Santorini ➔ Atenas" }
+    ];
+
+    const europeStopsClasica = [
+      { name: "Roma", coords: [41.9028, 12.4964], icon: "🏛️", desc: "<strong>🏛️ Roma (4 noches | 17 - 21 Abr)</strong><br>Llegada de Ezeiza.<br>Coliseo, Vaticano, Trevi y Trastevere.<br><span style='color:#ef4444;font-weight:700;'>🚆 Siguiente: Frecciarossa a Florencia (1h 35m)</span>" },
+      { name: "Florencia", coords: [43.7696, 11.2558], icon: "🎨", desc: "<strong>🎨 Florencia (3 noches | 21 - 24 Abr)</strong><br>Duomo, Galería Uffizi y David de Miguel Ángel.<br><span style='color:#ef4444;font-weight:700;'>🚆 Siguiente: Frecciarossa a Venecia (2h 15m)</span>" },
+      { name: "Venecia", coords: [45.4408, 12.3155], icon: "🛶", desc: "<strong>🛶 Venecia (3 noches | 24 - 27 Abr)</strong><br>Gran Canal en vaporetto, San Marcos y góndola.<br><span style='color:#8b5cf6;font-weight:700;'>✈️ Siguiente: Vuelo directo Venecia ➔ Atenas (2h 10m)</span>" },
+      { name: "Atenas", coords: [37.9753, 23.7261], icon: "🏛️", desc: "<strong>🏛️ Atenas (3 noches | 27 - 30 Abr)</strong><br>Acrópolis, Museo y tabernas en Plaka.<br><span style='color:#0284c7;font-weight:700;'>🚢 Siguiente: Ferry Blue Star a Naxos/Paros (3h 30m)</span>" },
+      { name: "Naxos / Paros", coords: [37.1062, 25.3768], icon: "🏝️", desc: "<strong>🏝️ Naxos o Paros (4 noches | 30 Abr - 4 May)</strong><br>Pascua Ortodoxa y calas del Egeo.<br><span style='color:#0284c7;font-weight:700;'>🚢 Siguiente: Ferry a Santorini (1h 45m)</span>" },
+      { name: "Santorini", coords: [36.3932, 25.4615], icon: "🌅", desc: "<strong>🌅 Santorini (3 noches | 4 - 7 May)</strong><br>Caldera de Oia y catamarán sunset con cena.<br><span style='color:#0284c7;font-weight:700;'>🚢/✈️ Siguiente: Regreso a Atenas y vuelo a EZE</span>" }
+    ];
+
+    const europeLegsClasica = [
+      { coords: [[41.9028, 12.4964], [43.7696, 11.2558]], color: "#ef4444", weight: 5, label: "Tren Frecciarossa Roma ➔ Florencia (1h 35m)" },
+      { coords: [[43.7696, 11.2558], [44.4949, 11.3426], [45.4408, 12.3155]], color: "#ef4444", weight: 5, label: "Tren Frecciarossa Florencia ➔ Venecia (2h 15m)" },
+      { coords: [[45.4408, 12.3155], [41.5, 18.0], [37.9753, 23.7261]], color: "#8b5cf6", weight: 4, dash: "6, 8", label: "Vuelo Directo Venecia ➔ Atenas (2h 10m)" },
+      { coords: [[37.9429, 23.6469], [37.5, 24.5], [37.1062, 25.3768]], color: "#0284c7", weight: 4, dash: "4, 6", label: "Ferry Pireo ➔ Naxos/Paros (3h 30m)" },
+      { coords: [[37.1062, 25.3768], [36.7, 25.4], [36.3932, 25.4615]], color: "#0284c7", weight: 4, dash: "4, 6", label: "Ferry Naxos ➔ Santorini (1h 45m)" },
+      { coords: [[36.3932, 25.4615], [37.15, 24.55], [37.9753, 23.7261]], color: "#0284c7", weight: 4, dash: "4, 6", label: "Ferry / Vuelo Santorini ➔ Atenas" }
+    ];
+
     const routeData = {
       sur: {
-        bounds: [[36.0, 12.0], [42.5, 26.5]],
-        stops: [
-          { name: "Roma", coords: [41.9028, 12.4964], icon: "🏛️", desc: "<strong>🏛️ Roma (3 noches | 17 - 20 Abr)</strong><br>Llegada en vuelo directo ITA desde Ezeiza.<br>Coliseo, Vaticano, Fontana di Trevi y Trastevere.<br><span style='color:#ef4444;font-weight:700;'>🚆 Siguiente: Frecciarossa a Nápoles (1h 10m)</span>" },
-          { name: "Nápoles & Pompeya", coords: [40.8518, 14.2681], icon: "🌋", desc: "<strong>🌋 Nápoles & Pompeya (3 noches | 20 - 23 Abr)</strong><br>Base en centro histórico.<br>Parque arqueológico en tren local, Spaccanapoli y pizza.<br><span style='color:#f59e0b;font-weight:700;'>🚆 Siguiente: Frecciargento a Bari (3h 30m)</span>" },
-          { name: "Puglia & Alberobello", coords: [40.9964, 17.2186], icon: "🌊", desc: "<strong>🌊 Puglia: Polignano & Trulli (3 noches | 23 - 26 Abr)</strong><br>Pueblos blancos sobre acantilados del Adriático.<br>Excursión en tren regional a los trulli de Alberobello.<br><span style='color:#8b5cf6;font-weight:700;'>✈️ Siguiente: Vuelo directo Bari ➔ Atenas (1h 15m)</span>" },
-          { name: "Atenas", coords: [37.9753, 23.7261], icon: "🏛️", desc: "<strong>🏛️ Atenas (3 noches iniciales + 2 finales)</strong><br>Acrópolis, Museo de las Cariátides y cenas en Plaka.<br><span style='color:#0284c7;font-weight:700;'>🚢 Siguiente: Ferry Blue Star a Naxos (3h 30m)</span>" },
-          { name: "Naxos", coords: [37.1062, 25.3768], icon: "🏝️", desc: "<strong>🏝️ Isla de Naxos (4 noches | 29 Abr - 3 May)</strong><br>Portara de Apolo y celebración de la Pascua Ortodoxa (2 de mayo).<br><span style='color:#0284c7;font-weight:700;'>🚢 Siguiente: Catamarán rápido a Santorini (1h 45m)</span>" },
-          { name: "Santorini", coords: [36.3932, 25.4615], icon: "🌅", desc: "<strong>🌅 Santorini (3 noches | 3 - 6 May)</strong><br>Cúpulas azules de Oia y crucero catamarán sunset con barbacoa.<br><span style='color:#0284c7;font-weight:700;'>🚢/✈️ Siguiente: Regreso a Atenas (2n de cierre) y vuelo EZE</span>" }
-        ],
-        legs: [
-          { coords: [[41.9028, 12.4964], [40.8518, 14.2681]], color: "#ef4444", weight: 5, label: "Tren Bala Frecciarossa (1h 10m)" },
-          { coords: [[40.8518, 14.2681], [41.1171, 16.8719], [40.9964, 17.2186]], color: "#f59e0b", weight: 5, label: "Tren Frecciargento a Puglia (3h 30m)" },
-          { coords: [[41.1171, 16.8719], [39.5, 20.0], [37.9753, 23.7261]], color: "#8b5cf6", weight: 4, dash: "6, 8", label: "Vuelo Directo Bari ➔ Atenas (1h 15m)" },
-          { coords: [[37.9429, 23.6469], [37.5, 24.5], [37.1062, 25.3768]], color: "#0284c7", weight: 4, dash: "4, 6", label: "Ferry Pireo ➔ Naxos (3h 30m)" },
-          { coords: [[37.1062, 25.3768], [36.7, 25.4], [36.3932, 25.4615]], color: "#0284c7", weight: 4, dash: "4, 6", label: "Catamarán Naxos ➔ Santorini (1h 45m)" },
-          { coords: [[36.3932, 25.4615], [37.15, 24.55], [37.9753, 23.7261]], color: "#0284c7", weight: 4, dash: "4, 6", label: "Ferry / Vuelo Santorini ➔ Atenas" }
-        ]
+        bounds: [[35.8, 11.8], [42.6, 26.6]],
+        stops: [ezeStop, ...europeStopsSur],
+        legs: [...transatlanticLegs, ...europeLegsSur]
       },
       clasica: {
-        bounds: [[36.0, 11.0], [45.8, 26.5]],
-        stops: [
-          { name: "Roma", coords: [41.9028, 12.4964], icon: "🏛️", desc: "<strong>🏛️ Roma (4 noches | 17 - 21 Abr)</strong><br>Llegada de Ezeiza.<br>Coliseo, Vaticano, Trevi y Trastevere.<br><span style='color:#ef4444;font-weight:700;'>🚆 Siguiente: Frecciarossa a Florencia (1h 35m)</span>" },
-          { name: "Florencia", coords: [43.7696, 11.2558], icon: "🎨", desc: "<strong>🎨 Florencia (3 noches | 21 - 24 Abr)</strong><br>Duomo, Galería Uffizi y David de Miguel Ángel.<br><span style='color:#ef4444;font-weight:700;'>🚆 Siguiente: Frecciarossa a Venecia (2h 15m)</span>" },
-          { name: "Venecia", coords: [45.4408, 12.3155], icon: "🛶", desc: "<strong>🛶 Venecia (3 noches | 24 - 27 Abr)</strong><br>Gran Canal en vaporetto, San Marcos y góndola.<br><span style='color:#8b5cf6;font-weight:700;'>✈️ Siguiente: Vuelo directo Venecia ➔ Atenas (2h 10m)</span>" },
-          { name: "Atenas", coords: [37.9753, 23.7261], icon: "🏛️", desc: "<strong>🏛️ Atenas (3 noches | 27 - 30 Abr)</strong><br>Acrópolis, Museo y tabernas en Plaka.<br><span style='color:#0284c7;font-weight:700;'>🚢 Siguiente: Ferry Blue Star a Naxos/Paros (3h 30m)</span>" },
-          { name: "Naxos / Paros", coords: [37.1062, 25.3768], icon: "🏝️", desc: "<strong>🏝️ Naxos o Paros (4 noches | 30 Abr - 4 May)</strong><br>Pascua Ortodoxa y calas del Egeo.<br><span style='color:#0284c7;font-weight:700;'>🚢 Siguiente: Ferry a Santorini (1h 45m)</span>" },
-          { name: "Santorini", coords: [36.3932, 25.4615], icon: "🌅", desc: "<strong>🌅 Santorini (3 noches | 4 - 7 May)</strong><br>Caldera de Oia y catamarán sunset con cena.<br><span style='color:#0284c7;font-weight:700;'>🚢/✈️ Siguiente: Regreso a Atenas y vuelo a EZE</span>" }
-        ],
-        legs: [
-          { coords: [[41.9028, 12.4964], [43.7696, 11.2558]], color: "#ef4444", weight: 5, label: "Tren Frecciarossa Roma ➔ Florencia (1h 35m)" },
-          { coords: [[43.7696, 11.2558], [44.4949, 11.3426], [45.4408, 12.3155]], color: "#ef4444", weight: 5, label: "Tren Frecciarossa Florencia ➔ Venecia (2h 15m)" },
-          { coords: [[45.4408, 12.3155], [41.5, 18.0], [37.9753, 23.7261]], color: "#8b5cf6", weight: 4, dash: "6, 8", label: "Vuelo Directo Venecia ➔ Atenas (2h 10m)" },
-          { coords: [[37.9429, 23.6469], [37.5, 24.5], [37.1062, 25.3768]], color: "#0284c7", weight: 4, dash: "4, 6", label: "Ferry Pireo ➔ Naxos/Paros (3h 30m)" },
-          { coords: [[37.1062, 25.3768], [36.7, 25.4], [36.3932, 25.4615]], color: "#0284c7", weight: 4, dash: "4, 6", label: "Ferry Naxos ➔ Santorini (1h 45m)" },
-          { coords: [[36.3932, 25.4615], [37.15, 24.55], [37.9753, 23.7261]], color: "#0284c7", weight: 4, dash: "4, 6", label: "Ferry / Vuelo Santorini ➔ Atenas" }
-        ]
+        bounds: [[35.8, 10.8], [45.9, 26.6]],
+        stops: [ezeStop, ...europeStopsClasica],
+        legs: [...transatlanticLegs, ...europeLegsClasica]
+      },
+      global: {
+        bounds: [[-36.5, -63.0], [46.5, 28.5]],
+        stops: [ezeStop, ...europeStopsSur],
+        legs: [...transatlanticLegs, ...europeLegsSur]
       }
     };
 
@@ -3037,7 +3106,7 @@
         });
 
         const marker = L.marker(stop.coords, { icon: pinIcon }).addTo(mapLayerGroup);
-        marker.bindPopup(`<div style="font-family:sans-serif;font-size:0.9rem;line-height:1.45;min-width:210px;">${stop.desc}</div>`);
+        marker.bindPopup(`<div style="font-family:sans-serif;font-size:0.9rem;line-height:1.45;min-width:220px;">${stop.desc}</div>`);
       });
 
       routeMap.fitBounds(data.bounds, { padding: [30, 30] });
@@ -3045,7 +3114,8 @@
 
     function switchMapRoute(mode) {
       document.querySelectorAll('.map-toggle-btn').forEach(b => b.classList.remove('active'));
-      const activeBtn = document.getElementById(mode === 'sur' ? 'map-btn-sur' : 'map-btn-clasica');
+      const btnId = mode === 'sur' ? 'map-btn-sur' : (mode === 'clasica' ? 'map-btn-clasica' : 'map-btn-global');
+      const activeBtn = document.getElementById(btnId);
       if (activeBtn) activeBtn.classList.add('active');
       renderRouteLayers(mode);
     }
