@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viaje Italia & Grecia 2027 | Planificación</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --accent: #0284c7;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --success: #16a34a;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding-bottom: 60px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 { font-size: 2rem; margin-bottom: 8px; font-weight: 700; }
+    header p { color: #cbd5e1; font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+    .badge-bar {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+    .badge {
+      background: rgba(255,255,255,0.15);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      border-bottom: 2px solid var(--border);
+      gap: 10px;
+      margin-bottom: 25px;
+      overflow-x: auto;
+    }
+    .tab-btn {
+      background: none;
+      border: none;
+      padding: 12px 18px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .tab-btn.active {
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .tab-content { display: none; }
+    .tab-content.active { display: block; animation: fadeIn 0.3s ease; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Cards */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+    .card h2 {
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Flight highlight */
+    .flight-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 15px;
+    }
+    .flight-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .flight-endpoint { font-size: 1.1rem; font-weight: 700; color: #1e3a8a; }
+    .flight-meta { font-size: 0.9rem; color: #475569; }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+      font-size: 0.95rem;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    th { background: #f1f5f9; color: #334155; font-weight: 600; }
+
+    /* Itinerary variants */
+    .variant-card {
+      border-left: 4px solid var(--primary-light);
+      margin-bottom: 20px;
+      background: white;
+      padding: 20px;
+      border-radius: 0 8px 8px 0;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .variant-title { font-size: 1.15rem; font-weight: 700; color: #1e293b; margin-bottom: 6px; }
+    .variant-summary { font-size: 0.9rem; color: var(--accent); font-weight: 600; margin-bottom: 12px; }
+    .timeline { list-style: none; padding-left: 5px; }
+    .timeline li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 8px;
+      font-size: 0.92rem;
+    }
+    .timeline li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--primary-light);
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+
+    .callout {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 8px;
+      padding: 15px;
+      margin: 15px 0;
+      color: #166534;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Viaje Matrimonios: Italia & Grecia</h1>
+    <p>3 Semanas | 17 de Abril al 8 de Mayo de 2027</p>
+    <div class="badge-bar">
+      <span class="badge">✈️ Multidestino ITA Airways</span>
+      <span class="badge">🚆 100% Transporte Público</span>
+      <span class="badge">🚫 Cero Manejo de Autos</span>
+    </div>
+  </header>
+
+  <div class="container">
+    <nav class="tabs">
+      <button class="tab-btn active" onclick="openTab('vuelos')">1. Vuelos Confirmados</button>
+      <button class="tab-btn" onclick="openTab('itinerarios')">2. Variantes de Itinerario</button>
+      <button class="tab-btn" onclick="openTab('logistica')">3. Logística & Sin Auto</button>
+      <button class="tab-btn" onclick="openTab('presupuesto')">4. Presupuesto & Pago</button>
+    </nav>
+
+    <!-- TAB 1: VUELOS -->
+    <section id="vuelos" class="tab-content active">
+      <div class="card">
+        <h2>✈️ Vuelos Seleccionados (ITA Airways)</h2>
+        <p style="margin-bottom: 15px; color: var(--text-muted);">
+          Ruta multidestino óptima: salimos sin pedir días hábiles extras y volvemos con escala mínima de 1h 50m.
+        </p>
+
+        <div class="flight-box">
+          <div class="flight-row">
+            <span class="flight-endpoint">EZE → Roma (FCO)</span>
+            <span class="flight-meta"><strong>Sábado 17 de Abril, 2027</strong></span>
+          </div>
+          <p class="flight-meta">Salida: <strong>00:50 AM</strong> | Llegada: <strong>18:40 PM</strong> (Directo, 12h 45m)</p>
+          <small style="color: #64748b;">Trabajamos viernes normal, vamos a Ezeiza de noche y llegamos a Roma a dormir y arrancar frescos el domingo.</small>
+        </div>
+
+        <div class="flight-box">
+          <div class="flight-row">
+            <span class="flight-endpoint">Atenas (ATH) → EZE</span>
+            <span class="flight-meta"><strong>Sábado 8 de Mayo, 2027</strong></span>
+          </div>
+          <p class="flight-meta">Salida ATH: <strong>19:30 PM</strong> | Escala Roma: <strong>1h 50m</strong> | Llegada EZE: <strong>07:30 AM (+1)</strong></p>
+          <small style="color: #64748b;">Aprovechamos el sábado completo en Atenas. Escala quirúrgica protegida por ITA.</small>
+        </div>
+
+        <div class="callout">
+          <strong>Tarifa total para los 4 pasajeros:</strong> USD 6.354,00 (Tarifa Economy Comfort con valijas despachadas y asientos).<br>
+          <strong>Costo por matrimonio:</strong> <strong>USD 3.177,00</strong>.
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: ITINERARIOS -->
+    <section id="itinerarios" class="tab-content">
+      <div class="card">
+        <h2>🗺️ Tres Opciones para Definir entre los Cuatro</h2>
+        <p style="margin-bottom: 20px; color: var(--text-muted);">
+          Tenemos 21 noches netas. La decisión pasa por si preferimos sumar Nápoles/Pompeya, hacer el circuito clásico renacentista o maximizar el relax de mar.
+        </p>
+
+        <div class="variant-card">
+          <div class="variant-title">Opción A: La Clásica Equilibrada (Recomendada)</div>
+          <div class="variant-summary">11 noches Italia / 10 noches Grecia | Ritmo: Medio-Cultural</div>
+          <ul class="timeline">
+            <li><strong>17 al 21 abr (4n):</strong> Roma (Coliseo, Vaticano, centro histórico).</li>
+            <li><strong>21 al 24 abr (3n):</strong> Florencia (Uffizi, Academia, escapada en tren a Siena/Lucca).</li>
+            <li><strong>24 al 27 abr (3n):</strong> Venecia (San Marcos, canales, islas).</li>
+            <li><strong>27 al 30 abr (3n):</strong> Vuelo directo a Atenas (Acrópolis, Plaka).</li>
+            <li><strong>30 abr al 4 may (4n):</strong> Ferry a Naxos o Paros (Pascua Ortodoxa el domingo 2 de mayo).</li>
+            <li><strong>4 al 7 may (3n):</strong> Ferry a Santorini (caldera, pueblos blancos).</li>
+            <li><strong>7 al 8 may (1n):</strong> Vuelo a Atenas, última noche y regreso.</li>
+          </ul>
+        </div>
+
+        <div class="variant-card">
+          <div class="variant-title">Opción B: Foco Centro-Sur & Pompeya</div>
+          <div class="variant-summary">12 noches Italia / 9 noches Grecia | Enfoque: Ruinas romanas y pizza napolitana</div>
+          <ul class="timeline">
+            <li><strong>17 al 21 abr (4n):</strong> Roma.</li>
+            <li><strong>21 al 24 abr (3n):</strong> Florencia.</li>
+            <li><strong>24 al 28 abr (4n):</strong> Nápoles (centro histórico, 1 día completo a Pompeya en tren, posible Capri).</li>
+            <li><strong>28 abr:</strong> Vuelo directo Nápoles → Atenas.</li>
+            <li><strong>28 abr al 1 may (3n):</strong> Atenas.</li>
+            <li><strong>1 al 7 may (6n):</strong> Dos islas Cícladas (ej. Paros + Santorini).</li>
+            <li><strong>8 may:</strong> Vuelo isla → Atenas y regreso a Buenos Aires.</li>
+          </ul>
+        </div>
+
+        <div class="variant-card">
+          <div class="variant-title">Opción C: Relax Cícladas & Menos Hoteles</div>
+          <div class="variant-summary">8 noches Italia / 13 noches Grecia | Ritmo: Desconexión y mar</div>
+          <ul class="timeline">
+            <li><strong>17 al 21 abr (4n):</strong> Roma.</li>
+            <li><strong>21 al 25 abr (4n):</strong> Florencia o Venecia (una sola para no cambiar tanto de base).</li>
+            <li><strong>25 al 28 abr (3n):</strong> Atenas.</li>
+            <li><strong>28 abr al 7 may (9n):</strong> Tres islas en ferrys cortos (Paros 3n + Naxos 3n + Santorini 3n).</li>
+            <li><strong>8 may:</strong> Conexión a Atenas y regreso a Buenos Aires.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: LOGÍSTICA -->
+    <section id="logistica" class="tab-content">
+      <div class="card">
+        <h2>🚶‍♂️ Cero Manejo: Cómo Nos Movemos</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Tramo</th>
+              <th>Medio de Transporte</th>
+              <th>Detalles</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Roma ↔ Florencia ↔ Venecia</strong></td>
+              <td>Tren Frecciarossa / Italo</td>
+              <td>Alta velocidad (1h 35m a 2h 15m). De centro a centro, sin aeropuertos.</td>
+            </tr>
+            <tr>
+              <td><strong>Nápoles / Pompeya</strong></td>
+              <td>Tren de alta velocidad + Tren local</td>
+              <td>Frecciarossa a Nápoles (1h 10m). Tren local a Pompeya (30 min hasta la puerta).</td>
+            </tr>
+            <tr>
+              <td><strong>Italia → Grecia</strong></td>
+              <td>Vuelo directo (Aegean / low-cost)</td>
+              <td>2 horas netas de vuelo. Con valijas despachadas.</td>
+            </tr>
+            <tr>
+              <td><strong>Atenas ↔ Islas</strong></td>
+              <td>Ferrys rápidos (Blue Star / SeaJets)</td>
+              <td>Catamaranes con butacas numeradas. Salida desde El Pireo.</td>
+            </tr>
+            <tr>
+              <td><strong>En las islas (Naxos / Santorini)</strong></td>
+              <td>Red de colectivos KTEL y caminatas</td>
+              <td>Puntuales, €2 a €3 el tramo. Evita el estrés de calles angostas y estacionamiento.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- TAB 4: PRESUPUESTO -->
+    <section id="presupuesto" class="tab-content">
+      <div class="card">
+        <h2>💰 Presupuesto Estimado (Por Matrimonio)</h2>
+        <p style="margin-bottom: 15px; color: var(--text-muted);">
+          Base confort estándar (Hoteles 3★ superior / 4★ céntricos, buena gastronomía, entradas y transportes).
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Rubro</th>
+              <th>Estimado (USD)</th>
+              <th>Comentarios</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Vuelos Internacionales ITA</strong></td>
+              <td><strong>USD 3.177</strong></td>
+              <td>Ya cotizados (Economy Comfort, valija bodega 23 kg).</td>
+            </tr>
+            <tr>
+              <td><strong>Hoteles (21 noches)</strong></td>
+              <td>USD 1.400 – USD 1.800</td>
+              <td>Base USD 130-170/noche con desayuno incluido.</td>
+            </tr>
+            <tr>
+              <td><strong>Transportes internos</strong></td>
+              <td>USD 400 – USD 600</td>
+              <td>Trenes Frecciarossa + Vuelo a Atenas + Ferrys.</td>
+            </tr>
+            <tr>
+              <td><strong>Comidas y gastronomía</strong></td>
+              <td>USD 1.000 – USD 1.300</td>
+              <td>Almuerzos ligeros y cenas con vino en trattorias/tabernas.</td>
+            </tr>
+            <tr>
+              <td><strong>Entradas, tours y extras</strong></td>
+              <td>USD 400 – USD 500</td>
+              <td>Coliseo, Vaticano, Acrópolis, seguro médico y tasas.</td>
+            </tr>
+            <tr style="font-weight: 700; background: #f8fafc;">
+              <td>TOTAL ESTIMADO</td>
+              <td><strong>USD 6.400 – USD 7.400</strong></td>
+              <td>Gasto global aproximado por pareja (todo incluido).</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    function openTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      const activeBtn = Array.from(document.querySelectorAll('.tab-btn')).find(b => b.getAttribute('onclick').includes(tabId));
+      if (activeBtn) activeBtn.classList.add('active');
+    }
+  </script>
+</body>
+</html>
