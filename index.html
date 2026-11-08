@@ -184,7 +184,7 @@
     /* Tab Buttons Navigation */
     .nav-tabs {
       display: grid;
-      grid-template-columns: repeat(8, 1fr);
+      grid-template-columns: repeat(9, 1fr);
       gap: 6px;
     }
     .tab-btn {
@@ -985,6 +985,161 @@
       line-height: 1.4;
     }
 
+    /* Gastronomy section styles */
+    .gastro-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 22px;
+      margin-top: 25px;
+    }
+    .gastro-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .gastro-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+    .gastro-img-wrap {
+      position: relative;
+      height: 200px;
+      width: 100%;
+      overflow: hidden;
+      background: #1e293b;
+    }
+    .gastro-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .gastro-card:hover .gastro-img-wrap img {
+      transform: scale(1.06);
+    }
+    .gastro-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(15, 23, 42, 0.88);
+      color: #ffffff;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      backdrop-filter: blur(4px);
+    }
+    .gastro-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .gastro-city {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+    .gastro-subtitle {
+      font-size: 0.88rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+    .gastro-dishes {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 16px 0;
+      flex: 1;
+    }
+    .gastro-dish-item {
+      padding: 9px 0;
+      border-bottom: 1px dashed #e2e8f0;
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+    .gastro-dish-item:last-child {
+      border-bottom: none;
+    }
+    .gastro-dish-name {
+      font-weight: 700;
+      color: #1e293b;
+    }
+    .gastro-dish-price {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: #f1f5f9;
+      color: #475569;
+      padding: 2px 7px;
+      border-radius: 4px;
+      margin-left: 6px;
+    }
+    .gastro-dish-desc {
+      color: #64748b;
+      font-size: 0.86rem;
+      margin-top: 2px;
+    }
+    .gastro-wine-box {
+      background: #fdf2f8;
+      border: 1px solid #fbcfe8;
+      border-radius: 9px;
+      padding: 10px 14px;
+      margin-top: 12px;
+      font-size: 0.88rem;
+      color: #831843;
+    }
+    .gastro-wine-title {
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 3px;
+    }
+    .gastro-tip-box {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 9px;
+      padding: 10px 14px;
+      margin-top: 10px;
+      font-size: 0.86rem;
+      color: #14532d;
+    }
+    .etiquette-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+      margin: 18px 0 24px;
+    }
+    .etiquette-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .etiquette-card-title {
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .etiquette-card-desc {
+      font-size: 0.86rem;
+      color: #64748b;
+      line-height: 1.45;
+    }
+
     /* Responsive navigation & layouts */
     @media (max-width: 900px) {
       .hero-showcase {
@@ -1112,6 +1267,7 @@
             <option value="logistica">📍 6. Mapa de Ruta & Logística</option>
             <option value="presupuesto">💰 7. Presupuesto Consolidado</option>
             <option value="recordar">💡 8. Puntos Clave & A Recordar</option>
+            <option value="gastronomia">🍝 9. Guía Gastronómica & Vinos</option>
           </select>
           <span class="mobile-select-arrow">▼</span>
         </div>
@@ -1150,6 +1306,10 @@
         <button class="tab-btn" data-tab="recordar" onclick="openTab('recordar')">
           <span class="tab-icon">💡</span>
           <span class="tab-btn-title">8. Puntos Clave</span>
+        </button>
+        <button class="tab-btn" data-tab="gastronomia" onclick="openTab('gastronomia')">
+          <span class="tab-icon">🍝</span>
+          <span class="tab-btn-title">9. Gastronomía</span>
         </button>
       </nav>
 
@@ -3280,10 +3440,285 @@
           <button class="tab-footer-btn" onclick="openTab('presupuesto')">
             ← Anterior: 7. Presupuesto Consolidado
           </button>
+          <button class="tab-footer-btn primary" onclick="openTab('gastronomia')">
+            Siguiente: 9. Gastronomía & Vinos ➔
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 9: GUÍA GASTRONÓMICA & VINOS -->
+    <section id="gastronomia" class="tab-content">
+      <div class="card">
+        <h2>🍝 Guía Gastronómica, Platos Estrella & Vinos</h2>
+        <p style="margin-bottom: 20px; color: var(--text-muted);">
+          Comer y brindar entre los cuatro es una parte central del viaje. Esta guía reúne qué especialidades probar en cada región, cómo evitar trampas para turistas y los códigos de mesa tradicionales de Italia y Grecia:
+        </p>
+
+        <!-- Códigos de mesa / Etiqueta -->
+        <h3 style="font-size: 1.15rem; color: #1e3a8a; margin-top: 25px; margin-bottom: 12px;">
+          🧭 Códigos de Mesa & "Reglas de Oro" para el Viajero
+        </h3>
+        <div class="etiquette-grid">
+          <div class="etiquette-card">
+            <div class="etiquette-card-title">🍞 El "Coperto" en Italia</div>
+            <div class="etiquette-card-desc">
+              Es un cargo fijo estándar (€1,50 a €3 por persona) por servicio de mesa y panera. Es 100% legal y obligatorio en la carta; <strong>no es una estafa ni la propina del mozo</strong>.
+            </div>
+          </div>
+          <div class="etiquette-card">
+            <div class="etiquette-card-title">☕ La Cultura del Café</div>
+            <div class="etiquette-card-desc">
+              El <em>espresso</em> se toma de pie en la barra (<em>al banco</em>) por apenas €1,20 – €1,50. Sentarse en una mesa de una plaza histórica puede triplicar el precio. El <em>cappuccino</em> es sagrado solo por la mañana (después de las 11:00 AM pedirlo es considerado sacrilegio).
+            </div>
+          </div>
+          <div class="etiquette-card">
+            <div class="etiquette-card-title">🥗 El "Meze" Compartido en Grecia</div>
+            <div class="etiquette-card-desc">
+              En las tabernas griegas no se pide "un plato principal por persona". Se ordenan varios platitos (<em>mezedes</em>) al centro para picar entre los 4 con pan pita caliente. El agua mineral embotellada de 1L la traen al instante a precio fijado por ley (€0,50 a €1).
+            </div>
+          </div>
+          <div class="etiquette-card">
+            <div class="etiquette-card-title">⏰ Horarios Mediterráneos</div>
+            <div class="etiquette-card-desc">
+              En el sur de Italia y las islas griegas se almuerza de 13:30 a 15:30 y <strong>se cena tarde</strong> (de 21:00 a 23:30). Las trattorias y tabernas auténticas no abren sus cocinas a las 18:30; si un lugar está lleno a esa hora, suele ser una trampa para turistas.
+            </div>
+          </div>
+        </div>
+
+        <!-- Alerta trampas para turistas -->
+        <div class="callout" style="margin-bottom: 25px; border-left-color: #f59e0b; background: #fffbeb;">
+          ⚠️ <strong>Cómo detectar "Trampas para Turistas":</strong> Si el restaurante tiene fotos gigantes plastificadas en la vereda, un mozo insistente que te intercepta para que entres (<em>buttadentro</em>), o un menú en 10 idiomas que ofrece paella en Nápoles o pizza congelada en Santorini, sigan de largo. Busquen callejones internos donde vean familias y gente local comiendo.
+        </div>
+
+        <h3 style="font-size: 1.15rem; color: #1e3a8a; margin-top: 30px; margin-bottom: 15px;">
+          📍 Especialidades Imperdibles Región por Región
+        </h3>
+
+        <!-- Gastro Grid -->
+        <div class="gastro-grid">
+          
+          <!-- 1. Roma -->
+          <div class="gastro-card">
+            <div class="gastro-img-wrap">
+              <img src="https://images.unsplash.com/photo-1612874742237-6526221588e3?auto=format&fit=crop&w=800&q=80" alt="Pasta Romana" loading="lazy">
+              <span class="gastro-badge">🇮🇹 ROMA (Lacio)</span>
+            </div>
+            <div class="gastro-body">
+              <div class="gastro-city">Roma</div>
+              <div class="gastro-subtitle">Las 4 pastas imperiales y cocina del Trastevere</div>
+              <ul class="gastro-dishes">
+                <li class="gastro-dish-item">
+                  <div class="gastro-dish-name">Carbonara Tradicional <span class="gastro-dish-price">€11 – €14</span></div>
+                  <div class="gastro-dish-desc">Spaghetti con guanciale crujiente (papada de cerdo curada), yema de huevo fresca, abundante pecorino romano y pimienta negra. ¡Cero crema ni panceta común!</div>
+                </li>
+                <li class="gastro-dish-item">
+                  <div class="gastro-dish-name">Cacio e Pepe <span class="gastro-dish-price">€10 – €13</span></div>
+                  <div class="gastro-dish-desc">La simpleza perfecta: pecorino romano rallado y pimienta tostada emulsionados con el agua caliente de cocción de la pasta.</div>
+                </li>
+                <li class="gastro-dish-item">
+                  <div class="gastro-dish-name">Carciofi alla Giudìa <span class="gastro-dish-price">€6 – €8</span></div>
+                  <div class="gastro-dish-desc">Alcauciles enteros fritos en aceite de oliva al estilo del histórico Ghetto judío; crocantes como una flor de papas fritas.</div>
+                </li>
+                <li class="gastro-dish-item">
+                  <div class="gastro-dish-name">Maritozzo con Panna <span class="gastro-dish-price">€3 – €4</span></div>
+                  <div class="gastro-dish-desc">Bollo brioche súper esponjoso cortado al medio y colmado de crema chantilly fresca. Desayuno clásico romano.</div>
+                </li>
+              </ul>
+              <div class="gastro-wine-box">
+                <div class="gastro-wine-title">🍷 Vino Local Recomendado:</div>
+                <strong>Frascati Superiore DOCG</strong> (blanco fresco y seco de las colinas romanas de Castelli Romani) o un tinto <strong>Cesanese del Piglio</strong>.
+              </div>
+              <div class="gastro-tip-box">
+                💡 <strong>Dónde comer:</strong> En Trastevere o en el barrio de Testaccio (la meca gastronómica no turística de Roma).
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Nápoles & Campania -->
+          <div class="gastro-card">
+            <div class="gastro-img-wrap">
+              <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=800&q=80" alt="Pizza Napolitana" loading="lazy">
+              <span class="gastro-badge">🇮🇹 NÁPOLES & COSTA</span>
+            </div>
+            <div class="gastro-body">
+              <div class="gastro-city">Nápoles & Pompeya</div>
+              <div class="gastro-subtitle">Cuna de la pizza mundial, street food y mariscos</div>
+              <ul class="gastro-dishes">
+                <li class="gastro-dish-item">
+                  <div class="gastro-dish-name">Pizza Napoletana Verace (STG) <span class="gastro-dish-price">€6 – €9</span></div>
+                  <div class="gastro-dish-desc">Masa fermentada 48 hs cocida 90 segundos a 450°C en horno a leña. Bordes inflados (cornicione), tomate San Marzano DOP, mozzarella di bufala y albahaca fresca.</div>
+                </li>
+                <li class="gastro-dish-item">
+                  <div class="gastro-dish-name">Cuoppo di Mare <span class="gastro-dish-price">€7 – €10</span></div>
+                  <div class="gastro-dish-desc">Cono de papel con pescado de roca, calamares, camarones y pescaditos fritos al paso para comer mientras caminan por Spaccanapoli.</div>
+                </li>
+                <li class="gastro-dish-item">
+                  <div class="gastro-dish-name">Sfogliatella (Riccia o Frolla) & Babà <span class="gastro-dish-price">€2,50 – €3,50</span></div>
+                  <div class="gastro-dish-desc">Hojaldre crujiente tibio relleno de ricotta perfumada con naranja y canela, o el babà empapado en almíbar de ron.</div>
+                </li>
+              </ul>
+              <div class="gastro-wine-box">
+                <div class="gastro-wine-title">🍷 Vino Local & Digestivo:</div>
+                <strong>Greco di Tufo DOCG</strong> (blanco con carácter) o <strong>Lacryma Christi del Vesuvio</strong>. De postre: un chupito helado de <strong>Limoncello di Sorrento</strong>.
+              </div>
+              <div class="gastro-tip-box">
+                💡 <strong>Dónde comer:</strong> Pizzerías históricas de Via dei Tribunali (Sorbillo, Da Michele, Di Matteo).
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Puglia -->
+          <div class="gastro-card">
+            <div class="gastro-img-wrap">
+              <img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=800&q=80" alt="Antipasti y Burrata Puglia" loading="lazy">
+              <span class="gastro-badge">🇮🇹 PUGLIA (Adriático)</span>
+            </div>
+            <div class="gastro-body">
+              <div class="gastro-city">Puglia (Bari & Monopoli)</div>
+              <div class="gastro-subtitle">Huertas, burratas cremosas, olivas y pescadores</div>
+              <ul class="gastro-dishes">
+                <li class="gastro-dish-item">
+                  <div class="gastro-dish-name">Orecchiette alle Cime di Rapa <span class="gastro-dish-price">€10 – €13</span></div>
+                  <div class="gastro-dish-desc">Pasta fresca hecha a mano por las señoras en las calles de Bari vieja, salteada con grelos tiernos, ajo, oliva virgen extra y un toque de anchoa.</div>
+                </li>
+                <li class="gastro-dish-item">
+                  <div class="gastro-dish-name">Burrata & Stracciatella de Andria <span class="gastro-dish-price">€8 – €12</span></div>
+                  <div class="gastro-dish-desc">El queso más cremoso de Italia. Al cortarlo al medio se desborda el corazón de nata líquida y hebras de mozzarella fresca con tomates cherry.</div>
+                </li>
+                <li class="gastro-dish-item">
+                  <div class="gastro-dish-name">Focaccia Barese & Panzerotto <span class="gastro-dish-price">€2 – €4</span></div>
+                  <div class="gastro-dish-desc">Masa aireada con base crocante impregnada de aceite de oliva, tomates enteros incrustados y orégano. El panzerotto se come frito y relleno de mozzarella caliente.</div>
+                </li>
+              </ul>
+              <div class="gastro-wine-box">
+                <div class="gastro-wine-title">🍷 Vino Local Recomendado:</div>
+                <strong>Primitivo di Manduria</strong> (un tinto con cuerpo, aterciopelado y frutal, pariente del Zinfandel) o <strong>Negroamaro del Salento</strong>.
+              </div>
+              <div class="gastro-tip-box">
+                💡 <strong>Dónde comer:</strong> En las tabernas de piedra del centro histórico de Monopoli o Polignano a Mare junto al mar.
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Atenas -->
+          <div class="gastro-card">
+            <div class="gastro-img-wrap">
+              <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80" alt="Ensalada Griega y Meze" loading="lazy">
+              <span class="gastro-badge">🇬🇷 ATENAS</span>
+            </div>
+            <div class="gastro-body">
+              <div class="gastro-city">Atenas</div>
+              <div class="gastro-subtitle">Tabernas bajo la Acrópolis y comida callejera</div>
+              <ul class="gastro-dishes">
+                <li class="gastro-dish-item">
+                  <div class="gastro-dish-name">Souvlaki Kalamaki & Gyros Pita <span class="gastro-dish-price">€3,50 – €5</span></div>
+                  <div class="gastro-dish-desc">Carne marinada con orégano y limón en brocheta o en pan pita caliente con salsa tzatziki (yogur griego, pepino y ajo), tomate y papas fritas.</div>
+                </li>
+                <li class="gastro-dish-item">
+                  <div class="gastro-dish-name">Moussaka Casera <span class="gastro-dish-price">€9 – €12</span></div>
+                  <div class="gastro-dish-desc">Pastel horneado en capas de berenjena dorada, carne especiada con un toque de canela y una suave capa superior de bechamel gratinada.</div>
+                </li>
+                <li class="gastro-dish-item">
+                  <div class="gastro-dish-name">Ensalada Griega (Horiatiki) <span class="gastro-dish-price">€7 – €9</span></div>
+                  <div class="gastro-dish-desc">Tomates maduros, pepino crujiente, cebolla morada, aceitunas kalamata, orégano silvestre y un bloque generoso de Feta DOP.</div>
+                </li>
+                <li class="gastro-dish-item">
+                  <div class="gastro-dish-name">Loukoumades <span class="gastro-dish-price">€4 – €5</span></div>
+                  <div class="gastro-dish-desc">Buñuelitos dorados y crujientes por fuera, bañados en abundante miel de tomillo griega, canela y nueces picadas.</div>
+                </li>
+              </ul>
+              <div class="gastro-wine-box">
+                <div class="gastro-wine-title">🍷 Bebida Tradicional:</div>
+                <strong>Ouzo</strong> con hielo (aperitivo anisado) o cerveza helada griega <strong>Mythos</strong> o <strong>Fix Hellas</strong>.
+              </div>
+              <div class="gastro-tip-box">
+                💡 <strong>Dónde comer:</strong> En las tabernas con música en vivo de Psirri o las terrazas de Plaka.
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Naxos -->
+          <div class="gastro-card">
+            <div class="gastro-img-wrap">
+              <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=800&q=80" alt="Mariscos y Pulpo Cícladas" loading="lazy">
+              <span class="gastro-badge">🇬🇷 NAXOS (Cícladas)</span>
+            </div>
+            <div class="gastro-body">
+              <div class="gastro-city">Naxos</div>
+              <div class="gastro-subtitle">La isla más fértil: quesos premiados, cordero y mar</div>
+              <ul class="gastro-dishes">
+                <li class="gastro-dish-item">
+                  <div class="gastro-dish-name">Queso Graviera de Naxos (DOP) <span class="gastro-dish-price">€6 – €8</span></div>
+                  <div class="gastro-dish-desc">Uno de los mejores quesos de Grecia: elaborado con leche de vaca y oveja de pastoreo isleño; sabor mantecoso con ligero toque picante al madurar.</div>
+                </li>
+                <li class="gastro-dish-item">
+                  <div class="gastro-dish-name">Papas de Naxos (Patates Naxou) <span class="gastro-dish-price">€4 – €6</span></div>
+                  <div class="gastro-dish-desc">Famosas en todo el país por la tierra volcánica y rica en potasio de la isla. Fritas doradas en aceite de oliva son un manjar de otro nivel.</div>
+                </li>
+                <li class="gastro-dish-item">
+                  <div class="gastro-dish-name">Cordero al Horno con Hierbas (Kleftiko) <span class="gastro-dish-price">€12 – €16</span></div>
+                  <div class="gastro-dish-desc">El plato supremo de la Pascua: carne de cordero o cabrito cocinada a fuego lento en cazuela de barro hasta que se desprende sola del hueso.</div>
+                </li>
+                <li class="gastro-dish-item">
+                  <div class="gastro-dish-name">Pulpo a la Brasa & Pescado Fresco <span class="gastro-dish-price">€12 – €16</span></div>
+                  <div class="gastro-dish-desc">Pulpo secado al sol en las cuerdas del muelle y asado a las brasas con limón, orégano y aceite de oliva.</div>
+                </li>
+              </ul>
+              <div class="gastro-wine-box">
+                <div class="gastro-wine-title">🍸 Licor Tradicional de Naxos:</div>
+                <strong>Licor Kitron</strong>: Destilado histórico elaborado con hojas del árbol de cidro nativo (se prueba en la destilería centenaria Vallindras de Halki).
+              </div>
+              <div class="gastro-tip-box">
+                💡 <strong>Dónde comer:</strong> En las tabernas pesqueras del paseo marítimo de Chora o en los pueblitos de montaña como Filoti y Halki.
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. Santorini -->
+          <div class="gastro-card">
+            <div class="gastro-img-wrap">
+              <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80" alt="Vino y Caldera Santorini" loading="lazy">
+              <span class="gastro-badge">🇬🇷 SANTORINI</span>
+            </div>
+            <div class="gastro-body">
+              <div class="gastro-city">Santorini</div>
+              <div class="gastro-subtitle">Cocina volcánica de secano y vinos minerales del Egeo</div>
+              <ul class="gastro-dishes">
+                <li class="gastro-dish-item">
+                  <div class="gastro-dish-name">Fava Santorinis (DOP) <span class="gastro-dish-price">€7 – €9</span></div>
+                  <div class="gastro-dish-desc">Puré sedoso y aterciopelado de guisantes amarillos cultivados en la ceniza volcánica. Se sirve tibio con cebolla caramelizada, alcaparras y abundante oliva virgen.</div>
+                </li>
+                <li class="gastro-dish-item">
+                  <div class="gastro-dish-name">Tomatokeftedes (Buñuelos de Tomate) <span class="gastro-dish-price">€7 – €10</span></div>
+                  <div class="gastro-dish-desc">Croquetas fritas crujientes elaboradas con los diminutos tomates cherry volcánicos de Santorini, menta fresca, cebolla y queso.</div>
+                </li>
+                <li class="gastro-dish-item">
+                  <div class="gastro-dish-name">Pescado Fresco del Día en Ammoudi Bay <span class="gastro-dish-price">Al peso</span></div>
+                  <div class="gastro-dish-desc">Lubina o dorada asada al carbón a centímetros del agua turquesa en la bahía de Ammoudi, bajo los acantilados de Oia.</div>
+                </li>
+              </ul>
+              <div class="gastro-wine-box">
+                <div class="gastro-wine-title">🍷 El Rey de los Vinos Griegos:</div>
+                <strong>Assyrtiko de Santorini</strong>: Uva autóctona que crece en viñas trenzadas en canastas en el suelo (<em>kouloura</em>). Blanco seco, ultra mineral, salino y vibrante, considerado entre los mejores del mundo. De postre: una copa de <strong>Vinsanto</strong> (vino dulce de uvas pasas al sol).
+              </div>
+              <div class="gastro-tip-box">
+                💡 <strong>Dónde comer:</strong> Degustación al atardecer en bodegas como Santo Wines o Venetsanos, y cena en las tabernas tradicionales de Megalochori o Ammoudi.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="tab-nav-footer">
+          <button class="tab-footer-btn" onclick="openTab('recordar')">
+            ← Anterior: 8. Puntos Clave & Recordar
+          </button>
           <button class="tab-footer-btn primary" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
             ⬆ Volver al Inicio
           </button>
         </div>
+
       </div>
     </section>
   </div>
