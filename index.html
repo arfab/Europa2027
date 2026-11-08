@@ -451,6 +451,171 @@
       color: #1e40af;
       font-size: 0.95rem;
     }
+
+    /* Mobile-first & Responsive Cards for Tabs 3, 6, 7 */
+    .card-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+      margin: 15px 0 25px;
+    }
+    .card-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin: 15px 0 25px;
+    }
+    .res-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .res-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+    }
+    .res-card-img {
+      position: relative;
+      width: 100%;
+      height: 145px;
+      overflow: hidden;
+    }
+    .res-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .res-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(4px);
+      color: white;
+      padding: 3px 9px;
+      border-radius: 12px;
+      font-size: 0.74rem;
+      font-weight: 600;
+    }
+    .res-card-body {
+      padding: 14px 16px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .res-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+    .res-sub {
+      font-size: 0.82rem;
+      color: #64748b;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .price-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 10px 12px;
+      margin-bottom: 10px;
+      font-size: 0.88rem;
+    }
+    .price-row-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+    .price-row-item:last-child { margin-bottom: 0; }
+    .price-label { color: #64748b; font-size: 0.8rem; }
+    .price-val { font-weight: 700; color: #1e293b; }
+    
+    /* Budget Dashboard Cards */
+    .budget-hero {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+    .budget-stat {
+      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+      border: 1px solid #bfdbfe;
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+    }
+    .budget-stat-label { font-size: 0.8rem; font-weight: 700; color: #1e40af; text-transform: uppercase; letter-spacing: 0.5px; }
+    .budget-stat-val { font-size: 1.45rem; font-weight: 800; color: #1e3a8a; margin-top: 4px; }
+    .budget-stat-sub { font-size: 0.78rem; color: #475569; margin-top: 2px; }
+
+    .budget-item-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin-bottom: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      transition: all 0.2s ease;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+    .budget-item-card:hover {
+      border-color: #cbd5e1;
+      background: #f8fafc;
+    }
+    .budget-item-info {
+      flex: 1 1 260px;
+    }
+    .budget-item-name {
+      font-weight: 700;
+      color: #0f172a;
+      font-size: 1.02rem;
+      margin-bottom: 4px;
+    }
+    .budget-item-desc {
+      font-size: 0.84rem;
+      color: #64748b;
+      line-height: 1.4;
+    }
+    .budget-item-amount {
+      text-align: right;
+      flex: 0 0 auto;
+    }
+    .budget-item-price {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #1e3a8a;
+    }
+    .budget-item-unit {
+      font-size: 0.76rem;
+      color: #64748b;
+      display: block;
+    }
+
+    /* Media queries for small screens */
+    @media (max-width: 640px) {
+      header h1 { font-size: 1.6rem; }
+      header p { font-size: 0.98rem; }
+      .container { padding: 0 12px; margin: 15px auto; }
+      .card { padding: 18px 14px; }
+      .card h2 { font-size: 1.2rem; }
+      .tabs { gap: 4px; }
+      .tab-btn { padding: 10px 12px; font-size: 0.88rem; }
+      .res-card-img { height: 160px; }
+      .budget-stat-val { font-size: 1.3rem; }
+      .budget-item-amount { text-align: left; width: 100%; border-top: 1px dashed #e2e8f0; padding-top: 8px; margin-top: 4px; }
+    }
   </style>
 </head>
 <body>
@@ -1024,195 +1189,439 @@
     <!-- TAB 3: PRECIOS ENTRADAS, FERRYS & CIVITATIS -->
     <section id="precios-atracciones" class="tab-content">
       <div class="card">
-        <h2>🎟️ Tabla de Entradas Oficiales, Pasajes y Excursiones</h2>
-        <p style="margin-bottom: 15px; color: var(--text-muted);">
-          Precios actualizados de referencia para presupuestar con exactitud cada atracción y transporte interno:
+        <h2>🎟️ Entradas Oficiales, Pasajes y Excursiones</h2>
+        <p style="margin-bottom: 18px; color: var(--text-muted);">
+          Diseño optimizado para celulares y computadoras con fotos de cada monumento y transporte, comparando valores oficiales vs. tours con guía y accesos rápidos de Civitatis:
         </p>
 
-        <!-- 1. ENTRADAS A ATRACCIONES -->
-        <h3 style="color: var(--primary); font-size: 1.15rem; margin-top: 20px; margin-bottom: 10px;">🏛️ 1. Entradas a Monumentos Clave</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Atracción</th>
-              <th>Destino</th>
-              <th>Ticket Oficial</th>
-              <th>Civitatis (Tour Guiado / Sin Cola)</th>
-              <th>Recomendación</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Coliseo, Foro Romano y Palatino</strong></td>
-              <td>Roma 🇮🇹</td>
-              <td>€18,00 (básico) / €24 (arena)</td>
-              <td>€45,00 – €55,00</td>
-              <td><span class="badge-oficial">Comprar oficial</span> 30 días antes con horario fijo.</td>
-            </tr>
-            <tr>
-              <td><strong>Museos Vaticanos y Capilla Sixtina</strong></td>
-              <td>Roma 🇮🇹</td>
-              <td>€20,00 + €5 reserva online</td>
-              <td>€55,00 – €65,00</td>
-              <td><span class="badge-civitatis">Civitatis</span> si se agotan oficiales en la web papal.</td>
-            </tr>
-            <tr>
-              <td><strong>Panteón de Agripa</strong></td>
-              <td>Roma 🇮🇹</td>
-              <td>€5,00</td>
-              <td>€15,00 (con audioguía)</td>
-              <td><span class="badge-oficial">Oficial</span> en la web del ministerio italiano.</td>
-            </tr>
-            <tr>
-              <td><strong>Galería Uffizi</strong></td>
-              <td>Florencia 🇮🇹</td>
-              <td>€25,00 (+€4 reserva)</td>
-              <td>€50,00 – €60,00</td>
-              <td><span class="badge-oficial">Oficial</span> reservar turno matutino.</td>
-            </tr>
-            <tr>
-              <td><strong>Cúpula del Duomo de Brunelleschi</strong></td>
-              <td>Florencia 🇮🇹</td>
-              <td>€30,00 (Brunelleschi Pass)</td>
-              <td>€45,00 – €55,00</td>
-              <td><span class="badge-oficial">Oficial</span> subida de 463 escalones imperdible.</td>
-            </tr>
-            <tr>
-              <td><strong>Parque Arqueológico de Pompeya</strong></td>
-              <td>Nápoles 🇮🇹</td>
-              <td>€18,00 (+€2 reserva)</td>
-              <td>€50,00 – €65,00 (con arqueólogo)</td>
-              <td><span class="badge-civitatis">Civitatis</span> suma mucho por la inmensidad del sitio.</td>
-            </tr>
-            <tr>
-              <td><strong>Acrópolis de Atenas</strong></td>
-              <td>Atenas 🇬🇷</td>
-              <td>€20,00 (o Pase 7 sitios €30)</td>
-              <td>€48,00 – €58,00 (con guía en español)</td>
-              <td><span class="badge-civitatis">Civitatis</span> muy recomendada para entender las ruinas.</td>
-            </tr>
-            <tr>
-              <td><strong>Museo de la Acrópolis</strong></td>
-              <td>Atenas 🇬🇷</td>
-              <td>€15,00</td>
-              <td>Combinado con Acrópolis: ~€62</td>
-              <td><span class="badge-oficial">Oficial</span> o pase combinado.</td>
-            </tr>
-          </tbody>
-        </table>
+        <!-- 1. ENTRADAS A MONUMENTOS -->
+        <h3 style="color: var(--primary); font-size: 1.15rem; margin-top: 15px; margin-bottom: 8px;">🏛️ 1. Entradas a Monumentos Clave</h3>
+        <div class="card-grid-2">
+          <!-- Coliseo -->
+          <div class="res-card">
+            <div class="res-card-img">
+              <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=600&q=80" alt="Coliseo Romano" loading="lazy">
+              <span class="res-badge">ROMA 🇮🇹</span>
+            </div>
+            <div class="res-card-body">
+              <div class="res-title">Coliseo, Foro Romano y Palatino</div>
+              <div class="res-sub">El corazón del imperio. Incluye acceso a los foros y mirador del Palatino.</div>
+              <div class="price-box">
+                <div class="price-row-item">
+                  <span class="price-label">Ticket Oficial:</span>
+                  <span class="price-val">€18,00 (Arena: €24)</span>
+                </div>
+                <div class="price-row-item">
+                  <span class="price-label">Civitatis (Tour guiado):</span>
+                  <span class="price-val" style="color: #b91c1c;">€45,00 – €55,00</span>
+                </div>
+              </div>
+              <div style="margin-top: auto;">
+                <span class="badge-oficial">Recomendación: Comprar oficial 30 días antes</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vaticano -->
+          <div class="res-card">
+            <div class="res-card-img">
+              <img src="https://images.unsplash.com/photo-1541370976299-4d24ebbc9077?auto=format&fit=crop&w=600&q=80" alt="Vaticano" loading="lazy">
+              <span class="res-badge">ROMA 🇮🇹</span>
+            </div>
+            <div class="res-card-body">
+              <div class="res-title">Museos Vaticanos & Capilla Sixtina</div>
+              <div class="res-sub">Galerías papales, estancias de Rafael y los frescos de Miguel Ángel.</div>
+              <div class="price-box">
+                <div class="price-row-item">
+                  <span class="price-label">Ticket Oficial:</span>
+                  <span class="price-val">€20,00 + €5 reserva</span>
+                </div>
+                <div class="price-row-item">
+                  <span class="price-label">Civitatis (Sin cola + guía):</span>
+                  <span class="price-val" style="color: #b91c1c;">€55,00 – €65,00</span>
+                </div>
+              </div>
+              <div style="margin-top: auto;">
+                <span class="badge-civitatis">Recomendación: Civitatis si se agota oficial</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panteon -->
+          <div class="res-card">
+            <div class="res-card-img">
+              <img src="https://images.unsplash.com/photo-1525874684015-58379d421a52?auto=format&fit=crop&w=600&q=80" alt="Panteón" loading="lazy">
+              <span class="res-badge">ROMA 🇮🇹</span>
+            </div>
+            <div class="res-card-body">
+              <div class="res-title">Panteón de Agripa</div>
+              <div class="res-sub">La cúpula de hormigón no armado más grande del mundo y óculo celestial.</div>
+              <div class="price-box">
+                <div class="price-row-item">
+                  <span class="price-label">Ticket Oficial:</span>
+                  <span class="price-val">€5,00</span>
+                </div>
+                <div class="price-row-item">
+                  <span class="price-label">Civitatis (Audioguía):</span>
+                  <span class="price-val" style="color: #b91c1c;">€15,00</span>
+                </div>
+              </div>
+              <div style="margin-top: auto;">
+                <span class="badge-oficial">Recomendación: Ticket oficial en web ministerial</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Duomo Florencia -->
+          <div class="res-card">
+            <div class="res-card-img">
+              <img src="img/florencia-duomo.jpg" alt="Duomo Florencia" loading="lazy">
+              <span class="res-badge">FLORENCIA 🇮🇹</span>
+            </div>
+            <div class="res-card-body">
+              <div class="res-title">Duomo Santa Maria del Fiore</div>
+              <div class="res-sub">Subida a la cúpula de Brunelleschi (463 escalones) y Baptisterio.</div>
+              <div class="price-box">
+                <div class="price-row-item">
+                  <span class="price-label">Ticket Oficial:</span>
+                  <span class="price-val">Gratis / Brunelleschi Pass €30</span>
+                </div>
+                <div class="price-row-item">
+                  <span class="price-label">Civitatis (Cúpula guiada):</span>
+                  <span class="price-val" style="color: #b91c1c;">€45,00 – €55,00</span>
+                </div>
+              </div>
+              <div style="margin-top: auto;">
+                <span class="badge-oficial">Recomendación: Comprar Brunelleschi Pass oficial</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Uffizi y David -->
+          <div class="res-card">
+            <div class="res-card-img">
+              <img src="img/florencia-david.jpg" alt="David de Miguel Ángel" loading="lazy">
+              <span class="res-badge">FLORENCIA 🇮🇹</span>
+            </div>
+            <div class="res-card-body">
+              <div class="res-title">Galería Uffizi & Galería de la Academia</div>
+              <div class="res-sub">El David original de Miguel Ángel y obras cumbre de Botticelli y Da Vinci.</div>
+              <div class="price-box">
+                <div class="price-row-item">
+                  <span class="price-label">Tickets Oficiales:</span>
+                  <span class="price-val">Uffizi €25 / Academia €16</span>
+                </div>
+                <div class="price-row-item">
+                  <span class="price-label">Civitatis (Visita guiada):</span>
+                  <span class="price-val" style="color: #b91c1c;">€50,00 – €60,00</span>
+                </div>
+              </div>
+              <div style="margin-top: auto;">
+                <span class="badge-oficial">Recomendación: Oficial con turno matutino</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pompeya -->
+          <div class="res-card">
+            <div class="res-card-img">
+              <img src="https://images.unsplash.com/photo-1555992828-ca4dbe41d294?auto=format&fit=crop&w=600&q=80" alt="Pompeya" loading="lazy">
+              <span class="res-badge">NÁPOLES 🇮🇹</span>
+            </div>
+            <div class="res-card-body">
+              <div class="res-title">Parque Arqueológico de Pompeya</div>
+              <div class="res-sub">Ciudad romana sepultada por la erupción del Vesubio en el 79 d.C.</div>
+              <div class="price-box">
+                <div class="price-row-item">
+                  <span class="price-label">Ticket Oficial:</span>
+                  <span class="price-val">€18,00 (+€2 reserva)</span>
+                </div>
+                <div class="price-row-item">
+                  <span class="price-label">Civitatis (Arqueólogo guía):</span>
+                  <span class="price-val" style="color: #b91c1c;">€50,00 – €65,00</span>
+                </div>
+              </div>
+              <div style="margin-top: auto;">
+                <span class="badge-civitatis">Recomendación: Civitatis suma muchísimo valor</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Acropolis Atenas -->
+          <div class="res-card">
+            <div class="res-card-img">
+              <img src="https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?auto=format&fit=crop&w=600&q=80" alt="Acrópolis Atenas" loading="lazy">
+              <span class="res-badge">ATENAS 🇬🇷</span>
+            </div>
+            <div class="res-card-body">
+              <div class="res-title">Acrópolis de Atenas & Partenón</div>
+              <div class="res-sub">Templo de Atenea Niké, Erecteion y el monumento máximo de la Grecia clásica.</div>
+              <div class="price-box">
+                <div class="price-row-item">
+                  <span class="price-label">Ticket Oficial:</span>
+                  <span class="price-val">€20,00 (Pase 7 sitios: €30)</span>
+                </div>
+                <div class="price-row-item">
+                  <span class="price-label">Civitatis (Guía en español):</span>
+                  <span class="price-val" style="color: #b91c1c;">€48,00 – €58,00</span>
+                </div>
+              </div>
+              <div style="margin-top: auto;">
+                <span class="badge-civitatis">Recomendación: Civitatis evita 2h de fila al sol</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Museo Acropolis -->
+          <div class="res-card">
+            <div class="res-card-img">
+              <img src="img/atenas-museo-acropolis.jpg" alt="Museo Acrópolis Cariátides" loading="lazy">
+              <span class="res-badge">ATENAS 🇬🇷</span>
+            </div>
+            <div class="res-card-body">
+              <div class="res-title">Museo de la Acrópolis & Cariátides</div>
+              <div class="res-sub">Las esculturas originales del Partenón y las 5 Cariátides históricas protegidas.</div>
+              <div class="price-box">
+                <div class="price-row-item">
+                  <span class="price-label">Ticket Oficial:</span>
+                  <span class="price-val">€15,00</span>
+                </div>
+                <div class="price-row-item">
+                  <span class="price-label">Civitatis (Combinado Acrópolis):</span>
+                  <span class="price-val" style="color: #b91c1c;">~€62,00</span>
+                </div>
+              </div>
+              <div style="margin-top: auto;">
+                <span class="badge-oficial">Recomendación: Oficial o combinado de Civitatis</span>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <!-- 2. PASAJES DE TRANSPORTE INTERNO -->
-        <h3 style="color: var(--primary); font-size: 1.15rem; margin-top: 25px; margin-bottom: 10px;">🚆 2. Pasajes de Trenes, Vuelos Internos y Ferrys</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Tramo</th>
-              <th>Operador</th>
-              <th>Estimado x Persona</th>
-              <th>Estimado x Pareja</th>
-              <th>Detalles</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Roma ➔ Florencia</strong> (Alta Velocidad)</td>
-              <td>Frecciarossa / Italo</td>
-              <td>€25 – €40</td>
-              <td>€50 – €80</td>
-              <td>1h 35m. Centro a centro. Comprar 3 meses antes.</td>
-            </tr>
-            <tr>
-              <td><strong>Florencia ➔ Venecia</strong> (Alta Velocidad)</td>
-              <td>Frecciarossa / Italo</td>
-              <td>€30 – €45</td>
-              <td>€60 – €90</td>
-              <td>2h 15m. Llega directo a estación Santa Lucia sobre el agua.</td>
-            </tr>
-            <tr>
-              <td><strong>Roma ➔ Nápoles</strong> (Opción B)</td>
-              <td>Frecciarossa</td>
-              <td>€20 – €35</td>
-              <td>€40 – €70</td>
-              <td>1h 10m. Frecuencias cada 20 minutos.</td>
-            </tr>
-            <tr>
-              <td><strong>Italia ➔ Atenas</strong> (Vuelo interno)</td>
-              <td>Aegean / Volotea / Ryanair</td>
-              <td>€80 – €130</td>
-              <td>€160 – €260</td>
-              <td>2h netas de vuelo. Incluye valija despachada 20kg.</td>
-            </tr>
-            <tr>
-              <td><strong>Atenas (Pireo) ➔ Paros / Naxos</strong></td>
-              <td>Blue Star Ferries / SeaJets</td>
-              <td>€45 – €75</td>
-              <td>€90 – €150</td>
-              <td>Blue Star 4h (€45-55) / Seajets rápido 3h (€75).</td>
-            </tr>
-            <tr>
-              <td><strong>Naxos / Paros ➔ Santorini</strong></td>
-              <td>SeaJets / Blue Star</td>
-              <td>€35 – €55</td>
-              <td>€70 – €110</td>
-              <td>1h 45m de travesía entre islas. Butacas numeradas.</td>
-            </tr>
-            <tr>
-              <td><strong>Santorini ➔ Atenas</strong></td>
-              <td>Vuelo Sky Express o Ferry</td>
-              <td>€60 – €95</td>
-              <td>€120 – €190</td>
-              <td>Vuelo de 45 min o Ferry rápido de 4h 30m.</td>
-            </tr>
-          </tbody>
-        </table>
+        <h3 style="color: var(--primary); font-size: 1.15rem; margin-top: 25px; margin-bottom: 8px;">🚆 2. Pasajes de Transporte Interno (Trenes, Vuelos & Ferrys)</h3>
+        <div class="card-grid-2">
+          <!-- Tren Roma - Florencia -->
+          <div class="res-card">
+            <div class="res-card-img">
+              <img src="img/tren-frecciarossa.jpg" alt="Tren Frecciarossa" loading="lazy">
+              <span class="res-badge">1h 35m · ALTA VELOCIDAD</span>
+            </div>
+            <div class="res-card-body">
+              <div class="res-title">Roma ➔ Florencia</div>
+              <div class="res-sub">Frecciarossa 1000 / Italo. Centro a centro de estación Termini a Santa Maria Novella.</div>
+              <div class="price-box">
+                <div class="price-row-item">
+                  <span class="price-label">Por Persona:</span>
+                  <span class="price-val">€25 – €40</span>
+                </div>
+                <div class="price-row-item">
+                  <span class="price-label">Por Pareja:</span>
+                  <span class="price-val" style="color: #1e3a8a;">€50 – €80</span>
+                </div>
+              </div>
+              <small style="color: #64748b;">Comprar 60-90 días antes en Trenitalia / Italo para tarifa Super Economy.</small>
+            </div>
+          </div>
+
+          <!-- Tren Florencia - Venecia -->
+          <div class="res-card">
+            <div class="res-card-img">
+              <img src="https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=600&q=80" alt="Venecia Santa Lucia" loading="lazy">
+              <span class="res-badge">2h 15m · ALTA VELOCIDAD</span>
+            </div>
+            <div class="res-card-body">
+              <div class="res-title">Florencia ➔ Venecia</div>
+              <div class="res-sub">Frecciarossa cruzando los Apeninos directo a la estación Santa Lucia sobre el Gran Canal.</div>
+              <div class="price-box">
+                <div class="price-row-item">
+                  <span class="price-label">Por Persona:</span>
+                  <span class="price-val">€30 – €45</span>
+                </div>
+                <div class="price-row-item">
+                  <span class="price-label">Por Pareja:</span>
+                  <span class="price-val" style="color: #1e3a8a;">€60 – €90</span>
+                </div>
+              </div>
+              <small style="color: #64748b;">Comodidad total con wifi y guardaequipaje en coche.</small>
+            </div>
+          </div>
+
+          <!-- Tren Roma - Nápoles -->
+          <div class="res-card">
+            <div class="res-card-img">
+              <img src="img/tren-frecciarossa.jpg" alt="Frecciarossa a Nápoles" loading="lazy">
+              <span class="res-badge">1h 10m · OPCIÓN B</span>
+            </div>
+            <div class="res-card-body">
+              <div class="res-title">Roma ➔ Nápoles</div>
+              <div class="res-sub">Frecciarossa a 300 km/h de Roma Termini a Napoli Centrale. Frecuencias continuas.</div>
+              <div class="price-box">
+                <div class="price-row-item">
+                  <span class="price-label">Por Persona:</span>
+                  <span class="price-val">€20 – €35</span>
+                </div>
+                <div class="price-row-item">
+                  <span class="price-label">Por Pareja:</span>
+                  <span class="price-val" style="color: #1e3a8a;">€40 – €70</span>
+                </div>
+              </div>
+              <small style="color: #64748b;">Conexión inmediata con tren local a las ruinas de Pompeya.</small>
+            </div>
+          </div>
+
+          <!-- Vuelo Italia - Grecia -->
+          <div class="res-card">
+            <div class="res-card-img">
+              <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=600&q=80" alt="Vuelo Italia a Atenas" loading="lazy">
+              <span class="res-badge">2h 00m · VUELO DIRECTO</span>
+            </div>
+            <div class="res-card-body">
+              <div class="res-title">Italia (Roma/Venecia/Nápoles) ➔ Atenas</div>
+              <div class="res-sub">Vuelo directo (Aegean Airlines / Volotea / Ryanair). Cruza el mar Adriático.</div>
+              <div class="price-box">
+                <div class="price-row-item">
+                  <span class="price-label">Por Persona:</span>
+                  <span class="price-val">€80 – €130</span>
+                </div>
+                <div class="price-row-item">
+                  <span class="price-label">Por Pareja:</span>
+                  <span class="price-val" style="color: #1e3a8a;">€160 – €260</span>
+                </div>
+              </div>
+              <small style="color: #64748b;">Tarifa calculada con valija despachada en bodega de 20-23 kg.</small>
+            </div>
+          </div>
+
+          <!-- Ferry Atenas - Paros/Naxos -->
+          <div class="res-card">
+            <div class="res-card-img">
+              <img src="img/ferry-grecia.jpg" alt="Ferry Blue Star" loading="lazy">
+              <span class="res-badge">3h 30m a 4h · FERRY</span>
+            </div>
+            <div class="res-card-body">
+              <div class="res-title">Atenas (Pireo) ➔ Paros o Naxos</div>
+              <div class="res-sub">Blue Star Ferries (grande y panorámico) o SeaJets (catamarán ultra-rápido).</div>
+              <div class="price-box">
+                <div class="price-row-item">
+                  <span class="price-label">Por Persona:</span>
+                  <span class="price-val">€45 – €75</span>
+                </div>
+                <div class="price-row-item">
+                  <span class="price-label">Por Pareja:</span>
+                  <span class="price-val" style="color: #1e3a8a;">€90 – €150</span>
+                </div>
+              </div>
+              <small style="color: #64748b;">Butacas numeradas estilo avión reservadas con anticipación.</small>
+            </div>
+          </div>
+
+          <!-- Ferry Inter-islas Paros/Naxos - Santorini -->
+          <div class="res-card">
+            <div class="res-card-img">
+              <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=600&q=80" alt="Ferry a Santorini" loading="lazy">
+              <span class="res-badge">1h 45m · INTER-ISLAS</span>
+            </div>
+            <div class="res-card-body">
+              <div class="res-title">Paros / Naxos ➔ Santorini</div>
+              <div class="res-sub">Catamarán SeaJets / Blue Star. Llegada imponente al puerto de Athinios bajo la caldera.</div>
+              <div class="price-box">
+                <div class="price-row-item">
+                  <span class="price-label">Por Persona:</span>
+                  <span class="price-val">€35 – €55</span>
+                </div>
+                <div class="price-row-item">
+                  <span class="price-label">Por Pareja:</span>
+                  <span class="price-val" style="color: #1e3a8a;">€70 – €110</span>
+                </div>
+              </div>
+              <small style="color: #64748b;">Travesía corta y placentera por el corazón de las Cícladas.</small>
+            </div>
+          </div>
+        </div>
 
         <!-- 3. EXCURSIONES CIVITATIS EN GRECIA -->
-        <h3 style="color: var(--primary); font-size: 1.15rem; margin-top: 25px; margin-bottom: 10px;">🇬🇷 3. Excursiones de Referencia en Grecia (Civitatis)</h3>
-        <p style="font-size: 0.9rem; color: #475569; margin-bottom: 12px;">
-          En Grecia delegar la logística marítima o arqueológica en Civitatis ofrece guías en español y traslados garantizados:
+        <h3 style="color: var(--primary); font-size: 1.15rem; margin-top: 25px; margin-bottom: 8px;">🇬🇷 3. Excursiones Clave en Grecia (Civitatis)</h3>
+        <p style="font-size: 0.9rem; color: #475569; margin-bottom: 15px;">
+          En Grecia delegar la logística marítima y arqueológica en Civitatis ofrece guías oficiales en español y traslados seguros:
         </p>
-        <table>
-          <thead>
-            <tr>
-              <th>Excursión / Actividad</th>
-              <th>Ubicación</th>
-              <th>Precio Civitatis x Persona</th>
-              <th>Qué Incluye & Por Qué Vale la Pena</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Crucero en Catamarán al Atardecer por la Caldera</strong></td>
-              <td>Santorini 🇬🇷</td>
-              <td><strong>€115 – €135</strong></td>
-              <td>⭐ <em>La actividad cumbre del viaje:</em> Navegación por el volcán, parada en fuentes termales, Red Beach, cena barbacoa a bordo con vino blanco griego y atardecer de Oia desde el mar.</td>
-            </tr>
-            <tr>
-              <td><strong>Visita Guiada Acrópolis + Museo de la Acrópolis</strong></td>
-              <td>Atenas 🇬🇷</td>
-              <td><strong>€58 – €65</strong></td>
-              <td>Guía oficial de habla hispana, entrada preferente sin colas para evitar las 2 horas de fila bajo el sol y explicación profunda del Partenón.</td>
-            </tr>
-            <tr>
-              <td><strong>Crucero en Velero de Día Completo por Koufonisia / Calas</strong></td>
-              <td>Naxos / Paros 🇬🇷</td>
-              <td><strong>€85 – €105</strong></td>
-              <td>Paseo en barco tradicional de madera a islas vírgenes con aguas cristalinas turquesas, almuerzo casero y equipo de snorkel.</td>
-            </tr>
-            <tr>
-              <td><strong>Tour Gastronómico Nocturno por Plaka y Psiri</strong></td>
-              <td>Atenas 🇬🇷</td>
-              <td><strong>€55 – €70</strong></td>
-              <td>Recorrido a pie con degustación de souvlaki, quesos feta, aceite de oliva, licores (ouzo/raki) y cena en taberna típica.</td>
-            </tr>
-            <tr>
-              <td><strong>Excursión de 1 Día a Delfos con Guía en Español</strong></td>
-              <td>Atenas (Día libre) 🇬🇷</td>
-              <td><strong>€85 – €95</strong></td>
-              <td>Opcional si sobra tiempo en Atenas: Bus ida y vuelta, entrada al oráculo místico de Delfos y almuerzo tradicional griego en montaña.</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="card-grid-2">
+          <!-- Catamaran Santorini -->
+          <div class="res-card">
+            <div class="res-card-img">
+              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" alt="Catamarán Santorini" loading="lazy">
+              <span class="res-badge">SANTORINI 🇬🇷</span>
+            </div>
+            <div class="res-card-body">
+              <div class="res-title">Crucero Catamarán Sunset por la Caldera</div>
+              <div class="res-sub">Navegación al volcán, baño en aguas termales, Red Beach, cena barbacoa a bordo con vino blanco ilimitado y atardecer de Oia desde el agua.</div>
+              <div class="price-box">
+                <div class="price-row-item">
+                  <span class="price-label">Precio Civitatis:</span>
+                  <span class="price-val" style="color: #b91c1c; font-size: 1.1rem;">€115 – €135 / persona</span>
+                </div>
+              </div>
+              <small style="color: #166534; font-weight: 600;">⭐ La experiencia #1 y más valorada de todo el viaje para las 2 parejas.</small>
+            </div>
+          </div>
+
+          <!-- Acropolis guiada -->
+          <div class="res-card">
+            <div class="res-card-img">
+              <img src="img/atenas-museo-acropolis.jpg" alt="Acrópolis y Museo" loading="lazy">
+              <span class="res-badge">ATENAS 🇬🇷</span>
+            </div>
+            <div class="res-card-body">
+              <div class="res-title">Visita Guiada Acrópolis + Museo</div>
+              <div class="res-sub">Guía oficial en español, acceso prioritario sin filas para evitar las 2 horas bajo el sol y explicación profunda del Partenón y Cariátides.</div>
+              <div class="price-box">
+                <div class="price-row-item">
+                  <span class="price-label">Precio Civitatis:</span>
+                  <span class="price-val" style="color: #b91c1c; font-size: 1.1rem;">€58 – €65 / persona</span>
+                </div>
+              </div>
+              <small style="color: #166534; font-weight: 600;">Fundamental para entender las ruinas y no caminar sin contexto histórico.</small>
+            </div>
+          </div>
+
+          <!-- Velero Naxos Koufonisia -->
+          <div class="res-card">
+            <div class="res-card-img">
+              <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=600&q=80" alt="Velero Calas Naxos" loading="lazy">
+              <span class="res-badge">NAXOS / PAROS 🇬🇷</span>
+            </div>
+            <div class="res-card-body">
+              <div class="res-title">Crucero en Velero a Calas & Koufonisia</div>
+              <div class="res-sub">Día entero en barco tradicional a islas vírgenes con aguas cristalinas turquesas, almuerzo casero a bordo, vino y equipo de snorkel.</div>
+              <div class="price-box">
+                <div class="price-row-item">
+                  <span class="price-label">Precio Civitatis:</span>
+                  <span class="price-val" style="color: #b91c1c; font-size: 1.1rem;">€85 – €105 / persona</span>
+                </div>
+              </div>
+              <small style="color: #166534; font-weight: 600;">Relax total y paisajes de postal en las Pequeñas Cícladas.</small>
+            </div>
+          </div>
+
+          <!-- Tour gastronomico Plaka -->
+          <div class="res-card">
+            <div class="res-card-img">
+              <img src="img/atenas-plaka.jpg" alt="Tour gastronómico Atenas" loading="lazy">
+              <span class="res-badge">ATENAS 🇬🇷</span>
+            </div>
+            <div class="res-card-body">
+              <div class="res-title">Tour Gastronómico Nocturno en Plaka</div>
+              <div class="res-sub">Caminata con degustación de quesos griegos, aceitunas kalamata, souvlaki auténtico, licores (ouzo/mastika) y cena en taberna con música en vivo.</div>
+              <div class="price-box">
+                <div class="price-row-item">
+                  <span class="price-label">Precio Civitatis:</span>
+                  <span class="price-val" style="color: #b91c1c; font-size: 1.1rem;">€55 – €70 / persona</span>
+                </div>
+              </div>
+              <small style="color: #166534; font-weight: 600;">Excelente plan para la primera noche en Atenas entre los cuatro.</small>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1409,106 +1818,227 @@
     <section id="logistica" class="tab-content">
       <div class="card">
         <h2>🚶‍♂️ Cero Manejo: Cómo Nos Movemos sin Alquilar Auto</h2>
-        <p style="margin-bottom: 15px; color: var(--text-muted);">
-          El itinerario está pensado 100% para evitar el estrés del tráfico, las multas por zonas ZTL de Italia, el estacionamiento imposible y el gasto de combustible:
+        <p style="margin-bottom: 18px; color: var(--text-muted);">
+          Diseño optimizado para celulares y pantallas grandes con fotos de cada transporte y los tramos que conecta. Evita el estrés del tráfico, las multas ZTL de Italia, el estacionamiento imposible y el gasto de combustible:
         </p>
-        <table>
-          <thead>
-            <tr>
-              <th>Tramo</th>
-              <th>Medio de Transporte</th>
-              <th>Detalles & Confort</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Roma ↔ Florencia ↔ Venecia</strong></td>
-              <td>Tren Frecciarossa / Italo</td>
-              <td>Alta velocidad (1h 35m a 2h 15m). De centro a centro, con wifi, café y espacio para valijas.</td>
-            </tr>
-            <tr>
-              <td><strong>Nápoles / Pompeya</strong></td>
-              <td>Frecciarossa + Tren local</td>
-              <td>Frecciarossa a Nápoles (1h 10m). Tren local a Pompeya (30 min que te deja en la puerta de la boletería).</td>
-            </tr>
-            <tr>
-              <td><strong>Italia → Grecia</strong></td>
-              <td>Vuelo directo (Aegean / low-cost)</td>
-              <td>2 horas netas de vuelo. Con valijas despachadas incluidas para las 2 parejas.</td>
-            </tr>
-            <tr>
-              <td><strong>Atenas ↔ Islas</strong></td>
-              <td>Ferrys rápidos (Blue Star / SeaJets)</td>
-              <td>Catamaranes con butacas numeradas reclinables. Salida desde el puerto de El Pireo (conectado por metro).</td>
-            </tr>
-            <tr>
-              <td><strong>En las islas (Naxos / Santorini)</strong></td>
-              <td>Red de colectivos KTEL y caminatas</td>
-              <td>Puntuales, con aire acondicionado, salen desde el puerto central hacia cada playa y pueblo (€2 a €3 el tramo).</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="card-grid-2">
+          <!-- 1. Frecciarossa -->
+          <div class="res-card">
+            <div class="res-card-img">
+              <img src="img/tren-frecciarossa.jpg" alt="Tren Frecciarossa 1000" loading="lazy">
+              <span class="res-badge">300 km/h · TREN ITALIANO</span>
+            </div>
+            <div class="res-card-body">
+              <div class="res-title">Roma ↔ Florencia ↔ Venecia</div>
+              <div class="res-sub">Trenes Frecciarossa 1000 / Italo de Alta Velocidad.</div>
+              <div class="price-box">
+                <div class="price-row-item">
+                  <span class="price-label">Tiempo de viaje:</span>
+                  <span class="price-val">1h 35m a 2h 15m</span>
+                </div>
+                <div class="price-row-item">
+                  <span class="price-label">Comodidades:</span>
+                  <span class="price-val">Wifi, enchufes, café y maleteros</span>
+                </div>
+              </div>
+              <small style="color: #166534; font-weight: 600;">✓ De centro a centro: salís de Roma Termini y bajás en el corazón de Florencia o directo sobre el Gran Canal de Venecia.</small>
+            </div>
+          </div>
+
+          <!-- 2. Napoles Pompeya -->
+          <div class="res-card">
+            <div class="res-card-img">
+              <img src="https://images.unsplash.com/photo-1555992828-ca4dbe41d294?auto=format&fit=crop&w=600&q=80" alt="Pompeya y Vesubio" loading="lazy">
+              <span class="res-badge">1h 10m + 30m · OPCIÓN B</span>
+            </div>
+            <div class="res-card-body">
+              <div class="res-title">Nápoles & Ruinas de Pompeya</div>
+              <div class="res-sub">Frecciarossa a Nápoles + Tren local directo a la puerta del parque.</div>
+              <div class="price-box">
+                <div class="price-row-item">
+                  <span class="price-label">Roma ➔ Nápoles:</span>
+                  <span class="price-val">1h 10m en Frecciarossa</span>
+                </div>
+                <div class="price-row-item">
+                  <span class="price-label">Nápoles ➔ Pompeya:</span>
+                  <span class="price-val">30 min en tren local (€3)</span>
+                </div>
+              </div>
+              <small style="color: #166534; font-weight: 600;">✓ El tren te deja exactamente frente a la boletería de Porta Marina en Pompeya.</small>
+            </div>
+          </div>
+
+          <!-- 3. Vuelo Italia a Grecia -->
+          <div class="res-card">
+            <div class="res-card-img">
+              <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=600&q=80" alt="Vuelo Italia a Atenas" loading="lazy">
+              <span class="res-badge">2h 00m · CONEXIÓN AÉREA</span>
+            </div>
+            <div class="res-card-body">
+              <div class="res-title">Italia ➔ Atenas (Grecia)</div>
+              <div class="res-sub">Vuelo directo sin escalas (Aegean Airlines / Volotea / Ryanair).</div>
+              <div class="price-box">
+                <div class="price-row-item">
+                  <span class="price-label">Duración vuelo:</span>
+                  <span class="price-val">2 horas netas</span>
+                </div>
+                <div class="price-row-item">
+                  <span class="price-label">Equipaje:</span>
+                  <span class="price-val">Valijas de 20-23 kg despachadas</span>
+                </div>
+              </div>
+              <small style="color: #166534; font-weight: 600;">✓ Cruce rápido del Adriático; el metro de Atenas te conecta del aeropuerto al centro (Plaka) en 40 min.</small>
+            </div>
+          </div>
+
+          <!-- 4. Ferrys en Grecia -->
+          <div class="res-card">
+            <div class="res-card-img">
+              <img src="img/ferry-grecia.jpg" alt="Ferry Blue Star en el Egeo" loading="lazy">
+              <span class="res-badge">MAR EGEO · FERRYS</span>
+            </div>
+            <div class="res-card-body">
+              <div class="res-title">Atenas (Pireo) ↔ Islas Cícladas</div>
+              <div class="res-sub">Buques modernos Blue Star Ferries y catamaranes SeaJets.</div>
+              <div class="price-box">
+                <div class="price-row-item">
+                  <span class="price-label">Atenas ➔ Paros/Naxos:</span>
+                  <span class="price-val">3h 30m a 4h de navegación</span>
+                </div>
+                <div class="price-row-item">
+                  <span class="price-label">Naxos ➔ Santorini:</span>
+                  <span class="price-val">1h 45m de travesía</span>
+                </div>
+              </div>
+              <small style="color: #166534; font-weight: 600;">✓ Butacas numeradas tipo avión, cafetería a bordo y vistas increíbles del archipiélago.</small>
+            </div>
+          </div>
+
+          <!-- 5. Buses KTEL en Islas -->
+          <div class="res-card">
+            <div class="res-card-img">
+              <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=600&q=80" alt="Calles peatonales Santorini" loading="lazy">
+              <span class="res-badge">ISLAS · TRANSPORTE LOCAL</span>
+            </div>
+            <div class="res-card-body">
+              <div class="res-title">En las Islas: Paros, Naxos & Santorini</div>
+              <div class="res-sub">Red de colectivos KTEL con aire acondicionado y senderos peatonales.</div>
+              <div class="price-box">
+                <div class="price-row-item">
+                  <span class="price-label">Frecuencias:</span>
+                  <span class="price-val">Cada 30 a 45 minutos</span>
+                </div>
+                <div class="price-row-item">
+                  <span class="price-label">Tarifa por tramo:</span>
+                  <span class="price-val">€2,00 a €3,50 por viaje</span>
+                </div>
+              </div>
+              <small style="color: #166534; font-weight: 600;">✓ Conectan el puerto central con todas las playas y pueblos. Cero estrés de estacionamiento ni calles angostas.</small>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- TAB 7: PRESUPUESTO CONSOLIDADO -->
     <section id="presupuesto" class="tab-content">
       <div class="card">
-        <h2>💰 Presupuesto Estimado Consolidado (Por Pareja)</h2>
-        <p style="margin-bottom: 15px; color: var(--text-muted);">
-          Base confort estándar contemplando <strong>2 Habitaciones Dobles Separadas</strong> en hoteles 3★ superior / 4★ céntricos con desayuno, gastronomía de calidad, transporte y excursiones:
+        <h2>💰 Presupuesto Estimado Consolidado</h2>
+        <p style="margin-bottom: 18px; color: var(--text-muted);">
+          Diseño optimizado para celulares sin tablas apretadas. Base confort estándar con <strong>2 Habitaciones Dobles Separadas</strong> en hoteles 3★ sup / 4★ céntricos con desayuno, gastronomía mediterránea, vuelos, traslados y excursiones:
         </p>
 
-        <table>
-          <thead>
-            <tr>
-              <th>Rubro</th>
-              <th>Estimado x Pareja (USD)</th>
-              <th>Comentarios & Cobertura</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Vuelos Internacionales ITA Airways</strong></td>
-              <td><strong>USD 3.177</strong></td>
-              <td>Ya cotizados confirmados (Tarifa Economy Comfort, valija en bodega 23 kg c/u).</td>
-            </tr>
-            <tr>
-              <td><strong>Alojamiento: 2 Habitaciones Dobles (21 noches)</strong></td>
-              <td>USD 1.600 – USD 2.150</td>
-              <td>Habitación doble privada por pareja con baño privado y desayuno (Base €140-€190/noche).</td>
-            </tr>
-            <tr>
-              <td><strong>Transportes internos (Trenes + Vuelo + Ferrys)</strong></td>
-              <td>USD 450 – USD 650</td>
-              <td>Frecciarossa + Vuelo a Atenas + Ferrys entre islas con butacas reservadas.</td>
-            </tr>
-            <tr>
-              <td><strong>Entradas, Monumentos & Excursiones Civitatis</strong></td>
-              <td>USD 450 – USD 650</td>
-              <td>Coliseo, Vaticano, Acrópolis, Catamarán en Santorini y entradas de museos.</td>
-            </tr>
-            <tr>
-              <td><strong>Comidas y gastronomía (Almuerzos y cenas)</strong></td>
-              <td>USD 1.100 – USD 1.400</td>
-              <td>Almuerzos ligeros, helados/cafés y cenas con vino en trattorias y tabernas.</td>
-            </tr>
-            <tr>
-              <td><strong>Seguro médico & extras</strong></td>
-              <td>USD 200 – USD 300</td>
-              <td>Asistencia al viajero y tasas turísticas de ciudad (tasa de soggiorno).</td>
-            </tr>
-            <tr style="font-weight: 700; background: #f8fafc; font-size: 1.05rem;">
-              <td>TOTAL ESTIMADO POR PAREJA</td>
-              <td style="color: #1e3a8a;"><strong>USD 6.977 – USD 8.327</strong></td>
-              <td>Gasto global aproximado todo incluido para 21 días (con habitación doble privada).</td>
-            </tr>
-          </tbody>
-        </table>
+        <!-- STAT HERO WIDGETS -->
+        <div class="budget-hero">
+          <div class="budget-stat">
+            <div class="budget-stat-label">Total x Pareja</div>
+            <div class="budget-stat-val">USD 6.977 – 8.327</div>
+            <div class="budget-stat-sub">Todo incluido (21 noches)</div>
+          </div>
+          <div class="budget-stat">
+            <div class="budget-stat-label">Total 2 Parejas (4 Pax)</div>
+            <div class="budget-stat-val" style="color: #0369a1;">USD 13.950 – 16.650</div>
+            <div class="budget-stat-sub">Presupuesto global combinado</div>
+          </div>
+          <div class="budget-stat">
+            <div class="budget-stat-label">Duración & Alojamiento</div>
+            <div class="budget-stat-val" style="color: #15803d;">21 Noches</div>
+            <div class="budget-stat-sub">2 Habitaciones Dobles Privadas</div>
+          </div>
+        </div>
 
-        <div class="callout">
-          <strong>Resumen para las 2 Parejas (4 personas en total):</strong><br>
-          Presupuesto total combinado: <strong>USD 13.950 – USD 16.650</strong> (promedio de aprox. USD 7.600 por pareja con 2 habitaciones dobles independientes, vuelos, hoteles de buena categoría, catamarán y todas las atracciones cubiertas).
+        <!-- DETALLE POR RUBROS -->
+        <h3 style="color: var(--primary); font-size: 1.15rem; margin-top: 15px; margin-bottom: 12px;">📊 Desglose Detallado por Pareja</h3>
+        
+        <div class="budget-item-card">
+          <div class="budget-item-info">
+            <div class="budget-item-name">✈️ 1. Vuelos Internacionales ITA Airways</div>
+            <div class="budget-item-desc">EZE ➔ FCO (Directo) y ATH ➔ FCO (1h 50m) ➔ EZE. Tarifa Economy Comfort con 2 valijas en bodega de 23 kg y asientos elegidos.</div>
+          </div>
+          <div class="budget-item-amount">
+            <div class="budget-item-price">USD 3.177</div>
+            <span class="budget-item-unit">Total por pareja (Confirmado)</span>
+          </div>
+        </div>
+
+        <div class="budget-item-card">
+          <div class="budget-item-info">
+            <div class="budget-item-name">🏨 2. Alojamiento: Habitación Doble Privada (21 noches)</div>
+            <div class="budget-item-desc">Hoteles 3★ superior / 4★ céntricos con baño privado independiente y desayuno buffet diario incluido (Base €140 – €190/noche).</div>
+          </div>
+          <div class="budget-item-amount">
+            <div class="budget-item-price">USD 1.600 – 2.150</div>
+            <span class="budget-item-unit">Por pareja (21 noches)</span>
+          </div>
+        </div>
+
+        <div class="budget-item-card">
+          <div class="budget-item-info">
+            <div class="budget-item-name">🚆 3. Transportes Internos (Trenes + Vuelo + Ferrys)</div>
+            <div class="budget-item-desc">Trenes Frecciarossa alta velocidad (Roma-Florencia-Venecia) + Vuelo a Atenas con valija + Ferrys Blue Star/SeaJets con butacas reservadas.</div>
+          </div>
+          <div class="budget-item-amount">
+            <div class="budget-item-price">USD 450 – 650</div>
+            <span class="budget-item-unit">Por pareja</span>
+          </div>
+        </div>
+
+        <div class="budget-item-card">
+          <div class="budget-item-info">
+            <div class="budget-item-name">🎟️ 4. Entradas a Monumentos & Excursiones Civitatis</div>
+            <div class="budget-item-desc">Coliseo, Vaticano, Acrópolis de Atenas, Crucero en Catamarán al atardecer en Santorini con cena y barbacoa, entradas de museos.</div>
+          </div>
+          <div class="budget-item-amount">
+            <div class="budget-item-price">USD 450 – 650</div>
+            <span class="budget-item-unit">Por pareja</span>
+          </div>
+        </div>
+
+        <div class="budget-item-card">
+          <div class="budget-item-info">
+            <div class="budget-item-name">🍷 5. Gastronomía & Comidas (Almuerzos y Cenas)</div>
+            <div class="budget-item-desc">Almuerzos ligeros (paninis, souvlaki, ensaladas), helados/cafés y cenas completas con vino en trattorias italianas y tabernas griegas.</div>
+          </div>
+          <div class="budget-item-amount">
+            <div class="budget-item-price">USD 1.100 – 1.400</div>
+            <span class="budget-item-unit">Por pareja</span>
+          </div>
+        </div>
+
+        <div class="budget-item-card">
+          <div class="budget-item-info">
+            <div class="budget-item-name">🛡️ 6. Seguro Médico de Viaje & Tasas Turísticas</div>
+            <div class="budget-item-desc">Asistencia al viajero integral internacional con cobertura médica completa (€30.000+) y tasas de soggiorno de los municipios.</div>
+          </div>
+          <div class="budget-item-amount">
+            <div class="budget-item-price">USD 200 – 300</div>
+            <span class="budget-item-unit">Por pareja</span>
+          </div>
+        </div>
+
+        <div class="callout" style="margin-top: 20px;">
+          <strong>Resumen Global para las 2 Parejas (4 personas en total):</strong><br>
+          Gasto estimado promedio: <strong>USD 7.600 por pareja</strong> (USD 15.200 en total para los 4 pasajeros). El viaje queda completamente cubierto con vuelos internacionales, 2 habitaciones privadas independientes, traslados sin manejar autos, las mejores atracciones y navegación en catamarán.
         </div>
       </div>
     </section>
