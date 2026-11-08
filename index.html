@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Viaje Italia & Grecia 2027 | Planificación</title>
+  <title>Viaje Italia & Grecia 2027 | Planificación 2 Parejas</title>
   <style>
     :root {
       --primary: #1e3a8a;
-      --primary-light: #3b82f6;
+      --primary-light: #2563eb;
       --accent: #0284c7;
+      --accent-warm: #d97706;
+      --civitatis: #eb5757;
       --bg: #f8fafc;
       --card-bg: #ffffff;
       --text: #0f172a;
@@ -23,11 +25,11 @@
       background-color: var(--bg);
       color: var(--text);
       line-height: 1.6;
-      padding-bottom: 60px;
+      padding-bottom: 70px;
     }
 
     header {
-      background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 58, 138, 0.9) 100%), 
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 58, 138, 0.88) 100%), 
                   url('https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
       color: white;
       padding: 50px 20px 45px;
@@ -35,7 +37,7 @@
       position: relative;
     }
     header h1 { font-size: 2.2rem; margin-bottom: 10px; font-weight: 800; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
-    header p { color: #e2e8f0; font-size: 1.15rem; max-width: 650px; margin: 0 auto; text-shadow: 0 1px 3px rgba(0,0,0,0.3); }
+    header p { color: #e2e8f0; font-size: 1.15rem; max-width: 680px; margin: 0 auto; text-shadow: 0 1px 3px rgba(0,0,0,0.3); }
 
     .badge-bar {
       display: flex;
@@ -56,7 +58,7 @@
     }
 
     .container {
-      max-width: 1050px;
+      max-width: 1100px;
       margin: 30px auto;
       padding: 0 20px;
     }
@@ -73,8 +75,8 @@
     .tab-btn {
       background: none;
       border: none;
-      padding: 12px 18px;
-      font-size: 0.98rem;
+      padding: 12px 16px;
+      font-size: 0.96rem;
       font-weight: 600;
       color: var(--text-muted);
       cursor: pointer;
@@ -140,8 +142,8 @@
     table {
       width: 100%;
       border-collapse: collapse;
-      margin: 15px 0;
-      font-size: 0.95rem;
+      margin: 15px 0 20px;
+      font-size: 0.94rem;
     }
     th, td {
       padding: 12px 14px;
@@ -149,66 +151,91 @@
       border-bottom: 1px solid var(--border);
     }
     th { background: #f1f5f9; color: #334155; font-weight: 600; }
+    .price-col { font-weight: 700; color: #1e293b; white-space: nowrap; }
 
     /* Itinerary variants */
     .variant-card {
       border: 1px solid var(--border);
       border-left: 5px solid var(--primary-light);
-      margin-bottom: 24px;
+      margin-bottom: 28px;
       background: white;
-      padding: 22px;
-      border-radius: 10px;
+      padding: 24px;
+      border-radius: 12px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.03);
     }
-    .variant-title { font-size: 1.2rem; font-weight: 700; color: #1e293b; margin-bottom: 6px; }
-    .variant-summary { font-size: 0.92rem; color: var(--accent); font-weight: 600; margin-bottom: 14px; }
-    .timeline { list-style: none; padding-left: 5px; }
-    .timeline li {
-      position: relative;
-      padding-left: 22px;
-      margin-bottom: 9px;
-      font-size: 0.93rem;
-    }
-    .timeline li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: var(--primary-light);
-      font-size: 1.5rem;
-      line-height: 1;
-    }
-
-    /* Mini thumbnails strip for itinerary */
-    .itinerary-photos {
+    .variant-header {
       display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
       gap: 10px;
-      margin-top: 15px;
-      overflow-x: auto;
-      padding-bottom: 5px;
+      margin-bottom: 12px;
     }
-    .thumb-item {
-      flex: 0 0 130px;
-      text-align: center;
-    }
-    .thumb-item img {
-      width: 130px;
-      height: 85px;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.12);
-    }
-    .thumb-item span {
-      display: block;
-      font-size: 0.78rem;
+    .variant-title { font-size: 1.25rem; font-weight: 700; color: #1e293b; }
+    .variant-pill {
+      background: #e0f2fe;
+      color: #0369a1;
+      padding: 4px 12px;
+      border-radius: 14px;
+      font-size: 0.8rem;
       font-weight: 600;
-      color: #475569;
-      margin-top: 4px;
     }
+    .variant-summary { font-size: 0.95rem; color: var(--accent); font-weight: 600; margin-bottom: 18px; }
+
+    /* Attraction block inside itinerary */
+    .stop-block {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+    .stop-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .stop-city { font-size: 1.05rem; font-weight: 700; color: #1e3a8a; }
+    .stop-nights { font-size: 0.85rem; background: #e2e8f0; padding: 2px 8px; border-radius: 10px; color: #334155; font-weight: 600; }
+    
+    .attractions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .attr-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .attr-card img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+    }
+    .attr-card-body {
+      padding: 10px;
+      font-size: 0.86rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .attr-title { font-weight: 700; color: #0f172a; margin-bottom: 4px; }
+    .attr-detail { color: #64748b; font-size: 0.8rem; margin-bottom: 6px; }
+    .attr-price { font-size: 0.82rem; font-weight: 600; color: var(--accent-warm); }
 
     /* Destination Gallery Grid */
     .dest-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
       gap: 20px;
       margin-top: 15px;
     }
@@ -229,7 +256,7 @@
     .dest-img-wrap {
       position: relative;
       width: 100%;
-      height: 190px;
+      height: 195px;
       overflow: hidden;
     }
     .dest-img-wrap img {
@@ -293,13 +320,43 @@
       font-weight: 500;
     }
 
+    .badge-civitatis {
+      background: #fef2f2;
+      color: #b91c1c;
+      border: 1px solid #fecaca;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      display: inline-block;
+    }
+    .badge-oficial {
+      background: #f0fdf4;
+      color: #15803d;
+      border: 1px solid #bbf7d0;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      display: inline-block;
+    }
+
     .callout {
       background: #f0fdf4;
       border: 1px solid #bbf7d0;
-      border-radius: 8px;
+      border-radius: 10px;
       padding: 16px;
-      margin: 15px 0;
+      margin: 18px 0;
       color: #166534;
+      font-size: 0.95rem;
+    }
+    .callout-info {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 10px;
+      padding: 16px;
+      margin: 18px 0;
+      color: #1e40af;
       font-size: 0.95rem;
     }
   </style>
@@ -307,23 +364,24 @@
 <body>
 
   <header>
-    <h1>Viaje Matrimonios: Italia & Grecia</h1>
+    <h1>Viaje 2 Parejas: Italia & Grecia 2027</h1>
     <p>3 Semanas | 17 de Abril al 8 de Mayo de 2027</p>
     <div class="badge-bar">
-      <span class="badge">✈️ Multidestino ITA Airways</span>
-      <span class="badge">🚆 100% Transporte Público</span>
-      <span class="badge">🚫 Cero Manejo de Autos</span>
-      <span class="badge">📸 7 Destinos Clave</span>
+      <span class="badge">✈️ ITA Airways Multidestino</span>
+      <span class="badge">🚆 100% Sin Manejar Autos</span>
+      <span class="badge">👥 Plan para 2 Parejas (4 Pasajeros)</span>
+      <span class="badge">🎟️ Precios & Excursiones Civitatis</span>
     </div>
   </header>
 
   <div class="container">
     <nav class="tabs">
       <button class="tab-btn active" onclick="openTab('vuelos')">1. Vuelos Confirmados</button>
-      <button class="tab-btn" onclick="openTab('itinerarios')">2. Variantes de Itinerario</button>
-      <button class="tab-btn" onclick="openTab('destinos')">3. Fotos & Destinos</button>
-      <button class="tab-btn" onclick="openTab('logistica')">4. Logística & Sin Auto</button>
-      <button class="tab-btn" onclick="openTab('presupuesto')">5. Presupuesto & Pago</button>
+      <button class="tab-btn" onclick="openTab('itinerarios')">2. Itinerarios & Atracciones</button>
+      <button class="tab-btn" onclick="openTab('precios-atracciones')">3. Entradas, Ferrys & Civitatis</button>
+      <button class="tab-btn" onclick="openTab('destinos')">4. Fotos de Destinos</button>
+      <button class="tab-btn" onclick="openTab('logistica')">5. Logística & Movilidad</button>
+      <button class="tab-btn" onclick="openTab('presupuesto')">6. Presupuesto Consolidado</button>
     </nav>
 
     <!-- TAB 1: VUELOS -->
@@ -331,7 +389,7 @@
       <div class="card">
         <h2>✈️ Vuelos Seleccionados (ITA Airways)</h2>
         <p style="margin-bottom: 15px; color: var(--text-muted);">
-          Ruta multidestino óptima: salimos sin pedir días hábiles extras y volvemos con escala mínima de 1h 50m.
+          Ruta multidestino óptima: salimos viernes de noche sin perder días de oficina y volvemos de Atenas con escala quirúrgica de 1h 50m en Roma protegida por la misma aerolínea.
         </p>
 
         <div class="flight-box">
@@ -339,8 +397,8 @@
             <span class="flight-endpoint">EZE → Roma (FCO)</span>
             <span class="flight-meta"><strong>Sábado 17 de Abril, 2027</strong></span>
           </div>
-          <p class="flight-meta">Salida: <strong>00:50 AM</strong> | Llegada: <strong>18:40 PM</strong> (Directo, 12h 45m)</p>
-          <small style="color: #64748b;">Trabajamos viernes normal, vamos a Ezeiza de noche y llegamos a Roma a dormir y arrancar frescos el domingo.</small>
+          <p class="flight-meta">Salida: <strong>00:50 AM</strong> | Llegada: <strong>18:40 PM</strong> (Vuelo directo, 12h 45m)</p>
+          <small style="color: #64748b;">Trabajamos viernes normal, vamos a Ezeiza de noche y llegamos a Roma a dormir y arrancar frescos el domingo por la mañana.</small>
         </div>
 
         <div class="flight-box">
@@ -349,148 +407,469 @@
             <span class="flight-meta"><strong>Sábado 8 de Mayo, 2027</strong></span>
           </div>
           <p class="flight-meta">Salida ATH: <strong>19:30 PM</strong> | Escala Roma: <strong>1h 50m</strong> | Llegada EZE: <strong>07:30 AM (+1)</strong></p>
-          <small style="color: #64748b;">Aprovechamos el sábado completo en Atenas. Escala quirúrgica protegida por ITA.</small>
+          <small style="color: #64748b;">Aprovechamos el sábado completo en Atenas. Escala garantizada por ITA Airways con valijas despachadas a destino final.</small>
         </div>
 
         <div class="callout">
-          <strong>Tarifa total para los 4 pasajeros:</strong> USD 6.354,00 (Tarifa Economy Comfort con valijas despachadas y asientos).<br>
-          <strong>Costo por matrimonio:</strong> <strong>USD 3.177,00</strong>.
+          <strong>Tarifa total para las 2 parejas (4 pasajeros):</strong> USD 6.354,00 (Tarifa Economy Comfort con valijas despachadas de 23 kg y asientos reservados).<br>
+          <strong>Costo por pareja:</strong> <strong>USD 3.177,00</strong>.
         </div>
       </div>
     </section>
 
-    <!-- TAB 2: ITINERARIOS -->
+    <!-- TAB 2: ITINERARIOS CON ATRACCIONES Y FOTOS -->
     <section id="itinerarios" class="tab-content">
       <div class="card">
-        <h2>🗺️ Tres Opciones para Definir entre los Cuatro</h2>
+        <h2>🗺️ Las 3 Opciones con Qué Ver en Cada Lugar</h2>
         <p style="margin-bottom: 20px; color: var(--text-muted);">
-          Tenemos 21 noches netas. La decisión pasa por si preferimos sumar Nápoles/Pompeya, hacer el circuito clásico renacentista o maximizar el relax de mar en las Cícladas.
+          21 noches netas en Europa. A continuación el detalle de qué atracciones ver en cada ciudad/isla, con fotos de referencia y estimación de entradas:
         </p>
 
-        <!-- Opción A -->
+        <!-- OPCIÓN A -->
         <div class="variant-card">
-          <div class="variant-title">Opción A: La Clásica Equilibrada (Recomendada)</div>
-          <div class="variant-summary">11 noches Italia / 10 noches Grecia | Ritmo: Medio-Cultural</div>
-          <ul class="timeline">
-            <li><strong>17 al 21 abr (4n):</strong> Roma (Coliseo, Vaticano, centro histórico).</li>
-            <li><strong>21 al 24 abr (3n):</strong> Florencia (Uffizi, Academia, escapada en tren a Siena/Lucca).</li>
-            <li><strong>24 al 27 abr (3n):</strong> Venecia (San Marcos, canales, islas).</li>
-            <li><strong>27 al 30 abr (3n):</strong> Vuelo directo a Atenas (Acrópolis, Plaka).</li>
-            <li><strong>30 abr al 4 may (4n):</strong> Ferry a Naxos o Paros (Pascua Ortodoxa el domingo 2 de mayo).</li>
-            <li><strong>4 al 7 may (3n):</strong> Ferry a Santorini (caldera, pueblos blancos).</li>
-            <li><strong>7 al 8 may (1n):</strong> Vuelo a Atenas, última noche y regreso.</li>
-          </ul>
+          <div class="variant-header">
+            <div class="variant-title">Opción A: La Clásica Equilibrada (Recomendada)</div>
+            <span class="variant-pill">11n Italia + 10n Grecia</span>
+          </div>
+          <div class="variant-summary">Roma (4n) ➔ Florencia (3n) ➔ Venecia (3n) ➔ Atenas (3n) ➔ Paros/Naxos (4n) ➔ Santorini (3n) ➔ Regreso</div>
 
-          <div class="itinerary-photos">
-            <div class="thumb-item">
-              <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=300&q=80" alt="Roma" loading="lazy">
-              <span>Roma (4n)</span>
+          <!-- Parada: Roma -->
+          <div class="stop-block">
+            <div class="stop-header">
+              <span class="stop-city">🏛️ 1. Roma (4 noches | 17 - 21 Abril)</span>
+              <span class="stop-nights">Base hotel en Roma centro</span>
             </div>
-            <div class="thumb-item">
-              <img src="https://images.unsplash.com/photo-1543429776-2782fc8e1acd?auto=format&fit=crop&w=300&q=80" alt="Florencia" loading="lazy">
-              <span>Florencia (3n)</span>
+            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
+              Caminatas por el centro imperial, fuentes barrocas y gastronomía en Trastevere.
+            </p>
+            <div class="attractions-grid">
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=400&q=80" alt="Coliseo y Foro Romano" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Coliseo, Foro y Palatino</div>
+                  <div class="attr-detail">El corazón de la Roma imperial con vistas panorámicas.</div>
+                  <div class="attr-price">Oficial: €18 | Civitatis con guía: €45</div>
+                </div>
+              </div>
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1541370976299-4d24ebbc9077?auto=format&fit=crop&w=400&q=80" alt="Vaticano y Capilla Sixtina" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Vaticano & Capilla Sixtina</div>
+                  <div class="attr-detail">Museos, frescos de Miguel Ángel y Basílica San Pedro.</div>
+                  <div class="attr-price">Oficial: €25 | Civitatis sin cola: €55</div>
+                </div>
+              </div>
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1525874684015-58379d421a52?auto=format&fit=crop&w=400&q=80" alt="Fontana di Trevi y Panteón" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Trevi, Panteón & Trastevere</div>
+                  <div class="attr-detail">Panteón de Agripa (€5), Fontana di Trevi y cena nocturna.</div>
+                  <div class="attr-price">Acceso libre / Panteón €5</div>
+                </div>
+              </div>
             </div>
-            <div class="thumb-item">
-              <img src="https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=300&q=80" alt="Venecia" loading="lazy">
-              <span>Venecia (3n)</span>
+          </div>
+
+          <!-- Parada: Florencia -->
+          <div class="stop-block">
+            <div class="stop-header">
+              <span class="stop-city">🎨 2. Florencia (3 noches | 21 - 24 Abril)</span>
+              <span class="stop-nights">Llegada en Frecciarossa (1h 35m)</span>
             </div>
-            <div class="thumb-item">
-              <img src="https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?auto=format&fit=crop&w=300&q=80" alt="Atenas" loading="lazy">
-              <span>Atenas (3n)</span>
+            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
+              Arte del Renacimiento, vinos de Chianti y escapada opcional en tren a Siena.
+            </p>
+            <div class="attractions-grid">
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1543429776-2782fc8e1acd?auto=format&fit=crop&w=400&q=80" alt="Duomo de Florencia" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Duomo Santa Maria del Fiore</div>
+                  <div class="attr-detail">La cúpula de Brunelleschi, Baptisterio y Piazza del Duomo.</div>
+                  <div class="attr-price">Catedral gratis | Cúpula pase: €30</div>
+                </div>
+              </div>
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=400&q=80" alt="Galería Uffizi y Ponte Vecchio" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Galería Uffizi & David</div>
+                  <div class="attr-detail">Botticelli, Da Vinci y el David en la Academia.</div>
+                  <div class="attr-price">Uffizi: €25 | Academia: €16</div>
+                </div>
+              </div>
             </div>
-            <div class="thumb-item">
-              <img src="https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?auto=format&fit=crop&w=300&q=80" alt="Paros / Naxos" loading="lazy">
-              <span>Naxos/Paros (4n)</span>
+          </div>
+
+          <!-- Parada: Venecia -->
+          <div class="stop-block">
+            <div class="stop-header">
+              <span class="stop-city">🛶 3. Venecia (3 noches | 24 - 27 Abril)</span>
+              <span class="stop-nights">Llegada en Frecciarossa (2h 15m)</span>
             </div>
-            <div class="thumb-item">
-              <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=300&q=80" alt="Santorini" loading="lazy">
-              <span>Santorini (3n)</span>
+            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
+              Canales, palacios sobre el agua y la mágica laguna veneciana.
+            </p>
+            <div class="attractions-grid">
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=400&q=80" alt="Plaza San Marcos y Gran Canal" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">San Marcos & Palacio Ducal</div>
+                  <div class="attr-detail">Plaza San Marcos, mosaicos dorados y Puente de los Suspiros.</div>
+                  <div class="attr-price">Basílica: €3 | Palacio Ducal: €30</div>
+                </div>
+              </div>
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?auto=format&fit=crop&w=400&q=80" alt="Góndola y Murano" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Paseo en Góndola & Islas</div>
+                  <div class="attr-detail">Góndola en canales interiores y escapada a Murano/Burano.</div>
+                  <div class="attr-price">Góndola 4 pax: €90 | Murano tour: €25</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Parada: Atenas -->
+          <div class="stop-block">
+            <div class="stop-header">
+              <span class="stop-city">🏛️ 4. Atenas (3 noches | 27 - 30 Abril)</span>
+              <span class="stop-nights">Vuelo Venecia/Roma ➔ Atenas (2h 10m)</span>
+            </div>
+            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
+              La cuna de la civilización occidental, tabernas griegas con buzuki en Plaka.
+            </p>
+            <div class="attractions-grid">
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?auto=format&fit=crop&w=400&q=80" alt="Acrópolis y Partenón" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Acrópolis & Partenón</div>
+                  <div class="attr-detail">Templo de Atenea Niké, Erecteion con las Cariátides.</div>
+                  <div class="attr-price">Oficial: €20 | Civitatis guiado: €48</div>
+                </div>
+              </div>
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1598971861713-54ad16a7e72e?auto=format&fit=crop&w=400&q=80" alt="Museo Acrópolis y Plaka" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Museo Acrópolis & Plaka</div>
+                  <div class="attr-detail">Piezas originales del Partenón y cena en el pintoresco Anafiotika.</div>
+                  <div class="attr-price">Museo: €15 | Tour combinado: €62</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Parada: Naxos / Paros -->
+          <div class="stop-block">
+            <div class="stop-header">
+              <span class="stop-city">🌊 5. Isla Paros o Naxos (4 noches | 30 Abr - 4 Mayo)</span>
+              <span class="stop-nights">Ferry rápido Blue Star / SeaJets (3h 30m)</span>
+            </div>
+            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
+              Pascua Ortodoxa griega (2 de mayo), pueblos blancos, playas y cero masificación.
+            </p>
+            <div class="attractions-grid">
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?auto=format&fit=crop&w=400&q=80" alt="Portara y Calles de Naxos" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Portara & Castro de Naxos</div>
+                  <div class="attr-detail">La mítica puerta del Templo de Apolo mirando al mar.</div>
+                  <div class="attr-price">Entrada libre | Puesta del sol mágica</div>
+                </div>
+              </div>
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=400&q=80" alt="Crucero velero calas Naxos" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Excursión en Velero / Koufonisia</div>
+                  <div class="attr-detail">Crucero de día completo con almuerzo, vino y snorkel.</div>
+                  <div class="attr-price">Civitatis / Local: €80 - €100 / persona</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Parada: Santorini -->
+          <div class="stop-block">
+            <div class="stop-header">
+              <span class="stop-city">🌅 6. Santorini (3 noches | 4 - 7 Mayo)</span>
+              <span class="stop-nights">Ferry inter-islas (1h 45m)</span>
+            </div>
+            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
+              Los acantilados volcánicos más famosos del mundo, Oia, Imerovigli y catamarán al atardecer.
+            </p>
+            <div class="attractions-grid">
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=400&q=80" alt="Oia Santorini" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Oia & Sendero de la Caldera</div>
+                  <div class="attr-detail">Cúpulas azules, molinos y la caminata escénica Fira ➔ Oia.</div>
+                  <div class="attr-price">Paseo libre | Bodega Santo Wines: €45</div>
+                </div>
+              </div>
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80" alt="Catamarán Santorini Civitatis" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Catamarán Sunset por Caldera</div>
+                  <div class="attr-detail">Aguas termales del volcán, barbacoa a bordo y atardecer.</div>
+                  <div class="attr-price">Civitatis: €120 - €135 / persona</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Opción B -->
+        <!-- OPCIÓN B -->
         <div class="variant-card">
-          <div class="variant-title">Opción B: Foco Centro-Sur & Pompeya</div>
-          <div class="variant-summary">12 noches Italia / 9 noches Grecia | Enfoque: Ruinas romanas y pizza napolitana</div>
-          <ul class="timeline">
-            <li><strong>17 al 21 abr (4n):</strong> Roma.</li>
-            <li><strong>21 al 24 abr (3n):</strong> Florencia.</li>
-            <li><strong>24 al 28 abr (4n):</strong> Nápoles (centro histórico, 1 día completo a Pompeya en tren, posible Capri).</li>
-            <li><strong>28 abr:</strong> Vuelo directo Nápoles → Atenas.</li>
-            <li><strong>28 abr al 1 may (3n):</strong> Atenas.</li>
-            <li><strong>1 al 7 may (6n):</strong> Dos islas Cícladas (ej. Paros + Santorini).</li>
-            <li><strong>8 may:</strong> Vuelo isla → Atenas y regreso a Buenos Aires.</li>
-          </ul>
-
-          <div class="itinerary-photos">
-            <div class="thumb-item">
-              <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=300&q=80" alt="Roma" loading="lazy">
-              <span>Roma (4n)</span>
+          <div class="variant-header">
+            <div class="variant-title">Opción B: Foco Centro-Sur & Pompeya</div>
+            <span class="variant-pill">12n Italia + 9n Grecia</span>
+          </div>
+          <div class="variant-summary">Roma (4n) ➔ Florencia (3n) ➔ Nápoles & Pompeya (4n) ➔ Vuelo Nápoles-Atenas (3n) ➔ 2 Islas Cícladas (6n)</div>
+          
+          <div class="stop-block">
+            <div class="stop-header">
+              <span class="stop-city">🌋 Destacado especial: Parque de Pompeya & Nápoles</span>
+              <span class="stop-nights">4 noches base en Nápoles</span>
             </div>
-            <div class="thumb-item">
-              <img src="https://images.unsplash.com/photo-1543429776-2782fc8e1acd?auto=format&fit=crop&w=300&q=80" alt="Florencia" loading="lazy">
-              <span>Florencia (3n)</span>
-            </div>
-            <div class="thumb-item">
-              <img src="https://images.unsplash.com/photo-1555992828-ca4dbe41d294?auto=format&fit=crop&w=300&q=80" alt="Nápoles y Pompeya" loading="lazy">
-              <span>Nápoles/Pompeya (4n)</span>
-            </div>
-            <div class="thumb-item">
-              <img src="https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?auto=format&fit=crop&w=300&q=80" alt="Atenas" loading="lazy">
-              <span>Atenas (3n)</span>
-            </div>
-            <div class="thumb-item">
-              <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=300&q=80" alt="Cícladas" loading="lazy">
-              <span>Cícladas (6n)</span>
+            <div class="attractions-grid">
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1555992828-ca4dbe41d294?auto=format&fit=crop&w=400&q=80" alt="Pompeya" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Ruinas Arqueológicas de Pompeya</div>
+                  <div class="attr-detail">Ciudad romana congelada en el tiempo bajo cenizas del Vesubio.</div>
+                  <div class="attr-price">Oficial: €18 | Civitatis guiado: €55</div>
+                </div>
+              </div>
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=400&q=80" alt="Nápoles Spaccanapoli" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Spaccanapoli & Pizza Auténtica</div>
+                  <div class="attr-detail">Pizzería Da Michele, Cristo Velado y paseo costero a Castel dell'Ovo.</div>
+                  <div class="attr-price">Cristo Velado: €10 | Pizza: €8-€12</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Opción C -->
+        <!-- OPCIÓN C -->
         <div class="variant-card">
-          <div class="variant-title">Opción C: Relax Cícladas & Menos Hoteles</div>
-          <div class="variant-summary">8 noches Italia / 13 noches Grecia | Ritmo: Desconexión y mar</div>
-          <ul class="timeline">
-            <li><strong>17 al 21 abr (4n):</strong> Roma.</li>
-            <li><strong>21 al 25 abr (4n):</strong> Florencia o Venecia (una sola para no cambiar tanto de base).</li>
-            <li><strong>25 al 28 abr (3n):</strong> Atenas.</li>
-            <li><strong>28 abr al 7 may (9n):</strong> Tres islas en ferrys cortos (Paros 3n + Naxos 3n + Santorini 3n).</li>
-            <li><strong>8 may:</strong> Conexión a Atenas y regreso a Buenos Aires.</li>
-          </ul>
-
-          <div class="itinerary-photos">
-            <div class="thumb-item">
-              <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=300&q=80" alt="Roma" loading="lazy">
-              <span>Roma (4n)</span>
-            </div>
-            <div class="thumb-item">
-              <img src="https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=300&q=80" alt="Venecia o Florencia" loading="lazy">
-              <span>Florencia/Venecia (4n)</span>
-            </div>
-            <div class="thumb-item">
-              <img src="https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?auto=format&fit=crop&w=300&q=80" alt="Atenas" loading="lazy">
-              <span>Atenas (3n)</span>
-            </div>
-            <div class="thumb-item">
-              <img src="https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?auto=format&fit=crop&w=300&q=80" alt="Paros & Naxos" loading="lazy">
-              <span>Paros & Naxos (6n)</span>
-            </div>
-            <div class="thumb-item">
-              <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=300&q=80" alt="Santorini" loading="lazy">
-              <span>Santorini (3n)</span>
-            </div>
+          <div class="variant-header">
+            <div class="variant-title">Opción C: Relax Cícladas & Menos Hoteles</div>
+            <span class="variant-pill">8n Italia + 13n Grecia</span>
           </div>
+          <div class="variant-summary">Roma (4n) ➔ Florencia o Venecia (4n) ➔ Atenas (3n) ➔ Paros (3n) + Naxos (3n) + Santorini (3n)</div>
+          <p style="font-size: 0.92rem; color: #475569;">
+            Ideal si las 2 parejas priorizan descansar junto al mar Egeo, hacer playa, degustar comida mediterránea en tabernas familiares y evitar cambiar de hotel cada 2 noches en Italia.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- TAB 3: FOTOS & DESTINOS -->
+    <!-- TAB 3: PRECIOS ENTRADAS, FERRYS & CIVITATIS -->
+    <section id="precios-atracciones" class="tab-content">
+      <div class="card">
+        <h2>🎟️ Tabla de Entradas, Pasajes y Excursiones</h2>
+        <p style="margin-bottom: 15px; color: var(--text-muted);">
+          Precios actualizados de referencia para tener presupuestado cada rubro (por persona y por pareja). Incluye comparación entre comprar ticket oficial o contratar con Civitatis (guiado y sin filas).
+        </p>
+
+        <!-- 1. ENTRADAS A ATRACCIONES -->
+        <h3 style="color: var(--primary); font-size: 1.15rem; margin-top: 20px; margin-bottom: 10px;">🏛️ 1. Entradas a Monumentos Clave</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Atracción</th>
+              <th>Destino</th>
+              <th>Ticket Oficial</th>
+              <th>Civitatis (Tour Guiado / Sin Cola)</th>
+              <th>Recomendación</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Coliseo, Foro Romano y Palatino</strong></td>
+              <td>Roma 🇮🇹</td>
+              <td>€18,00 (básico) / €24 (arena)</td>
+              <td>€45,00 – €55,00</td>
+              <td><span class="badge-oficial">Comprar oficial</span> 30 días antes con horario fijo.</td>
+            </tr>
+            <tr>
+              <td><strong>Museos Vaticanos y Capilla Sixtina</strong></td>
+              <td>Roma 🇮🇹</td>
+              <td>€20,00 + €5 reserva online</td>
+              <td>€55,00 – €65,00</td>
+              <td><span class="badge-civitatis">Civitatis</span> si se agotan oficiales (vuelan).</td>
+            </tr>
+            <tr>
+              <td><strong>Panteón de Agripa</strong></td>
+              <td>Roma 🇮🇹</td>
+              <td>€5,00</td>
+              <td>€15,00 (con audioguía)</td>
+              <td><span class="badge-oficial">Oficial</span> en la web del ministerio.</td>
+            </tr>
+            <tr>
+              <td><strong>Galería Uffizi</strong></td>
+              <td>Florencia 🇮🇹</td>
+              <td>€25,00 (+€4 reserva)</td>
+              <td>€50,00 – €60,00</td>
+              <td><span class="badge-oficial">Oficial</span> reservar turno matutino.</td>
+            </tr>
+            <tr>
+              <td><strong>Cúpula del Duomo de Brunelleschi</strong></td>
+              <td>Florencia 🇮🇹</td>
+              <td>€30,00 (Brunelleschi Pass)</td>
+              <td>€45,00 – €55,00</td>
+              <td><span class="badge-oficial">Oficial</span> subida de 463 escalones imperdible.</td>
+            </tr>
+            <tr>
+              <td><strong>Parque Arqueológico de Pompeya</strong></td>
+              <td>Nápoles 🇮🇹</td>
+              <td>€18,00 (+€2 reserva)</td>
+              <td>€50,00 – €65,00 (con arqueólogo)</td>
+              <td><span class="badge-civitatis">Civitatis</span> suma mucho por la inmensidad.</td>
+            </tr>
+            <tr>
+              <td><strong>Acrópolis de Atenas</strong></td>
+              <td>Atenas 🇬🇷</td>
+              <td>€20,00 (o Pase 7 sitios €30)</td>
+              <td>€48,00 – €58,00 (con guía en español)</td>
+              <td><span class="badge-civitatis">Civitatis</span> muy recomendada para entender ruinas.</td>
+            </tr>
+            <tr>
+              <td><strong>Museo de la Acrópolis</strong></td>
+              <td>Atenas 🇬🇷</td>
+              <td>€15,00</td>
+              <td>Combinado con Acrópolis: ~€62</td>
+              <td><span class="badge-oficial">Oficial</span> o combinado.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- 2. PASAJES DE TRANSPORTE INTERNO -->
+        <h3 style="color: var(--primary); font-size: 1.15rem; margin-top: 25px; margin-bottom: 10px;">🚆 2. Pasajes de Trenes, Vuelos Internos y Ferrys</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Tramo</th>
+              <th>Operador</th>
+              <th>Estimado x Persona</th>
+              <th>Estimado x Pareja</th>
+              <th>Detalles</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Roma ➔ Florencia</strong> (Alta Velocidad)</td>
+              <td>Frecciarossa / Italo</td>
+              <td>€25 – €40</td>
+              <td>€50 – €80</td>
+              <td>1h 35m. Centro a centro. Comprar 3 meses antes.</td>
+            </tr>
+            <tr>
+              <td><strong>Florencia ➔ Venecia</strong> (Alta Velocidad)</td>
+              <td>Frecciarossa / Italo</td>
+              <td>€30 – €45</td>
+              <td>€60 – €90</td>
+              <td>2h 15m. Llega directo a estación Santa Lucia.</td>
+            </tr>
+            <tr>
+              <td><strong>Roma ➔ Nápoles</strong> (Opción B)</td>
+              <td>Frecciarossa</td>
+              <td>€20 – €35</td>
+              <td>€40 – €70</td>
+              <td>1h 10m. Frecuencias cada 20 minutos.</td>
+            </tr>
+            <tr>
+              <td><strong>Italia ➔ Atenas</strong> (Vuelo interno)</td>
+              <td>Aegean / Volotea / Ryanair</td>
+              <td>€80 – €130</td>
+              <td>€160 – €260</td>
+              <td>2h netas de vuelo. Incluye valija despachada 20kg.</td>
+            </tr>
+            <tr>
+              <td><strong>Atenas (Pireo) ➔ Paros / Naxos</strong></td>
+              <td>Blue Star Ferries / SeaJets</td>
+              <td>€45 – €75</td>
+              <td>€90 – €150</td>
+              <td>Blue Star 4h (€45-55) / Seajets rápido 3h (€75).</td>
+            </tr>
+            <tr>
+              <td><strong>Naxos / Paros ➔ Santorini</strong></td>
+              <td>SeaJets / Blue Star</td>
+              <td>€35 – €55</td>
+              <td>€70 – €110</td>
+              <td>1h 45m de travesía entre islas. Butacas numeradas.</td>
+            </tr>
+            <tr>
+              <td><strong>Santorini ➔ Atenas</strong></td>
+              <td>Vuelo Sky Express/Olympic o Ferry</td>
+              <td>€60 – €95</td>
+              <td>€120 – €190</td>
+              <td>Vuelo 45 min o Ferry rápido 4h 30m.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- 3. EXCURSIONES CIVITATIS EN GRECIA -->
+        <h3 style="color: var(--primary); font-size: 1.15rem; margin-top: 25px; margin-bottom: 10px;">🇬🇷 3. Excursiones de Referencia en Grecia (Civitatis)</h3>
+        <p style="font-size: 0.9rem; color: #475569; margin-bottom: 12px;">
+          En Grecia contratar excursiones organizadas es ideal para resolver traslados marítimos, guías en español y paseos de día completo:
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Excursión / Actividad</th>
+              <th>Ubicación</th>
+              <th>Precio Civitatis x Persona</th>
+              <th>Qué Incluye & Por Qué Vale la Pena</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Crucero en Catamarán al Atardecer por la Caldera</strong></td>
+              <td>Santorini 🇬🇷</td>
+              <td><strong>€115 – €135</strong></td>
+              <td>⭐ <em>La actividad #1 del viaje:</em> Navegación por el volcán, parada en fuentes termales, Red Beach, cena barbacoa a bordo con vino blanco griego y atardecer de Oia desde el agua.</td>
+            </tr>
+            <tr>
+              <td><strong>Visita Guiada Acrópolis + Museo de la Acrópolis</strong></td>
+              <td>Atenas 🇬🇷</td>
+              <td><strong>€58 – €65</strong></td>
+              <td>Guía oficial de habla hispana, entrada preferente sin colas para evitar las 2 horas de fila bajo el sol y explicación profunda del Partenón.</td>
+            </tr>
+            <tr>
+              <td><strong>Crucero en Velero de Día Completo por Koufonisia / Calas</strong></td>
+              <td>Naxos / Paros 🇬🇷</td>
+              <td><strong>€85 – €105</strong></td>
+              <td>Paseo en barco tradicional de madera a islas vírgenes con aguas cristalinas turquesas, almuerzo casero y equipo de snorkel.</td>
+            </tr>
+            <tr>
+              <td><strong>Tour Gastronómico Nocturno por Plaka y Psiri</strong></td>
+              <td>Atenas 🇬🇷</td>
+              <td><strong>€55 – €70</strong></td>
+              <td>Recorrido a pie con degustación de souvlaki, quesos feta, aceite de oliva, licores (ouzo/raki) y cena en taberna típica.</td>
+            </tr>
+            <tr>
+              <td><strong>Excursión de 1 Día a Delfos con Guía en Español</strong></td>
+              <td>Atenas (Día libre) 🇬🇷</td>
+              <td><strong>€85 – €95</strong></td>
+              <td>Opcional si sobra tiempo en Atenas: Bus ida y vuelta, entrada al oráculo místico de Delfos y almuerzo tradicional griego en montaña.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="callout-info">
+          💡 <strong>Tip de Ahorro para las 2 parejas:</strong><br>
+          En Italia conviene comprar las entradas de monumentos en sus <strong>webs oficiales con 30 a 60 días de anticipación</strong> (ahorran hasta 50% frente a tours con reventa). En Grecia, la única excursión imprescindible que conviene contratar sí o sí con Civitatis es el <strong>catamarán en Santorini</strong> y el <strong>tour con arqueólogo de la Acrópolis</strong>.
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: FOTOS DE DESTINOS -->
     <section id="destinos" class="tab-content">
       <div class="card">
         <h2>📸 Galería de Destinos a Visitar</h2>
         <p style="margin-bottom: 20px; color: var(--text-muted);">
-          Postales y referencias de cada ciudad e isla para visualizar el viaje antes de decidir el itinerario definitivo:
+          Postales y referencias de cada ciudad e isla para visualizar el viaje entre las 2 parejas:
         </p>
 
         <div class="dest-grid">
@@ -623,98 +1002,111 @@
       </div>
     </section>
 
-    <!-- TAB 4: LOGÍSTICA -->
+    <!-- TAB 5: LOGÍSTICA & MOVILIDAD -->
     <section id="logistica" class="tab-content">
       <div class="card">
-        <h2>🚶‍♂️ Cero Manejo: Cómo Nos Movemos</h2>
+        <h2>🚶‍♂️ Cero Manejo: Cómo Nos Movemos sin Alquilar Auto</h2>
+        <p style="margin-bottom: 15px; color: var(--text-muted);">
+          El itinerario está diseñado 100% para evitar el estrés del tránsito, las multas por zonas ZTL de Italia, el estacionamiento imposible y el gasto de combustible:
+        </p>
         <table>
           <thead>
             <tr>
               <th>Tramo</th>
               <th>Medio de Transporte</th>
-              <th>Detalles</th>
+              <th>Detalles & Confort</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td><strong>Roma ↔ Florencia ↔ Venecia</strong></td>
               <td>Tren Frecciarossa / Italo</td>
-              <td>Alta velocidad (1h 35m a 2h 15m). De centro a centro, sin aeropuertos.</td>
+              <td>Alta velocidad (1h 35m a 2h 15m). De centro a centro, con wifi, café y espacio para valijas.</td>
             </tr>
             <tr>
               <td><strong>Nápoles / Pompeya</strong></td>
-              <td>Tren de alta velocidad + Tren local</td>
-              <td>Frecciarossa a Nápoles (1h 10m). Tren local a Pompeya (30 min hasta la puerta).</td>
+              <td>Frecciarossa + Tren Circumvesuviana/Metropolitano</td>
+              <td>Frecciarossa a Nápoles (1h 10m). Tren local a Pompeya (30 min que te deja en la puerta de la boletería).</td>
             </tr>
             <tr>
               <td><strong>Italia → Grecia</strong></td>
               <td>Vuelo directo (Aegean / low-cost)</td>
-              <td>2 horas netas de vuelo. Con valijas despachadas.</td>
+              <td>2 horas netas de vuelo. Con valijas despachadas incluidas para las 2 parejas.</td>
             </tr>
             <tr>
               <td><strong>Atenas ↔ Islas</strong></td>
               <td>Ferrys rápidos (Blue Star / SeaJets)</td>
-              <td>Catamaranes con butacas numeradas. Salida desde El Pireo.</td>
+              <td>Catamaranes con butacas numeradas reclinables. Salida desde el puerto de El Pireo (conectado por metro).</td>
             </tr>
             <tr>
               <td><strong>En las islas (Naxos / Santorini)</strong></td>
               <td>Red de colectivos KTEL y caminatas</td>
-              <td>Puntuales, €2 a €3 el tramo. Evita el estrés de calles angostas y estacionamiento.</td>
+              <td>Puntuales, con aire acondicionado, salen desde el puerto central hacia cada playa y pueblo (€2 a €3 el tramo).</td>
             </tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <!-- TAB 5: PRESUPUESTO -->
+    <!-- TAB 6: PRESUPUESTO CONSOLIDADO -->
     <section id="presupuesto" class="tab-content">
       <div class="card">
-        <h2>💰 Presupuesto Estimado (Por Matrimonio)</h2>
+        <h2>💰 Presupuesto Estimado Consolidado (Por Pareja)</h2>
         <p style="margin-bottom: 15px; color: var(--text-muted);">
-          Base confort estándar (Hoteles 3★ superior / 4★ céntricos, buena gastronomía, entradas y transportes).
+          Base confort estándar (Hoteles 3★ superior / 4★ céntricos, buena gastronomía mediterránea con vino, pasajes y excursiones clave):
         </p>
 
         <table>
           <thead>
             <tr>
               <th>Rubro</th>
-              <th>Estimado (USD)</th>
-              <th>Comentarios</th>
+              <th>Estimado x Pareja (USD)</th>
+              <th>Comentarios & Cobertura</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>Vuelos Internacionales ITA</strong></td>
+              <td><strong>Vuelos Internacionales ITA Airways</strong></td>
               <td><strong>USD 3.177</strong></td>
-              <td>Ya cotizados (Economy Comfort, valija bodega 23 kg).</td>
+              <td>Ya cotizados confirmados (Tarifa Economy Comfort, valija en bodega 23 kg c/u).</td>
             </tr>
             <tr>
-              <td><strong>Hoteles (21 noches)</strong></td>
-              <td>USD 1.400 – USD 1.800</td>
-              <td>Base USD 130-170/noche con desayuno incluido.</td>
+              <td><strong>Hoteles (21 noches / habitación doble)</strong></td>
+              <td>USD 1.500 – USD 1.900</td>
+              <td>Base USD 140-180/noche con desayuno incluido y ubicación céntrica.</td>
             </tr>
             <tr>
-              <td><strong>Transportes internos</strong></td>
-              <td>USD 400 – USD 600</td>
-              <td>Trenes Frecciarossa + Vuelo a Atenas + Ferrys.</td>
+              <td><strong>Transportes internos (Trenes + Vuelo + Ferrys)</strong></td>
+              <td>USD 450 – USD 650</td>
+              <td>Frecciarossa + Vuelo a Atenas + Ferrys entre islas con butacas reservadas.</td>
             </tr>
             <tr>
-              <td><strong>Comidas y gastronomía</strong></td>
-              <td>USD 1.000 – USD 1.300</td>
-              <td>Almuerzos ligeros y cenas con vino en trattorias/tabernas.</td>
+              <td><strong>Entradas, Monumentos & Excursiones Civitatis</strong></td>
+              <td>USD 450 – USD 650</td>
+              <td>Coliseo, Vaticano, Acrópolis, Catamarán en Santorini y entradas de museos.</td>
             </tr>
             <tr>
-              <td><strong>Entradas, tours y extras</strong></td>
-              <td>USD 400 – USD 500</td>
-              <td>Coliseo, Vaticano, Acrópolis, seguro médico y tasas.</td>
+              <td><strong>Comidas y gastronomía (Almuerzos y cenas)</strong></td>
+              <td>USD 1.100 – USD 1.400</td>
+              <td>Almuerzos ligeros, helados/cafés y cenas con vino en trattorias y tabernas.</td>
             </tr>
-            <tr style="font-weight: 700; background: #f8fafc;">
-              <td>TOTAL ESTIMADO</td>
-              <td><strong>USD 6.400 – USD 7.400</strong></td>
-              <td>Gasto global aproximado por pareja (todo incluido).</td>
+            <tr>
+              <td><strong>Seguro médico & extras</strong></td>
+              <td>USD 200 – USD 300</td>
+              <td>Asistencia al viajero y tasas turísticas de ciudad (tasa de soggiorno).</td>
+            </tr>
+            <tr style="font-weight: 700; background: #f8fafc; font-size: 1.05rem;">
+              <td>TOTAL ESTIMADO POR PAREJA</td>
+              <td style="color: #1e3a8a;"><strong>USD 6.877 – USD 8.077</strong></td>
+              <td>Gasto global aproximado todo incluido para 21 días inolvidables.</td>
             </tr>
           </tbody>
         </table>
+
+        <div class="callout">
+          <strong>Resumen para las 2 Parejas (4 personas en total):</strong><br>
+          Presupuesto total combinado: <strong>USD 13.750 – USD 16.150</strong> (promedio de aprox. USD 7.400 por pareja con vuelos, hoteles de buena categoría, catamarán y todas las atracciones cubiertas).
+        </div>
       </div>
     </section>
   </div>
