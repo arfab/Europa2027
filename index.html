@@ -184,8 +184,14 @@
     /* Tab Buttons Navigation */
     .nav-tabs {
       display: grid;
-      grid-template-columns: repeat(9, 1fr);
-      gap: 6px;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 5px;
+    }
+    @media (max-width: 1150px) and (min-width: 901px) {
+      .nav-tabs {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 6px;
+      }
     }
     .tab-btn {
       background: #f8fafc;
@@ -1140,6 +1146,97 @@
       line-height: 1.45;
     }
 
+    /* Climate Section Styles */
+    .climate-hero-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 12px;
+      margin: 18px 0 25px;
+    }
+    .climate-stat-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 16px 12px;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+    .climate-stat-box:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .climate-stat-icon { font-size: 1.6rem; margin-bottom: 5px; }
+    .climate-stat-label { font-size: 0.74rem; text-transform: uppercase; font-weight: 700; color: #64748b; letter-spacing: 0.5px; }
+    .climate-stat-val { font-size: 1.25rem; font-weight: 800; color: #1e3a8a; margin-top: 2px; }
+    .climate-stat-desc { font-size: 0.72rem; color: #059669; font-weight: 600; margin-top: 2px; }
+
+    .climate-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+    .climate-city-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+      position: relative;
+    }
+    .climate-city-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .climate-city-name { font-size: 1.15rem; font-weight: 800; color: #1e3a8a; }
+    .climate-city-dates { font-size: 0.76rem; font-weight: 600; background: #e0f2fe; color: #0369a1; padding: 3px 9px; border-radius: 12px; }
+    
+    .temp-bar-wrap {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-bottom: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .temp-range-label { font-size: 0.84rem; color: #475569; font-weight: 600; }
+    .temp-range-vals { font-size: 1.15rem; font-weight: 800; }
+    .temp-min { color: #0284c7; }
+    .temp-max { color: #dc2626; }
+
+    .climate-detail-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 14px;
+      font-size: 0.88rem;
+    }
+    .climate-detail-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 0;
+      border-bottom: 1px dashed #f1f5f9;
+      color: #334155;
+    }
+    .climate-detail-item:last-child { border-bottom: none; }
+    .climate-detail-label { color: #64748b; }
+    .climate-detail-val { font-weight: 600; }
+
+    .climate-clothing-tip {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 0.84rem;
+      color: #14532d;
+      line-height: 1.4;
+    }
+
     /* Responsive navigation & layouts */
     @media (max-width: 900px) {
       .hero-showcase {
@@ -1268,6 +1365,7 @@
             <option value="presupuesto">💰 7. Presupuesto Consolidado</option>
             <option value="recordar">💡 8. Puntos Clave & A Recordar</option>
             <option value="gastronomia">🍝 9. Guía Gastronómica & Vinos</option>
+            <option value="clima">🌤️ 10. Clima & Temperaturas</option>
           </select>
           <span class="mobile-select-arrow">▼</span>
         </div>
@@ -1310,6 +1408,10 @@
         <button class="tab-btn" data-tab="gastronomia" onclick="openTab('gastronomia')">
           <span class="tab-icon">🍝</span>
           <span class="tab-btn-title">9. Gastronomía</span>
+        </button>
+        <button class="tab-btn" data-tab="clima" onclick="openTab('clima')">
+          <span class="tab-icon">🌤️</span>
+          <span class="tab-btn-title">10. Clima</span>
         </button>
       </nav>
 
@@ -3713,6 +3815,279 @@
         <div class="tab-nav-footer">
           <button class="tab-footer-btn" onclick="openTab('recordar')">
             ← Anterior: 8. Puntos Clave & Recordar
+          </button>
+          <button class="tab-footer-btn primary" onclick="openTab('clima')">
+            Siguiente: 10. Clima & Temperaturas ➔
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TAB 10: CLIMA & TEMPERATURAS PROMEDIO -->
+    <section id="clima" class="tab-content">
+      <div class="card">
+        <h2>🌤️ Clima y Temperaturas Promedio (Primavera Mediterránea)</h2>
+        <p style="margin-bottom: 20px; color: var(--text-muted);">
+          Datos climáticos históricos en grados Celsius (°C) para el período del viaje (<strong>17 de abril al 8 de mayo</strong>). Primavera es considerada la mejor época del año para visitar Italia y Grecia: temperaturas cálidas sin el calor agobiante del verano, días largos con sol y baja probabilidad de lluvias:
+        </p>
+
+        <!-- Metric Cards Overview -->
+        <div class="climate-hero-stats">
+          <div class="climate-stat-box">
+            <div class="climate-stat-icon">☀️</div>
+            <div class="climate-stat-label">Temp. Diurna Media</div>
+            <div class="climate-stat-val">20°C a 25°C</div>
+            <div class="climate-stat-desc">Ideal para caminar todo el día</div>
+          </div>
+          <div class="climate-stat-box">
+            <div class="climate-stat-icon">🌙</div>
+            <div class="climate-stat-label">Temp. Nocturna</div>
+            <div class="climate-stat-val">11°C a 15°C</div>
+            <div class="climate-stat-desc">Fresco con brisa de mar</div>
+          </div>
+          <div class="climate-stat-box">
+            <div class="climate-stat-icon">🕶️</div>
+            <div class="climate-stat-label">Horas de Sol</div>
+            <div class="climate-stat-val">8 a 10 hs / día</div>
+            <div class="climate-stat-desc">Anochece pasadas las 20:15 hs</div>
+          </div>
+          <div class="climate-stat-box">
+            <div class="climate-stat-icon">🌊</div>
+            <div class="climate-stat-label">Temp. Agua de Mar</div>
+            <div class="climate-stat-val">18°C a 19°C</div>
+            <div class="climate-stat-desc">Refrescante / Termas 25°C</div>
+          </div>
+          <div class="climate-stat-box">
+            <div class="climate-stat-icon">🌧️</div>
+            <div class="climate-stat-label">Lluvias</div>
+            <div class="climate-stat-val">&lt; 15%</div>
+            <div class="climate-stat-desc">Época seca mediterránea</div>
+          </div>
+        </div>
+
+        <h3 style="font-size: 1.15rem; color: #1e3a8a; margin-top: 25px; margin-bottom: 15px;">
+          📍 Clima Detallado por Destino (°C)
+        </h3>
+
+        <!-- Climate Cards Grid -->
+        <div class="climate-grid">
+
+          <!-- 1. Roma -->
+          <div class="climate-city-card">
+            <div class="climate-city-header">
+              <span class="climate-city-name">🇮🇹 Roma</span>
+              <span class="climate-city-dates">17 al 20 Abr</span>
+            </div>
+            <div class="temp-bar-wrap">
+              <span class="temp-range-label">Rango Térmico:</span>
+              <span class="temp-range-vals"><span class="temp-min">11°C</span> min / <span class="temp-max">21°C</span> máx</span>
+            </div>
+            <ul class="climate-detail-list">
+              <li class="climate-detail-item">
+                <span class="climate-detail-label">Sensación de día:</span>
+                <span class="climate-detail-val">Templado y muy agradable</span>
+              </li>
+              <li class="climate-detail-item">
+                <span class="climate-detail-label">Sensación de noche:</span>
+                <span class="climate-detail-val">Fresca (11°C – 12°C)</span>
+              </li>
+              <li class="climate-detail-item">
+                <span class="climate-detail-label">Lluvia mensual:</span>
+                <span class="climate-detail-val">5 a 6 días promedio</span>
+              </li>
+              <li class="climate-detail-item">
+                <span class="climate-detail-label">Horas de sol diario:</span>
+                <span class="climate-detail-val">8 horas</span>
+              </li>
+            </ul>
+            <div class="climate-clothing-tip">
+              🧥 <strong>Qué llevar:</strong> Remera y calzado cómodo para adoquines de día. Campera liviana o trench y un sweater fino para pasear de noche por Trastevere.
+            </div>
+          </div>
+
+          <!-- 2. Nápoles & Pompeya -->
+          <div class="climate-city-card">
+            <div class="climate-city-header">
+              <span class="climate-city-name">🇮🇹 Nápoles & Costa</span>
+              <span class="climate-city-dates">20 al 23 Abr</span>
+            </div>
+            <div class="temp-bar-wrap">
+              <span class="temp-range-label">Rango Térmico:</span>
+              <span class="temp-range-vals"><span class="temp-min">12°C</span> min / <span class="temp-max">22°C</span> máx</span>
+            </div>
+            <ul class="climate-detail-list">
+              <li class="climate-detail-item">
+                <span class="climate-detail-label">Sensación de día:</span>
+                <span class="climate-detail-val">Cálido con brisa marina del Golfo</span>
+              </li>
+              <li class="climate-detail-item">
+                <span class="climate-detail-label">Sensación en ruinas:</span>
+                <span class="climate-detail-val">Pompeya no tiene sombra (sol pleno)</span>
+              </li>
+              <li class="climate-detail-item">
+                <span class="climate-detail-label">Temp. Agua del Golfo:</span>
+                <span class="climate-detail-val">17°C – 18°C</span>
+              </li>
+              <li class="climate-detail-item">
+                <span class="climate-detail-label">Lluvia mensual:</span>
+                <span class="climate-detail-val">4 días promedio</span>
+              </li>
+            </ul>
+            <div class="climate-clothing-tip">
+              🧢 <strong>Qué llevar:</strong> Gorro/sombrero y lentes de sol obligatorios para caminar las ruinas de Pompeya. Cortavientos ligero para el ferry a Ischia o Sorrento.
+            </div>
+          </div>
+
+          <!-- 3. Puglia -->
+          <div class="climate-city-card">
+            <div class="climate-city-header">
+              <span class="climate-city-name">🇮🇹 Puglia (Bari & Monopoli)</span>
+              <span class="climate-city-dates">23 al 26 Abr</span>
+            </div>
+            <div class="temp-bar-wrap">
+              <span class="temp-range-label">Rango Térmico:</span>
+              <span class="temp-range-vals"><span class="temp-min">12°C</span> min / <span class="temp-max">22°C</span> máx</span>
+            </div>
+            <ul class="climate-detail-list">
+              <li class="climate-detail-item">
+                <span class="climate-detail-label">Sensación de día:</span>
+                <span class="climate-detail-val">Soleado y luminoso (mar Adriático)</span>
+              </li>
+              <li class="climate-detail-item">
+                <span class="climate-detail-label">Viento:</span>
+                <span class="climate-detail-val">Brisa suave de costa</span>
+              </li>
+              <li class="climate-detail-item">
+                <span class="climate-detail-label">Días despejados:</span>
+                <span class="climate-detail-val">Más del 80% del tiempo</span>
+              </li>
+              <li class="climate-detail-item">
+                <span class="climate-detail-label">Temp. Agua de Mar:</span>
+                <span class="climate-detail-val">17°C – 18°C (acantilados)</span>
+              </li>
+            </ul>
+            <div class="climate-clothing-tip">
+              👟 <strong>Qué llevar:</strong> Ropa clara para las callejuelas blancas de Polignano y Monopoli. Zapatillas deportivas para subir y bajar los acantilados de piedra.
+            </div>
+          </div>
+
+          <!-- 4. Atenas -->
+          <div class="climate-city-card">
+            <div class="climate-city-header">
+              <span class="climate-city-name">🇬🇷 Atenas</span>
+              <span class="climate-city-dates">26 al 29 Abr</span>
+            </div>
+            <div class="temp-bar-wrap">
+              <span class="temp-range-label">Rango Térmico:</span>
+              <span class="temp-range-vals"><span class="temp-min">14°C</span> min / <span class="temp-max">25°C</span> máx</span>
+            </div>
+            <ul class="climate-detail-list">
+              <li class="climate-detail-item">
+                <span class="climate-detail-label">Sensación de día:</span>
+                <span class="climate-detail-val">Calor primaveral seco (roza 25°C)</span>
+              </li>
+              <li class="climate-detail-item">
+                <span class="climate-detail-label">Sensación en la Acrópolis:</span>
+                <span class="climate-detail-val">Mármol blanco refleja el sol</span>
+              </li>
+              <li class="climate-detail-item">
+                <span class="climate-detail-label">Lluvia:</span>
+                <span class="climate-detail-val">Casi nula (2 días al mes)</span>
+              </li>
+              <li class="climate-detail-item">
+                <span class="climate-detail-label">Horas de sol diario:</span>
+                <span class="climate-detail-val">9 a 10 horas</span>
+              </li>
+            </ul>
+            <div class="climate-clothing-tip">
+              🧴 <strong>Qué llevar:</strong> Ropa fresca de algodón o lino, protector solar factor 50 y botella térmica para recargar agua fría en las fuentes públicas.
+            </div>
+          </div>
+
+          <!-- 5. Naxos -->
+          <div class="climate-city-card">
+            <div class="climate-city-header">
+              <span class="climate-city-name">🇬🇷 Naxos (Cícladas)</span>
+              <span class="climate-city-dates">29 Abr al 3 May</span>
+            </div>
+            <div class="temp-bar-wrap">
+              <span class="temp-range-label">Rango Térmico:</span>
+              <span class="temp-range-vals"><span class="temp-min">15°C</span> min / <span class="temp-max">23°C</span> máx</span>
+            </div>
+            <ul class="climate-detail-list">
+              <li class="climate-detail-item">
+                <span class="climate-detail-label">Sensación de día:</span>
+                <span class="climate-detail-val">Perfecto para playa y sol</span>
+              </li>
+              <li class="climate-detail-item">
+                <span class="climate-detail-label">Viento del Egeo:</span>
+                <span class="climate-detail-val">Brisa constante y refrescante</span>
+              </li>
+              <li class="climate-detail-item">
+                <span class="climate-detail-label">Temp. Agua de Mar:</span>
+                <span class="climate-detail-val">18°C – 19°C (aguas cristalinas)</span>
+              </li>
+              <li class="climate-detail-item">
+                <span class="climate-detail-label">Noche en el puerto:</span>
+                <span class="climate-detail-val">15°C con brisa fresca</span>
+              </li>
+            </ul>
+            <div class="climate-clothing-tip">
+              🩱 <strong>Qué llevar:</strong> Malla/traje de baño para tomar sol en las playas de arena dorada (Agios Prokopios). Un cárdigan o pañuelo para cenar al aire libre en el puerto.
+            </div>
+          </div>
+
+          <!-- 6. Santorini -->
+          <div class="climate-city-card">
+            <div class="climate-city-header">
+              <span class="climate-city-name">🇬🇷 Santorini</span>
+              <span class="climate-city-dates">3 al 6 May</span>
+            </div>
+            <div class="temp-bar-wrap">
+              <span class="temp-range-label">Rango Térmico:</span>
+              <span class="temp-range-vals"><span class="temp-min">15°C</span> min / <span class="temp-max">23°C</span> máx</span>
+            </div>
+            <ul class="climate-detail-list">
+              <li class="climate-detail-item">
+                <span class="climate-detail-label">Sensación de día:</span>
+                <span class="climate-detail-val">Soleado e intenso reflejo blanco</span>
+              </li>
+              <li class="climate-detail-item">
+                <span class="climate-detail-label">Viento en la Caldera:</span>
+                <span class="climate-detail-val">Sopla regular en Oia e Imerovigli</span>
+              </li>
+              <li class="climate-detail-item">
+                <span class="climate-detail-label">Atardecer Sunset:</span>
+                <span class="climate-detail-val">Baja 4°C rápidamente al caer el sol</span>
+              </li>
+              <li class="climate-detail-item">
+                <span class="climate-detail-label">Aguas termales del volcán:</span>
+                <span class="climate-detail-val">24°C – 26°C (tibia y azufrada)</span>
+              </li>
+            </ul>
+            <div class="climate-clothing-tip">
+              ⛵ <strong>Qué llevar:</strong> Cortavientos o buzo para la navegación en catamarán al atardecer. Traje de baño oscuro para las aguas termales volcánicas (el azufre mancha los claros).
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Practical Packing Tips based on weather -->
+        <h3 style="font-size: 1.15rem; color: #1e3a8a; margin-top: 30px; margin-bottom: 12px;">
+          🎒 Estrategia de Valija según el Clima: El Secreto de las Capas ("Cebolla")
+        </h3>
+        <div class="callout" style="line-height: 1.6;">
+          <strong>Cómo armar la valija de 23 kg para 3 semanas:</strong><br>
+          • <strong>De día (11:00 a 18:00):</strong> Ropa veraniega/fresca (remeras, lino, bermudas, vestidos ligeros, gafas de sol y zapatillas deportivas con buen agarre).<br>
+          • <strong>De noche (20:00 en adelante):</strong> Una campera liviana de media estación (denim, cuero o trench liviano), sweaters finos de hilo y un fular/pañuelo para el cuello.<br>
+          • <strong>Lluvia:</strong> Solo un paraguas plegable compacto por pareja. Mayo es un mes predominantemente seco en el Mediterráneo.<br>
+          • <strong>Servicio de Lavandería:</strong> No hace falta llevar 21 mudas de ropa. A mitad de viaje (en Puglia o al llegar a Atenas) se hace una parada rápida en lavandería express (lavan y secan todo en 1 hora por €10–€15).
+        </div>
+
+        <div class="tab-nav-footer">
+          <button class="tab-footer-btn" onclick="openTab('gastronomia')">
+            ← Anterior: 9. Gastronomía & Vinos
           </button>
           <button class="tab-footer-btn primary" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
             ⬆ Volver al Inicio
