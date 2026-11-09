@@ -1729,6 +1729,49 @@
       display: inline-block;
     }
 
+    /* Custom Map Pin Pills in Spanish */
+    .custom-map-pin {
+      background: none !important;
+      border: none !important;
+    }
+    .custom-map-pill {
+      display: inline-flex;
+      align-items: center;
+      background: #ffffff;
+      padding: 3px 10px 3px 4px;
+      border-radius: 20px;
+      border: 2px solid #1e3a8a;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.28);
+      font-family: system-ui, -apple-system, sans-serif;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      user-select: none;
+    }
+    .custom-map-pill:hover {
+      transform: scale(1.08);
+      box-shadow: 0 5px 14px rgba(30, 58, 138, 0.45);
+      z-index: 1000;
+    }
+    .custom-map-pill-icon {
+      background: #1e3a8a;
+      color: white;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      margin-right: 6px;
+      flex-shrink: 0;
+    }
+    .custom-map-pill-text {
+      font-weight: 700;
+      font-size: 12px;
+      color: #0f172a;
+    }
+
     /* Day-by-Day Accordion Styles */
     .stop-header-interactive {
       cursor: pointer;
@@ -6943,12 +6986,12 @@
 
     // OPCIÓN 1 (RECOMENDADA · 100% SIN AUTO): ROMA (4n), NÁPOLES (3n), ATENAS (3n), MILOS (3n), NAXOS (3n), SANTORINI (3n), ATENAS (2n)
     const europeStopsOpcion1 = [
-      { name: "Roma", coords: [41.9028, 12.4964], icon: "🏛️", desc: "<strong>🏛️ Roma (4 noches | 17 - 21 Abr)</strong><br>Llegada en vuelo directo ITA desde Ezeiza.<br>Coliseo, Vaticano, Fontana di Trevi, Panteón y Trastevere.<br><span style='color:#ef4444;font-weight:700;'>🚆 Siguiente: Frecciarossa a Nápoles (1h 10m)</span>" },
-      { name: "Nápoles & Pompeya", coords: [40.8518, 14.2681], icon: "🌋", desc: "<strong>🌋 Nápoles & Pompeya (3 noches | 21 - 24 Abr)</strong><br>Base céntrica en Nápoles.<br>Ruinas de Pompeya en tren directo (30 min), Spaccanapoli y pizza.<br><span style='color:#8b5cf6;font-weight:700;'>✈️ Siguiente: Vuelo directo Nápoles ➔ Atenas (1h 45m)</span>" },
-      { name: "Atenas", coords: [37.9753, 23.7261], icon: "🏛️", desc: "<strong>🏛️ Atenas (3 noches iniciales + 2 finales)</strong><br>Acrópolis, Plaka, Museo de las Cariátides y Anafiotika.<br><span style='color:#0284c7;font-weight:700;'>🚢 Siguiente: Ferry rápido Pireo ➔ Milos (3h 15m)</span>" },
-      { name: "Milos", coords: [36.7214, 24.4261], icon: "⛵", desc: "<strong>⛵ Isla de Milos (3 noches | 27 - 30 Abr)</strong><br>Paisajes lunares de Sarakiniko, velero a Kleftiko y pueblitos pesqueros.<br><span style='color:#0284c7;font-weight:700;'>🚢 Siguiente: Ferry Milos ➔ Naxos (2h 15m)</span>" },
-      { name: "Naxos", coords: [37.1062, 25.3768], icon: "🏝️", desc: "<strong>🏝️ Isla de Naxos (3 noches | 30 Abr - 3 May)</strong><br>Portara de Apolo y celebración de la Pascua Ortodoxa (2 de mayo).<br><span style='color:#0284c7;font-weight:700;'>🚢 Siguiente: Catamarán rápido a Santorini (1h 45m)</span>" },
-      { name: "Santorini", coords: [36.3932, 25.4615], icon: "🌅", desc: "<strong>🌅 Santorini (3 noches | 3 - 6 May)</strong><br>Caldera de Oia, cúpulas azules y catamarán sunset.<br><span style='color:#10b981;font-weight:700;'>✈️ Siguiente: Vuelo interno Santorini ➔ Atenas (45 min)</span>" }
+      { name: "Roma (4n)", coords: [41.9028, 12.4964], icon: "🏛️", desc: "<strong>🏛️ Roma (4 noches | 17 - 21 Abr)</strong><br>Llegada en vuelo directo ITA desde Ezeiza.<br>Coliseo, Vaticano, Fontana di Trevi, Panteón y Trastevere.<br><span style='color:#ef4444;font-weight:700;'>🚆 Siguiente: Frecciarossa a Nápoles (1h 10m)</span>" },
+      { name: "Nápoles (3n)", coords: [40.8518, 14.2681], icon: "🌋", desc: "<strong>🌋 Nápoles & Pompeya (3 noches | 21 - 24 Abr)</strong><br>Base céntrica en Nápoles.<br>Ruinas de Pompeya en tren directo (30 min), Spaccanapoli y pizza.<br><span style='color:#8b5cf6;font-weight:700;'>✈️ Siguiente: Vuelo directo Nápoles ➔ Atenas (1h 45m)</span>" },
+      { name: "Atenas (3n + 2n)", coords: [37.9753, 23.7261], icon: "🏛️", desc: "<strong>🏛️ Atenas (3 noches iniciales + 2 finales)</strong><br>Acrópolis, Plaka, Museo de las Cariátides y Anafiotika.<br><span style='color:#0284c7;font-weight:700;'>🚢 Siguiente: Ferry rápido Pireo ➔ Milos (3h 15m)</span>" },
+      { name: "Isla de Milos (3n)", coords: [36.7214, 24.4261], icon: "⛵", desc: "<strong>⛵ Isla de Milos (3 noches | 27 - 30 Abr)</strong><br>Paisajes lunares de Sarakiniko, velero a Kleftiko y pueblitos pesqueros.<br><span style='color:#0284c7;font-weight:700;'>🚢 Siguiente: Ferry Milos ➔ Naxos (2h 15m)</span>" },
+      { name: "Isla de Naxos (3n)", coords: [37.1062, 25.3768], icon: "🏝️", desc: "<strong>🏝️ Isla de Naxos (3 noches | 30 Abr - 3 May)</strong><br>Portara de Apolo y celebración de la Pascua Ortodoxa (2 de mayo).<br><span style='color:#0284c7;font-weight:700;'>🚢 Siguiente: Catamarán rápido a Santorini (1h 45m)</span>" },
+      { name: "Santorini (3n)", coords: [36.3932, 25.4615], icon: "🌅", desc: "<strong>🌅 Santorini (3 noches | 3 - 6 May)</strong><br>Caldera de Oia, cúpulas azules y catamarán sunset.<br><span style='color:#10b981;font-weight:700;'>✈️ Siguiente: Vuelo interno Santorini ➔ Atenas (45 min)</span>" }
     ];
 
     const europeLegsOpcion1 = [
@@ -6962,12 +7005,12 @@
 
     // OPCIÓN 2 (ALTERNATIVA SUR & PUGLIA): ROMA (3n), NÁPOLES (3n), PUGLIA (3n), ATENAS (3n), NAXOS (4n), SANTORINI (3n), ATENAS (2n)
     const europeStopsOpcion2 = [
-      { name: "Roma", coords: [41.9028, 12.4964], icon: "🏛️", desc: "<strong>🏛️ Roma (3 noches | 17 - 20 Abr)</strong><br>Coliseo, Vaticano, Fontana di Trevi y Trastevere.<br><span style='color:#ef4444;font-weight:700;'>🚆 Siguiente: Frecciarossa a Nápoles (1h 10m)</span>" },
-      { name: "Nápoles & Pompeya", coords: [40.8518, 14.2681], icon: "🌋", desc: "<strong>🌋 Nápoles & Pompeya (3 noches | 20 - 23 Abr)</strong><br>Centro histórico, Spaccanapoli y ruinas de Pompeya.<br><span style='color:#f59e0b;font-weight:700;'>🚆 Siguiente: Frecciargento a Bari (3h 30m)</span>" },
-      { name: "Puglia & Alberobello", coords: [40.9964, 17.2186], icon: "🌊", desc: "<strong>🌊 Puglia: Polignano & Trulli (3 noches | 23 - 26 Abr)</strong><br>Pueblos blancos sobre acantilados del Adriático.<br><span style='color:#8b5cf6;font-weight:700;'>✈️ Siguiente: Vuelo directo Bari ➔ Atenas (1h 15m)</span>" },
-      { name: "Atenas", coords: [37.9753, 23.7261], icon: "🏛️", desc: "<strong>🏛️ Atenas (3 noches iniciales + 2 finales)</strong><br>Acrópolis, Plaka, Museo y relax de cierre.<br><span style='color:#0284c7;font-weight:700;'>🚢 Siguiente: Ferry Blue Star a Naxos (3h 30m)</span>" },
-      { name: "Naxos", coords: [37.1062, 25.3768], icon: "🏝️", desc: "<strong>🏝️ Isla de Naxos (4 noches | 29 Abr - 3 May)</strong><br>Portara de Apolo y Pascua Ortodoxa.<br><span style='color:#0284c7;font-weight:700;'>🚢 Siguiente: Catamarán rápido a Santorini (1h 45m)</span>" },
-      { name: "Santorini", coords: [36.3932, 25.4615], icon: "🌅", desc: "<strong>🌅 Santorini (3 noches | 3 - 6 May)</strong><br>Caldera de Oia y catamarán sunset.<br><span style='color:#0284c7;font-weight:700;'>🚢/✈️ Siguiente: Regreso a Atenas (2n) y vuelo EZE</span>" }
+      { name: "Roma (3n)", coords: [41.9028, 12.4964], icon: "🏛️", desc: "<strong>🏛️ Roma (3 noches | 17 - 20 Abr)</strong><br>Coliseo, Vaticano, Fontana di Trevi y Trastevere.<br><span style='color:#ef4444;font-weight:700;'>🚆 Siguiente: Frecciarossa a Nápoles (1h 10m)</span>" },
+      { name: "Nápoles (3n)", coords: [40.8518, 14.2681], icon: "🌋", desc: "<strong>🌋 Nápoles & Pompeya (3 noches | 20 - 23 Abr)</strong><br>Centro histórico, Spaccanapoli y ruinas de Pompeya.<br><span style='color:#f59e0b;font-weight:700;'>🚆 Siguiente: Frecciargento a Bari (3h 30m)</span>" },
+      { name: "Puglia & Matera (3n)", coords: [40.9964, 17.2186], icon: "🌊", desc: "<strong>🌊 Puglia: Polignano & Trulli (3 noches | 23 - 26 Abr)</strong><br>Pueblos blancos sobre acantilados del Adriático.<br><span style='color:#8b5cf6;font-weight:700;'>✈️ Siguiente: Vuelo directo Bari ➔ Atenas (1h 15m)</span>" },
+      { name: "Atenas (3n + 2n)", coords: [37.9753, 23.7261], icon: "🏛️", desc: "<strong>🏛️ Atenas (3 noches iniciales + 2 finales)</strong><br>Acrópolis, Plaka, Museo y relax de cierre.<br><span style='color:#0284c7;font-weight:700;'>🚢 Siguiente: Ferry Blue Star a Naxos (3h 30m)</span>" },
+      { name: "Isla de Naxos (4n)", coords: [37.1062, 25.3768], icon: "🏝️", desc: "<strong>🏝️ Isla de Naxos (4 noches | 29 Abr - 3 May)</strong><br>Portara de Apolo y Pascua Ortodoxa.<br><span style='color:#0284c7;font-weight:700;'>🚢 Siguiente: Catamarán rápido a Santorini (1h 45m)</span>" },
+      { name: "Santorini (3n)", coords: [36.3932, 25.4615], icon: "🌅", desc: "<strong>🌅 Santorini (3 noches | 3 - 6 May)</strong><br>Caldera de Oia y catamarán sunset.<br><span style='color:#0284c7;font-weight:700;'>🚢/✈️ Siguiente: Regreso a Atenas (2n) y vuelo EZE</span>" }
     ];
 
     const europeLegsOpcion2 = [
@@ -7007,9 +7050,10 @@
         attributionControl: true
       }).setView([39.2, 19.0], 6);
 
-      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors',
-        maxZoom: 19
+      // Usar mapa Esri World Street con rotulación estándar en alfabeto latino (sin caracteres griegos ni cirílicos)
+      L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+        attribution: '&copy; Esri &mdash; Fuentes: Esri, USGS, DeLorme',
+        maxZoom: 18
       }).addTo(routeMap);
 
       mapLayerGroup = L.layerGroup().addTo(routeMap);
@@ -7022,7 +7066,7 @@
 
       const data = routeData[mode];
 
-      // Draw route lines
+      // Dibujar líneas de rutas y transporte
       data.legs.forEach(leg => {
         const poly = L.polyline(leg.coords, {
           color: leg.color,
@@ -7033,14 +7077,17 @@
         poly.bindTooltip(leg.label, { sticky: true });
       });
 
-      // Draw stop markers
+      // Dibujar marcadores con etiquetas visibles en ESPAÑOL directamente sobre el mapa
       data.stops.forEach(stop => {
         const pinIcon = L.divIcon({
           className: 'custom-map-pin',
-          html: `<div style="background:#1e3a8a;color:white;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 8px rgba(0,0,0,0.35);border:2px solid white;font-size:16px;cursor:pointer;">${stop.icon}</div>`,
-          iconSize: [34, 34],
-          iconAnchor: [17, 17],
-          popupAnchor: [0, -18]
+          html: `<div class="custom-map-pill">
+            <span class="custom-map-pill-icon">${stop.icon}</span>
+            <span class="custom-map-pill-text">${stop.name}</span>
+          </div>`,
+          iconSize: null,
+          iconAnchor: [20, 16],
+          popupAnchor: [10, -18]
         });
 
         const marker = L.marker(stop.coords, { icon: pinIcon }).addTo(mapLayerGroup);
