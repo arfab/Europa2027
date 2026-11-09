@@ -339,8 +339,8 @@
     }
     .itinerary-selector {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 12px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
       margin-top: 10px;
     }
     .itin-btn {
@@ -1887,6 +1887,13 @@
       }
       .tab-icon { font-size: 1rem; }
       .tab-btn-title { font-size: 0.82rem; }
+      .itinerary-selector {
+        grid-template-columns: 1fr !important;
+        gap: 12px;
+      }
+      .itin-btn {
+        width: 100%;
+      }
     }
 
     /* Media queries for small screens */
@@ -1902,9 +1909,27 @@
       .hero-dest-card { height: 95px; }
       .hero-dest-name { font-size: 0.82rem; }
       .hero-dest-meta { font-size: 0.68rem; }
-      .container { padding: 0 12px; margin: 15px auto; }
-      .card { padding: 18px 14px; }
+      .container { padding: 0 10px; margin: 15px auto; }
+      .card { padding: 16px 12px; }
       .card h2 { font-size: 1.2rem; }
+      .itinerary-selector {
+        grid-template-columns: 1fr !important;
+        gap: 10px;
+      }
+      .itin-btn {
+        width: 100%;
+        padding: 12px 14px;
+      }
+      .variant-card {
+        padding: 14px 10px;
+      }
+      .stop-block {
+        padding: 14px 10px;
+      }
+      .attractions-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
       .tab-nav-footer { flex-direction: column; align-items: stretch; }
       .tab-footer-btn { justify-content: center; width: 100%; text-align: center; }
       .tab-footer-btn.primary { margin-left: 0; }
@@ -2105,7 +2130,7 @@
 
         <!-- SELECTOR DE ITINERARIO (2 OPCIONES DEFINITIVAS) -->
         <div class="itinerary-selector-wrap">
-          <div class="itinerary-selector" style="grid-template-columns: 1fr 1fr;">
+          <div class="itinerary-selector">
             <button class="itin-btn active" onclick="switchItinerary('opt-1')">
               <span class="itin-btn-badge" style="background:#16a34a;">⭐ Opción 1 (Recomendada · 100% Sin Auto)</span>
               <span class="itin-btn-title">Roma, Nápoles & Cícladas con Milos</span>
