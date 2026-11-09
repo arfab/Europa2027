@@ -1975,36 +1975,26 @@
           21 noches netas en Europa. Hacé clic en cualquiera de los 4 recorridos para ver su detalle día por día con fotos y paradas sin necesidad de hacer scroll largo:
         </p>
 
-        <!-- SELECTOR DE ITINERARIO -->
+        <!-- SELECTOR DE ITINERARIO (2 OPCIONES DEFINITIVAS) -->
         <div class="itinerary-selector-wrap">
-          <div class="itinerary-selector">
-            <button class="itin-btn active" onclick="switchItinerary('opt-d')">
-              <span class="itin-btn-badge">⭐ Roma, Sur & Puglia</span>
-              <span class="itin-btn-title">Roma, Nápoles, Puglia & Grecia Profunda</span>
-              <span class="itin-btn-sub">Roma (3n) · Nápoles & Pompeya (3n) · Puglia & Trulli (3n) · Vuelo Bari-Atenas (1h 15m) · Grecia profunda (12n)</span>
+          <div class="itinerary-selector" style="grid-template-columns: 1fr 1fr;">
+            <button class="itin-btn active" onclick="switchItinerary('opt-1')">
+              <span class="itin-btn-badge">⭐ Opción 1 (Sur & Puglia)</span>
+              <span class="itin-btn-title">Roma, Nápoles, Puglia & Grecia</span>
+              <span class="itin-btn-sub">9n Italia + 12n Grecia · Roma (3n) · Nápoles (3n) · Puglia (3n) · Atenas (3n) · Naxos Pascua (4n) · Santorini (3n) · Atenas (2n)</span>
             </button>
-            <button class="itin-btn" onclick="switchItinerary('opt-a')">
-              <span class="itin-btn-badge" style="background:#475569;">🏛️ Ruta Clásica</span>
-              <span class="itin-btn-title">Clásica Norte & Islas Griegas</span>
-              <span class="itin-btn-sub">Roma (4n) · Florencia (3n) · Venecia (3n) · Atenas (3n) · Paros/Naxos (4n) · Santorini (3n)</span>
-            </button>
-            <button class="itin-btn" onclick="switchItinerary('opt-b')">
-              <span class="itin-btn-badge" style="background:#ea580c;">🌋 Centro-Sur</span>
-              <span class="itin-btn-title">Roma, Florencia & Nápoles + Grecia</span>
-              <span class="itin-btn-sub">Roma (4n) · Florencia (3n) · Nápoles & Pompeya (4n) · Atenas (3n) · 2 Cícladas (6n)</span>
-            </button>
-            <button class="itin-btn" onclick="switchItinerary('opt-c')">
-              <span class="itin-btn-badge" style="background:#0284c7;">🌊 Más Mar & Relax</span>
-              <span class="itin-btn-title">13 Noches en Grecia (Menos Hoteles)</span>
-              <span class="itin-btn-sub">Roma (4n) · Base única Toscana o Venecia (4n) · Atenas (3n) · 3 Islas Cícladas (9n)</span>
+            <button class="itin-btn" onclick="switchItinerary('opt-2')">
+              <span class="itin-btn-badge" style="background:#0284c7;">🏝️ Opción 2 (Más Islas & Menos Hoteles)</span>
+              <span class="itin-btn-title">Roma, Nápoles & Cícladas Extendidas</span>
+              <span class="itin-btn-sub">7n Italia + 14n Grecia · Roma (4n) · Nápoles (3n) · Atenas (3n) · Milos (3n) · Naxos Pascua (3n) · Santorini (3n) · Atenas (2n)</span>
             </button>
           </div>
         </div>
 
-        <!-- ==================== ROMA, NÁPOLES, PUGLIA & GRECIA PROFUNDA ==================== -->
-        <div id="opt-d" class="variant-card itin-option-card active">
+        <!-- ==================== OPCIÓN 1: ROMA, NÁPOLES, PUGLIA & GRECIA PROFUNDA ==================== -->
+        <div id="opt-1" class="variant-card itin-option-card active">
           <div class="variant-header">
-            <div class="variant-title">Roma, Nápoles, Puglia & Grecia Profunda</div>
+            <div class="variant-title">Opción 1: Roma, Nápoles, Puglia & Grecia Profunda</div>
             <span class="variant-pill" style="background: #dbeafe; color: #1e40af;">9n Italia + 12n Grecia</span>
           </div>
           <div class="variant-summary">
@@ -2181,217 +2171,31 @@
           </div>
         </div>
 
-        <!-- ==================== RUTA CLÁSICA ==================== -->
-        <div id="opt-a" class="variant-card itin-option-card" style="display: none;">
+                <!-- ==================== OPCIÓN 2: ROMA, NÁPOLES & CÍCLADAS EXTENDIDAS ==================== -->
+        <div id="opt-2" class="variant-card itin-option-card" style="display: none;">
           <div class="variant-header">
-            <div class="variant-title">Clásica Norte & Islas Griegas</div>
-            <span class="variant-pill">11n Italia + 10n Grecia</span>
+            <div class="variant-title">Opción 2: Roma, Nápoles & Cícladas Extendidas (Milos, Naxos & Santorini)</div>
+            <span class="variant-pill" style="background: #e0f2fe; color: #0369a1;">7n Italia + 14n Grecia (Menos Mudanzas de Hotel)</span>
           </div>
-          <div class="variant-summary">Roma (4n) ➔ Florencia (3n) ➔ Venecia (3n) ➔ Atenas (3n) ➔ Paros/Naxos (4n) ➔ Santorini (3n) ➔ Regreso</div>
+          <div class="variant-summary">
+            Roma (4n) ➔ Nápoles & Pompeya (3n) ➔ Salto Nápoles-Atenas ➔ Atenas (3n) ➔ Milos (3n) ➔ Naxos Pascua (3n) ➔ Santorini (3n) ➔ Atenas despedida & relax (2n)
+          </div>
 
           <!-- Parada 1: Roma -->
           <div class="stop-block">
             <div class="stop-header">
               <span class="stop-city">🏛️ 1. Roma (4 noches | 17 - 21 Abril)</span>
-              <span class="stop-nights">2 Habitaciones Dobles en Roma Centro</span>
+              <span class="stop-nights">Hotel céntrico en Roma (Termini / Centro)</span>
             </div>
             <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
-              Caminatas por el foro imperial, fuentes barrocas, basílicas y trattorias en Trastevere.
+              3 días completos y 4 noches para disfrutar la Ciudad Eterna sin apuros: Coliseo, Foros Imperiales, Palatino, Museos Vaticanos, Capilla Sixtina, San Pedro, Fontana di Trevi, Panteón, Plaza Navona, Villa Borghese y cenas relajadas en Trastevere.
             </p>
             <div class="attractions-grid">
               <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=400&q=80" alt="Coliseo y Foro Romano" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=400&q=80" alt="Coliseo Romano" loading="lazy">
                 <div class="attr-card-body">
-                  <div class="attr-title">Coliseo, Foro y Palatino</div>
-                  <div class="attr-detail">El epicentro de la Roma de los Césares y mirador imperial.</div>
-                  <div class="attr-price">Oficial: €18 | Civitatis guiado: €45</div>
-                </div>
-              </div>
-              <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1541370976299-4d24ebbc9077?auto=format&fit=crop&w=400&q=80" alt="Vaticano y Capilla Sixtina" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Vaticano & Capilla Sixtina</div>
-                  <div class="attr-detail">Museos Vaticanos, frescos de Miguel Ángel y Basílica San Pedro.</div>
-                  <div class="attr-price">Oficial: €25 | Civitatis sin cola: €55</div>
-                </div>
-              </div>
-              <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1525874684015-58379d421a52?auto=format&fit=crop&w=400&q=80" alt="Fontana di Trevi y Panteón" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Trevi, Panteón & Trastevere</div>
-                  <div class="attr-detail">Panteón de Agripa (€5), Fontana di Trevi y noche en Trastevere.</div>
-                  <div class="attr-price">Panteón: €5 | Trevi: Acceso libre</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Parada 2: Florencia -->
-          <div class="stop-block">
-            <div class="stop-header">
-              <span class="stop-city">🎨 2. Florencia (3 noches | 21 - 24 Abril)</span>
-              <span class="stop-nights">Frecciarossa Roma ➔ Florencia (1h 35m)</span>
-            </div>
-            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
-              Cuna del Renacimiento, vinos de Chianti y bistec a la fiorentina.
-            </p>
-            <div class="attractions-grid">
-              <div class="attr-card">
-                <img src="img/florencia-duomo.jpg" alt="Duomo de Florencia Santa Maria del Fiore" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Duomo Santa Maria del Fiore</div>
-                  <div class="attr-detail">Subida a la cúpula de Brunelleschi y Baptisterio San Giovanni.</div>
-                  <div class="attr-price">Catedral gratis | Brunelleschi Pass: €30</div>
-                </div>
-              </div>
-              <div class="attr-card">
-                <img src="img/florencia-david.jpg" alt="David de Miguel Ángel en la Academia" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Galería Uffizi & David</div>
-                  <div class="attr-detail">El David original de Miguel Ángel en la Academia y salas de los Uffizi.</div>
-                  <div class="attr-price">Uffizi: €25 | Academia: €16</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Parada 3: Venecia -->
-          <div class="stop-block">
-            <div class="stop-header">
-              <span class="stop-city">🛶 3. Venecia (3 noches | 24 - 27 Abril)</span>
-              <span class="stop-nights">Frecciarossa Florencia ➔ Venecia (2h 15m)</span>
-            </div>
-            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
-              Canales históricos, palacios sobre el agua y paseo en vaporetto al atardecer.
-            </p>
-            <div class="attractions-grid">
-              <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=400&q=80" alt="San Marcos y Gran Canal" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">San Marcos & Palacio Ducal</div>
-                  <div class="attr-detail">Mosaicos bizantinos, Puente de los Suspiros y Gran Canal.</div>
-                  <div class="attr-price">Basílica: €3 | Palacio Ducal: €30</div>
-                </div>
-              </div>
-              <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?auto=format&fit=crop&w=400&q=80" alt="Góndola y Murano" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Paseo en Góndola & Islas</div>
-                  <div class="attr-detail">Góndola privada para los 4 y excursión en barco a Murano/Burano.</div>
-                  <div class="attr-price">Góndola 4 pax: €90 | Murano/Burano: €25</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Parada 4: Atenas -->
-          <div class="stop-block">
-            <div class="stop-header">
-              <span class="stop-city">🏛️ 4. Atenas (3 noches | 27 - 30 Abril)</span>
-              <span class="stop-nights">Vuelo directo Italia ➔ Atenas (2h 10m)</span>
-            </div>
-            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
-              La Acrópolis, barrios pintorescos de Plaka y Anafiotika con tabernas tradicionales.
-            </p>
-            <div class="attractions-grid">
-              <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?auto=format&fit=crop&w=400&q=80" alt="Acrópolis de Atenas" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Acrópolis & Partenón</div>
-                  <div class="attr-detail">Templo de Atenea Niké, Erecteion con las Cariátides.</div>
-                  <div class="attr-price">Oficial: €20 | Civitatis guiado: €48</div>
-                </div>
-              </div>
-              <div class="attr-card">
-                <img src="img/atenas-museo-acropolis.jpg" alt="Cariátides en el Museo de la Acrópolis" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Museo Acrópolis & Cariátides</div>
-                  <div class="attr-detail">Las legendarias Cariátides originales y frisos del Partenón.</div>
-                  <div class="attr-price">Museo: €15 | Tour combinado: €62</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Parada 5: Naxos o Paros -->
-          <div class="stop-block">
-            <div class="stop-header">
-              <span class="stop-city">🌊 5. Isla Naxos o Paros (4 noches | 30 Abr - 4 Mayo)</span>
-              <span class="stop-nights">Ferry Blue Star / SeaJets desde Pireo (3h 30m)</span>
-            </div>
-            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
-              Pascua Ortodoxa griega (domingo 2 de mayo), pueblos blancos, playas doradas y comida casera.
-            </p>
-            <div class="attractions-grid">
-              <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?auto=format&fit=crop&w=400&q=80" alt="Portara Naxos" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Portara & Castro de Chora</div>
-                  <div class="attr-detail">El pórtico del templo de Apolo mirando al mar y callejones encalados.</div>
-                  <div class="attr-price">Acceso libre | Atardecer mágico</div>
-                </div>
-              </div>
-              <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=400&q=80" alt="Velero calas Naxos" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Crucero en Velero / Koufonisia</div>
-                  <div class="attr-detail">Día completo en barco por calas de agua turquesa con almuerzo y vino.</div>
-                  <div class="attr-price">Civitatis / Local: €85 - €105 / pax</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Parada 6: Santorini -->
-          <div class="stop-block">
-            <div class="stop-header">
-              <span class="stop-city">🌅 6. Santorini (3 noches | 4 - 7 Mayo)</span>
-              <span class="stop-nights">Ferry inter-islas (1h 45m)</span>
-            </div>
-            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
-              Los acantilados de la caldera más famosos del mundo, cúpulas azules y navegación volcánica.
-            </p>
-            <div class="attractions-grid">
-              <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=400&q=80" alt="Oia Santorini" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Oia & Sendero de la Caldera</div>
-                  <div class="attr-detail">Cúpulas azules, miradores y caminata panorámica Fira ➔ Oia.</div>
-                  <div class="attr-price">Paseo libre | Bodega Santo Wines: €45</div>
-                </div>
-              </div>
-              <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80" alt="Catamarán Santorini Civitatis" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Catamarán Sunset por Caldera</div>
-                  <div class="attr-detail">Aguas termales del volcán, barbacoa a bordo y atardecer de Oia.</div>
-                  <div class="attr-price">Civitatis: €120 - €135 / persona</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- ==================== CENTRO-SUR & POMPEYA ==================== -->
-        <div id="opt-b" class="variant-card itin-option-card" style="display: none;">
-          <div class="variant-header">
-            <div class="variant-title">Roma, Florencia & Nápoles + Islas Griegas</div>
-            <span class="variant-pill">12n Italia + 9n Grecia</span>
-          </div>
-          <div class="variant-summary">Roma (4n) ➔ Florencia (3n) ➔ Nápoles & Pompeya (4n) ➔ Vuelo Nápoles-Atenas (3n) ➔ Cícladas (6n)</div>
-
-          <!-- B1: Roma -->
-          <div class="stop-block">
-            <div class="stop-header">
-              <span class="stop-city">🏛️ 1. Roma (4 noches | 17 - 21 Abril)</span>
-              <span class="stop-nights">Base céntrica en Roma</span>
-            </div>
-            <div class="attractions-grid">
-              <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=400&q=80" alt="Coliseo" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Coliseo & Foro Romano</div>
-                  <div class="attr-detail">Inmersión en la historia clásica de la Antigua Roma.</div>
+                  <div class="attr-title">Coliseo, Foro & Palatino</div>
+                  <div class="attr-detail">Inmersión en el corazón del imperio romano.</div>
                   <div class="attr-price">Oficial: €18 | Civitatis: €45</div>
                 </div>
               </div>
@@ -2404,263 +2208,213 @@
                 </div>
               </div>
               <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1525874684015-58379d421a52?auto=format&fit=crop&w=400&q=80" alt="Fontana di Trevi" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1525874684015-58379d421a52?auto=format&fit=crop&w=400&q=80" alt="Panteón y Trevi" loading="lazy">
                 <div class="attr-card-body">
-                  <div class="attr-title">Plazas, Trevi & Trastevere</div>
-                  <div class="attr-detail">Paseos nocturnos, Panteón y gastronomía romana típica.</div>
-                  <div class="attr-price">Panteón: €5 | Gratis plazas</div>
+                  <div class="attr-title">Panteón & Fontana di Trevi</div>
+                  <div class="attr-detail">Paseos nocturnos, monedas a la fuente y helados artesanales.</div>
+                  <div class="attr-price">Oficial: €5 / Trevi: Gratis</div>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- B2: Florencia -->
+          <!-- Parada 2: Nápoles -->
           <div class="stop-block">
             <div class="stop-header">
-              <span class="stop-city">🎨 2. Florencia (3 noches | 21 - 24 Abril)</span>
-              <span class="stop-nights">Frecciarossa (1h 35m)</span>
-            </div>
-            <div class="attractions-grid">
-              <div class="attr-card">
-                <img src="img/florencia-duomo.jpg" alt="Duomo Florencia" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Duomo Santa Maria del Fiore</div>
-                  <div class="attr-detail">La cúpula renacentista más imponente del mundo.</div>
-                  <div class="attr-price">Pase cúpula: €30</div>
-                </div>
-              </div>
-              <div class="attr-card">
-                <img src="img/florencia-david.jpg" alt="David de Miguel Ángel y Uffizi" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Uffizi & David de Miguel Ángel</div>
-                  <div class="attr-detail">Obras maestras de Botticelli, Da Vinci y la escultura cumbre renacentista.</div>
-                  <div class="attr-price">Uffizi: €25 | Academia: €16</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- B3: Nápoles y Pompeya -->
-          <div class="stop-block">
-            <div class="stop-header">
-              <span class="stop-city">🌋 3. Nápoles & Pompeya (4 noches | 24 - 28 Abril)</span>
-              <span class="stop-nights">Frecciarossa a Nápoles (1h 10m)</span>
+              <span class="stop-city">🌋 2. Nápoles & Pompeya (3 noches | 21 - 24 Abril)</span>
+              <span class="stop-nights">Tren Frecciarossa directo (1h 10m)</span>
             </div>
             <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
-              Ruinas romanas congeladas en el tiempo, energía napolitana y la cuna de la auténtica pizza.
+              Tren bala a 300 km/h desde Roma Termini a Napoli Centrale. Base en centro histórico para conocer el parque arqueológico de Pompeya en tren directo (30 min), Spaccanapoli, el Cristo Velado y las mejores pizzerías tradicionales.
             </p>
             <div class="attractions-grid">
               <div class="attr-card">
                 <img src="https://images.unsplash.com/photo-1555992828-ca4dbe41d294?auto=format&fit=crop&w=400&q=80" alt="Ruinas de Pompeya" loading="lazy">
                 <div class="attr-card-body">
-                  <div class="attr-title">Parque Arqueológico Pompeya</div>
-                  <div class="attr-detail">Ciudad romana sepultada por la erupción del Vesubio en el 79 d.C.</div>
-                  <div class="attr-price">Oficial: €18 | Civitatis guiado: €55</div>
+                  <div class="attr-title">Parque Arqueológico de Pompeya</div>
+                  <div class="attr-detail">Calles romanas, anfiteatro y mosaicos intactos al pie del Vesubio.</div>
+                  <div class="attr-price">Oficial: €18 | Tren local: €3</div>
                 </div>
               </div>
               <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80" alt="Pizza Napolitana y Spaccanapoli" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80" alt="Pizza Napolitana" loading="lazy">
                 <div class="attr-card-body">
-                  <div class="attr-title">Spaccanapoli & Pizza Auténtica</div>
-                  <div class="attr-detail">Pizzería Da Michele, Cristo Velado y paseo costero a Santa Lucía.</div>
-                  <div class="attr-price">Cristo Velado: €10 | Pizza: €8-€12</div>
-                </div>
-              </div>
-              <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=400&q=80" alt="Paseo golfo Nápoles Capri" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Escapada Golfo de Nápoles / Capri</div>
-                  <div class="attr-detail">Barco rápido de 45 min para recorrer los Farallones y calas.</div>
-                  <div class="attr-price">Ferry i/v: €45 | Tour barco: €75</div>
+                  <div class="attr-title">Centro Histórico & Pizza</div>
+                  <div class="attr-detail">Spaccanapoli, via San Gregorio Armeno y la auténtica pizza Margherita.</div>
+                  <div class="attr-price">Pizza napolitana: €6 – €9</div>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- B4: Atenas -->
+          <!-- Parada 3: Salto a Grecia -->
           <div class="stop-block">
             <div class="stop-header">
-              <span class="stop-city">🏛️ 4. Atenas (3 noches | 28 Abr - 1 Mayo)</span>
-              <span class="stop-nights">Vuelo directo Nápoles ➔ Atenas (1h 55m)</span>
+              <span class="stop-city">✈️ 3. Salto Directo a Grecia (Sábado 24 Abril)</span>
+              <span class="stop-nights">Vuelo directo Nápoles ➔ Atenas (1h 45m)</span>
             </div>
+            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
+              Vuelo directo desde el aeropuerto de Nápoles (NAP) a Atenas (ATH) por Volotea o EasyJet (o tren rápido a Roma FCO y vuelo directo). En menos de 2 horas cruzan a Grecia para instalarse y cenar en Atenas.
+            </p>
             <div class="attractions-grid">
               <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?auto=format&fit=crop&w=400&q=80" alt="Acrópolis Atenas" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=400&q=80" alt="Vuelo a Grecia" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Vuelo Nápoles ➔ Atenas</div>
+                  <div class="attr-detail">Conexión aérea rápida con valija despachada en bodega.</div>
+                  <div class="attr-price">Vuelo: €70 – €110 / persona</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Parada 4: Atenas Inicial -->
+          <div class="stop-block">
+            <div class="stop-header">
+              <span class="stop-city">🏛️ 4. Atenas Clásica (3 noches | 24 - 27 Abril)</span>
+              <span class="stop-nights">Hotel en Plaka / Monastiraki</span>
+            </div>
+            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
+              La cuna de la civilización occidental: subida a la Acrópolis por la mañana temprano, visita al vanguardista Museo de la Acrópolis y cenas en tabernas de Plaka bajo el Partenón iluminado.
+            </p>
+            <div class="attractions-grid">
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?auto=format&fit=crop&w=400&q=80" alt="Acrópolis de Atenas" loading="lazy">
                 <div class="attr-card-body">
                   <div class="attr-title">Acrópolis & Partenón</div>
-                  <div class="attr-detail">El ícono griego por excelencia sobre la colina sagrada.</div>
-                  <div class="attr-price">Oficial: €20 | Civitatis: €48</div>
+                  <div class="attr-detail">Templo de Atenea Niké, Erecteón y vistas panorámicas de toda la cuenca.</div>
+                  <div class="attr-price">Oficial: €20 | Civitatis: €45</div>
                 </div>
               </div>
               <div class="attr-card">
-                <img src="img/atenas-museo-acropolis.jpg" alt="Museo Acrópolis Cariátides" loading="lazy">
+                <img src="img/atenas-plaka.jpg" alt="Plaka Atenas" loading="lazy">
                 <div class="attr-card-body">
-                  <div class="attr-title">Museo Acrópolis & Plaka</div>
-                  <div class="attr-detail">Cariátides originales, tesoros arqueológicos y café en Plaka.</div>
-                  <div class="attr-price">Museo: €15</div>
+                  <div class="attr-title">Plaka & Anafiotika</div>
+                  <div class="attr-detail">Callejones empedrados que parecen una isla en el centro histórico.</div>
+                  <div class="attr-price">Paseo libre / Tabernas tradicionales</div>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- B5: Dos Cícladas -->
+          <!-- Parada 5: Milos -->
           <div class="stop-block">
             <div class="stop-header">
-              <span class="stop-city">🏝️ 5. Dos Islas Cícladas (6 noches | 1 - 7 Mayo)</span>
-              <span class="stop-nights">Paros (3n) + Santorini (3n) en ferrys</span>
+              <span class="stop-city">⛵ 5. Isla de Milos (3 noches | 27 - 30 Abril)</span>
+              <span class="stop-nights">Ferry rápido desde Pireo (3h 15m)</span>
             </div>
+            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
+              Considerada una de las islas más bellas y vírgenes del mundo. Famosa por sus formaciones de roca volcánica blanca lunar en <strong>Sarakiniko</strong>, los pueblos de pescadores con puertas de colores en <strong>Klima</strong> y excursión en velero privado a las cuevas de <strong>Kleftiko</strong>.
+            </p>
             <div class="attractions-grid">
               <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?auto=format&fit=crop&w=400&q=80" alt="Paros Naoussa" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=400&q=80" alt="Playa Lunar Sarakiniko Milos" loading="lazy">
                 <div class="attr-card-body">
-                  <div class="attr-title">Naoussa & Playas de Paros</div>
-                  <div class="attr-detail">Puerto pesquero con encanto, tabernas y calas de roca pulida.</div>
-                  <div class="attr-price">Paseos libres en bus local</div>
+                  <div class="attr-title">Playa Lunar de Sarakiniko</div>
+                  <div class="attr-detail">Rocas blancas esculpidas por el viento y aguas turquesas del Egeo.</div>
+                  <div class="attr-price">Entrada libre / Paisaje único</div>
                 </div>
               </div>
               <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=400&q=80" alt="Santorini Oia" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80" alt="Cuevas de Kleftiko Milos" loading="lazy">
                 <div class="attr-card-body">
-                  <div class="attr-title">Oia & Caldera de Santorini</div>
-                  <div class="attr-detail">Las vistas volcánicas más deseadas de Europa.</div>
-                  <div class="attr-price">Catamarán sunset: €120/pax</div>
+                  <div class="attr-title">Excursión en Velero a Kleftiko</div>
+                  <div class="attr-detail">Antiguo refugio pirata con arcos de piedra marina y snorkel.</div>
+                  <div class="attr-price">Velero día completo: €80–€100/pax</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Parada 6: Naxos con Pascua -->
+          <div class="stop-block">
+            <div class="stop-header">
+              <span class="stop-city">🏝️ 6. Naxos & Gran Pascua Ortodoxa (3 noches | 30 Abr - 3 Mayo)</span>
+              <span class="stop-nights">Ferry directo Milos ➔ Naxos (2h 15m)</span>
+            </div>
+            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
+              La isla más fértil y auténtica de las Cícladas. Aquí se vivirá la <strong>Pascua Ortodoxa del domingo 2 de mayo</strong> con procesiones de cirios, corderos asados en las plazas y danzas tradicionales en pueblos de montaña como Apiranthos y Filoti.
+            </p>
+            <div class="attractions-grid">
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?auto=format&fit=crop&w=400&q=80" alt="Portara de Apolo Naxos" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Portara de Apolo</div>
+                  <div class="attr-detail">El colosal marco de mármol del siglo VI a.C. mirando al mar.</div>
+                  <div class="attr-price">Acceso libre al atardecer</div>
+                </div>
+              </div>
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=400&q=80" alt="Pascua Griega en Naxos" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Pascua Ortodoxa & Pueblos</div>
+                  <div class="attr-detail">Celebración cumbre de Grecia, quesos artesanales y papas de Naxos.</div>
+                  <div class="attr-price">Fiesta tradicional popular</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Parada 7: Santorini -->
+          <div class="stop-block">
+            <div class="stop-header">
+              <span class="stop-city">🌅 7. Santorini: Caldera & Catamarán (3 noches | 3 - 6 Mayo)</span>
+              <span class="stop-nights">Catamarán SeaJets Naxos ➔ Santorini (1h 45m)</span>
+            </div>
+            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
+              El gran broche de oro de las islas: acantilados de Oia con sus cúpulas azules, vistas vertiginosas a la caldera y navegación privada al atardecer en catamarán con barbacoa marina y vino blanco local.
+            </p>
+            <div class="attractions-grid">
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=400&q=80" alt="Cúpulas de Oia Santorini" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Cúpulas Azules de Oia</div>
+                  <div class="attr-detail">Paseo por los senderos blancos sobre el abismo de la caldera.</div>
+                  <div class="attr-price">La postal más famosa de Europa</div>
+                </div>
+              </div>
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=400&q=80" alt="Catamarán Sunset Santorini" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Crucero Catamarán Sunset</div>
+                  <div class="attr-detail">Aguas termales del volcán, playa roja y cena con asado a bordo.</div>
+                  <div class="attr-price">Civitatis: €120 / persona</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Parada 8: Atenas Despedida & Relax -->
+          <div class="stop-block">
+            <div class="stop-header">
+              <span class="stop-city">🛍️ 8. Atenas Final: 2 Noches de Relax & Despedida (6 - 8 Mayo)</span>
+              <span class="stop-nights">Vuelo corto Santorini ➔ Atenas (45 min)</span>
+            </div>
+            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
+              Regreso en avión desde Santorini el jueves 6 de mayo por la tarde. El <strong>viernes 7 de mayo es un día 100% libre sin valijas</strong>: compras de recuerdos, souvenirs, empaque y control de peso de valijas con calma en la habitación, y cena de despedida. El sábado 8 de mayo tienen el día libre y a las 16:30 van al aeropuerto para el vuelo de ITA Airways de las 19:30 rumbo a Buenos Aires.
+            </p>
+            <div class="attractions-grid">
+              <div class="attr-card">
+                <img src="img/atenas-plaka.jpg" alt="Atenas Despedida" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Cena de Cierre & Souvenirs</div>
+                  <div class="attr-detail">Plaza Monastiraki, aceite de oliva, cuero y última noche griega.</div>
+                  <div class="attr-price">Viernes de relax total</div>
+                </div>
+              </div>
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=400&q=80" alt="Vuelo Regreso ITA" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Vuelo de Regreso ITA Airways</div>
+                  <div class="attr-detail">Sáb 8/05 19:30 ATH ➔ FCO (1h 50m) ➔ EZE (Dom 9/05 07:30 AM).</div>
+                  <div class="attr-price">Conexión 100% protegida</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- ==================== RELAX CÍCLADAS ==================== -->
-        <div id="opt-c" class="variant-card itin-option-card" style="display: none;">
-          <div class="variant-header">
-            <div class="variant-title">13 Noches en Grecia & Menos Mudanzas de Hotel</div>
-            <span class="variant-pill">8n Italia + 13n Grecia</span>
-          </div>
-          <div class="variant-summary">Roma (4n) ➔ Base única Florencia o Venecia (4n) ➔ Atenas (3n) ➔ Paros (3n) + Naxos (3n) + Santorini (3n)</div>
-          <p style="font-size: 0.92rem; color: #475569; margin-bottom: 15px;">
-            Diseñada especialmente para no cambiar tanto de base en Italia y disfrutar 13 días de mar, sol, gastronomía marina y relax en las islas griegas.
-          </p>
-
-          <!-- C1: Roma -->
-          <div class="stop-block">
-            <div class="stop-header">
-              <span class="stop-city">🏛️ 1. Roma (4 noches | 17 - 21 Abril)</span>
-              <span class="stop-nights">Base de 4 noches</span>
-            </div>
-            <div class="attractions-grid">
-              <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=400&q=80" alt="Coliseo" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Coliseo & Foro Imperial</div>
-                  <div class="attr-detail">Paseo clásico por las grandes ruinas de Roma.</div>
-                  <div class="attr-price">Oficial: €18</div>
-                </div>
-              </div>
-              <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1541370976299-4d24ebbc9077?auto=format&fit=crop&w=400&q=80" alt="Vaticano" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Vaticano & San Pedro</div>
-                  <div class="attr-detail">Museos Vaticanos y plaza de San Pedro.</div>
-                  <div class="attr-price">Oficial: €25</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- C2: Florencia o Venecia -->
-          <div class="stop-block">
-            <div class="stop-header">
-              <span class="stop-city">🎨 2. Base Única Norte: Florencia o Venecia (4 noches | 21 - 25 Abril)</span>
-              <span class="stop-nights">Sin mudanzas continuas de hotel</span>
-            </div>
-            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
-              Elegir una sola ciudad para hacer 4 noches consecutivas y visitar la otra en excursión de día en Frecciarossa:
-            </p>
-            <div class="attractions-grid">
-              <div class="attr-card">
-                <img src="img/florencia-duomo.jpg" alt="Duomo Florencia" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Florencia & Toscana</div>
-                  <div class="attr-detail">Duomo, David de Miguel Ángel y escapada en tren a Siena.</div>
-                  <div class="attr-price">Uffizi: €25 | Cúpula: €30</div>
-                </div>
-              </div>
-              <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=400&q=80" alt="Gran Canal Venecia" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Venecia & Islas de la Laguna</div>
-                  <div class="attr-detail">Paseos en vaporetto por el Gran Canal y góndola al atardecer.</div>
-                  <div class="attr-price">Boleto 24h Vaporetto: €25</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- C3: Atenas -->
-          <div class="stop-block">
-            <div class="stop-header">
-              <span class="stop-city">🏛️ 3. Atenas (3 noches | 25 - 28 Abril)</span>
-              <span class="stop-nights">Vuelo directo Italia ➔ Atenas</span>
-            </div>
-            <div class="attractions-grid">
-              <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?auto=format&fit=crop&w=400&q=80" alt="Acrópolis Atenas" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Acrópolis & Partenón</div>
-                  <div class="attr-detail">Monumento cumbre de la cultura helénica.</div>
-                  <div class="attr-price">Oficial: €20 | Civitatis: €48</div>
-                </div>
-              </div>
-              <div class="attr-card">
-                <img src="img/atenas-plaka.jpg" alt="Plaka y Anafiotika" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Plaka & Gastronomía Griega</div>
-                  <div class="attr-detail">Callejones de adoquines, casas blancas y cenas con música griega.</div>
-                  <div class="attr-price">Cenas taberna: €25-€35/pax</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- C4: Paros, Naxos y Santorini -->
-          <div class="stop-block">
-            <div class="stop-header">
-              <span class="stop-city">🌊 4. Trío de Islas Cícladas (9 noches | 28 Abr - 7 Mayo)</span>
-              <span class="stop-nights">Paros (3n) + Naxos (3n) + Santorini (3n) en ferrys cortos</span>
-            </div>
-            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
-              Ferrys muy breves de 45 min a 1h 30m entre islas vecinas para disfrutar el mar Egeo a pleno:
-            </p>
-            <div class="attractions-grid">
-              <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?auto=format&fit=crop&w=400&q=80" alt="Paros" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Paros (3 noches)</div>
-                  <div class="attr-detail">Naoussa, bahías turquesas de Kolymbithres y cafés de pescadores.</div>
-                  <div class="attr-price">Ferry Pireo ➔ Paros: €45-€55</div>
-                </div>
-              </div>
-              <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=400&q=80" alt="Naxos" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Naxos (3 noches)</div>
-                  <div class="attr-detail">Portara de Apolo, Pascua Ortodoxa y playas vírgenes de arena blanca.</div>
-                  <div class="attr-price">Ferry Paros ➔ Naxos: €15 (45 min)</div>
-                </div>
-              </div>
-              <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=400&q=80" alt="Santorini" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Santorini (3 noches)</div>
-                  <div class="attr-detail">Cierre de lujo con acantilados de Oia y catamarán al atardecer.</div>
-                  <div class="attr-price">Catamarán sunset: €120/pax</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="tab-nav-footer">
+<div class="tab-nav-footer">
           <button class="tab-footer-btn" onclick="openTab('vuelos')">
             ← Anterior: 1. Vuelos
           </button>
@@ -2757,52 +2511,52 @@
             </div>
           </div>
 
-          <!-- Duomo Florencia -->
+          <!-- Capilla Sansevero (Nápoles) -->
           <div class="res-card">
             <div class="res-card-img">
-              <img src="img/florencia-duomo.jpg" alt="Duomo Florencia" loading="lazy">
-              <span class="res-badge">FLORENCIA 🇮🇹</span>
+              <img src="https://images.unsplash.com/photo-1555992828-ca4dbe41d294?auto=format&fit=crop&w=600&q=80" alt="Capilla Sansevero Nápoles" loading="lazy">
+              <span class="res-badge">NÁPOLES 🇮🇹</span>
             </div>
             <div class="res-card-body">
-              <div class="res-title">Duomo Santa Maria del Fiore</div>
-              <div class="res-sub">Subida a la cúpula de Brunelleschi (463 escalones) y Baptisterio.</div>
+              <div class="res-title">Capilla Sansevero & Cristo Velado</div>
+              <div class="res-sub">La obra maestra escultórica del mármol transparente en pleno corazón de Spaccanapoli.</div>
               <div class="price-box">
                 <div class="price-row-item">
                   <span class="price-label">Ticket Oficial:</span>
-                  <span class="price-val">Gratis / Brunelleschi Pass €30</span>
+                  <span class="price-val">€10,00</span>
                 </div>
                 <div class="price-row-item">
-                  <span class="price-label">Civitatis (Cúpula guiada):</span>
-                  <span class="price-val" style="color: #b91c1c;">€45,00 – €55,00</span>
+                  <span class="price-label">Civitatis (Tour centro histórico):</span>
+                  <span class="price-val" style="color: #b91c1c;">€25,00 – €35,00</span>
                 </div>
               </div>
               <div style="margin-top: auto;">
-                <span class="badge-oficial">Recomendación: Comprar Brunelleschi Pass oficial</span>
+                <span class="badge-oficial">Recomendación: Reservar online con fecha y hora</span>
               </div>
             </div>
           </div>
 
-          <!-- Uffizi y David -->
+          <!-- Kleftiko Milos -->
           <div class="res-card">
             <div class="res-card-img">
-              <img src="img/florencia-david.jpg" alt="David de Miguel Ángel" loading="lazy">
-              <span class="res-badge">FLORENCIA 🇮🇹</span>
+              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" alt="Velero Kleftiko Milos" loading="lazy">
+              <span class="res-badge">MILOS 🇬🇷</span>
             </div>
             <div class="res-card-body">
-              <div class="res-title">Galería Uffizi & Galería de la Academia</div>
-              <div class="res-sub">El David original de Miguel Ángel y obras cumbre de Botticelli y Da Vinci.</div>
+              <div class="res-title">Paseo en Velero a las Cuevas de Kleftiko</div>
+              <div class="res-sub">Navegación de día completo por calas volcánicas, arcos de piedra natural y cuevas piratas con almuerzo a bordo.</div>
               <div class="price-box">
                 <div class="price-row-item">
-                  <span class="price-label">Tickets Oficiales:</span>
-                  <span class="price-val">Uffizi €25 / Academia €16</span>
+                  <span class="price-label">Velero / Catamarán día:</span>
+                  <span class="price-val">€80 – €110 / persona</span>
                 </div>
                 <div class="price-row-item">
-                  <span class="price-label">Civitatis (Visita guiada):</span>
-                  <span class="price-val" style="color: #b91c1c;">€50,00 – €60,00</span>
+                  <span class="price-label">Civitatis / Puerto Adamas:</span>
+                  <span class="price-val" style="color: #1e3a8a;">Incluye almuerzo y snorkel</span>
                 </div>
               </div>
               <div style="margin-top: auto;">
-                <span class="badge-oficial">Recomendación: Oficial con turno matutino</span>
+                <span class="badge-civitatis">Recomendación: Excursión estrella de Milos (Opción 2)</span>
               </div>
             </div>
           </div>
@@ -2886,61 +2640,15 @@
         <!-- 2. PASAJES DE TRANSPORTE INTERNO -->
         <h3 style="color: var(--primary); font-size: 1.15rem; margin-top: 25px; margin-bottom: 8px;">🚆 2. Pasajes de Transporte Interno (Trenes, Vuelos & Ferrys)</h3>
         <div class="card-grid-2">
-          <!-- Tren Roma - Florencia -->
-          <div class="res-card">
-            <div class="res-card-img">
-              <img src="img/tren-frecciarossa.jpg" alt="Tren Frecciarossa" loading="lazy">
-              <span class="res-badge">1h 35m · ALTA VELOCIDAD</span>
-            </div>
-            <div class="res-card-body">
-              <div class="res-title">Roma ➔ Florencia</div>
-              <div class="res-sub">Frecciarossa 1000 / Italo. Centro a centro de estación Termini a Santa Maria Novella.</div>
-              <div class="price-box">
-                <div class="price-row-item">
-                  <span class="price-label">Por Persona:</span>
-                  <span class="price-val">€25 – €40</span>
-                </div>
-                <div class="price-row-item">
-                  <span class="price-label">Por Pareja:</span>
-                  <span class="price-val" style="color: #1e3a8a;">€50 – €80</span>
-                </div>
-              </div>
-              <small style="color: #64748b;">Comprar 60-90 días antes en Trenitalia / Italo para tarifa Super Economy.</small>
-            </div>
-          </div>
-
-          <!-- Tren Florencia - Venecia -->
-          <div class="res-card">
-            <div class="res-card-img">
-              <img src="https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=600&q=80" alt="Venecia Santa Lucia" loading="lazy">
-              <span class="res-badge">2h 15m · ALTA VELOCIDAD</span>
-            </div>
-            <div class="res-card-body">
-              <div class="res-title">Florencia ➔ Venecia</div>
-              <div class="res-sub">Frecciarossa cruzando los Apeninos directo a la estación Santa Lucia sobre el Gran Canal.</div>
-              <div class="price-box">
-                <div class="price-row-item">
-                  <span class="price-label">Por Persona:</span>
-                  <span class="price-val">€30 – €45</span>
-                </div>
-                <div class="price-row-item">
-                  <span class="price-label">Por Pareja:</span>
-                  <span class="price-val" style="color: #1e3a8a;">€60 – €90</span>
-                </div>
-              </div>
-              <small style="color: #64748b;">Comodidad total con wifi y guardaequipaje en coche.</small>
-            </div>
-          </div>
-
           <!-- Tren Roma - Nápoles -->
           <div class="res-card">
             <div class="res-card-img">
-              <img src="img/tren-frecciarossa.jpg" alt="Frecciarossa a Nápoles" loading="lazy">
+              <img src="img/tren-frecciarossa.jpg" alt="Frecciarossa Roma a Nápoles" loading="lazy">
               <span class="res-badge">1h 10m · ALTA VELOCIDAD</span>
             </div>
             <div class="res-card-body">
               <div class="res-title">Roma ➔ Nápoles</div>
-              <div class="res-sub">Frecciarossa a 300 km/h de Roma Termini a Napoli Centrale. Frecuencias continuas.</div>
+              <div class="res-sub">Frecciarossa a 300 km/h de Roma Termini a Napoli Centrale. Frecuencias continuas sin paradas intermedias.</div>
               <div class="price-box">
                 <div class="price-row-item">
                   <span class="price-label">Por Persona:</span>
@@ -2951,7 +2659,30 @@
                   <span class="price-val" style="color: #1e3a8a;">€40 – €70</span>
                 </div>
               </div>
-              <small style="color: #64748b;">Conexión inmediata con tren local a Pompeya y Frecciargento a Puglia.</small>
+              <small style="color: #64748b;">Comodidad total en Opción 1 y Opción 2.</small>
+            </div>
+          </div>
+
+          <!-- Tren Nápoles - Puglia (Opción 1) -->
+          <div class="res-card">
+            <div class="res-card-img">
+              <img src="img/puglia-polignano.jpg" alt="Tren a Puglia" loading="lazy">
+              <span class="res-badge">3h 30m · FRECCIARGENTO</span>
+            </div>
+            <div class="res-card-body">
+              <div class="res-title">Nápoles ➔ Puglia (Bari / Polignano)</div>
+              <div class="res-sub">Tren Frecciargento cruzando los Apeninos hacia el mar Adriático (Opción 1 Sur & Puglia).</div>
+              <div class="price-box">
+                <div class="price-row-item">
+                  <span class="price-label">Por Persona:</span>
+                  <span class="price-val">€25 – €40</span>
+                </div>
+                <div class="price-row-item">
+                  <span class="price-label">Por Pareja:</span>
+                  <span class="price-val" style="color: #1e3a8a;">€50 – €80</span>
+                </div>
+              </div>
+              <small style="color: #64748b;">Directo de costa Tirrena a costa Adriática.</small>
             </div>
           </div>
 
@@ -2962,8 +2693,8 @@
               <span class="res-badge">1h 15m a 2h · VUELO DIRECTO</span>
             </div>
             <div class="res-card-body">
-              <div class="res-title">Italia (Bari / Roma / Venecia) ➔ Atenas</div>
-              <div class="res-sub">Vuelo directo (Volotea / Ryanair / Aegean Airlines). Desde Bari a Atenas son solo 1h 15m.</div>
+              <div class="res-title">Italia (Bari o Nápoles / Roma) ➔ Atenas</div>
+              <div class="res-sub">Vuelo directo (Volotea / Ryanair / Aegean). Desde Bari (Opción 1) o Nápoles (Opción 2) a Atenas en menos de 2h.</div>
               <div class="price-box">
                 <div class="price-row-item">
                   <span class="price-label">Por Persona:</span>
@@ -3206,38 +2937,20 @@
             </div>
           </div>
 
-          <!-- Florencia -->
+          <!-- Milos -->
           <div class="dest-card">
             <div class="dest-img-wrap">
-              <img src="img/florencia-duomo.jpg" alt="Florencia Duomo Santa Maria del Fiore" loading="lazy">
-              <span class="dest-country-badge">🇮🇹 ITALIA</span>
+              <img src="https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80" alt="Playa Sarakiniko Milos" loading="lazy">
+              <span class="dest-country-badge" style="background:#0284c7;">🇬🇷 GRECIA</span>
             </div>
             <div class="dest-body">
-              <div class="dest-title">Florencia & Toscana</div>
-              <div class="dest-highlight">Cuna del Renacimiento y gastronomía toscana</div>
-              <p class="dest-desc">La impresionante cúpula del Duomo, el Ponte Vecchio sobre el río Arno, el David de Miguel Ángel y escapadas en tren rápido.</p>
-              <div class="dest-tags">
-                <span class="dest-tag">3-4 Noches</span>
-                <span class="dest-tag">Tren Frecciarossa</span>
-                <span class="dest-tag">Ruta Clásica</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Venecia -->
-          <div class="dest-card">
-            <div class="dest-img-wrap">
-              <img src="https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=800&q=80" alt="Venecia Gran Canal" loading="lazy">
-              <span class="dest-country-badge">🇮🇹 ITALIA</span>
-            </div>
-            <div class="dest-body">
-              <div class="dest-title">Venecia</div>
-              <div class="dest-highlight">Canales eternos, puentes y serenidad</div>
-              <p class="dest-desc">Navegación por el Gran Canal en vaporetto, la majestuosa Plaza San Marcos, el Palacio Ducal y perderse en sus puentes sin ruidos de autos.</p>
+              <div class="dest-title">Milos & Kleftiko</div>
+              <div class="dest-highlight">Playas lunares y cuevas de piratas</div>
+              <p class="dest-desc">La roca blanca volcánica de Sarakiniko contrastando con el azul zafiro, pueblitos de pescadores como Klima y navegación en velero por Kleftiko.</p>
               <div class="dest-tags">
                 <span class="dest-tag">3 Noches</span>
-                <span class="dest-tag">Vaporetto & A pie</span>
-                <span class="dest-tag">Ruta Clásica</span>
+                <span class="dest-tag">Ferry & Velero</span>
+                <span class="dest-tag" style="background:#dbeafe;color:#1e40af;font-weight:700;">Opción 2</span>
               </div>
             </div>
           </div>
@@ -3374,13 +3087,13 @@
         <div class="map-container-wrap">
           <div class="map-toggle-bar">
             <button id="map-btn-sur" class="map-toggle-btn active" onclick="switchMapRoute('sur')">
-              ⭐ Ver Ruta Sur & Puglia (Italia & Grecia)
+              ⭐ Opción 1: Roma, Sur & Puglia (9n + 12n)
             </button>
-            <button id="map-btn-clasica" class="map-toggle-btn" onclick="switchMapRoute('clasica')">
-              🏛️ Ver Ruta Clásica (Norte & Grecia)
+            <button id="map-btn-opcion2" class="map-toggle-btn" onclick="switchMapRoute('opcion2')">
+              🏝️ Opción 2: Roma, Nápoles & Milos (7n + 14n)
             </button>
             <button id="map-btn-global" class="map-toggle-btn" onclick="switchMapRoute('global')">
-              ✈️ Ver Vuelo Global (Ezeiza ↔ Europa)
+              ✈️ Vuelo Transatlántico (Ezeiza ↔ Europa)
             </button>
           </div>
 
@@ -3624,19 +3337,19 @@
               <span class="res-badge">300 km/h · TREN ITALIANO</span>
             </div>
             <div class="res-card-body">
-              <div class="res-title">Roma ↔ Florencia ↔ Venecia</div>
-              <div class="res-sub">Trenes Frecciarossa 1000 / Italo de Alta Velocidad.</div>
+              <div class="res-title">Roma ↔ Nápoles (Frecciarossa 1000)</div>
+              <div class="res-sub">Trenes Frecciarossa 1000 / Italo de Alta Velocidad (Opción 1 y Opción 2).</div>
               <div class="price-box">
                 <div class="price-row-item">
                   <span class="price-label">Tiempo de viaje:</span>
-                  <span class="price-val">1h 35m a 2h 15m</span>
+                  <span class="price-val">Solo 1h 10m</span>
                 </div>
                 <div class="price-row-item">
                   <span class="price-label">Comodidades:</span>
                   <span class="price-val">Wifi, enchufes, café y maleteros</span>
                 </div>
               </div>
-              <small style="color: #166534; font-weight: 600;">✓ De centro a centro: salís de Roma Termini y bajás en el corazón de Florencia o directo sobre el Gran Canal de Venecia.</small>
+              <small style="color: #166534; font-weight: 600;">✓ De centro a centro: salís de Roma Termini y en 70 minutos bajás en Napoli Centrale a 300 km/h sin escalas.</small>
             </div>
           </div>
 
@@ -3826,7 +3539,7 @@
         <div class="budget-item-card">
           <div class="budget-item-info">
             <div class="budget-item-name">🚆 3. Transportes Internos (Trenes + Vuelo + Ferrys)</div>
-            <div class="budget-item-desc">Trenes Frecciarossa alta velocidad (Roma-Florencia-Venecia) + Vuelo a Atenas con valija + Ferrys Blue Star/SeaJets con butacas reservadas.</div>
+            <div class="budget-item-desc">Trenes Frecciarossa alta velocidad (Roma-Nápoles o Puglia) + Vuelo a Atenas con valija despachada + Ferrys y catamaranes con butacas reservadas.</div>
           </div>
           <div class="budget-item-amount">
             <div class="budget-item-price">USD 450 – 650</div>
@@ -4015,7 +3728,7 @@
                 <span class="country-badge-tag it">Roma · Nápoles · Puglia</span>
               </div>
               <p style="font-size:0.84rem; color:#64748b; margin-bottom:12px;">
-                Nápoles y Puglia son entre un 20% y 30% más baratas que Roma o el norte (Milán/Florencia).
+                Nápoles y Puglia son entre un 20% y 30% más económicas que Roma, con precios excelentes en comidas y cafés.
               </p>
 
               <div class="price-row-item-daily">
@@ -4476,7 +4189,7 @@
             <div class="notice-body">
               <p>Los tres únicos temas que conviene charlar y definir en la próxima reunión:</p>
               <ul style="margin: 8px 0 0 18px; line-height: 1.5;">
-                <li><strong>1. Elección de la variante:</strong> Confirmar si van por la propuesta de Roma + Gran Sur y Puglia (sin repetir lo clásico) o prefieren la Ruta Clásica con Florencia y Venecia.</li>
+                <li><strong>1. Elección del circuito definitivo:</strong> Definir si prefieren la <strong>Opción 1</strong> (Roma, Nápoles y Puglia + 12n Grecia) o la <strong>Opción 2</strong> (Roma 4n y Nápoles 3n + 14n Grecia con Milos, Naxos y Santorini).</li>
                 <li><strong>2. Hoteles vs. Villa en las Islas:</strong> Definir si en las islas (Naxos y Santorini) prefieren 2 habitaciones dobles en hotel con desayuno o alquilar una casa/villa cicládica entera para los 4 con terraza y vista al mar.</li>
                 <li><strong>3. Catamarán Sunset en Santorini:</strong> Es la excursión estrella de Grecia (crucero al volcán con barbacoa y vino blanco al atardecer). Confirmar que los 4 están de acuerdo en contratarla.</li>
               </ul>
@@ -5017,6 +4730,39 @@
             </ul>
             <div class="climate-clothing-tip">
               ⛵ <strong>Qué llevar:</strong> Cortavientos o buzo para la navegación en catamarán al atardecer. Traje de baño oscuro para las aguas termales volcánicas (el azufre mancha los claros).
+            </div>
+          </div>
+
+          <!-- 7. Milos (Opción 2) -->
+          <div class="climate-city-card">
+            <div class="climate-city-header">
+              <span class="climate-city-name">🇬🇷 Milos (Cícladas)</span>
+              <span class="climate-city-dates">27 al 30 Abr</span>
+            </div>
+            <div class="temp-bar-wrap">
+              <span class="temp-range-label">Rango Térmico:</span>
+              <span class="temp-range-vals"><span class="temp-min">15°C</span> min / <span class="temp-max">23°C</span> máx</span>
+            </div>
+            <ul class="climate-detail-list">
+              <li class="climate-detail-item">
+                <span class="climate-detail-label">Sensación de día:</span>
+                <span class="climate-detail-val">Sol radiante en calas volcánicas</span>
+              </li>
+              <li class="climate-detail-item">
+                <span class="climate-detail-label">Viento del Egeo:</span>
+                <span class="climate-detail-val">Brisa fresca ideal para velero</span>
+              </li>
+              <li class="climate-detail-item">
+                <span class="climate-detail-label">Temp. Agua de Mar:</span>
+                <span class="climate-detail-val">18°C – 19°C (turquesa cristalina)</span>
+              </li>
+              <li class="climate-detail-item">
+                <span class="climate-detail-label">Lluvia:</span>
+                <span class="climate-detail-val">Prácticamente nula</span>
+              </li>
+            </ul>
+            <div class="climate-clothing-tip">
+              🩱 <strong>Qué llevar:</strong> Protector solar y calzado de agua para caminar por las rocas blancas de Sarakiniko y subir a los botes de Kleftiko.
             </div>
           </div>
 
@@ -6014,22 +5760,22 @@
       { coords: [[36.3932, 25.4615], [37.15, 24.55], [37.9753, 23.7261]], color: "#0284c7", weight: 4, dash: "4, 6", label: "Ferry / Vuelo Santorini ➔ Atenas" }
     ];
 
-    const europeStopsClasica = [
-      { name: "Roma", coords: [41.9028, 12.4964], icon: "🏛️", desc: "<strong>🏛️ Roma (4 noches | 17 - 21 Abr)</strong><br>Llegada de Ezeiza.<br>Coliseo, Vaticano, Trevi y Trastevere.<br><span style='color:#ef4444;font-weight:700;'>🚆 Siguiente: Frecciarossa a Florencia (1h 35m)</span>" },
-      { name: "Florencia", coords: [43.7696, 11.2558], icon: "🎨", desc: "<strong>🎨 Florencia (3 noches | 21 - 24 Abr)</strong><br>Duomo, Galería Uffizi y David de Miguel Ángel.<br><span style='color:#ef4444;font-weight:700;'>🚆 Siguiente: Frecciarossa a Venecia (2h 15m)</span>" },
-      { name: "Venecia", coords: [45.4408, 12.3155], icon: "🛶", desc: "<strong>🛶 Venecia (3 noches | 24 - 27 Abr)</strong><br>Gran Canal en vaporetto, San Marcos y góndola.<br><span style='color:#8b5cf6;font-weight:700;'>✈️ Siguiente: Vuelo directo Venecia ➔ Atenas (2h 10m)</span>" },
-      { name: "Atenas", coords: [37.9753, 23.7261], icon: "🏛️", desc: "<strong>🏛️ Atenas (3 noches | 27 - 30 Abr)</strong><br>Acrópolis, Museo y tabernas en Plaka.<br><span style='color:#0284c7;font-weight:700;'>🚢 Siguiente: Ferry Blue Star a Naxos/Paros (3h 30m)</span>" },
-      { name: "Naxos / Paros", coords: [37.1062, 25.3768], icon: "🏝️", desc: "<strong>🏝️ Naxos o Paros (4 noches | 30 Abr - 4 May)</strong><br>Pascua Ortodoxa y calas del Egeo.<br><span style='color:#0284c7;font-weight:700;'>🚢 Siguiente: Ferry a Santorini (1h 45m)</span>" },
-      { name: "Santorini", coords: [36.3932, 25.4615], icon: "🌅", desc: "<strong>🌅 Santorini (3 noches | 4 - 7 May)</strong><br>Caldera de Oia y catamarán sunset con cena.<br><span style='color:#0284c7;font-weight:700;'>🚢/✈️ Siguiente: Regreso a Atenas y vuelo a EZE</span>" }
+    const europeStopsOpcion2 = [
+      { name: "Roma", coords: [41.9028, 12.4964], icon: "🏛️", desc: "<strong>🏛️ Roma (4 noches | 17 - 21 Abr)</strong><br>Coliseo, Vaticano, Panteón y Trastevere.<br><span style='color:#ef4444;font-weight:700;'>🚆 Siguiente: Frecciarossa a Nápoles (1h 10m)</span>" },
+      { name: "Nápoles & Pompeya", coords: [40.8518, 14.2681], icon: "🌋", desc: "<strong>🌋 Nápoles & Pompeya (3 noches | 21 - 24 Abr)</strong><br>Centro histórico, Spaccanapoli y ruinas de Pompeya.<br><span style='color:#8b5cf6;font-weight:700;'>✈️ Siguiente: Vuelo Nápoles ➔ Atenas (1h 45m)</span>" },
+      { name: "Atenas", coords: [37.9753, 23.7261], icon: "🏛️", desc: "<strong>🏛️ Atenas (3 noches iniciales + 2 finales)</strong><br>Acrópolis, Plaka, Museo y relax de cierre.<br><span style='color:#0284c7;font-weight:700;'>🚢 Siguiente: Ferry a Milos (3h 15m)</span>" },
+      { name: "Milos", coords: [36.7214, 24.4261], icon: "⛵", desc: "<strong>⛵ Isla de Milos (3 noches | 27 - 30 Abr)</strong><br>Playas lunares de Sarakiniko, velero a Kleftiko y Klima.<br><span style='color:#0284c7;font-weight:700;'>🚢 Siguiente: Ferry Milos ➔ Naxos (2h 15m)</span>" },
+      { name: "Naxos", coords: [37.1062, 25.3768], icon: "🏝️", desc: "<strong>🏝️ Isla de Naxos (3 noches | 30 Abr - 3 May)</strong><br>Pascua Ortodoxa del 2 de mayo, pueblos de montaña y Portara.<br><span style='color:#0284c7;font-weight:700;'>🚢 Siguiente: Catamarán a Santorini (1h 45m)</span>" },
+      { name: "Santorini", coords: [36.3932, 25.4615], icon: "🌅", desc: "<strong>🌅 Santorini (3 noches | 3 - 6 May)</strong><br>Caldera de Oia y crucero catamarán sunset con cena.<br><span style='color:#10b981;font-weight:700;'>✈️ Siguiente: Vuelo a Atenas (45 min) y 2n de relax final</span>" }
     ];
 
-    const europeLegsClasica = [
-      { coords: [[41.9028, 12.4964], [43.7696, 11.2558]], color: "#ef4444", weight: 5, label: "Tren Frecciarossa Roma ➔ Florencia (1h 35m)" },
-      { coords: [[43.7696, 11.2558], [44.4949, 11.3426], [45.4408, 12.3155]], color: "#ef4444", weight: 5, label: "Tren Frecciarossa Florencia ➔ Venecia (2h 15m)" },
-      { coords: [[45.4408, 12.3155], [41.5, 18.0], [37.9753, 23.7261]], color: "#8b5cf6", weight: 4, dash: "6, 8", label: "Vuelo Directo Venecia ➔ Atenas (2h 10m)" },
-      { coords: [[37.9429, 23.6469], [37.5, 24.5], [37.1062, 25.3768]], color: "#0284c7", weight: 4, dash: "4, 6", label: "Ferry Pireo ➔ Naxos/Paros (3h 30m)" },
-      { coords: [[37.1062, 25.3768], [36.7, 25.4], [36.3932, 25.4615]], color: "#0284c7", weight: 4, dash: "4, 6", label: "Ferry Naxos ➔ Santorini (1h 45m)" },
-      { coords: [[36.3932, 25.4615], [37.15, 24.55], [37.9753, 23.7261]], color: "#0284c7", weight: 4, dash: "4, 6", label: "Ferry / Vuelo Santorini ➔ Atenas" }
+    const europeLegsOpcion2 = [
+      { coords: [[41.9028, 12.4964], [40.8518, 14.2681]], color: "#ef4444", weight: 5, label: "Tren Bala Frecciarossa Roma ➔ Nápoles (1h 10m)" },
+      { coords: [[40.8518, 14.2681], [39.0, 19.5], [37.9753, 23.7261]], color: "#8b5cf6", weight: 4, dash: "6, 8", label: "Vuelo Directo Nápoles ➔ Atenas (1h 45m)" },
+      { coords: [[37.9429, 23.6469], [37.3, 24.0], [36.7214, 24.4261]], color: "#0284c7", weight: 4, dash: "4, 6", label: "Ferry Rápido Pireo ➔ Milos (3h 15m)" },
+      { coords: [[36.7214, 24.4261], [36.9, 24.9], [37.1062, 25.3768]], color: "#0284c7", weight: 4, dash: "4, 6", label: "Ferry Milos ➔ Naxos (2h 15m)" },
+      { coords: [[37.1062, 25.3768], [36.7, 25.4], [36.3932, 25.4615]], color: "#0284c7", weight: 4, dash: "4, 6", label: "Catamarán Naxos ➔ Santorini (1h 45m)" },
+      { coords: [[36.3932, 25.4615], [37.15, 24.55], [37.9753, 23.7261]], color: "#10b981", weight: 4, dash: "5, 7", label: "Vuelo Santorini ➔ Atenas (45 min)" }
     ];
 
     const routeData = {
@@ -6038,10 +5784,10 @@
         stops: [ezeStop, ...europeStopsSur],
         legs: [...transatlanticLegs, ...europeLegsSur]
       },
-      clasica: {
-        bounds: [[35.8, 10.8], [45.9, 26.6]],
-        stops: [ezeStop, ...europeStopsClasica],
-        legs: [...transatlanticLegs, ...europeLegsClasica]
+      opcion2: {
+        bounds: [[35.8, 11.8], [42.6, 26.6]],
+        stops: [ezeStop, ...europeStopsOpcion2],
+        legs: [...transatlanticLegs, ...europeLegsOpcion2]
       },
       global: {
         bounds: [[-36.5, -63.0], [46.5, 28.5]],
@@ -6105,7 +5851,7 @@
 
     function switchMapRoute(mode) {
       document.querySelectorAll('.map-toggle-btn').forEach(b => b.classList.remove('active'));
-      const btnId = mode === 'sur' ? 'map-btn-sur' : (mode === 'clasica' ? 'map-btn-clasica' : 'map-btn-global');
+      const btnId = mode === 'sur' ? 'map-btn-sur' : (mode === 'opcion2' ? 'map-btn-opcion2' : 'map-btn-global');
       const activeBtn = document.getElementById(btnId);
       if (activeBtn) activeBtn.classList.add('active');
       renderRouteLayers(mode);
