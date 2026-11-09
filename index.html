@@ -2107,23 +2107,634 @@
         <div class="itinerary-selector-wrap">
           <div class="itinerary-selector" style="grid-template-columns: 1fr 1fr;">
             <button class="itin-btn active" onclick="switchItinerary('opt-1')">
-              <span class="itin-btn-badge">⭐ Opción 1 (Sur & Puglia)</span>
-              <span class="itin-btn-title">Roma, Nápoles, Puglia & Grecia</span>
-              <span class="itin-btn-sub">9n Italia + 12n Grecia · Roma (3n) · Nápoles (3n) · Puglia (3n) · Atenas (3n) · Naxos Pascua (4n) · Santorini (3n) · Atenas (2n)</span>
+              <span class="itin-btn-badge" style="background:#16a34a;">⭐ Opción 1 (Recomendada · 100% Sin Auto)</span>
+              <span class="itin-btn-title">Roma, Nápoles & Cícladas con Milos</span>
+              <span class="itin-btn-sub">7n Italia + 14n Grecia · Roma (4n) · Nápoles (3n) · Salto Directo Nápoles-Atenas · Milos (3n) · Naxos (3n) · Santorini (3n) · Atenas (2n)</span>
             </button>
             <button class="itin-btn" onclick="switchItinerary('opt-2')">
-              <span class="itin-btn-badge" style="background:#0284c7;">🏝️ Opción 2 (Más Islas & Menos Hoteles)</span>
-              <span class="itin-btn-title">Roma, Nápoles & Cícladas Extendidas</span>
-              <span class="itin-btn-sub">7n Italia + 14n Grecia · Roma (4n) · Nápoles (3n) · Atenas (3n) · Milos (3n) · Naxos Pascua (3n) · Santorini (3n) · Atenas (2n)</span>
+              <span class="itin-btn-badge" style="background:#64748b;">🏛️ Opción 2 (Alternativa Sur & Puglia)</span>
+              <span class="itin-btn-title">Roma, Nápoles, Puglia & Grecia</span>
+              <span class="itin-btn-sub">9n Italia + 12n Grecia · Roma (3n) · Nápoles (3n) · Puglia (3n) · Atenas (3n) · Naxos Pascua (4n) · Santorini (3n) · Atenas (2n)</span>
+            </button<!-- ==================== OPCIÓN 1: ROMA, NÁPOLES & CÍCLADAS EXTENDIDAS (RECOMENDADA) ==================== -->
+        <div id="opt-1" class="variant-card itin-option-card active">
+          <div class="variant-header">
+            <div class="variant-title">⭐ Opción 1: Roma, Nápoles & Cícladas Extendidas (100% Sin Alquilar Auto)</div>
+            <span class="variant-pill" style="background: #dcfce7; color: #15803d; font-weight:700;">⭐ 7n Italia + 14n Grecia · Recomendada (Cero Autos)</span>
+          </div>
+          <div class="variant-summary">
+            Roma (4n) ➔ Nápoles & Pompeya (3n) ➔ Salto Nápoles-Atenas ➔ Atenas (3n) ➔ Milos (3n) ➔ Naxos Pascua (3n) ➔ Santorini (3n) ➔ Atenas despedida & relax (2n)
+          </div>
+
+          <!-- Parada 1: Roma -->
+          <div class="stop-block">
+            <div class="stop-header stop-header-interactive" onclick="toggleDayPlan(this)" title="Hacé clic para ver o cerrar el día a día recomendado">
+              <span class="stop-city">🏛️ 1. Roma (4 noches | 17 - 21 Abril)</span>
+              <span class="stop-nights">Hotel céntrico en Roma (Termini / Centro) · 📅 Ver día a día ▼</span>
+            </div>
+            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
+              3 días completos y 4 noches para disfrutar la Ciudad Eterna sin apuros: Coliseo, Foros Imperiales, Palatino, Museos Vaticanos, Capilla Sixtina, San Pedro, Fontana di Trevi, Panteón, Plaza Navona, Villa Borghese y cenas relajadas en Trastevere.
+            </p>
+            <div class="attractions-grid">
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=400&q=80" alt="Coliseo Romano" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Coliseo, Foro & Palatino</div>
+                  <div class="attr-detail">Inmersión en el corazón del imperio romano.</div>
+                  <div class="attr-price">Oficial: €18 | Civitatis: €45</div>
+                </div>
+              </div>
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1531572753322-ad063cecc140?auto=format&fit=crop&w=400&q=80" alt="Vaticano" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Vaticano & San Pedro</div>
+                  <div class="attr-detail">Capilla Sixtina, estancias de Rafael y cúpula de San Pedro.</div>
+                  <div class="attr-price">Oficial: €25 | Civitatis: €55</div>
+                </div>
+              </div>
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1525874684015-58379d421a52?auto=format&fit=crop&w=400&q=80" alt="Panteón y Trevi" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Panteón & Fontana di Trevi</div>
+                  <div class="attr-detail">Paseos nocturnos, monedas a la fuente y helados artesanales.</div>
+                  <div class="attr-price">Oficial: €5 / Trevi: Gratis</div>
+                </div>
+              </div>
+            </div>
+            <button class="day-toggle-btn" onclick="toggleDayPlan(this)">
+              <span>📅 Ver Itinerario Día por Día Recomendado & Transporte</span>
+              <span class="day-btn-arrow">▼</span>
             </button>
+            <div class="day-by-day-panel">
+                <div class="day-step-item">
+                  <div class="day-step-dot"></div>
+                  <div class="day-step-title">
+                    <span>Día 1: Aterrizaje en Roma y Primera Noche Mágica</span>
+                    <span class="day-step-badge">Llegada & Roma Nocturna</span>
+                  </div>
+                  <div class="day-step-meta">📅 <strong>Sábado 17 de Abril</strong></div>
+                  <div class="day-step-desc">Llegada a Roma FCO a las 18:40 PM en vuelo directo ITA Airways. Traslado en tren Leonardo Express al centro, check-in y cena nocturna.</div>
+                  <div class="day-step-details">
+                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>Tren Leonardo Express (32 min, €14) directo a Roma Termini. Taxi o caminata al hotel.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>Paseo nocturno por la Fontana di Trevi iluminada y Piazza Navona.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Cena de bienvenida con pasta Carbonara o Cacio e Pepe en Trastevere.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Comprar billetes de tren en app Trenitalia para evitar colas en el aeropuerto.</span></div>
+                  </div>
+                </div>
+                <div class="day-step-item">
+                  <div class="day-step-dot"></div>
+                  <div class="day-step-title">
+                    <span>Día 2: Coliseo, Foro Romano & Trastevere</span>
+                    <span class="day-step-badge">Roma Antigua</span>
+                  </div>
+                  <div class="day-step-meta">📅 <strong>Domingo 18 de Abril</strong></div>
+                  <div class="day-step-desc">Jornada completa en el corazón del imperio romano.</div>
+                  <div class="day-step-details">
+                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>A pie. Calzado cómodo con buen agarre.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>09:00 AM entrada oficial al Coliseo Romano, Foro y Palatino. Tarde: Panteón de Agripa y Campo de' Fiori.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Almuerzo en barrio Monti. Cena tradicional en Trastevere (Da Enzo o Tonnarello).</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Reservar Coliseo con 30 días exactos de anticipación en la web oficial ministerial.</span></div>
+                  </div>
+                </div>
+                <div class="day-step-item">
+                  <div class="day-step-dot"></div>
+                  <div class="day-step-title">
+                    <span>Día 3: Museos Vaticanos, San Pedro & Castillo Sant'Angelo</span>
+                    <span class="day-step-badge">Vaticano & Tíber</span>
+                  </div>
+                  <div class="day-step-meta">📅 <strong>Lunes 19 de Abril</strong></div>
+                  <div class="day-step-desc">Día dedicado al patrimonio papal y renacentista.</div>
+                  <div class="day-step-details">
+                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>Metro Línea A hasta estación Ottaviano (10 min). Resto a pie.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>09:00 AM Museos Vaticanos, Capilla Sixtina y Basílica de San Pedro. Tarde: Castillo Sant'Angelo y Piazza Navona.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Almuerzo en Borgo Pio. Café en Sant'Eustachio. Cena en centro histórico.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Hombros y rodillas cubiertos para ingresar a la Basílica de San Pedro.</span></div>
+                  </div>
+                </div>
+                <div class="day-step-item">
+                  <div class="day-step-dot"></div>
+                  <div class="day-step-title">
+                    <span>Día 4: Villa Borghese, Mirador del Pincio & Compras</span>
+                    <span class="day-step-badge">Roma Relajada</span>
+                  </div>
+                  <div class="day-step-meta">📅 <strong>Martes 20 de Abril</strong></div>
+                  <div class="day-step-desc">Día extra sin apuros para disfrutar de Roma como un local.</div>
+                  <div class="day-step-details">
+                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>A pie y metro.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>Plaza de España, jardines de Villa Borghese, mirador del Pincio sobre Piazza del Popolo y compras en Via del Corso y Via Condotti.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Almuerzo distendido en terraza de Piazza del Popolo. Cena gourmet en el auténtico barrio de Testaccio.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Subir al Pincio a las 18:30 para ver la puesta de sol sobre todas las cúpulas de Roma.</span></div>
+                  </div>
+                </div>
+            </div>
+          </div>
+
+          <!-- Parada 2: Nápoles -->
+          <div class="stop-block">
+            <div class="stop-header stop-header-interactive" onclick="toggleDayPlan(this)" title="Hacé clic para ver o cerrar el día a día recomendado">
+              <span class="stop-city">🌋 2. Nápoles & Pompeya (3 noches | 21 - 24 Abril)</span>
+              <span class="stop-nights">Tren Frecciarossa directo (1h 10m) · 📅 Ver día a día ▼</span>
+            </div>
+            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
+              Tren bala a 300 km/h desde Roma Termini a Napoli Centrale. Base en centro histórico para conocer el parque arqueológico de Pompeya en tren directo (30 min), Spaccanapoli, el Cristo Velado y las mejores pizzerías tradicionales.
+            </p>
+            <div class="attractions-grid">
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1555992828-ca4dbe41d294?auto=format&fit=crop&w=400&q=80" alt="Ruinas de Pompeya" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Parque Arqueológico de Pompeya</div>
+                  <div class="attr-detail">Calles romanas, anfiteatro y mosaicos intactos al pie del Vesubio.</div>
+                  <div class="attr-price">Oficial: €18 | Tren local: €3</div>
+                </div>
+              </div>
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80" alt="Pizza Napolitana" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Centro Histórico & Pizza</div>
+                  <div class="attr-detail">Spaccanapoli, via San Gregorio Armeno y la auténtica pizza Margherita.</div>
+                  <div class="attr-price">Pizza napolitana: €6 – €9</div>
+                </div>
+              </div>
+            </div>
+            <button class="day-toggle-btn" onclick="toggleDayPlan(this)">
+              <span>📅 Ver Itinerario Día por Día Recomendado & Transporte</span>
+              <span class="day-btn-arrow">▼</span>
+            </button>
+            <div class="day-by-day-panel">
+                <div class="day-step-item">
+                  <div class="day-step-dot"></div>
+                  <div class="day-step-title">
+                    <span>Día 5: Llegada a Nápoles & Spaccanapoli</span>
+                    <span class="day-step-badge">Tren Bala a Nápoles</span>
+                  </div>
+                  <div class="day-step-meta">📅 <strong>Miércoles 21 de Abril</strong></div>
+                  <div class="day-step-desc">Salida en tren de alta velocidad a Nápoles en solo 70 minutos.</div>
+                  <div class="day-step-details">
+                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>Tren Frecciarossa de Roma Termini a Napoli Centrale (1h 10m). Salida 10:00, llegada 11:10 AM.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>Check-in, Spaccanapoli, calle de pesebres San Gregorio Armeno y Cristo Velado en Capilla Sansevero.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Almuerzo de pizza Margherita en Sorbillo o Da Michele. Sfogliatella en Gambrinus. Cena junto al Castel dell'Ovo.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Reservar Capilla Sansevero online previamente para asegurar acceso.</span></div>
+                  </div>
+                </div>
+                <div class="day-step-item">
+                  <div class="day-step-dot"></div>
+                  <div class="day-step-title">
+                    <span>Día 6: Día Completo en el Parque Arqueológico</span>
+                    <span class="day-step-badge">Ruinas de Pompeya</span>
+                  </div>
+                  <div class="day-step-meta">📅 <strong>Jueves 22 de Abril</strong></div>
+                  <div class="day-step-desc">Excursión directa en tren local a las ruinas romanas al pie del Vesubio.</div>
+                  <div class="day-step-details">
+                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>Tren Circumvesuviana directo desde Nápoles a Pompei Scavi (35 min, €3,50).</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>4 horas recorriendo el Foro, Anfiteatro, termas romanas y villas con frescos intactos.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Almuerzo en Pompeya. Regreso a Nápoles por la tarde para pasear por Via Toledo y cenar en Chiaia.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Llevar gorro, protector solar y calzado deportivo para caminar sobre piedras romanas.</span></div>
+                  </div>
+                </div>
+                <div class="day-step-item">
+                  <div class="day-step-dot"></div>
+                  <div class="day-step-title">
+                    <span>Día 7: Museo Arqueológico & Vistas de la Bahía</span>
+                    <span class="day-step-badge">Nápoles Subterránea & Golfo</span>
+                  </div>
+                  <div class="day-step-meta">📅 <strong>Viernes 23 de Abril</strong></div>
+                  <div class="day-step-desc">Cultura, arqueología y paseo costero antes de volar a Grecia.</div>
+                  <div class="day-step-details">
+                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>Metro y caminata.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>Museo Arqueológico Nacional de Nápoles (mosaicos originales de Pompeya) y túneles de Nápoles Subterránea.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Almuerzo de pizza frita en Zia Esterina. Cena marinera con pasta alle vongole frente al mar.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Subir a Castel Sant'Elmo para tener la mejor vista panorámica del Vesubio y el golfo.</span></div>
+                  </div>
+                </div>
+            </div>
+          </div>
+
+          <!-- Parada 3: Salto a Grecia -->
+          <div class="stop-block">
+            <div class="stop-header">
+              <span class="stop-city">✈️ 3. Salto Directo a Grecia (Sábado 24 Abril)</span>
+              <span class="stop-nights">Vuelo directo Nápoles ➔ Atenas (1h 45m)</span>
+            </div>
+            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
+              Vuelo directo desde el aeropuerto de Nápoles (NAP) a Atenas (ATH) por Volotea o EasyJet (o tren rápido a Roma FCO y vuelo directo). En menos de 2 horas cruzan a Grecia para instalarse y cenar en Atenas.
+            </p>
+            <div class="attractions-grid">
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=400&q=80" alt="Vuelo a Grecia" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Vuelo Nápoles ➔ Atenas</div>
+                  <div class="attr-detail">Conexión aérea rápida con valija despachada en bodega.</div>
+                  <div class="attr-price">Vuelo: €70 – €110 / persona</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Parada 4: Atenas Inicial -->
+          <div class="stop-block">
+            <div class="stop-header stop-header-interactive" onclick="toggleDayPlan(this)" title="Hacé clic para ver o cerrar el día a día recomendado">
+              <span class="stop-city">🏛️ 4. Atenas Clásica (3 noches | 24 - 27 Abril)</span>
+              <span class="stop-nights">Hotel en Plaka / Monastiraki · 📅 Ver día a día ▼</span>
+            </div>
+            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
+              La cuna de la civilización occidental: subida a la Acrópolis por la mañana temprano, visita al vanguardista Museo de la Acrópolis y cenas en tabernas de Plaka bajo el Partenón iluminado.
+            </p>
+            <div class="attractions-grid">
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?auto=format&fit=crop&w=400&q=80" alt="Acrópolis de Atenas" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Acrópolis & Partenón</div>
+                  <div class="attr-detail">Templo de Atenea Niké, Erecteón y vistas panorámicas de toda la cuenca.</div>
+                  <div class="attr-price">Oficial: €20 | Civitatis: €45</div>
+                </div>
+              </div>
+              <div class="attr-card">
+                <img src="img/atenas-plaka.jpg" alt="Plaka Atenas" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Plaka & Anafiotika</div>
+                  <div class="attr-detail">Callejones empedrados que parecen una isla en el centro histórico.</div>
+                  <div class="attr-price">Paseo libre / Tabernas tradicionales</div>
+                </div>
+              </div>
+            </div>
+            <button class="day-toggle-btn" onclick="toggleDayPlan(this)">
+              <span>📅 Ver Itinerario Día por Día Recomendado & Transporte</span>
+              <span class="day-btn-arrow">▼</span>
+            </button>
+            <div class="day-by-day-panel">
+                <div class="day-step-item">
+                  <div class="day-step-dot"></div>
+                  <div class="day-step-title">
+                    <span>Día 8: Vuelo Directo a Atenas & Bienvenida en Plaka</span>
+                    <span class="day-step-badge">Salto a Grecia</span>
+                  </div>
+                  <div class="day-step-meta">📅 <strong>Sábado 24 de Abril</strong></div>
+                  <div class="day-step-desc">Vuelo directo de Nápoles a Atenas y primera noche en la capital griega.</div>
+                  <div class="day-step-details">
+                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>Vuelo directo Nápoles (NAP) ➔ Atenas (ATH) (1h 45m). Metro Línea 3 al centro (40 min).</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>Check-in en Plaka, caminata por Anafiotika al pie de la Acrópolis.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Cena tradicional con ensalada griega, souvlaki y vistas al Partenón iluminado.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Comprar billete de metro de aeropuerto de €9 en las máquinas de la estación.</span></div>
+                  </div>
+                </div>
+                <div class="day-step-item">
+                  <div class="day-step-dot"></div>
+                  <div class="day-step-title">
+                    <span>Día 9: Partenón, Museo & Atardecer en Licabeto</span>
+                    <span class="day-step-badge">Acrópolis & Historia</span>
+                  </div>
+                  <div class="day-step-meta">📅 <strong>Domingo 25 de Abril</strong></div>
+                  <div class="day-step-desc">Día cumbre de la Grecia clásica.</div>
+                  <div class="day-step-details">
+                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>A pie por el anillo peatonal arqueológico.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>08:30 AM subida a la Acrópolis (Partenón y Cariátides). 11:30 AM Museo de la Acrópolis. Tarde: Ágora y Templo de Hefesto. Atardecer en Monte Licabeto.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Almuerzo en Makrigianni. Cena en Psirri con música rebétiko.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Subir a la Acrópolis temprano para evitar contingentes de cruceros.</span></div>
+                  </div>
+                </div>
+                <div class="day-step-item">
+                  <div class="day-step-dot"></div>
+                  <div class="day-step-title">
+                    <span>Día 10: Syntagma, Monastiraki & Preparación Cícladas</span>
+                    <span class="day-step-badge">Mercados & Vida Urbana</span>
+                  </div>
+                  <div class="day-step-meta">📅 <strong>Lunes 26 de Abril</strong></div>
+                  <div class="day-step-desc">Paseos cívicos y preparativos para embarcar a las islas.</div>
+                  <div class="day-step-details">
+                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>Metro y caminata.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>Cambio de guardia en el Parlamento, Jardines Nacionales y mercado de Monastiraki.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Almuerzo de gyros pita en Monastiraki (€4–€6). Cena relajada.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Descansar temprano para tomar el ferry matutino a Milos.</span></div>
+                  </div>
+                </div>
+            </div>
+          </div>
+
+          <!-- Parada 5: Milos -->
+          <div class="stop-block">
+            <div class="stop-header stop-header-interactive" onclick="toggleDayPlan(this)" title="Hacé clic para ver o cerrar el día a día recomendado">
+              <span class="stop-city">⛵ 5. Isla de Milos (3 noches | 27 - 30 Abril)</span>
+              <span class="stop-nights">Ferry rápido desde Pireo (3h 15m) · 📅 Ver día a día ▼</span>
+            </div>
+            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
+              Considerada una de las islas más bellas y vírgenes del mundo. Famosa por sus formaciones de roca volcánica blanca lunar en <strong>Sarakiniko</strong>, los pueblos de pescadores con puertas de colores en <strong>Klima</strong> y excursión en velero privado a las cuevas de <strong>Kleftiko</strong>.
+            </p>
+            <div class="attractions-grid">
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=400&q=80" alt="Playa Lunar Sarakiniko Milos" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Playa Lunar de Sarakiniko</div>
+                  <div class="attr-detail">Rocas blancas esculpidas por el viento y aguas turquesas del Egeo.</div>
+                  <div class="attr-price">Entrada libre / Paisaje único</div>
+                </div>
+              </div>
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80" alt="Cuevas de Kleftiko Milos" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Excursión en Velero a Kleftiko</div>
+                  <div class="attr-detail">Antiguo refugio pirata con arcos de piedra marina y snorkel.</div>
+                  <div class="attr-price">Velero día completo: €80–€100/pax</div>
+                </div>
+              </div>
+            </div>
+            <button class="day-toggle-btn" onclick="toggleDayPlan(this)">
+              <span>📅 Ver Itinerario Día por Día Recomendado & Transporte</span>
+              <span class="day-btn-arrow">▼</span>
+            </button>
+            <div class="day-by-day-panel">
+                <div class="day-step-item">
+                  <div class="day-step-dot"></div>
+                  <div class="day-step-title">
+                    <span>Día 11: Llegada a Milos & La Playa Lunar de Sarakiniko</span>
+                    <span class="day-step-badge">Ferry a las Cícladas</span>
+                  </div>
+                  <div class="day-step-meta">📅 <strong>Martes 27 de Abril</strong></div>
+                  <div class="day-step-desc">Travesía en ferry rápido desde el Pireo a la isla volcánica más deslumbrante de Grecia.</div>
+                  <div class="day-step-details">
+                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>Metro al Pireo (25 min) ➔ Ferry rápido SeaJets a Milos (3h 15m). Llegada al puerto de Adamas (11:00 AM). Traslado al hotel.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>Check-in, almuerzo marinero y tarde en la famosa **playa lunar de Sarakiniko** (rocas volcánicas blancas esculpidas por el viento y aguas azul zafiro).</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Almuerzo de pescado en Adamas. Cena junto al mar en el idílico pueblo pesquero de Pollonia.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Llevar calzado con agarre para caminar sobre las formaciones blancas de Sarakiniko.</span></div>
+                  </div>
+                </div>
+                <div class="day-step-item">
+                  <div class="day-step-dot"></div>
+                  <div class="day-step-title">
+                    <span>Día 12: Navegación de Día Completo a las Cuevas de Kleftiko</span>
+                    <span class="day-step-badge">Excursión en Velero</span>
+                  </div>
+                  <div class="day-step-meta">📅 <strong>Miércoles 28 de Abril</strong></div>
+                  <div class="day-step-desc">La gran experiencia marina del viaje: navegar el antiguo refugio de piratas accesible solo por mar.</div>
+                  <div class="day-step-details">
+                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>Velero o catamarán de excursión diurna saliendo desde el puerto de Adamas.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>Navegación por arcos de piedra natural marina, nado en aguas esmeralda cristalinas y snorkel en las cuevas piratas de Kleftiko.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Almuerzo tradicional preparado a bordo por la tripulación del velero con vino y ensaladas. Por la noche: Cena en Plaka (capital en la colina) viendo el atardecer.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Contratar la excursión en velero con antelación en el puerto o Civitatis; incluye equipo de snorkel y almuerzo.</span></div>
+                  </div>
+                </div>
+                <div class="day-step-item">
+                  <div class="day-step-dot"></div>
+                  <div class="day-step-title">
+                    <span>Día 13: Las Casitas Syrmata de Klima & Playas del Sur</span>
+                    <span class="day-step-badge">Pueblos de Pescadores</span>
+                  </div>
+                  <div class="day-step-meta">📅 <strong>Jueves 29 de Abril</strong></div>
+                  <div class="day-step-desc">Pueblos marineros auténticos con casitas de pescadores multicolores a ras del agua.</div>
+                  <div class="day-step-details">
+                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>Auto de alquiler o bus local.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>Pueblo de Klima (fotografiar las puertas de colores de los antiguos garajes de botes), catacumbas cristianas de Milos y teatro antiguo. Tarde de playa en Firiplaka.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Almuerzo en taberna marinera frente a los botes. Cena tranquila en Adamas antes de viajar a Naxos.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Klima es el sitio más fotogénico de la isla al caer la tarde cuando el sol baña las puertas de colores.</span></div>
+                  </div>
+                </div>
+            </div>
+          </div>
+
+          <!-- Parada 6: Naxos con Pascua -->
+          <div class="stop-block">
+            <div class="stop-header stop-header-interactive" onclick="toggleDayPlan(this)" title="Hacé clic para ver o cerrar el día a día recomendado">
+              <span class="stop-city">🏝️ 6. Naxos & Gran Pascua Ortodoxa (3 noches | 30 Abr - 3 Mayo)</span>
+              <span class="stop-nights">Ferry directo Milos ➔ Naxos (2h 15m) · 📅 Ver día a día ▼</span>
+            </div>
+            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
+              La isla más fértil y auténtica de las Cícladas. Aquí se vivirá la <strong>Pascua Ortodoxa del domingo 2 de mayo</strong> con procesiones de cirios, corderos asados en las plazas y danzas tradicionales en pueblos de montaña como Apiranthos y Filoti.
+            </p>
+            <div class="attractions-grid">
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?auto=format&fit=crop&w=400&q=80" alt="Portara de Apolo Naxos" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Portara de Apolo</div>
+                  <div class="attr-detail">El colosal marco de mármol del siglo VI a.C. mirando al mar.</div>
+                  <div class="attr-price">Acceso libre al atardecer</div>
+                </div>
+              </div>
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=400&q=80" alt="Pascua Griega en Naxos" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Pascua Ortodoxa & Pueblos</div>
+                  <div class="attr-detail">Celebración cumbre de Grecia, quesos artesanales y papas de Naxos.</div>
+                  <div class="attr-price">Fiesta tradicional popular</div>
+                </div>
+              </div>
+            </div>
+            <button class="day-toggle-btn" onclick="toggleDayPlan(this)">
+              <span>📅 Ver Itinerario Día por Día Recomendado & Transporte</span>
+              <span class="day-btn-arrow">▼</span>
+            </button>
+            <div class="day-by-day-panel">
+                <div class="day-step-item">
+                  <div class="day-step-dot"></div>
+                  <div class="day-step-title">
+                    <span>Día 14: Llegada a Naxos & Procesión de Viernes Santo</span>
+                    <span class="day-step-badge">Ferry Inter-Islas</span>
+                  </div>
+                  <div class="day-step-meta">📅 <strong>Viernes 30 de Abril</strong></div>
+                  <div class="day-step-desc">Cruce corto en ferry desde Milos a Naxos y primera noche de Semana Santa.</div>
+                  <div class="day-step-details">
+                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>Ferry directo Milos ➔ Naxos (2h 15m, salida 11:30 AM, llegada 13:45 PM). Traslado al hotel.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>Check-in, caminata a la Portara de Apolo al atardecer y procesión solemne de cirios del Viernes Santo por las callejuelas del Kastro veneciano.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Almuerzo en el puerto. Cena tradicional de vigilia con mariscos y ensaladas de huerta.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Vivir el Viernes Santo en Naxos es una de las vivencias culturales más respetadas y bellas de Grecia.</span></div>
+                  </div>
+                </div>
+                <div class="day-step-item">
+                  <div class="day-step-dot"></div>
+                  <div class="day-step-title">
+                    <span>Día 15: Pueblos de Montaña & Ceremonia de la Luz</span>
+                    <span class="day-step-badge">Sábado Santo & Pueblos</span>
+                  </div>
+                  <div class="day-step-meta">📅 <strong>Sábado 1 de Mayo</strong></div>
+                  <div class="day-step-desc">Exploración de los pueblos de mármol y la gran noche de Pascua.</div>
+                  <div class="day-step-details">
+                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>Auto compartido o bus regional.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>Pueblos de montaña de Filoti y Apiranthos, playas de Agios Prokopios y descanso por la tarde.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Cena de vísperas. A la medianoche: Ceremonia de la Resurrección (Anastasi) con cirios encendidos, fuegos artificiales sobre el mar y sopa magiritsa.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Reunirse en la iglesia del pueblo a las 23:45 para recibir la llama de la Pascua traída de Jerusalén.</span></div>
+                  </div>
+                </div>
+                <div class="day-step-item">
+                  <div class="day-step-dot"></div>
+                  <div class="day-step-title">
+                    <span>Día 16: El Gran Asado de Pascua Ortodoxa</span>
+                    <span class="day-step-badge">¡GRAN PASCUA GRIEGA!</span>
+                  </div>
+                  <div class="day-step-meta">📅 <strong>Domingo 2 de Mayo</strong></div>
+                  <div class="day-step-desc">La fiesta nacional por excelencia: corderos asados al espetón, música folclórica y brindis.</div>
+                  <div class="day-step-details">
+                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>A pie en el pueblo o taberna.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>Participar de los festejos populares al aire libre en las plazas y tabernas con música de violín y bailes cicládicos.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Banquete de Pascua con cordero a la cruz al asador, vino local fluyendo y platos festivos griegos.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Brindar chocando los huevos rojos diciendo "¡Christós Anésti!" (Cristo ha resucitado).</span></div>
+                  </div>
+                </div>
+            </div>
+          </div>
+
+          <!-- Parada 7: Santorini -->
+          <div class="stop-block">
+            <div class="stop-header stop-header-interactive" onclick="toggleDayPlan(this)" title="Hacé clic para ver o cerrar el día a día recomendado">
+              <span class="stop-city">🌅 7. Santorini: Caldera & Catamarán (3 noches | 3 - 6 Mayo)</span>
+              <span class="stop-nights">Catamarán SeaJets Naxos ➔ Santorini (1h 45m) · 📅 Ver día a día ▼</span>
+            </div>
+            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
+              El gran broche de oro de las islas: acantilados de Oia con sus cúpulas azules, vistas vertiginosas a la caldera y navegación privada al atardecer en catamarán con barbacoa marina y vino blanco local.
+            </p>
+            <div class="attractions-grid">
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=400&q=80" alt="Cúpulas de Oia Santorini" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Cúpulas Azules de Oia</div>
+                  <div class="attr-detail">Paseo por los senderos blancos sobre el abismo de la caldera.</div>
+                  <div class="attr-price">La postal más famosa de Europa</div>
+                </div>
+              </div>
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=400&q=80" alt="Catamarán Sunset Santorini" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Crucero Catamarán Sunset</div>
+                  <div class="attr-detail">Aguas termales del volcán, playa roja y cena con asado a bordo.</div>
+                  <div class="attr-price">Civitatis: €120 / persona</div>
+                </div>
+              </div>
+            </div>
+            <button class="day-toggle-btn" onclick="toggleDayPlan(this)">
+              <span>📅 Ver Itinerario Día por Día Recomendado & Transporte</span>
+              <span class="day-btn-arrow">▼</span>
+            </button>
+            <div class="day-by-day-panel">
+                <div class="day-step-item">
+                  <div class="day-step-dot"></div>
+                  <div class="day-step-title">
+                    <span>Día 17: Llegada a la Caldera & Atardecer de Oia</span>
+                    <span class="day-step-badge">Catamarán a Santorini</span>
+                  </div>
+                  <div class="day-step-meta">📅 <strong>Lunes 3 de Mayo</strong></div>
+                  <div class="day-step-desc">Travesía en catamarán rápido SeaJets a la isla volcánica.</div>
+                  <div class="day-step-details">
+                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>Catamarán SeaJets Naxos ➔ Santorini (1h 45m). Traslado privado desde puerto Athinios al hotel.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>Check-in con vista a la caldera. Paseo por Fira y atardecer desde el balcón del hotel.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Almuerzo ligero. Cena en terraza sobre el acantilado con vino Assyrtiko.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Reservar traslado de llegada con el hotel para evitar colas de taxis en el puerto.</span></div>
+                  </div>
+                </div>
+                <div class="day-step-item">
+                  <div class="day-step-dot"></div>
+                  <div class="day-step-title">
+                    <span>Día 18: Sendero Panorámico & Bodega Santo Wines</span>
+                    <span class="day-step-badge">Cúpulas Azules</span>
+                  </div>
+                  <div class="day-step-meta">📅 <strong>Martes 4 de Mayo</strong></div>
+                  <div class="day-step-desc">Las postales más famosas de casas blancas y cúpulas azules.</div>
+                  <div class="day-step-details">
+                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>Bus local o caminata escénica.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>Paseo por las cúpulas de Oia y cata de vinos volcánicos en Santo Wines sobre el acantilado.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Almuerzo en Oia. Cena en Imerovigli con vistas a la roca de Skaros.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Visitar Oia a primera hora de la mañana para sacar fotos tranquilas sin grupos de cruceros.</span></div>
+                  </div>
+                </div>
+                <div class="day-step-item">
+                  <div class="day-step-dot"></div>
+                  <div class="day-step-title">
+                    <span>Día 19: Crucero por la Caldera con Barbacoa al Ocaso</span>
+                    <span class="day-step-badge">Catamarán Sunset</span>
+                  </div>
+                  <div class="day-step-meta">📅 <strong>Miércoles 5 de Mayo</strong></div>
+                  <div class="day-step-desc">La excursión imperdible: navegar dentro de la caldera volcánica.</div>
+                  <div class="day-step-details">
+                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>Van privada de la excursión que traslada al grupo desde el hotel al catamarán.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>Navegación por la Playa Roja, aguas termales del volcán para nadar y puesta de sol fondeados frente a Oia.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Cena barbacoa a bordo con pescado, carne asada, ensaladas y vino blanco local ilimitado.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Llevar traje de baño oscuro para el baño en aguas termales volcánicas.</span></div>
+                  </div>
+                </div>
+            </div>
+          </div>
+
+          <!-- Parada 8: Atenas Despedida & Relax -->
+          <div class="stop-block">
+            <div class="stop-header stop-header-interactive" onclick="toggleDayPlan(this)" title="Hacé clic para ver o cerrar el día a día recomendado">
+              <span class="stop-city">🛍️ 8. Atenas Final: 2 Noches de Relax & Despedida (6 - 8 Mayo)</span>
+              <span class="stop-nights">Vuelo corto Santorini ➔ Atenas (45 min) · 📅 Ver día a día ▼</span>
+            </div>
+            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
+              Regreso en avión desde Santorini el jueves 6 de mayo por la tarde. El <strong>viernes 7 de mayo es un día 100% libre sin valijas</strong>: compras de recuerdos, souvenirs, empaque y control de peso de valijas con calma en la habitación, y cena de despedida. El sábado 8 de mayo tienen el día libre y a las 16:30 van al aeropuerto para el vuelo de ITA Airways de las 19:30 rumbo a Buenos Aires.
+            </p>
+            <div class="attractions-grid">
+              <div class="attr-card">
+                <img src="img/atenas-plaka.jpg" alt="Atenas Despedida" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Cena de Cierre & Souvenirs</div>
+                  <div class="attr-detail">Plaza Monastiraki, aceite de oliva, cuero y última noche griega.</div>
+                  <div class="attr-price">Viernes de relax total</div>
+                </div>
+              </div>
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=400&q=80" alt="Vuelo Regreso ITA" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Vuelo de Regreso ITA Airways</div>
+                  <div class="attr-detail">Sáb 8/05 19:30 ATH ➔ FCO (1h 50m) ➔ EZE (Dom 9/05 07:30 AM).</div>
+                  <div class="attr-price">Conexión 100% protegida</div>
+                </div>
+              </div>
+            </div>
+            <button class="day-toggle-btn" onclick="toggleDayPlan(this)">
+              <span>📅 Ver Itinerario Día por Día Recomendado & Transporte</span>
+              <span class="day-btn-arrow">▼</span>
+            </button>
+            <div class="day-by-day-panel">
+                <div class="day-step-item">
+                  <div class="day-step-dot"></div>
+                  <div class="day-step-title">
+                    <span>Día 20: Regreso a Tierra Firme & Noche Tranquila</span>
+                    <span class="day-step-badge">Vuelo a Atenas</span>
+                  </div>
+                  <div class="day-step-meta">📅 <strong>Jueves 6 de Mayo</strong></div>
+                  <div class="day-step-desc">Salto aéreo a tierra firme 48 horas antes del vuelo a Buenos Aires para máxima seguridad.</div>
+                  <div class="day-step-details">
+                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>Vuelo de Santorini (JTR) a Atenas (ATH) (solo 45 minutos). Metro al hotel céntrico.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>Check-in en Atenas y cena relajada en Plaka.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Cena de bienvenida a la capital sin preocupaciones de ferrys.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Dormir en Atenas desde el jueves elimina cualquier riesgo por viento o demoras de barcos.</span></div>
+                  </div>
+                </div>
+                <div class="day-step-item">
+                  <div class="day-step-dot"></div>
+                  <div class="day-step-title">
+                    <span>Día 21: Compras de Souvenirs, Empaque & Cena Despedida</span>
+                    <span class="day-step-badge">Día Libre sin Valijas</span>
+                  </div>
+                  <div class="day-step-meta">📅 <strong>Viernes 7 de Mayo</strong></div>
+                  <div class="day-step-desc">Día 100% de vacaciones y descanso sin mudanzas ni horarios.</div>
+                  <div class="day-step-details">
+                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>A pie.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>Compras de recuerdos (aceite de oliva, cuero, especias, miel de tomillo) en Monastiraki y Plaka. Control y pesaje de valijas de 23 kg con la balanza digital.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Almuerzo distendido. Por la noche: Gran cena de despedida en terraza rooftop con la Acrópolis iluminada.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Pesar las 4 valijas con la balanza de mano para asegurar que ninguna supere los 23 kg.</span></div>
+                  </div>
+                </div>
+                <div class="day-step-item">
+                  <div class="day-step-dot"></div>
+                  <div class="day-step-title">
+                    <span>Día 22: Último Día en Atenas & Vuelo ITA Airways</span>
+                    <span class="day-step-badge">Vuelo a Buenos Aires</span>
+                  </div>
+                  <div class="day-step-meta">📅 <strong>Sábado 8 de Mayo</strong></div>
+                  <div class="day-step-desc">Despedida de Europa y regreso a Buenos Aires.</div>
+                  <div class="day-step-details">
+                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>16:30 PM metro o taxi al aeropuerto ATH. 19:30 PM vuelo ITA ATH ➔ FCO (1h 50m) ➔ EZE.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>Desayuno largo, check-out con valijas en custodia y paseo final por la ciudad.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Último almuerzo griego en terraza arbolada.</span></div>
+                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Llegar a las 16:45 al aeropuerto para despacho tranquilo de valijas.</span></div>
+                  </div>
+                </div>
+            </div>
           </div>
         </div>
 
-                <!-- ==================== OPCIÓN 1: ROMA, NÁPOLES, PUGLIA & GRECIA PROFUNDA ==================== -->
-        <div id="opt-1" class="variant-card itin-option-card active">
+        <!-- ==================== OPCIÓN 2: ROMA, NÁPOLES, PUGLIA & GRECIA PROFUNDA (ALTERNATIVA) ==================== -->
+        <div id="opt-2" class="variant-card itin-option-card" style="display: none;">
           <div class="variant-header">
-            <div class="variant-title">Opción 1: Roma, Nápoles, Puglia & Grecia Profunda</div>
-            <span class="variant-pill" style="background: #dbeafe; color: #1e40af;">9n Italia + 12n Grecia</span>
+            <div class="variant-title">🏛️ Opción 2: Roma, Nápoles, Puglia & Grecia Profunda (Alternativa con Puglia)</div>
+            <span class="variant-pill" style="background: #f1f5f9; color: #475569; font-weight:700;">9n Italia + 12n Grecia (Requiere Traslados Adicionales)</span>
           </div>
           <div class="variant-summary">
             Roma (3n) ➔ Nápoles & Pompeya (3n) ➔ Puglia costera: Polignano, Monopoli & Alberobello (3n) ➔ Vuelo directo Bari-Atenas (1h 15m) ➔ Atenas (3n) ➔ Naxos Pascua (4n) ➔ Santorini (3n) ➔ Atenas regreso (2n)
@@ -2742,618 +3353,7 @@
           </div>
         </div>
 
-        <!-- ==================== OPCIÓN 2: ROMA, NÁPOLES & CÍCLADAS EXTENDIDAS ==================== -->
-        <div id="opt-2" class="variant-card itin-option-card" style="display: none;">
-          <div class="variant-header">
-            <div class="variant-title">Opción 2: Roma, Nápoles & Cícladas Extendidas (Milos, Naxos & Santorini)</div>
-            <span class="variant-pill" style="background: #e0f2fe; color: #0369a1;">7n Italia + 14n Grecia (Menos Mudanzas de Hotel)</span>
-          </div>
-          <div class="variant-summary">
-            Roma (4n) ➔ Nápoles & Pompeya (3n) ➔ Salto Nápoles-Atenas ➔ Atenas (3n) ➔ Milos (3n) ➔ Naxos Pascua (3n) ➔ Santorini (3n) ➔ Atenas despedida & relax (2n)
-          </div>
-
-          <!-- Parada 1: Roma -->
-          <div class="stop-block">
-            <div class="stop-header stop-header-interactive" onclick="toggleDayPlan(this)" title="Hacé clic para ver o cerrar el día a día recomendado">
-              <span class="stop-city">🏛️ 1. Roma (4 noches | 17 - 21 Abril)</span>
-              <span class="stop-nights">Hotel céntrico en Roma (Termini / Centro) · 📅 Ver día a día ▼</span>
-            </div>
-            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
-              3 días completos y 4 noches para disfrutar la Ciudad Eterna sin apuros: Coliseo, Foros Imperiales, Palatino, Museos Vaticanos, Capilla Sixtina, San Pedro, Fontana di Trevi, Panteón, Plaza Navona, Villa Borghese y cenas relajadas en Trastevere.
-            </p>
-            <div class="attractions-grid">
-              <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=400&q=80" alt="Coliseo Romano" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Coliseo, Foro & Palatino</div>
-                  <div class="attr-detail">Inmersión en el corazón del imperio romano.</div>
-                  <div class="attr-price">Oficial: €18 | Civitatis: €45</div>
-                </div>
-              </div>
-              <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1531572753322-ad063cecc140?auto=format&fit=crop&w=400&q=80" alt="Vaticano" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Vaticano & San Pedro</div>
-                  <div class="attr-detail">Capilla Sixtina, estancias de Rafael y cúpula de San Pedro.</div>
-                  <div class="attr-price">Oficial: €25 | Civitatis: €55</div>
-                </div>
-              </div>
-              <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1525874684015-58379d421a52?auto=format&fit=crop&w=400&q=80" alt="Panteón y Trevi" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Panteón & Fontana di Trevi</div>
-                  <div class="attr-detail">Paseos nocturnos, monedas a la fuente y helados artesanales.</div>
-                  <div class="attr-price">Oficial: €5 / Trevi: Gratis</div>
-                </div>
-              </div>
-            </div>
-            <button class="day-toggle-btn" onclick="toggleDayPlan(this)">
-              <span>📅 Ver Itinerario Día por Día Recomendado & Transporte</span>
-              <span class="day-btn-arrow">▼</span>
-            </button>
-            <div class="day-by-day-panel">
-                <div class="day-step-item">
-                  <div class="day-step-dot"></div>
-                  <div class="day-step-title">
-                    <span>Día 1: Aterrizaje en Roma y Primera Noche Mágica</span>
-                    <span class="day-step-badge">Llegada & Roma Nocturna</span>
-                  </div>
-                  <div class="day-step-meta">📅 <strong>Sábado 17 de Abril</strong></div>
-                  <div class="day-step-desc">Llegada a Roma FCO a las 18:40 PM en vuelo directo ITA Airways. Traslado en tren Leonardo Express al centro, check-in y cena nocturna.</div>
-                  <div class="day-step-details">
-                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>Tren Leonardo Express (32 min, €14) directo a Roma Termini. Taxi o caminata al hotel.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>Paseo nocturno por la Fontana di Trevi iluminada y Piazza Navona.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Cena de bienvenida con pasta Carbonara o Cacio e Pepe en Trastevere.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Comprar billetes de tren en app Trenitalia para evitar colas en el aeropuerto.</span></div>
-                  </div>
-                </div>
-                <div class="day-step-item">
-                  <div class="day-step-dot"></div>
-                  <div class="day-step-title">
-                    <span>Día 2: Coliseo, Foro Romano & Trastevere</span>
-                    <span class="day-step-badge">Roma Antigua</span>
-                  </div>
-                  <div class="day-step-meta">📅 <strong>Domingo 18 de Abril</strong></div>
-                  <div class="day-step-desc">Jornada completa en el corazón del imperio romano.</div>
-                  <div class="day-step-details">
-                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>A pie. Calzado cómodo con buen agarre.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>09:00 AM entrada oficial al Coliseo Romano, Foro y Palatino. Tarde: Panteón de Agripa y Campo de' Fiori.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Almuerzo en barrio Monti. Cena tradicional en Trastevere (Da Enzo o Tonnarello).</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Reservar Coliseo con 30 días exactos de anticipación en la web oficial ministerial.</span></div>
-                  </div>
-                </div>
-                <div class="day-step-item">
-                  <div class="day-step-dot"></div>
-                  <div class="day-step-title">
-                    <span>Día 3: Museos Vaticanos, San Pedro & Castillo Sant'Angelo</span>
-                    <span class="day-step-badge">Vaticano & Tíber</span>
-                  </div>
-                  <div class="day-step-meta">📅 <strong>Lunes 19 de Abril</strong></div>
-                  <div class="day-step-desc">Día dedicado al patrimonio papal y renacentista.</div>
-                  <div class="day-step-details">
-                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>Metro Línea A hasta estación Ottaviano (10 min). Resto a pie.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>09:00 AM Museos Vaticanos, Capilla Sixtina y Basílica de San Pedro. Tarde: Castillo Sant'Angelo y Piazza Navona.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Almuerzo en Borgo Pio. Café en Sant'Eustachio. Cena en centro histórico.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Hombros y rodillas cubiertos para ingresar a la Basílica de San Pedro.</span></div>
-                  </div>
-                </div>
-                <div class="day-step-item">
-                  <div class="day-step-dot"></div>
-                  <div class="day-step-title">
-                    <span>Día 4: Villa Borghese, Mirador del Pincio & Compras</span>
-                    <span class="day-step-badge">Roma Relajada</span>
-                  </div>
-                  <div class="day-step-meta">📅 <strong>Martes 20 de Abril</strong></div>
-                  <div class="day-step-desc">Día extra sin apuros para disfrutar de Roma como un local.</div>
-                  <div class="day-step-details">
-                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>A pie y metro.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>Plaza de España, jardines de Villa Borghese, mirador del Pincio sobre Piazza del Popolo y compras en Via del Corso y Via Condotti.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Almuerzo distendido en terraza de Piazza del Popolo. Cena gourmet en el auténtico barrio de Testaccio.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Subir al Pincio a las 18:30 para ver la puesta de sol sobre todas las cúpulas de Roma.</span></div>
-                  </div>
-                </div>
-            </div>
-          </div>
-
-          <!-- Parada 2: Nápoles -->
-          <div class="stop-block">
-            <div class="stop-header stop-header-interactive" onclick="toggleDayPlan(this)" title="Hacé clic para ver o cerrar el día a día recomendado">
-              <span class="stop-city">🌋 2. Nápoles & Pompeya (3 noches | 21 - 24 Abril)</span>
-              <span class="stop-nights">Tren Frecciarossa directo (1h 10m) · 📅 Ver día a día ▼</span>
-            </div>
-            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
-              Tren bala a 300 km/h desde Roma Termini a Napoli Centrale. Base en centro histórico para conocer el parque arqueológico de Pompeya en tren directo (30 min), Spaccanapoli, el Cristo Velado y las mejores pizzerías tradicionales.
-            </p>
-            <div class="attractions-grid">
-              <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1555992828-ca4dbe41d294?auto=format&fit=crop&w=400&q=80" alt="Ruinas de Pompeya" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Parque Arqueológico de Pompeya</div>
-                  <div class="attr-detail">Calles romanas, anfiteatro y mosaicos intactos al pie del Vesubio.</div>
-                  <div class="attr-price">Oficial: €18 | Tren local: €3</div>
-                </div>
-              </div>
-              <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80" alt="Pizza Napolitana" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Centro Histórico & Pizza</div>
-                  <div class="attr-detail">Spaccanapoli, via San Gregorio Armeno y la auténtica pizza Margherita.</div>
-                  <div class="attr-price">Pizza napolitana: €6 – €9</div>
-                </div>
-              </div>
-            </div>
-            <button class="day-toggle-btn" onclick="toggleDayPlan(this)">
-              <span>📅 Ver Itinerario Día por Día Recomendado & Transporte</span>
-              <span class="day-btn-arrow">▼</span>
-            </button>
-            <div class="day-by-day-panel">
-                <div class="day-step-item">
-                  <div class="day-step-dot"></div>
-                  <div class="day-step-title">
-                    <span>Día 5: Llegada a Nápoles & Spaccanapoli</span>
-                    <span class="day-step-badge">Tren Bala a Nápoles</span>
-                  </div>
-                  <div class="day-step-meta">📅 <strong>Miércoles 21 de Abril</strong></div>
-                  <div class="day-step-desc">Salida en tren de alta velocidad a Nápoles en solo 70 minutos.</div>
-                  <div class="day-step-details">
-                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>Tren Frecciarossa de Roma Termini a Napoli Centrale (1h 10m). Salida 10:00, llegada 11:10 AM.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>Check-in, Spaccanapoli, calle de pesebres San Gregorio Armeno y Cristo Velado en Capilla Sansevero.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Almuerzo de pizza Margherita en Sorbillo o Da Michele. Sfogliatella en Gambrinus. Cena junto al Castel dell'Ovo.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Reservar Capilla Sansevero online previamente para asegurar acceso.</span></div>
-                  </div>
-                </div>
-                <div class="day-step-item">
-                  <div class="day-step-dot"></div>
-                  <div class="day-step-title">
-                    <span>Día 6: Día Completo en el Parque Arqueológico</span>
-                    <span class="day-step-badge">Ruinas de Pompeya</span>
-                  </div>
-                  <div class="day-step-meta">📅 <strong>Jueves 22 de Abril</strong></div>
-                  <div class="day-step-desc">Excursión directa en tren local a las ruinas romanas al pie del Vesubio.</div>
-                  <div class="day-step-details">
-                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>Tren Circumvesuviana directo desde Nápoles a Pompei Scavi (35 min, €3,50).</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>4 horas recorriendo el Foro, Anfiteatro, termas romanas y villas con frescos intactos.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Almuerzo en Pompeya. Regreso a Nápoles por la tarde para pasear por Via Toledo y cenar en Chiaia.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Llevar gorro, protector solar y calzado deportivo para caminar sobre piedras romanas.</span></div>
-                  </div>
-                </div>
-                <div class="day-step-item">
-                  <div class="day-step-dot"></div>
-                  <div class="day-step-title">
-                    <span>Día 7: Museo Arqueológico & Vistas de la Bahía</span>
-                    <span class="day-step-badge">Nápoles Subterránea & Golfo</span>
-                  </div>
-                  <div class="day-step-meta">📅 <strong>Viernes 23 de Abril</strong></div>
-                  <div class="day-step-desc">Cultura, arqueología y paseo costero antes de volar a Grecia.</div>
-                  <div class="day-step-details">
-                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>Metro y caminata.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>Museo Arqueológico Nacional de Nápoles (mosaicos originales de Pompeya) y túneles de Nápoles Subterránea.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Almuerzo de pizza frita en Zia Esterina. Cena marinera con pasta alle vongole frente al mar.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Subir a Castel Sant'Elmo para tener la mejor vista panorámica del Vesubio y el golfo.</span></div>
-                  </div>
-                </div>
-            </div>
-          </div>
-
-          <!-- Parada 3: Salto a Grecia -->
-          <div class="stop-block">
-            <div class="stop-header">
-              <span class="stop-city">✈️ 3. Salto Directo a Grecia (Sábado 24 Abril)</span>
-              <span class="stop-nights">Vuelo directo Nápoles ➔ Atenas (1h 45m)</span>
-            </div>
-            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
-              Vuelo directo desde el aeropuerto de Nápoles (NAP) a Atenas (ATH) por Volotea o EasyJet (o tren rápido a Roma FCO y vuelo directo). En menos de 2 horas cruzan a Grecia para instalarse y cenar en Atenas.
-            </p>
-            <div class="attractions-grid">
-              <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=400&q=80" alt="Vuelo a Grecia" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Vuelo Nápoles ➔ Atenas</div>
-                  <div class="attr-detail">Conexión aérea rápida con valija despachada en bodega.</div>
-                  <div class="attr-price">Vuelo: €70 – €110 / persona</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Parada 4: Atenas Inicial -->
-          <div class="stop-block">
-            <div class="stop-header stop-header-interactive" onclick="toggleDayPlan(this)" title="Hacé clic para ver o cerrar el día a día recomendado">
-              <span class="stop-city">🏛️ 4. Atenas Clásica (3 noches | 24 - 27 Abril)</span>
-              <span class="stop-nights">Hotel en Plaka / Monastiraki · 📅 Ver día a día ▼</span>
-            </div>
-            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
-              La cuna de la civilización occidental: subida a la Acrópolis por la mañana temprano, visita al vanguardista Museo de la Acrópolis y cenas en tabernas de Plaka bajo el Partenón iluminado.
-            </p>
-            <div class="attractions-grid">
-              <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?auto=format&fit=crop&w=400&q=80" alt="Acrópolis de Atenas" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Acrópolis & Partenón</div>
-                  <div class="attr-detail">Templo de Atenea Niké, Erecteón y vistas panorámicas de toda la cuenca.</div>
-                  <div class="attr-price">Oficial: €20 | Civitatis: €45</div>
-                </div>
-              </div>
-              <div class="attr-card">
-                <img src="img/atenas-plaka.jpg" alt="Plaka Atenas" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Plaka & Anafiotika</div>
-                  <div class="attr-detail">Callejones empedrados que parecen una isla en el centro histórico.</div>
-                  <div class="attr-price">Paseo libre / Tabernas tradicionales</div>
-                </div>
-              </div>
-            </div>
-            <button class="day-toggle-btn" onclick="toggleDayPlan(this)">
-              <span>📅 Ver Itinerario Día por Día Recomendado & Transporte</span>
-              <span class="day-btn-arrow">▼</span>
-            </button>
-            <div class="day-by-day-panel">
-                <div class="day-step-item">
-                  <div class="day-step-dot"></div>
-                  <div class="day-step-title">
-                    <span>Día 8: Vuelo Directo a Atenas & Bienvenida en Plaka</span>
-                    <span class="day-step-badge">Salto a Grecia</span>
-                  </div>
-                  <div class="day-step-meta">📅 <strong>Sábado 24 de Abril</strong></div>
-                  <div class="day-step-desc">Vuelo directo de Nápoles a Atenas y primera noche en la capital griega.</div>
-                  <div class="day-step-details">
-                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>Vuelo directo Nápoles (NAP) ➔ Atenas (ATH) (1h 45m). Metro Línea 3 al centro (40 min).</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>Check-in en Plaka, caminata por Anafiotika al pie de la Acrópolis.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Cena tradicional con ensalada griega, souvlaki y vistas al Partenón iluminado.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Comprar billete de metro de aeropuerto de €9 en las máquinas de la estación.</span></div>
-                  </div>
-                </div>
-                <div class="day-step-item">
-                  <div class="day-step-dot"></div>
-                  <div class="day-step-title">
-                    <span>Día 9: Partenón, Museo & Atardecer en Licabeto</span>
-                    <span class="day-step-badge">Acrópolis & Historia</span>
-                  </div>
-                  <div class="day-step-meta">📅 <strong>Domingo 25 de Abril</strong></div>
-                  <div class="day-step-desc">Día cumbre de la Grecia clásica.</div>
-                  <div class="day-step-details">
-                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>A pie por el anillo peatonal arqueológico.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>08:30 AM subida a la Acrópolis (Partenón y Cariátides). 11:30 AM Museo de la Acrópolis. Tarde: Ágora y Templo de Hefesto. Atardecer en Monte Licabeto.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Almuerzo en Makrigianni. Cena en Psirri con música rebétiko.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Subir a la Acrópolis temprano para evitar contingentes de cruceros.</span></div>
-                  </div>
-                </div>
-                <div class="day-step-item">
-                  <div class="day-step-dot"></div>
-                  <div class="day-step-title">
-                    <span>Día 10: Syntagma, Monastiraki & Preparación Cícladas</span>
-                    <span class="day-step-badge">Mercados & Vida Urbana</span>
-                  </div>
-                  <div class="day-step-meta">📅 <strong>Lunes 26 de Abril</strong></div>
-                  <div class="day-step-desc">Paseos cívicos y preparativos para embarcar a las islas.</div>
-                  <div class="day-step-details">
-                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>Metro y caminata.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>Cambio de guardia en el Parlamento, Jardines Nacionales y mercado de Monastiraki.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Almuerzo de gyros pita en Monastiraki (€4–€6). Cena relajada.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Descansar temprano para tomar el ferry matutino a Milos.</span></div>
-                  </div>
-                </div>
-            </div>
-          </div>
-
-          <!-- Parada 5: Milos -->
-          <div class="stop-block">
-            <div class="stop-header stop-header-interactive" onclick="toggleDayPlan(this)" title="Hacé clic para ver o cerrar el día a día recomendado">
-              <span class="stop-city">⛵ 5. Isla de Milos (3 noches | 27 - 30 Abril)</span>
-              <span class="stop-nights">Ferry rápido desde Pireo (3h 15m) · 📅 Ver día a día ▼</span>
-            </div>
-            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
-              Considerada una de las islas más bellas y vírgenes del mundo. Famosa por sus formaciones de roca volcánica blanca lunar en <strong>Sarakiniko</strong>, los pueblos de pescadores con puertas de colores en <strong>Klima</strong> y excursión en velero privado a las cuevas de <strong>Kleftiko</strong>.
-            </p>
-            <div class="attractions-grid">
-              <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=400&q=80" alt="Playa Lunar Sarakiniko Milos" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Playa Lunar de Sarakiniko</div>
-                  <div class="attr-detail">Rocas blancas esculpidas por el viento y aguas turquesas del Egeo.</div>
-                  <div class="attr-price">Entrada libre / Paisaje único</div>
-                </div>
-              </div>
-              <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80" alt="Cuevas de Kleftiko Milos" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Excursión en Velero a Kleftiko</div>
-                  <div class="attr-detail">Antiguo refugio pirata con arcos de piedra marina y snorkel.</div>
-                  <div class="attr-price">Velero día completo: €80–€100/pax</div>
-                </div>
-              </div>
-            </div>
-            <button class="day-toggle-btn" onclick="toggleDayPlan(this)">
-              <span>📅 Ver Itinerario Día por Día Recomendado & Transporte</span>
-              <span class="day-btn-arrow">▼</span>
-            </button>
-            <div class="day-by-day-panel">
-                <div class="day-step-item">
-                  <div class="day-step-dot"></div>
-                  <div class="day-step-title">
-                    <span>Día 11: Llegada a Milos & La Playa Lunar de Sarakiniko</span>
-                    <span class="day-step-badge">Ferry a las Cícladas</span>
-                  </div>
-                  <div class="day-step-meta">📅 <strong>Martes 27 de Abril</strong></div>
-                  <div class="day-step-desc">Travesía en ferry rápido desde el Pireo a la isla volcánica más deslumbrante de Grecia.</div>
-                  <div class="day-step-details">
-                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>Metro al Pireo (25 min) ➔ Ferry rápido SeaJets a Milos (3h 15m). Llegada al puerto de Adamas (11:00 AM). Traslado al hotel.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>Check-in, almuerzo marinero y tarde en la famosa **playa lunar de Sarakiniko** (rocas volcánicas blancas esculpidas por el viento y aguas azul zafiro).</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Almuerzo de pescado en Adamas. Cena junto al mar en el idílico pueblo pesquero de Pollonia.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Llevar calzado con agarre para caminar sobre las formaciones blancas de Sarakiniko.</span></div>
-                  </div>
-                </div>
-                <div class="day-step-item">
-                  <div class="day-step-dot"></div>
-                  <div class="day-step-title">
-                    <span>Día 12: Navegación de Día Completo a las Cuevas de Kleftiko</span>
-                    <span class="day-step-badge">Excursión en Velero</span>
-                  </div>
-                  <div class="day-step-meta">📅 <strong>Miércoles 28 de Abril</strong></div>
-                  <div class="day-step-desc">La gran experiencia marina del viaje: navegar el antiguo refugio de piratas accesible solo por mar.</div>
-                  <div class="day-step-details">
-                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>Velero o catamarán de excursión diurna saliendo desde el puerto de Adamas.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>Navegación por arcos de piedra natural marina, nado en aguas esmeralda cristalinas y snorkel en las cuevas piratas de Kleftiko.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Almuerzo tradicional preparado a bordo por la tripulación del velero con vino y ensaladas. Por la noche: Cena en Plaka (capital en la colina) viendo el atardecer.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Contratar la excursión en velero con antelación en el puerto o Civitatis; incluye equipo de snorkel y almuerzo.</span></div>
-                  </div>
-                </div>
-                <div class="day-step-item">
-                  <div class="day-step-dot"></div>
-                  <div class="day-step-title">
-                    <span>Día 13: Las Casitas Syrmata de Klima & Playas del Sur</span>
-                    <span class="day-step-badge">Pueblos de Pescadores</span>
-                  </div>
-                  <div class="day-step-meta">📅 <strong>Jueves 29 de Abril</strong></div>
-                  <div class="day-step-desc">Pueblos marineros auténticos con casitas de pescadores multicolores a ras del agua.</div>
-                  <div class="day-step-details">
-                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>Auto de alquiler o bus local.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>Pueblo de Klima (fotografiar las puertas de colores de los antiguos garajes de botes), catacumbas cristianas de Milos y teatro antiguo. Tarde de playa en Firiplaka.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Almuerzo en taberna marinera frente a los botes. Cena tranquila en Adamas antes de viajar a Naxos.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Klima es el sitio más fotogénico de la isla al caer la tarde cuando el sol baña las puertas de colores.</span></div>
-                  </div>
-                </div>
-            </div>
-          </div>
-
-          <!-- Parada 6: Naxos con Pascua -->
-          <div class="stop-block">
-            <div class="stop-header stop-header-interactive" onclick="toggleDayPlan(this)" title="Hacé clic para ver o cerrar el día a día recomendado">
-              <span class="stop-city">🏝️ 6. Naxos & Gran Pascua Ortodoxa (3 noches | 30 Abr - 3 Mayo)</span>
-              <span class="stop-nights">Ferry directo Milos ➔ Naxos (2h 15m) · 📅 Ver día a día ▼</span>
-            </div>
-            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
-              La isla más fértil y auténtica de las Cícladas. Aquí se vivirá la <strong>Pascua Ortodoxa del domingo 2 de mayo</strong> con procesiones de cirios, corderos asados en las plazas y danzas tradicionales en pueblos de montaña como Apiranthos y Filoti.
-            </p>
-            <div class="attractions-grid">
-              <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?auto=format&fit=crop&w=400&q=80" alt="Portara de Apolo Naxos" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Portara de Apolo</div>
-                  <div class="attr-detail">El colosal marco de mármol del siglo VI a.C. mirando al mar.</div>
-                  <div class="attr-price">Acceso libre al atardecer</div>
-                </div>
-              </div>
-              <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=400&q=80" alt="Pascua Griega en Naxos" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Pascua Ortodoxa & Pueblos</div>
-                  <div class="attr-detail">Celebración cumbre de Grecia, quesos artesanales y papas de Naxos.</div>
-                  <div class="attr-price">Fiesta tradicional popular</div>
-                </div>
-              </div>
-            </div>
-            <button class="day-toggle-btn" onclick="toggleDayPlan(this)">
-              <span>📅 Ver Itinerario Día por Día Recomendado & Transporte</span>
-              <span class="day-btn-arrow">▼</span>
-            </button>
-            <div class="day-by-day-panel">
-                <div class="day-step-item">
-                  <div class="day-step-dot"></div>
-                  <div class="day-step-title">
-                    <span>Día 14: Llegada a Naxos & Procesión de Viernes Santo</span>
-                    <span class="day-step-badge">Ferry Inter-Islas</span>
-                  </div>
-                  <div class="day-step-meta">📅 <strong>Viernes 30 de Abril</strong></div>
-                  <div class="day-step-desc">Cruce corto en ferry desde Milos a Naxos y primera noche de Semana Santa.</div>
-                  <div class="day-step-details">
-                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>Ferry directo Milos ➔ Naxos (2h 15m, salida 11:30 AM, llegada 13:45 PM). Traslado al hotel.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>Check-in, caminata a la Portara de Apolo al atardecer y procesión solemne de cirios del Viernes Santo por las callejuelas del Kastro veneciano.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Almuerzo en el puerto. Cena tradicional de vigilia con mariscos y ensaladas de huerta.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Vivir el Viernes Santo en Naxos es una de las vivencias culturales más respetadas y bellas de Grecia.</span></div>
-                  </div>
-                </div>
-                <div class="day-step-item">
-                  <div class="day-step-dot"></div>
-                  <div class="day-step-title">
-                    <span>Día 15: Pueblos de Montaña & Ceremonia de la Luz</span>
-                    <span class="day-step-badge">Sábado Santo & Pueblos</span>
-                  </div>
-                  <div class="day-step-meta">📅 <strong>Sábado 1 de Mayo</strong></div>
-                  <div class="day-step-desc">Exploración de los pueblos de mármol y la gran noche de Pascua.</div>
-                  <div class="day-step-details">
-                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>Auto compartido o bus regional.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>Pueblos de montaña de Filoti y Apiranthos, playas de Agios Prokopios y descanso por la tarde.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Cena de vísperas. A la medianoche: Ceremonia de la Resurrección (Anastasi) con cirios encendidos, fuegos artificiales sobre el mar y sopa magiritsa.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Reunirse en la iglesia del pueblo a las 23:45 para recibir la llama de la Pascua traída de Jerusalén.</span></div>
-                  </div>
-                </div>
-                <div class="day-step-item">
-                  <div class="day-step-dot"></div>
-                  <div class="day-step-title">
-                    <span>Día 16: El Gran Asado de Pascua Ortodoxa</span>
-                    <span class="day-step-badge">¡GRAN PASCUA GRIEGA!</span>
-                  </div>
-                  <div class="day-step-meta">📅 <strong>Domingo 2 de Mayo</strong></div>
-                  <div class="day-step-desc">La fiesta nacional por excelencia: corderos asados al espetón, música folclórica y brindis.</div>
-                  <div class="day-step-details">
-                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>A pie en el pueblo o taberna.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>Participar de los festejos populares al aire libre en las plazas y tabernas con música de violín y bailes cicládicos.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Banquete de Pascua con cordero a la cruz al asador, vino local fluyendo y platos festivos griegos.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Brindar chocando los huevos rojos diciendo "¡Christós Anésti!" (Cristo ha resucitado).</span></div>
-                  </div>
-                </div>
-            </div>
-          </div>
-
-          <!-- Parada 7: Santorini -->
-          <div class="stop-block">
-            <div class="stop-header stop-header-interactive" onclick="toggleDayPlan(this)" title="Hacé clic para ver o cerrar el día a día recomendado">
-              <span class="stop-city">🌅 7. Santorini: Caldera & Catamarán (3 noches | 3 - 6 Mayo)</span>
-              <span class="stop-nights">Catamarán SeaJets Naxos ➔ Santorini (1h 45m) · 📅 Ver día a día ▼</span>
-            </div>
-            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
-              El gran broche de oro de las islas: acantilados de Oia con sus cúpulas azules, vistas vertiginosas a la caldera y navegación privada al atardecer en catamarán con barbacoa marina y vino blanco local.
-            </p>
-            <div class="attractions-grid">
-              <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=400&q=80" alt="Cúpulas de Oia Santorini" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Cúpulas Azules de Oia</div>
-                  <div class="attr-detail">Paseo por los senderos blancos sobre el abismo de la caldera.</div>
-                  <div class="attr-price">La postal más famosa de Europa</div>
-                </div>
-              </div>
-              <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=400&q=80" alt="Catamarán Sunset Santorini" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Crucero Catamarán Sunset</div>
-                  <div class="attr-detail">Aguas termales del volcán, playa roja y cena con asado a bordo.</div>
-                  <div class="attr-price">Civitatis: €120 / persona</div>
-                </div>
-              </div>
-            </div>
-            <button class="day-toggle-btn" onclick="toggleDayPlan(this)">
-              <span>📅 Ver Itinerario Día por Día Recomendado & Transporte</span>
-              <span class="day-btn-arrow">▼</span>
-            </button>
-            <div class="day-by-day-panel">
-                <div class="day-step-item">
-                  <div class="day-step-dot"></div>
-                  <div class="day-step-title">
-                    <span>Día 17: Llegada a la Caldera & Atardecer de Oia</span>
-                    <span class="day-step-badge">Catamarán a Santorini</span>
-                  </div>
-                  <div class="day-step-meta">📅 <strong>Lunes 3 de Mayo</strong></div>
-                  <div class="day-step-desc">Travesía en catamarán rápido SeaJets a la isla volcánica.</div>
-                  <div class="day-step-details">
-                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>Catamarán SeaJets Naxos ➔ Santorini (1h 45m). Traslado privado desde puerto Athinios al hotel.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>Check-in con vista a la caldera. Paseo por Fira y atardecer desde el balcón del hotel.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Almuerzo ligero. Cena en terraza sobre el acantilado con vino Assyrtiko.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Reservar traslado de llegada con el hotel para evitar colas de taxis en el puerto.</span></div>
-                  </div>
-                </div>
-                <div class="day-step-item">
-                  <div class="day-step-dot"></div>
-                  <div class="day-step-title">
-                    <span>Día 18: Sendero Panorámico & Bodega Santo Wines</span>
-                    <span class="day-step-badge">Cúpulas Azules</span>
-                  </div>
-                  <div class="day-step-meta">📅 <strong>Martes 4 de Mayo</strong></div>
-                  <div class="day-step-desc">Las postales más famosas de casas blancas y cúpulas azules.</div>
-                  <div class="day-step-details">
-                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>Bus local o caminata escénica.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>Paseo por las cúpulas de Oia y cata de vinos volcánicos en Santo Wines sobre el acantilado.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Almuerzo en Oia. Cena en Imerovigli con vistas a la roca de Skaros.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Visitar Oia a primera hora de la mañana para sacar fotos tranquilas sin grupos de cruceros.</span></div>
-                  </div>
-                </div>
-                <div class="day-step-item">
-                  <div class="day-step-dot"></div>
-                  <div class="day-step-title">
-                    <span>Día 19: Crucero por la Caldera con Barbacoa al Ocaso</span>
-                    <span class="day-step-badge">Catamarán Sunset</span>
-                  </div>
-                  <div class="day-step-meta">📅 <strong>Miércoles 5 de Mayo</strong></div>
-                  <div class="day-step-desc">La excursión imperdible: navegar dentro de la caldera volcánica.</div>
-                  <div class="day-step-details">
-                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>Van privada de la excursión que traslada al grupo desde el hotel al catamarán.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>Navegación por la Playa Roja, aguas termales del volcán para nadar y puesta de sol fondeados frente a Oia.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Cena barbacoa a bordo con pescado, carne asada, ensaladas y vino blanco local ilimitado.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Llevar traje de baño oscuro para el baño en aguas termales volcánicas.</span></div>
-                  </div>
-                </div>
-            </div>
-          </div>
-
-          <!-- Parada 8: Atenas Despedida & Relax -->
-          <div class="stop-block">
-            <div class="stop-header stop-header-interactive" onclick="toggleDayPlan(this)" title="Hacé clic para ver o cerrar el día a día recomendado">
-              <span class="stop-city">🛍️ 8. Atenas Final: 2 Noches de Relax & Despedida (6 - 8 Mayo)</span>
-              <span class="stop-nights">Vuelo corto Santorini ➔ Atenas (45 min) · 📅 Ver día a día ▼</span>
-            </div>
-            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
-              Regreso en avión desde Santorini el jueves 6 de mayo por la tarde. El <strong>viernes 7 de mayo es un día 100% libre sin valijas</strong>: compras de recuerdos, souvenirs, empaque y control de peso de valijas con calma en la habitación, y cena de despedida. El sábado 8 de mayo tienen el día libre y a las 16:30 van al aeropuerto para el vuelo de ITA Airways de las 19:30 rumbo a Buenos Aires.
-            </p>
-            <div class="attractions-grid">
-              <div class="attr-card">
-                <img src="img/atenas-plaka.jpg" alt="Atenas Despedida" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Cena de Cierre & Souvenirs</div>
-                  <div class="attr-detail">Plaza Monastiraki, aceite de oliva, cuero y última noche griega.</div>
-                  <div class="attr-price">Viernes de relax total</div>
-                </div>
-              </div>
-              <div class="attr-card">
-                <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=400&q=80" alt="Vuelo Regreso ITA" loading="lazy">
-                <div class="attr-card-body">
-                  <div class="attr-title">Vuelo de Regreso ITA Airways</div>
-                  <div class="attr-detail">Sáb 8/05 19:30 ATH ➔ FCO (1h 50m) ➔ EZE (Dom 9/05 07:30 AM).</div>
-                  <div class="attr-price">Conexión 100% protegida</div>
-                </div>
-              </div>
-            </div>
-            <button class="day-toggle-btn" onclick="toggleDayPlan(this)">
-              <span>📅 Ver Itinerario Día por Día Recomendado & Transporte</span>
-              <span class="day-btn-arrow">▼</span>
-            </button>
-            <div class="day-by-day-panel">
-                <div class="day-step-item">
-                  <div class="day-step-dot"></div>
-                  <div class="day-step-title">
-                    <span>Día 20: Regreso a Tierra Firme & Noche Tranquila</span>
-                    <span class="day-step-badge">Vuelo a Atenas</span>
-                  </div>
-                  <div class="day-step-meta">📅 <strong>Jueves 6 de Mayo</strong></div>
-                  <div class="day-step-desc">Salto aéreo a tierra firme 48 horas antes del vuelo a Buenos Aires para máxima seguridad.</div>
-                  <div class="day-step-details">
-                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>Vuelo de Santorini (JTR) a Atenas (ATH) (solo 45 minutos). Metro al hotel céntrico.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>Check-in en Atenas y cena relajada en Plaka.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Cena de bienvenida a la capital sin preocupaciones de ferrys.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Dormir en Atenas desde el jueves elimina cualquier riesgo por viento o demoras de barcos.</span></div>
-                  </div>
-                </div>
-                <div class="day-step-item">
-                  <div class="day-step-dot"></div>
-                  <div class="day-step-title">
-                    <span>Día 21: Compras de Souvenirs, Empaque & Cena Despedida</span>
-                    <span class="day-step-badge">Día Libre sin Valijas</span>
-                  </div>
-                  <div class="day-step-meta">📅 <strong>Viernes 7 de Mayo</strong></div>
-                  <div class="day-step-desc">Día 100% de vacaciones y descanso sin mudanzas ni horarios.</div>
-                  <div class="day-step-details">
-                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>A pie.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>Compras de recuerdos (aceite de oliva, cuero, especias, miel de tomillo) en Monastiraki y Plaka. Control y pesaje de valijas de 23 kg con la balanza digital.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Almuerzo distendido. Por la noche: Gran cena de despedida en terraza rooftop con la Acrópolis iluminada.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Pesar las 4 valijas con la balanza de mano para asegurar que ninguna supere los 23 kg.</span></div>
-                  </div>
-                </div>
-                <div class="day-step-item">
-                  <div class="day-step-dot"></div>
-                  <div class="day-step-title">
-                    <span>Día 22: Último Día en Atenas & Vuelo ITA Airways</span>
-                    <span class="day-step-badge">Vuelo a Buenos Aires</span>
-                  </div>
-                  <div class="day-step-meta">📅 <strong>Sábado 8 de Mayo</strong></div>
-                  <div class="day-step-desc">Despedida de Europa y regreso a Buenos Aires.</div>
-                  <div class="day-step-details">
-                    <div class="day-detail-row"><span class="day-detail-tag">🚇 Transporte:</span><span>16:30 PM metro o taxi al aeropuerto ATH. 19:30 PM vuelo ITA ATH ➔ FCO (1h 50m) ➔ EZE.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🏛️ Visitas:</span><span>Desayuno largo, check-out con valijas en custodia y paseo final por la ciudad.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">🍝 Comidas:</span><span>Último almuerzo griego en terraza arbolada.</span></div>
-                    <div class="day-detail-row"><span class="day-detail-tag">💡 Consejo:</span><span>Llegar a las 16:45 al aeropuerto para despacho tranquilo de valijas.</span></div>
-                  </div>
-                </div>
-            </div>
+                   </div>
           </div>
         </div>
 
@@ -3499,7 +3499,7 @@
                 </div>
               </div>
               <div style="margin-top: auto;">
-                <span class="badge-civitatis">Recomendación: Excursión estrella de Milos (Opción 2)</span>
+                <span class="badge-civitatis">Recomendación: Excursión estrella de Milos (Opción 1 Recomendada)</span>
               </div>
             </div>
           </div>
@@ -3606,7 +3606,7 @@
             </div>
           </div>
 
-          <!-- Tren Nápoles - Puglia (Opción 1) -->
+          <!-- Tren Nápoles - Puglia (Opción 2) -->
           <div class="res-card">
             <div class="res-card-img">
               <img src="img/puglia-polignano.jpg" alt="Tren a Puglia" loading="lazy">
@@ -3614,7 +3614,7 @@
             </div>
             <div class="res-card-body">
               <div class="res-title">Nápoles ➔ Puglia (Bari / Polignano)</div>
-              <div class="res-sub">Tren Frecciargento cruzando los Apeninos hacia el mar Adriático (Opción 1 Sur & Puglia).</div>
+              <div class="res-sub">Tren Frecciargento cruzando los Apeninos hacia el mar Adriático (Opción 2 Sur & Puglia).</div>
               <div class="price-box">
                 <div class="price-row-item">
                   <span class="price-label">Por Persona:</span>
@@ -3633,11 +3633,11 @@
           <div class="res-card">
             <div class="res-card-img">
               <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=600&q=80" alt="Vuelo Italia a Atenas" loading="lazy">
-              <span class="res-badge">1h 15m a 2h · VUELO DIRECTO</span>
+              <span class="res-badge">1h 15m a 1h 45m · VUELO DIRECTO</span>
             </div>
             <div class="res-card-body">
-              <div class="res-title">Italia (Bari o Nápoles / Roma) ➔ Atenas</div>
-              <div class="res-sub">Vuelo directo (Volotea / Ryanair / Aegean). Desde Bari (Opción 1) o Nápoles (Opción 2) a Atenas en menos de 2h.</div>
+              <div class="res-title">Italia (Nápoles o Bari) ➔ Atenas</div>
+              <div class="res-sub">Vuelo directo (EasyJet / Volotea / Aegean). Desde Nápoles (Opción 1) o Bari (Opción 2) a Atenas en menos de 2h.</div>
               <div class="price-box">
                 <div class="price-row-item">
                   <span class="price-label">Por Persona:</span>
@@ -3893,7 +3893,7 @@
               <div class="dest-tags">
                 <span class="dest-tag">3 Noches</span>
                 <span class="dest-tag">Ferry & Velero</span>
-                <span class="dest-tag" style="background:#dbeafe;color:#1e40af;font-weight:700;">Opción 2</span>
+                <span class="dest-tag" style="background:#dcfce7;color:#15803d;font-weight:700;">⭐ Opción 1 (Recomendada)</span>
               </div>
             </div>
           </div>
@@ -4029,11 +4029,11 @@
         <!-- MAP CONTROLS & LEAFLET CONTAINER -->
         <div class="map-container-wrap">
           <div class="map-toggle-bar">
-            <button id="map-btn-sur" class="map-toggle-btn active" onclick="switchMapRoute('sur')">
-              ⭐ Opción 1: Roma, Sur & Puglia (9n + 12n)
+            <button id="map-btn-opcion1" class="map-toggle-btn active" onclick="switchMapRoute('opcion1')">
+              ⭐ Opción 1 (Recomendada): Roma, Nápoles & Cícladas con Milos (100% Sin Auto)
             </button>
             <button id="map-btn-opcion2" class="map-toggle-btn" onclick="switchMapRoute('opcion2')">
-              🏝️ Opción 2: Roma, Nápoles & Milos (7n + 14n)
+              🏛️ Opción 2: Roma, Sur & Puglia (9n + 12n)
             </button>
             <button id="map-btn-global" class="map-toggle-btn" onclick="switchMapRoute('global')">
               ✈️ Vuelo Transatlántico (Ezeiza ↔ Europa)
@@ -4052,27 +4052,232 @@
               <span>Tren Bala Frecciarossa (300 km/h)</span>
             </div>
             <div class="map-legend-item">
-              <span class="map-legend-line" style="background: #f59e0b;"></span>
-              <span>Tren Frecciargento / Regional</span>
-            </div>
-            <div class="map-legend-item">
               <span class="map-legend-line" style="background: #8b5cf6; border-top: 2px dashed #8b5cf6; height: 0;"></span>
-              <span>Vuelo Directo a Grecia (1h 15m)</span>
+              <span>Vuelo Directo a Grecia (1h 15m - 1h 45m)</span>
             </div>
             <div class="map-legend-item">
               <span class="map-legend-line" style="background: #0284c7; border-top: 2px dashed #0284c7; height: 0;"></span>
               <span>Ferrys Marítimos del Egeo</span>
             </div>
+            <div class="map-legend-item">
+              <span class="map-legend-line" style="background: #10b981; border-top: 2px dashed #10b981; height: 0;"></span>
+              <span>Vuelo Interno Santorini ➔ Atenas (45m)</span>
+            </div>
           </div>
         </div>
 
         <!-- TIMELINE ETAPAS ILUSTRADAS -->
-        <h3 style="color: var(--primary); font-size: 1.22rem; margin-top: 30px; margin-bottom: 6px;">📍 Las 14 Etapas del Recorrido Ilustradas (Paso a Paso)</h3>
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-top: 30px; margin-bottom: 8px;">
+          <h3 style="color: var(--primary); font-size: 1.22rem; margin: 0;">📍 Las 14 Etapas del Recorrido Ilustradas (Paso a Paso)</h3>
+          <div id="stages-indicator-badge" style="background: #dcfce7; color: #15803d; font-weight: 700; font-size: 0.85rem; padding: 5px 14px; border-radius: 20px; border: 1px solid #bbf7d0;">
+            Mostrando: ⭐ Opción 1 (Recomendada · Milos & Cícladas)
+          </div>
+        </div>
         <p style="font-size: 0.88rem; color: #64748b; margin-bottom: 16px;">
-          Secuencia cronológica completa con medios de transporte, tiempos de viaje y días en cada destino:
+          Secuencia cronológica completa con medios de transporte, tiempos de viaje y días en cada destino según el circuito seleccionado arriba:
         </p>
 
-        <div class="stages-grid">
+        <!-- ==================== ETAPAS OPCIÓN 1 (RECOMENDADA: MILOS & CÍCLADAS) ==================== -->
+        <div id="stages-opcion1" class="stages-grid">
+          <!-- Etapa 1 -->
+          <div class="stage-card">
+            <div class="stage-badge-num">1</div>
+            <div class="stage-main">
+              <div class="stage-header-line">
+                <span class="stage-route-title">EZE ➔ Roma (FCO)</span>
+                <span class="stage-type-badge stage-badge-flight">Vuelo Internacional</span>
+              </div>
+              <div class="stage-meta">
+                <strong>Sábado 17 de Abril:</strong> Vuelo directo ITA Airways (12h 45m). Salida 00:50 AM, llegada 18:40 PM. Traslado en tren Leonardo Express directo a Roma Termini.
+              </div>
+            </div>
+          </div>
+
+          <!-- Etapa 2 -->
+          <div class="stage-card">
+            <div class="stage-badge-num">2</div>
+            <div class="stage-main">
+              <div class="stage-header-line">
+                <span class="stage-route-title">Estancia en Roma</span>
+                <span class="stage-type-badge stage-badge-stay">4 Noches (Sin Apuros)</span>
+              </div>
+              <div class="stage-meta">
+                <strong>17 al 21 de Abril:</strong> 3 días enteros para disfrutar la Ciudad Eterna: Coliseo, Foros Imperiales, Palatino, Fontana di Trevi, Panteón, Museos Vaticanos y cenas relajadas en Trastevere. 100% a pie y metro.
+              </div>
+            </div>
+          </div>
+
+          <!-- Etapa 3 -->
+          <div class="stage-card">
+            <div class="stage-badge-num">3</div>
+            <div class="stage-main">
+              <div class="stage-header-line">
+                <span class="stage-route-title">Roma ➔ Nápoles</span>
+                <span class="stage-type-badge stage-badge-train">Tren Alta Velocidad</span>
+              </div>
+              <div class="stage-meta">
+                <strong>Miércoles 21 de Abril (mediodía):</strong> Frecciarossa 1000 a 300 km/h (1h 10m). De estación Termini a Napoli Centrale directo al corazón de la ciudad.
+              </div>
+            </div>
+          </div>
+
+          <!-- Etapa 4 -->
+          <div class="stage-card">
+            <div class="stage-badge-num">4</div>
+            <div class="stage-main">
+              <div class="stage-header-line">
+                <span class="stage-route-title">Nápoles & Pompeya</span>
+                <span class="stage-type-badge stage-badge-stay">3 Noches</span>
+              </div>
+              <div class="stage-meta">
+                <strong>21 al 24 de Abril:</strong> 1 día en ruinas de Pompeya en tren local directo (30 min) + centro histórico, Spaccanapoli, Cristo Velado y la auténtica pizza napolitana.
+              </div>
+            </div>
+          </div>
+
+          <!-- Etapa 5 -->
+          <div class="stage-card">
+            <div class="stage-badge-num">5</div>
+            <div class="stage-main">
+              <div class="stage-header-line">
+                <span class="stage-route-title">Nápoles (NAP) ➔ Atenas (ATH)</span>
+                <span class="stage-type-badge stage-badge-flight">Vuelo Directo (1h 45m)</span>
+              </div>
+              <div class="stage-meta">
+                <strong>Sábado 24 de Abril:</strong> Salto directo a Grecia sin manejar auto ni cruzar en ferry nocturno. Vuelo EasyJet / Volotea (1h 45m). Metro directo desde el aeropuerto ATH al centro (Plaka).
+              </div>
+            </div>
+          </div>
+
+          <!-- Etapa 6 -->
+          <div class="stage-card">
+            <div class="stage-badge-num">6</div>
+            <div class="stage-main">
+              <div class="stage-header-line">
+                <span class="stage-route-title">Atenas: Acrópolis & Plaka</span>
+                <span class="stage-type-badge stage-badge-stay">3 Noches</span>
+              </div>
+              <div class="stage-meta">
+                <strong>24 al 27 de Abril:</strong> Acrópolis, Partenón, Museo de las Cariátides, callejones de Plaka, Anafiotika y cena con vistas al templo iluminado. 100% peatonal y metro.
+              </div>
+            </div>
+          </div>
+
+          <!-- Etapa 7 -->
+          <div class="stage-card">
+            <div class="stage-badge-num">7</div>
+            <div class="stage-main">
+              <div class="stage-header-line">
+                <span class="stage-route-title">Atenas (Pireo) ➔ Isla de Milos</span>
+                <span class="stage-type-badge stage-badge-ferry">Ferry Marítimo (3h 15m)</span>
+              </div>
+              <div class="stage-meta">
+                <strong>Martes 27 de Abril:</strong> Navegación por el mar Egeo en buque rápido hacia el archipiélago cicládico volcánico. Butacas reservadas con aire acondicionado y cafetería.
+              </div>
+            </div>
+          </div>
+
+          <!-- Etapa 8 -->
+          <div class="stage-card">
+            <div class="stage-badge-num">8</div>
+            <div class="stage-main">
+              <div class="stage-header-line">
+                <span class="stage-route-title">Isla de Milos: Playas Lunares & Velero</span>
+                <span class="stage-type-badge stage-badge-stay">3 Noches</span>
+              </div>
+              <div class="stage-meta">
+                <strong>27 al 30 de Abril:</strong> Paisaje lunar y roca blanca en Sarakiniko, excursión completa en velero a las cuevas de Kleftiko con almuerzo a bordo, y pueblito pesquero de Klima con garajes de colores.
+              </div>
+            </div>
+          </div>
+
+          <!-- Etapa 9 -->
+          <div class="stage-card">
+            <div class="stage-badge-num">9</div>
+            <div class="stage-main">
+              <div class="stage-header-line">
+                <span class="stage-route-title">Milos ➔ Naxos</span>
+                <span class="stage-type-badge stage-badge-ferry">Ferry Inter-islas (2h 15m)</span>
+              </div>
+              <div class="stage-meta">
+                <strong>Viernes 30 de Abril:</strong> Conexión marítima corta entre islas. Salida desde el puerto de Adamas y llegada a la capital de Naxos frente al templo de Apolo.
+              </div>
+            </div>
+          </div>
+
+          <!-- Etapa 10 -->
+          <div class="stage-card">
+            <div class="stage-badge-num">10</div>
+            <div class="stage-main">
+              <div class="stage-header-line">
+                <span class="stage-route-title">Naxos & Pascua Ortodoxa</span>
+                <span class="stage-type-badge stage-badge-stay">3 Noches</span>
+              </div>
+              <div class="stage-meta">
+                <strong>30 Abr al 3 de Mayo:</strong> Portara de Apolo al atardecer, pueblos de montaña y la celebración máxima de la Pascua Ortodoxa (domingo 2 de mayo) con música, cirios y banquete tradicional de cordero.
+              </div>
+            </div>
+          </div>
+
+          <!-- Etapa 11 -->
+          <div class="stage-card">
+            <div class="stage-badge-num">11</div>
+            <div class="stage-main">
+              <div class="stage-header-line">
+                <span class="stage-route-title">Naxos ➔ Santorini</span>
+                <span class="stage-type-badge stage-badge-ferry">Catamarán Rápido (1h 45m)</span>
+              </div>
+              <div class="stage-meta">
+                <strong>Lunes 3 de Mayo:</strong> Cruce directo en catamarán SeaJets. Entrada escénica inolvidable al puerto navegando bajo los acantilados de la caldera volcánica.
+              </div>
+            </div>
+          </div>
+
+          <!-- Etapa 12 -->
+          <div class="stage-card">
+            <div class="stage-badge-num">12</div>
+            <div class="stage-main">
+              <div class="stage-header-line">
+                <span class="stage-route-title">Santorini: Caldera & Catamarán Sunset</span>
+                <span class="stage-type-badge stage-badge-stay">3 Noches</span>
+              </div>
+              <div class="stage-meta">
+                <strong>3 al 6 de Mayo:</strong> Cúpulas azules de Oia e Imerovigli, mirador del volcán y crucero exclusivo en catamarán al atardecer con baño en aguas termales y cena barbacoa a bordo.
+              </div>
+            </div>
+          </div>
+
+          <!-- Etapa 13 -->
+          <div class="stage-card">
+            <div class="stage-badge-num">13</div>
+            <div class="stage-main">
+              <div class="stage-header-line">
+                <span class="stage-route-title">Santorini ➔ Atenas (Relax de Cierre)</span>
+                <span class="stage-type-badge stage-badge-flight">Vuelo 45m + 2 Noches</span>
+              </div>
+              <div class="stage-meta">
+                <strong>6 al 8 de Mayo:</strong> Vuelo interno rápido de 45 min hacia Atenas. 2 noches de cierre para compras de recuerdos (Monastiraki/Plaka), paseos distendidos y gran cena despedida en rooftop.
+              </div>
+            </div>
+          </div>
+
+          <!-- Etapa 14 -->
+          <div class="stage-card">
+            <div class="stage-badge-num">14</div>
+            <div class="stage-main">
+              <div class="stage-header-line">
+                <span class="stage-route-title">Atenas (ATH) ➔ Roma ➔ EZE</span>
+                <span class="stage-type-badge stage-badge-flight">Vuelo de Regreso</span>
+              </div>
+              <div class="stage-meta">
+                <strong>Sábado 8 de Mayo:</strong> Salida 19:30 PM de Atenas. Escala protegida en Roma (1h 50m) con valijas despachadas directo a Buenos Aires. Llegada a Ezeiza domingo 9 a las 07:30 AM.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== ETAPAS OPCIÓN 2 (SUR & PUGLIA) ==================== -->
+        <div id="stages-opcion2" class="stages-grid" style="display: none;">
           <!-- Etapa 1 -->
           <div class="stage-card">
             <div class="stage-badge-num">1</div>
@@ -4152,7 +4357,7 @@
                 <span class="stage-type-badge stage-badge-stay">3 Noches</span>
               </div>
               <div class="stage-meta">
-                <strong>23 al 26 de Abril:</strong> Acantilados y mar turquesa en Polignano/Monopoli + excursión en tren local a los más de 1.500 trulli de Alberobello.
+                <strong>23 al 26 de Abril:</strong> Acantilados y mar turquesa en Polignano/Monopoli + excursión a los más de 1.500 trulli de Alberobello y Matera.
               </div>
             </div>
           </div>
@@ -4208,7 +4413,7 @@
                 <span class="stage-type-badge stage-badge-stay">4 Noches</span>
               </div>
               <div class="stage-meta">
-                <strong>29 Abr al 3 de Mayo:</strong> Portara de Apolo, calas vírgenes de arena blanca y celebración de la Pascua Ortodoxa (domingo 2 de mayo) con cirios y cordero.
+                <strong>29 Abr al 3 de Mayo:</strong> Portara de Apolo, calas de arena blanca y celebración de la Pascua Ortodoxa (domingo 2 de mayo) con cirios y cordero.
               </div>
             </div>
           </div>
@@ -4319,26 +4524,26 @@
             </div>
           </div>
 
-          <!-- 3. Vuelo Italia a Grecia -->
+          <!-- 3. Vuelo Directo Napoles - Atenas (Opción 1) -->
           <div class="res-card">
             <div class="res-card-img">
               <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=600&q=80" alt="Vuelo Italia a Atenas" loading="lazy">
-              <span class="res-badge">2h 00m · CONEXIÓN AÉREA</span>
+              <span class="res-badge" style="background:#16a34a;">1h 45m · CONEXIÓN AÉREA CLAVE (OPCIÓN 1)</span>
             </div>
             <div class="res-card-body">
-              <div class="res-title">Italia ➔ Atenas (Grecia)</div>
-              <div class="res-sub">Vuelo directo sin escalas (Aegean Airlines / Volotea / Ryanair).</div>
+              <div class="res-title">Nápoles ➔ Atenas (Vuelo Directo Sin Escalas)</div>
+              <div class="res-sub">Vuelo directo (EasyJet / Volotea / Aegean) sin autos ni ferris nocturnos.</div>
               <div class="price-box">
                 <div class="price-row-item">
                   <span class="price-label">Duración vuelo:</span>
-                  <span class="price-val">2 horas netas</span>
+                  <span class="price-val">Apenas 1h 45m</span>
                 </div>
                 <div class="price-row-item">
                   <span class="price-label">Equipaje:</span>
-                  <span class="price-val">Valijas de 20-23 kg despachadas</span>
+                  <span class="price-val">Valijas de 23 kg despachadas</span>
                 </div>
               </div>
-              <small style="color: #166534; font-weight: 600;">✓ Cruce rápido del Adriático; el metro de Atenas te conecta del aeropuerto al centro (Plaka) en 40 min.</small>
+              <small style="color: #166534; font-weight: 600;">✓ El cruce más cómodo y descansado: salís de Nápoles y en 1h 45m aterrizás en Atenas para almorzar en Plaka.</small>
             </div>
           </div>
 
@@ -4346,22 +4551,22 @@
           <div class="res-card">
             <div class="res-card-img">
               <img src="img/ferry-grecia.jpg" alt="Ferry Blue Star en el Egeo" loading="lazy">
-              <span class="res-badge">MAR EGEO · FERRYS</span>
+              <span class="res-badge">MAR EGEO · FERRYS & CATAMARANES</span>
             </div>
             <div class="res-card-body">
-              <div class="res-title">Atenas (Pireo) ↔ Islas Cícladas</div>
-              <div class="res-sub">Buques modernos Blue Star Ferries y catamaranes SeaJets.</div>
+              <div class="res-title">Atenas (Pireo) ↔ Milos ↔ Naxos ↔ Santorini</div>
+              <div class="res-sub">Buques modernos Blue Star Ferries y catamaranes rápidos SeaJets.</div>
               <div class="price-box">
                 <div class="price-row-item">
-                  <span class="price-label">Atenas ➔ Paros/Naxos:</span>
-                  <span class="price-val">3h 30m a 4h de navegación</span>
+                  <span class="price-label">Pireo ➔ Milos:</span>
+                  <span class="price-val">3h 15m (Opción 1)</span>
                 </div>
                 <div class="price-row-item">
-                  <span class="price-label">Naxos ➔ Santorini:</span>
-                  <span class="price-val">1h 45m de travesía</span>
+                  <span class="price-label">Milos ➔ Naxos / Santorini:</span>
+                  <span class="price-val">1h 45m a 2h 15m</span>
                 </div>
               </div>
-              <small style="color: #166534; font-weight: 600;">✓ Butacas numeradas tipo avión, cafetería a bordo y vistas increíbles del archipiélago.</small>
+              <small style="color: #166534; font-weight: 600;">✓ Butacas numeradas tipo avión, cafetería a bordo, maleteros de acceso fácil y vistas del mar Egeo.</small>
             </div>
           </div>
 
@@ -4369,49 +4574,45 @@
           <div class="res-card">
             <div class="res-card-img">
               <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=600&q=80" alt="Calles peatonales Santorini" loading="lazy">
-              <span class="res-badge">ISLAS · TRANSPORTE LOCAL</span>
+              <span class="res-badge">ISLAS · TRANSPORTE LOCAL (100% SIN AUTO)</span>
             </div>
             <div class="res-card-body">
-              <div class="res-title">En las Islas: Paros, Naxos & Santorini</div>
-              <div class="res-sub">Red de colectivos KTEL con aire acondicionado y senderos peatonales.</div>
+              <div class="res-title">En las Islas: Milos, Naxos & Santorini</div>
+              <div class="res-sub">Red de colectivos KTEL con aire acondicionado, taxis y excursiones marítimas.</div>
               <div class="price-box">
                 <div class="price-row-item">
-                  <span class="price-label">Frecuencias:</span>
-                  <span class="price-val">Cada 30 a 45 minutos</span>
+                  <span class="price-label">Frecuencias colectivos:</span>
+                  <span class="price-val">Cada 20 a 45 minutos</span>
                 </div>
                 <div class="price-row-item">
-                  <span class="price-label">Tarifa por tramo:</span>
-                  <span class="price-val">€2,00 a €3,50 por viaje</span>
+                  <span class="price-label">Tarifa por pasaje:</span>
+                  <span class="price-val">€1,80 a €2,50 por viaje</span>
                 </div>
               </div>
-              <small style="color: #166534; font-weight: 600;">✓ Conectan el puerto central con todas las playas y pueblos. Cero estrés de estacionamiento ni calles angostas.</small>
+              <small style="color: #166534; font-weight: 600;">✓ Conectan puertos con centros y playas. Además en Milos y Santorini las mejores calas se visitan en catamarán con todo incluido.</small>
             </div>
           </div>
 
-          <!-- 6. Puglia & Salto Directo a Grecia -->
+          <!-- 6. Puglia & Salto Directo a Grecia (Opción 2) -->
           <div class="res-card">
             <div class="res-card-img">
               <img src="img/puglia-polignano.jpg" alt="Puglia en tren costero" loading="lazy">
-              <span class="res-badge">PUGLIA & VUELO BRI-ATH · RUTA SUR</span>
+              <span class="res-badge" style="background:#64748b;">PUGLIA · ALTERNATIVA (OPCIÓN 2)</span>
             </div>
             <div class="res-card-body">
-              <div class="res-title">Puglia en Tren Costero & Salto Directo a Grecia</div>
-              <div class="res-sub">Frecciargento Nápoles ➔ Bari + Tren costero Polignano/Monopoli + Vuelo directo Bari ➔ Atenas.</div>
+              <div class="res-title">Puglia en Tren Costero & Salto Bari ➔ Atenas</div>
+              <div class="res-sub">Frecciargento Nápoles ➔ Bari + Tren costero Polignano + Vuelo Bari ➔ Atenas (Opción 2).</div>
               <div class="price-box">
                 <div class="price-row-item">
                   <span class="price-label">Nápoles ➔ Bari:</span>
                   <span class="price-val">3h 30m en Frecciargento</span>
                 </div>
                 <div class="price-row-item">
-                  <span class="price-label">Tren costero regional:</span>
-                  <span class="price-val">€1,50 a €3 (cada 30 min)</span>
-                </div>
-                <div class="price-row-item">
-                  <span class="price-label">Vuelo Bari (BRI) ➔ Atenas (ATH):</span>
-                  <span class="price-val">Apenas 1h 15m (Volotea / Ryanair)</span>
+                  <span class="price-label">Vuelo Bari (BRI) ➔ Atenas:</span>
+                  <span class="price-val">1h 15m (Volotea / Ryanair)</span>
                 </div>
               </div>
-              <small style="color: #166534; font-weight: 600;">✓ Sin retroceder a Roma: cruzan directo de Puglia a Atenas ganando un día entero de vacaciones.</small>
+              <small style="color: #475569; font-weight: 600;">✓ Requiere traslados adicionales entre pueblos y estación de Bari para conectar hacia Grecia.</small>
             </div>
           </div>
         </div>
@@ -5132,7 +5333,7 @@
             <div class="notice-body">
               <p>Los tres únicos temas que conviene charlar y definir en la próxima reunión:</p>
               <ul style="margin: 8px 0 0 18px; line-height: 1.5;">
-                <li><strong>1. Elección del circuito definitivo:</strong> Definir si prefieren la <strong>Opción 1</strong> (Roma, Nápoles y Puglia + 12n Grecia) o la <strong>Opción 2</strong> (Roma 4n y Nápoles 3n + 14n Grecia con Milos, Naxos y Santorini).</li>
+                <li><strong>1. Elección del circuito definitivo:</strong> Ratificar la <strong>Opción 1 (Recomendada · Cícladas con Milos)</strong> (Roma 4n, Nápoles 3n, Atenas 3n, Milos 3n, Naxos 3n, Santorini 3n y Atenas 2n — 100% sin alquilar auto) frente a la alternativa de la <strong>Opción 2</strong> (Roma 3n, Nápoles 3n, Puglia 3n + 12n Grecia).</li>
                 <li><strong>2. Hoteles vs. Villa en las Islas:</strong> Definir si en las islas (Naxos y Santorini) prefieren 2 habitaciones dobles en hotel con desayuno o alquilar una casa/villa cicládica entera para los 4 con terraza y vista al mar.</li>
                 <li><strong>3. Catamarán Sunset en Santorini:</strong> Es la excursión estrella de Grecia (crucero al volcán con barbacoa y vino blanco al atardecer). Confirmar que los 4 están de acuerdo en contratarla.</li>
               </ul>
@@ -5676,7 +5877,7 @@
             </div>
           </div>
 
-          <!-- 7. Milos (Opción 2) -->
+          <!-- 7. Milos (Opción 1 Recomendada) -->
           <div class="climate-city-card">
             <div class="climate-city-header">
               <span class="climate-city-name">🇬🇷 Milos (Cícladas)</span>
@@ -6715,34 +6916,17 @@
       }
     ];
 
-    const europeStopsSur = [
-      { name: "Roma", coords: [41.9028, 12.4964], icon: "🏛️", desc: "<strong>🏛️ Roma (3 noches | 17 - 20 Abr)</strong><br>Llegada en vuelo directo ITA desde Ezeiza.<br>Coliseo, Vaticano, Fontana di Trevi y Trastevere.<br><span style='color:#ef4444;font-weight:700;'>🚆 Siguiente: Frecciarossa a Nápoles (1h 10m)</span>" },
-      { name: "Nápoles & Pompeya", coords: [40.8518, 14.2681], icon: "🌋", desc: "<strong>🌋 Nápoles & Pompeya (3 noches | 20 - 23 Abr)</strong><br>Base en centro histórico.<br>Parque arqueológico en tren local, Spaccanapoli y pizza.<br><span style='color:#f59e0b;font-weight:700;'>🚆 Siguiente: Frecciargento a Bari (3h 30m)</span>" },
-      { name: "Puglia & Alberobello", coords: [40.9964, 17.2186], icon: "🌊", desc: "<strong>🌊 Puglia: Polignano & Trulli (3 noches | 23 - 26 Abr)</strong><br>Pueblos blancos sobre acantilados del Adriático.<br>Excursión en tren regional a los trulli de Alberobello.<br><span style='color:#8b5cf6;font-weight:700;'>✈️ Siguiente: Vuelo directo Bari ➔ Atenas (1h 15m)</span>" },
-      { name: "Atenas", coords: [37.9753, 23.7261], icon: "🏛️", desc: "<strong>🏛️ Atenas (3 noches iniciales + 2 finales)</strong><br>Acrópolis, Museo de las Cariátides y cenas en Plaka.<br><span style='color:#0284c7;font-weight:700;'>🚢 Siguiente: Ferry Blue Star a Naxos (3h 30m)</span>" },
-      { name: "Naxos", coords: [37.1062, 25.3768], icon: "🏝️", desc: "<strong>🏝️ Isla de Naxos (4 noches | 29 Abr - 3 May)</strong><br>Portara de Apolo y celebración de la Pascua Ortodoxa (2 de mayo).<br><span style='color:#0284c7;font-weight:700;'>🚢 Siguiente: Catamarán rápido a Santorini (1h 45m)</span>" },
-      { name: "Santorini", coords: [36.3932, 25.4615], icon: "🌅", desc: "<strong>🌅 Santorini (3 noches | 3 - 6 May)</strong><br>Cúpulas azules de Oia y crucero catamarán sunset con barbacoa.<br><span style='color:#0284c7;font-weight:700;'>🚢/✈️ Siguiente: Regreso a Atenas (2n de cierre) y vuelo EZE</span>" }
+    // OPCIÓN 1 (RECOMENDADA · 100% SIN AUTO): ROMA (4n), NÁPOLES (3n), ATENAS (3n), MILOS (3n), NAXOS (3n), SANTORINI (3n), ATENAS (2n)
+    const europeStopsOpcion1 = [
+      { name: "Roma", coords: [41.9028, 12.4964], icon: "🏛️", desc: "<strong>🏛️ Roma (4 noches | 17 - 21 Abr)</strong><br>Llegada en vuelo directo ITA desde Ezeiza.<br>Coliseo, Vaticano, Fontana di Trevi, Panteón y Trastevere.<br><span style='color:#ef4444;font-weight:700;'>🚆 Siguiente: Frecciarossa a Nápoles (1h 10m)</span>" },
+      { name: "Nápoles & Pompeya", coords: [40.8518, 14.2681], icon: "🌋", desc: "<strong>🌋 Nápoles & Pompeya (3 noches | 21 - 24 Abr)</strong><br>Base céntrica en Nápoles.<br>Ruinas de Pompeya en tren directo (30 min), Spaccanapoli y pizza.<br><span style='color:#8b5cf6;font-weight:700;'>✈️ Siguiente: Vuelo directo Nápoles ➔ Atenas (1h 45m)</span>" },
+      { name: "Atenas", coords: [37.9753, 23.7261], icon: "🏛️", desc: "<strong>🏛️ Atenas (3 noches iniciales + 2 finales)</strong><br>Acrópolis, Plaka, Museo de las Cariátides y Anafiotika.<br><span style='color:#0284c7;font-weight:700;'>🚢 Siguiente: Ferry rápido Pireo ➔ Milos (3h 15m)</span>" },
+      { name: "Milos", coords: [36.7214, 24.4261], icon: "⛵", desc: "<strong>⛵ Isla de Milos (3 noches | 27 - 30 Abr)</strong><br>Paisajes lunares de Sarakiniko, velero a Kleftiko y pueblitos pesqueros.<br><span style='color:#0284c7;font-weight:700;'>🚢 Siguiente: Ferry Milos ➔ Naxos (2h 15m)</span>" },
+      { name: "Naxos", coords: [37.1062, 25.3768], icon: "🏝️", desc: "<strong>🏝️ Isla de Naxos (3 noches | 30 Abr - 3 May)</strong><br>Portara de Apolo y celebración de la Pascua Ortodoxa (2 de mayo).<br><span style='color:#0284c7;font-weight:700;'>🚢 Siguiente: Catamarán rápido a Santorini (1h 45m)</span>" },
+      { name: "Santorini", coords: [36.3932, 25.4615], icon: "🌅", desc: "<strong>🌅 Santorini (3 noches | 3 - 6 May)</strong><br>Caldera de Oia, cúpulas azules y catamarán sunset.<br><span style='color:#10b981;font-weight:700;'>✈️ Siguiente: Vuelo interno Santorini ➔ Atenas (45 min)</span>" }
     ];
 
-    const europeLegsSur = [
-      { coords: [[41.9028, 12.4964], [40.8518, 14.2681]], color: "#ef4444", weight: 5, label: "Tren Bala Frecciarossa (1h 10m)" },
-      { coords: [[40.8518, 14.2681], [41.1171, 16.8719], [40.9964, 17.2186]], color: "#f59e0b", weight: 5, label: "Tren Frecciargento a Puglia (3h 30m)" },
-      { coords: [[41.1171, 16.8719], [39.5, 20.0], [37.9753, 23.7261]], color: "#8b5cf6", weight: 4, dash: "6, 8", label: "Vuelo Directo Bari ➔ Atenas (1h 15m)" },
-      { coords: [[37.9429, 23.6469], [37.5, 24.5], [37.1062, 25.3768]], color: "#0284c7", weight: 4, dash: "4, 6", label: "Ferry Pireo ➔ Naxos (3h 30m)" },
-      { coords: [[37.1062, 25.3768], [36.7, 25.4], [36.3932, 25.4615]], color: "#0284c7", weight: 4, dash: "4, 6", label: "Catamarán Naxos ➔ Santorini (1h 45m)" },
-      { coords: [[36.3932, 25.4615], [37.15, 24.55], [37.9753, 23.7261]], color: "#0284c7", weight: 4, dash: "4, 6", label: "Ferry / Vuelo Santorini ➔ Atenas" }
-    ];
-
-    const europeStopsOpcion2 = [
-      { name: "Roma", coords: [41.9028, 12.4964], icon: "🏛️", desc: "<strong>🏛️ Roma (4 noches | 17 - 21 Abr)</strong><br>Coliseo, Vaticano, Panteón y Trastevere.<br><span style='color:#ef4444;font-weight:700;'>🚆 Siguiente: Frecciarossa a Nápoles (1h 10m)</span>" },
-      { name: "Nápoles & Pompeya", coords: [40.8518, 14.2681], icon: "🌋", desc: "<strong>🌋 Nápoles & Pompeya (3 noches | 21 - 24 Abr)</strong><br>Centro histórico, Spaccanapoli y ruinas de Pompeya.<br><span style='color:#8b5cf6;font-weight:700;'>✈️ Siguiente: Vuelo Nápoles ➔ Atenas (1h 45m)</span>" },
-      { name: "Atenas", coords: [37.9753, 23.7261], icon: "🏛️", desc: "<strong>🏛️ Atenas (3 noches iniciales + 2 finales)</strong><br>Acrópolis, Plaka, Museo y relax de cierre.<br><span style='color:#0284c7;font-weight:700;'>🚢 Siguiente: Ferry a Milos (3h 15m)</span>" },
-      { name: "Milos", coords: [36.7214, 24.4261], icon: "⛵", desc: "<strong>⛵ Isla de Milos (3 noches | 27 - 30 Abr)</strong><br>Playas lunares de Sarakiniko, velero a Kleftiko y Klima.<br><span style='color:#0284c7;font-weight:700;'>🚢 Siguiente: Ferry Milos ➔ Naxos (2h 15m)</span>" },
-      { name: "Naxos", coords: [37.1062, 25.3768], icon: "🏝️", desc: "<strong>🏝️ Isla de Naxos (3 noches | 30 Abr - 3 May)</strong><br>Pascua Ortodoxa del 2 de mayo, pueblos de montaña y Portara.<br><span style='color:#0284c7;font-weight:700;'>🚢 Siguiente: Catamarán a Santorini (1h 45m)</span>" },
-      { name: "Santorini", coords: [36.3932, 25.4615], icon: "🌅", desc: "<strong>🌅 Santorini (3 noches | 3 - 6 May)</strong><br>Caldera de Oia y crucero catamarán sunset con cena.<br><span style='color:#10b981;font-weight:700;'>✈️ Siguiente: Vuelo a Atenas (45 min) y 2n de relax final</span>" }
-    ];
-
-    const europeLegsOpcion2 = [
+    const europeLegsOpcion1 = [
       { coords: [[41.9028, 12.4964], [40.8518, 14.2681]], color: "#ef4444", weight: 5, label: "Tren Bala Frecciarossa Roma ➔ Nápoles (1h 10m)" },
       { coords: [[40.8518, 14.2681], [39.0, 19.5], [37.9753, 23.7261]], color: "#8b5cf6", weight: 4, dash: "6, 8", label: "Vuelo Directo Nápoles ➔ Atenas (1h 45m)" },
       { coords: [[37.9429, 23.6469], [37.3, 24.0], [36.7214, 24.4261]], color: "#0284c7", weight: 4, dash: "4, 6", label: "Ferry Rápido Pireo ➔ Milos (3h 15m)" },
@@ -6751,11 +6935,30 @@
       { coords: [[36.3932, 25.4615], [37.15, 24.55], [37.9753, 23.7261]], color: "#10b981", weight: 4, dash: "5, 7", label: "Vuelo Santorini ➔ Atenas (45 min)" }
     ];
 
+    // OPCIÓN 2 (ALTERNATIVA SUR & PUGLIA): ROMA (3n), NÁPOLES (3n), PUGLIA (3n), ATENAS (3n), NAXOS (4n), SANTORINI (3n), ATENAS (2n)
+    const europeStopsOpcion2 = [
+      { name: "Roma", coords: [41.9028, 12.4964], icon: "🏛️", desc: "<strong>🏛️ Roma (3 noches | 17 - 20 Abr)</strong><br>Coliseo, Vaticano, Fontana di Trevi y Trastevere.<br><span style='color:#ef4444;font-weight:700;'>🚆 Siguiente: Frecciarossa a Nápoles (1h 10m)</span>" },
+      { name: "Nápoles & Pompeya", coords: [40.8518, 14.2681], icon: "🌋", desc: "<strong>🌋 Nápoles & Pompeya (3 noches | 20 - 23 Abr)</strong><br>Centro histórico, Spaccanapoli y ruinas de Pompeya.<br><span style='color:#f59e0b;font-weight:700;'>🚆 Siguiente: Frecciargento a Bari (3h 30m)</span>" },
+      { name: "Puglia & Alberobello", coords: [40.9964, 17.2186], icon: "🌊", desc: "<strong>🌊 Puglia: Polignano & Trulli (3 noches | 23 - 26 Abr)</strong><br>Pueblos blancos sobre acantilados del Adriático.<br><span style='color:#8b5cf6;font-weight:700;'>✈️ Siguiente: Vuelo directo Bari ➔ Atenas (1h 15m)</span>" },
+      { name: "Atenas", coords: [37.9753, 23.7261], icon: "🏛️", desc: "<strong>🏛️ Atenas (3 noches iniciales + 2 finales)</strong><br>Acrópolis, Plaka, Museo y relax de cierre.<br><span style='color:#0284c7;font-weight:700;'>🚢 Siguiente: Ferry Blue Star a Naxos (3h 30m)</span>" },
+      { name: "Naxos", coords: [37.1062, 25.3768], icon: "🏝️", desc: "<strong>🏝️ Isla de Naxos (4 noches | 29 Abr - 3 May)</strong><br>Portara de Apolo y Pascua Ortodoxa.<br><span style='color:#0284c7;font-weight:700;'>🚢 Siguiente: Catamarán rápido a Santorini (1h 45m)</span>" },
+      { name: "Santorini", coords: [36.3932, 25.4615], icon: "🌅", desc: "<strong>🌅 Santorini (3 noches | 3 - 6 May)</strong><br>Caldera de Oia y catamarán sunset.<br><span style='color:#0284c7;font-weight:700;'>🚢/✈️ Siguiente: Regreso a Atenas (2n) y vuelo EZE</span>" }
+    ];
+
+    const europeLegsOpcion2 = [
+      { coords: [[41.9028, 12.4964], [40.8518, 14.2681]], color: "#ef4444", weight: 5, label: "Tren Bala Frecciarossa Roma ➔ Nápoles (1h 10m)" },
+      { coords: [[40.8518, 14.2681], [41.1171, 16.8719], [40.9964, 17.2186]], color: "#f59e0b", weight: 5, label: "Tren Frecciargento a Puglia (3h 30m)" },
+      { coords: [[41.1171, 16.8719], [39.5, 20.0], [37.9753, 23.7261]], color: "#8b5cf6", weight: 4, dash: "6, 8", label: "Vuelo Directo Bari ➔ Atenas (1h 15m)" },
+      { coords: [[37.9429, 23.6469], [37.5, 24.5], [37.1062, 25.3768]], color: "#0284c7", weight: 4, dash: "4, 6", label: "Ferry Pireo ➔ Naxos (3h 30m)" },
+      { coords: [[37.1062, 25.3768], [36.7, 25.4], [36.3932, 25.4615]], color: "#0284c7", weight: 4, dash: "4, 6", label: "Catamarán Naxos ➔ Santorini (1h 45m)" },
+      { coords: [[36.3932, 25.4615], [37.15, 24.55], [37.9753, 23.7261]], color: "#0284c7", weight: 4, dash: "4, 6", label: "Ferry / Vuelo Santorini ➔ Atenas" }
+    ];
+
     const routeData = {
-      sur: {
+      opcion1: {
         bounds: [[35.8, 11.8], [42.6, 26.6]],
-        stops: [ezeStop, ...europeStopsSur],
-        legs: [...transatlanticLegs, ...europeLegsSur]
+        stops: [ezeStop, ...europeStopsOpcion1],
+        legs: [...transatlanticLegs, ...europeLegsOpcion1]
       },
       opcion2: {
         bounds: [[35.8, 11.8], [42.6, 26.6]],
@@ -6764,8 +6967,8 @@
       },
       global: {
         bounds: [[-36.5, -63.0], [46.5, 28.5]],
-        stops: [ezeStop, ...europeStopsSur],
-        legs: [...transatlanticLegs, ...europeLegsSur]
+        stops: [ezeStop, ...europeStopsOpcion1],
+        legs: [...transatlanticLegs, ...europeLegsOpcion1]
       }
     };
 
@@ -6785,7 +6988,7 @@
       }).addTo(routeMap);
 
       mapLayerGroup = L.layerGroup().addTo(routeMap);
-      renderRouteLayers('sur');
+      renderRouteLayers('opcion1');
     }
 
     function renderRouteLayers(mode) {
@@ -6824,9 +7027,35 @@
 
     function switchMapRoute(mode) {
       document.querySelectorAll('.map-toggle-btn').forEach(b => b.classList.remove('active'));
-      const btnId = mode === 'sur' ? 'map-btn-sur' : (mode === 'opcion2' ? 'map-btn-opcion2' : 'map-btn-global');
+      const btnId = mode === 'opcion1' ? 'map-btn-opcion1' : (mode === 'opcion2' ? 'map-btn-opcion2' : 'map-btn-global');
       const activeBtn = document.getElementById(btnId);
       if (activeBtn) activeBtn.classList.add('active');
+
+      // Update Stages Timeline below map
+      const stages1 = document.getElementById('stages-opcion1');
+      const stages2 = document.getElementById('stages-opcion2');
+      const badge = document.getElementById('stages-indicator-badge');
+
+      if (mode === 'opcion2') {
+        if (stages1) stages1.style.display = 'none';
+        if (stages2) stages2.style.display = 'grid';
+        if (badge) {
+          badge.textContent = 'Mostrando: 🏛️ Opción 2 (Alternativa Sur & Puglia)';
+          badge.style.background = '#f1f5f9';
+          badge.style.color = '#475569';
+          badge.style.borderColor = '#cbd5e1';
+        }
+      } else {
+        if (stages1) stages1.style.display = 'grid';
+        if (stages2) stages2.style.display = 'none';
+        if (badge) {
+          badge.textContent = 'Mostrando: ⭐ Opción 1 (Recomendada · Milos & Cícladas)';
+          badge.style.background = '#dcfce7';
+          badge.style.color = '#15803d';
+          badge.style.borderColor = '#bbf7d0';
+        }
+      }
+
       renderRouteLayers(mode);
     }
 
