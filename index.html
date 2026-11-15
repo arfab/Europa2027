@@ -339,7 +339,7 @@
     }
     .itinerary-selector {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 14px;
       margin-top: 10px;
     }
@@ -2168,10 +2168,10 @@
       <div class="card">
         <h2>🗺️ Propuestas de Itinerario con Fotos de Atracciones</h2>
         <p style="margin-bottom: 18px; color: var(--text-muted);">
-          21 noches netas en Europa. Hacé clic en cualquiera de las 3 propuestas para ver su detalle con fotos, paradas y desplegar el itinerario día por día recomendado con transportes:
+          21 noches netas en Europa. Hacé clic en cualquiera de las 4 propuestas para ver su detalle con fotos, paradas y desplegar el itinerario día por día recomendado con transportes:
         </p>
 
-        <!-- SELECTOR DE ITINERARIO (3 OPCIONES DEFINITIVAS) -->
+        <!-- SELECTOR DE ITINERARIO (4 OPCIONES DEFINITIVAS) -->
         <div class="itinerary-selector-wrap">
           <div class="itinerary-selector">
             <button class="itin-btn active" onclick="switchItinerary('opt-1')">
@@ -2188,6 +2188,11 @@
               <span class="itin-btn-badge" style="background:#7c3aed;">✨ Opción 3 (Italia Profunda + Pascua Segura)</span>
               <span class="itin-btn-title">Roma (5n), Nápoles & Amalfi (4n) + Islas</span>
               <span class="itin-btn-sub">9n Italia + 12n Grecia · Roma (5n) · Nápoles, Maradona & Amalfi (4n) · Atenas (3n) · Milos/Naxos Pascua (4n) · Santorini (3n) · Atenas (2n)</span>
+            </button>
+            <button class="itin-btn" onclick="switchItinerary('opt-4')">
+              <span class="itin-btn-badge" style="background:#0d9488;">⛵ Opción 4 (Base Única Paros · Sin Mudar Valijas)</span>
+              <span class="itin-btn-title">Italia Profunda + Hub Paros (7n)</span>
+              <span class="itin-btn-sub">9n Italia + 12n Grecia · Roma (5n) · Nápoles & Amalfi (4n) · Atenas (3n) · Paros Base Única (7n: Antíparos, Naxos, Delos & Mykonos) · Atenas (2n)</span>
             </button>
           </div>
         </div>
@@ -3670,6 +3675,280 @@
           </div>
         </div>
 
+        <!-- ==================== OPCIÓN 4: ITALIA PROFUNDA + BASE ÚNICA EN PAROS (7 NOCHES) ==================== -->
+        <div id="opt-4" class="variant-card itin-option-card" style="display: none;">
+          <div class="variant-header">
+            <div class="variant-title">⛵ Opción 4: Italia Profunda + Base Única en Paros (7n sin Mudar Valijas)</div>
+            <span class="variant-pill" style="background: #ccfbf1; color: #0f766e; font-weight:700;">⛵ 9n Italia + 12n Grecia · Cero Mudanzas en Islas</span>
+          </div>
+          <div class="variant-summary">
+            Roma (5n) ➔ Nápoles, Maradona, Pompeya & Amalfi (4n) ➔ Atenas días hábiles (3n) ➔ Base Fija en Paros / Parikia (7n con excursiones radiales a Antíparos, Naxos, Delos & Mykonos) ➔ Vuelo Paros-Atenas + Atenas cierre (2n)
+          </div>
+
+          <!-- Parada 1: Roma (5n) -->
+          <div class="stop-block">
+            <div class="stop-header stop-header-interactive" onclick="toggleDayPlan(this)" title="Hacé clic para ver o cerrar el día a día recomendado">
+              <span class="stop-city">🏛️ 1. Roma (5 noches | 17 - 22 Abril)</span>
+              <span class="stop-nights">Hotel céntrico en Roma · 📅 Ver día a día ▼</span>
+            </div>
+            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
+              4 días completos + mañana del 5° día: Coliseo, Foro Romano, Moisés de Miguel Ángel, Vaticano (lunes 19 evitando Audiencia Papal), Panteón, Fontana di Trevi, Villa Borghese y Trastevere.
+            </p>
+            <div class="attractions-grid">
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=400&q=80" alt="Coliseo Romano" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Coliseo, Foro & Moisés</div>
+                  <div class="attr-detail">Roma Antigua + San Pietro in Vincoli a 5 min a pie.</div>
+                  <div class="attr-price">Oficial: €18 | Basílica: Gratis</div>
+                </div>
+              </div>
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1531572753322-ad063cecc140?auto=format&fit=crop&w=400&q=80" alt="Vaticano" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Vaticano & Capilla Sixtina</div>
+                  <div class="attr-detail">Lunes 19 por la mañana con entrada sin fila.</div>
+                  <div class="attr-price">Oficial: €20 | Civitatis: €55</div>
+                </div>
+              </div>
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1525874684015-58379d421a52?auto=format&fit=crop&w=400&q=80" alt="Fontana di Trevi" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Panteón, Trevi & Borghese</div>
+                  <div class="attr-detail">Centro Barroco a pie + mirador del Pincio.</div>
+                  <div class="attr-price">Panteón: €5 | Trevi: Gratis</div>
+                </div>
+              </div>
+            </div>
+            <button class="day-toggle-btn" onclick="toggleDayPlan(this)">
+              <span>📅 Ver Itinerario Día por Día Recomendado & Transporte</span>
+              <span class="day-btn-arrow">▼</span>
+            </button>
+            <div class="day-by-day-panel">
+              <div class="day-step-item">
+                <div class="day-step-dot"></div>
+                <div class="day-step-title"><span>Día 1: Llegada a Roma FCO (18:30)</span><span class="day-step-badge">Sábado 17 Abril</span></div>
+                <div class="day-step-desc">Llegada a Fiumicino 18:30/18:40 PM. Leonardo Express a Termini (32m) o taxi tarifa fija (€55) al hotel y primera cena en Roma.</div>
+              </div>
+              <div class="day-step-item">
+                <div class="day-step-dot"></div>
+                <div class="day-step-title"><span>Día 2: Roma Antigua & Trastevere</span><span class="day-step-badge">Domingo 18 Abril</span></div>
+                <div class="day-step-desc">Coliseo, Foro Romano y Palatino + Moisés de Miguel Ángel (San Pietro in Vincoli). Tarde: Campidoglio, Gueto Judío y cena en Trastevere.</div>
+              </div>
+              <div class="day-step-item">
+                <div class="day-step-dot"></div>
+                <div class="day-step-title"><span>Día 3: Ciudad del Vaticano & San Pedro</span><span class="day-step-badge">Lunes 19 Abril</span></div>
+                <div class="day-step-desc">08:30 AM: Museos Vaticanos + Capilla Sixtina y Basílica de San Pedro. Tarde: Castel Sant'Angelo y paseo por el Tíber.</div>
+              </div>
+              <div class="day-step-item">
+                <div class="day-step-dot"></div>
+                <div class="day-step-title"><span>Día 4: Centro Barroco & Villa Borghese</span><span class="day-step-badge">Martes 20 Abril</span></div>
+                <div class="day-step-desc">Panteón, Piazza Navona, Campo de' Fiori, Fontana di Trevi, Piazza di Spagna y atardecer en Villa Borghese.</div>
+              </div>
+              <div class="day-step-item">
+                <div class="day-step-dot"></div>
+                <div class="day-step-title"><span>Día 5: Día Flexible & Basílicas</span><span class="day-step-badge">Miércoles 21 Abril</span></div>
+                <div class="day-step-desc">Santa María la Mayor, San Juan de Letrán y paseo relajado sin apuros.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Parada 2: Nápoles (4n) -->
+          <div class="stop-block">
+            <div class="stop-header stop-header-interactive" onclick="toggleDayPlan(this)" title="Hacé clic para ver o cerrar el día a día recomendado">
+              <span class="stop-city">🌋 2. Nápoles, Maradona, Pompeya & Costa Amalfitana (4 noches | 22 - 26 Abril)</span>
+              <span class="stop-nights">Base en Nápoles · 📅 Ver día a día ▼</span>
+            </div>
+            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
+              Circuito Maradoniano completo, Spaccanapoli, 1 día en Pompeya (35 min en tren) y 1 día en la Costa Amalfitana (Positano & Amalfi en ferry desde Salerno).
+            </p>
+            <div class="attractions-grid">
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=400&q=80" alt="Costa Amalfitana" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Costa Amalfitana (Positano & Amalfi)</div>
+                  <div class="attr-detail">Tren a Salerno (40m) + ferry panorámico costero.</div>
+                  <div class="attr-price">Ferry + Tren: ~€35 p/p</div>
+                </div>
+              </div>
+              <div class="attr-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Pompei_Forum.jpg" alt="Ruinas de Pompeya y Vesubio" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Ruinas de Pompeya</div>
+                  <div class="attr-detail">Tren directo Campania Express (35 min).</div>
+                  <div class="attr-price">Oficial: €18 | Civitatis: €49</div>
+                </div>
+              </div>
+              <div class="attr-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Napoli_-_Murales_Maradona_a_Montecalvario.jpeg" alt="Mural de Maradona en Nápoles" style="object-position: center 25%;" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Circuito Maradona & Pizza</div>
+                  <div class="attr-detail">Largo Maradona, Bar Nilo, Jorit y Sorbillo/Da Michele.</div>
+                  <div class="attr-price">A pie · Pizza: €8 – €12</div>
+                </div>
+              </div>
+            </div>
+            <button class="day-toggle-btn" onclick="toggleDayPlan(this)">
+              <span>📅 Ver Itinerario Día por Día Recomendado & Transporte</span>
+              <span class="day-btn-arrow">▼</span>
+            </button>
+            <div class="day-by-day-panel">
+              <div class="day-step-item">
+                <div class="day-step-dot"></div>
+                <div class="day-step-title"><span>Día 6: Tren a Nápoles & Spaccanapoli</span><span class="day-step-badge">Jueves 22 Abril</span></div>
+                <div class="day-step-desc">Frecciarossa 12:30 PM Roma ➔ Nápoles (1h 10m). Tarde: Spaccanapoli, Bar Nilo (reliquia de Diego) y primera pizza napolitana.</div>
+              </div>
+              <div class="day-step-item">
+                <div class="day-step-dot"></div>
+                <div class="day-step-title"><span>Día 7: Circuito Maradoniano & Cristo Velado</span><span class="day-step-badge">Viernes 23 Abril</span></div>
+                <div class="day-step-desc">Estación Toledo, Largo Maradona (Quartieri Spagnoli), Capilla Sansevero (Cristo Velado), Paseo Lungomare y opcional Estadio Maradona / Mural de Jorit.</div>
+              </div>
+              <div class="day-step-item">
+                <div class="day-step-dot"></div>
+                <div class="day-step-title"><span>Día 8: Excursión a Pompeya</span><span class="day-step-badge">Sábado 24 Abril</span></div>
+                <div class="day-step-desc">Tren Campania Express (35m) a Pompeya. 4 horas recorriendo el Foro y las ruinas bajo el Vesubio.</div>
+              </div>
+              <div class="day-step-item">
+                <div class="day-step-dot"></div>
+                <div class="day-step-title"><span>Día 9: Costa Amalfitana en Barco</span><span class="day-step-badge">Domingo 25 Abril</span></div>
+                <div class="day-step-desc">Tren Nápoles ➔ Salerno (40m) + ferry costero Travelmar a Amalfi y Positano sin tráfico ni auto.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Parada 3: Atenas Inicial (3n) -->
+          <div class="stop-block">
+            <div class="stop-header stop-header-interactive" onclick="toggleDayPlan(this)" title="Hacé clic para ver o cerrar el día a día recomendado">
+              <span class="stop-city">🏛️ 3. Atenas Inicial (3 noches | 26 - 29 Abril)</span>
+              <span class="stop-nights">Días hábiles normales (100% Abierto) · 📅 Ver día a día ▼</span>
+            </div>
+            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
+              Acrópolis, Museo de la Acrópolis, Ágora Antigua y Plaka el martes 27 y miércoles 28 en días hábiles normales (antes de los cierres del 1° y 2 de mayo).
+            </p>
+            <button class="day-toggle-btn" onclick="toggleDayPlan(this)">
+              <span>📅 Ver Itinerario Día por Día Recomendado & Transporte</span>
+              <span class="day-btn-arrow">▼</span>
+            </button>
+            <div class="day-by-day-panel">
+              <div class="day-step-item">
+                <div class="day-step-dot"></div>
+                <div class="day-step-title"><span>Día 10: Vuelo Italia ➔ Atenas</span><span class="day-step-badge">Lunes 26 Abril</span></div>
+                <div class="day-step-desc">Salto aéreo a Atenas (directo NAP/ATH o conexión protegida vía FCO). Cena en Plaka bajo la Acrópolis iluminada.</div>
+              </div>
+              <div class="day-step-item">
+                <div class="day-step-dot"></div>
+                <div class="day-step-title"><span>Día 11: Acrópolis & Anafiotika</span><span class="day-step-badge">Martes 27 Abril</span></div>
+                <div class="day-step-desc">08:00 AM: Acrópolis, Partenón, Museo de la Acrópolis, barrio de Anafiotika y atardecer en Monte Licabeto.</div>
+              </div>
+              <div class="day-step-item">
+                <div class="day-step-dot"></div>
+                <div class="day-step-title"><span>Día 12: Ágora Antigua & Centro</span><span class="day-step-badge">Miércoles 28 Abril</span></div>
+                <div class="day-step-desc">Ágora Antigua, Estadio Panatenaico, Sintagma y Monastiraki.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Parada 4: Base Única en Paros (7n) -->
+          <div class="stop-block">
+            <div class="stop-header stop-header-interactive" onclick="toggleDayPlan(this)" title="Hacé clic para ver o cerrar el día a día recomendado">
+              <span class="stop-city">⛵ 4. Base Única en Paros: Parikia (7 noches | 29 Abril - 6 Mayo)</span>
+              <span class="stop-nights">Cero mudanzas · 3 excursiones radiales sin valijas · 📅 Ver día a día ▼</span>
+            </div>
+            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
+              Desempacan una sola vez en Parikia (terminal central de buses KTEL de €2–€4 y puerto principal). Viven la famosa Pascua Ortodoxa de Paros sin depender de barcos en fechas críticas y hacen 3 escapadas por el día con mochila liviana: <strong>Antíparos</strong>, <strong>Naxos</strong> y <strong>Delos + Mykonos</strong>.
+            </p>
+            <div class="attractions-grid">
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=400&q=80" alt="Paros Naoussa y Parikia" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Paros (Parikia, Naoussa & Lefkes)</div>
+                  <div class="attr-detail">Buses KTEL (€2-€4) + Pascua Ortodoxa tradicional.</div>
+                  <div class="attr-price">Ferry Pireo: ~€40,50 (4h 20m)</div>
+                </div>
+              </div>
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?auto=format&fit=crop&w=400&q=80" alt="Naxos Portara" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Excursión a Naxos & Antíparos</div>
+                  <div class="attr-detail">Ferry a Naxos (35-45m) y a Antíparos (7m, €2).</div>
+                  <div class="attr-price">Ida y vuelta en el día sin valijas</div>
+                </div>
+              </div>
+              <div class="attr-card">
+                <img src="https://images.unsplash.com/photo-1601581875039-e899893d520c?auto=format&fit=crop&w=400&q=80" alt="Mykonos Molinos" loading="lazy">
+                <div class="attr-card-body">
+                  <div class="attr-title">Delos (UNESCO) & Mykonos</div>
+                  <div class="attr-detail">Excursión en barco desde Paros (mar 4 o mié 5).</div>
+                  <div class="attr-price">Día completo desde Parikia/Naoussa</div>
+                </div>
+              </div>
+            </div>
+            <button class="day-toggle-btn" onclick="toggleDayPlan(this)">
+              <span>📅 Ver Itinerario Día por Día Recomendado & Transporte</span>
+              <span class="day-btn-arrow">▼</span>
+            </button>
+            <div class="day-by-day-panel">
+              <div class="day-step-item">
+                <div class="day-step-dot"></div>
+                <div class="day-step-title"><span>Día 13: Ferry Atenas ➔ Paros (Parikia)</span><span class="day-step-badge">Jueves 29 Abril</span></div>
+                <div class="day-step-desc">Ferry desde El Pireo a Parikia (3h Seajets o 4h 20m Blue Star desde ~€40,50). Llegan antes de los feriados y desempacan para las 7 noches.</div>
+              </div>
+              <div class="day-step-item">
+                <div class="day-step-dot"></div>
+                <div class="day-step-title"><span>Día 14: Parikia, Lefkes & Viernes Santo</span><span class="day-step-badge">Viernes 30 Abril</span></div>
+                <div class="day-step-desc">Iglesia de las 100 Puertas en Parikia, bus KTEL (€2-€4) al pueblo de montaña Lefkes y procesión nocturna con antorchas de Viernes Santo en Marpissa/Prodromos.</div>
+              </div>
+              <div class="day-step-item">
+                <div class="day-step-dot"></div>
+                <div class="day-step-title"><span>Día 15: Naoussa & Noche de Resurrección</span><span class="day-step-badge">Sábado 1 Mayo</span></div>
+                <div class="day-step-desc">Día 100% terrestre en Paros (inmune a paros marítimos del 1° de mayo): bus a Naoussa (20 min), puerto veneciano, tabernas y misa de Resurrección a medianoche.</div>
+              </div>
+              <div class="day-step-item">
+                <div class="day-step-dot"></div>
+                <div class="day-step-title"><span>Día 16: Pascua Ortodoxa en Paros</span><span class="day-step-badge">Domingo 2 Mayo</span></div>
+                <div class="day-step-desc">Festejos tradicionales de Pascua Ortodoxa, música en vivo, cordero asado y ambiente local en Naoussa o Parikia.</div>
+              </div>
+              <div class="day-step-item">
+                <div class="day-step-dot"></div>
+                <div class="day-step-title"><span>Día 17: Excursión por el Día a Antíparos</span><span class="day-step-badge">Lunes 3 Mayo</span></div>
+                <div class="day-step-desc">Bus KTEL desde Parikia a Pounta (15 min) + ferry peatonal de 7 min (€2). Chora peatonal con buganvillas, Cueva de Antíparos y playa Soros.</div>
+              </div>
+              <div class="day-step-item">
+                <div class="day-step-dot"></div>
+                <div class="day-step-title"><span>Día 18: Excursión por el Día a Naxos</span><span class="day-step-badge">Martes 4 Mayo</span></div>
+                <div class="day-step-desc">Ferry directo Parikia ➔ Naxos (35-45 min). Portara de Apolo, Castillo Veneciano (Kastro), almuerzo local y playa Agios Prokopios. Regreso a dormir a Paros.</div>
+              </div>
+              <div class="day-step-item">
+                <div class="day-step-dot"></div>
+                <div class="day-step-title"><span>Día 19: Excursión a Delos & Mykonos</span><span class="day-step-badge">Miércoles 5 Mayo</span></div>
+                <div class="day-step-desc">Excursión en barco de día completo (verificando día de operación en día hábil con Delos abierto): sitio arqueológico de Delos + Chora, Pequeña Venecia y molinos de Mykonos.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Parada 5: Atenas Cierre (2n) -->
+          <div class="stop-block">
+            <div class="stop-header stop-header-interactive" onclick="toggleDayPlan(this)" title="Hacé clic para ver o cerrar el día a día recomendado">
+              <span class="stop-city">✈️ 5. Vuelo Paros ➔ Atenas & Despedida (2 noches | 6 - 8 Mayo)</span>
+              <span class="stop-nights">Vuelo corto 40m + 48 hs de margen · 📅 Ver día a día ▼</span>
+            </div>
+            <p style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
+              Vuelo directo desde el aeropuerto de Paros (PAS) a Atenas (ATH) en 40 minutos (o ferry 3h a El Pireo). Viernes de compras/relax y regreso blindado el sábado 8 de mayo.
+            </p>
+            <button class="day-toggle-btn" onclick="toggleDayPlan(this)">
+              <span>📅 Ver Itinerario Día por Día Recomendado & Transporte</span>
+              <span class="day-btn-arrow">▼</span>
+            </button>
+            <div class="day-by-day-panel">
+              <div class="day-step-item">
+                <div class="day-step-dot"></div>
+                <div class="day-step-title"><span>Días 20 - 22: Vuelo Paros-Atenas & Regreso a EZE</span><span class="day-step-badge">6 - 8 Mayo</span></div>
+                <div class="day-step-desc">Jue 6 May: Vuelo PAS ➔ ATH (40 min). Vie 7 May: Compras en calle Ermou y cena rooftop con vista a la Acrópolis. Sáb 8 May: Check-out tranquilo y vuelo ITA 19:30 PM ATH ➔ FCO ➔ EZE.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="tab-nav-footer">
           <button class="tab-footer-btn" onclick="openTab('vuelos')">
             ← Anterior: 1. Vuelos
@@ -4351,6 +4630,9 @@
             <button id="map-btn-opcion3" class="map-toggle-btn" onclick="switchMapRoute('opcion3')">
               ✨ Opción 3: Roma (5n), Nápoles & Amalfi (4n) + Pascua Segura
             </button>
+            <button id="map-btn-opcion4" class="map-toggle-btn" onclick="switchMapRoute('opcion4')">
+              ⛵ Opción 4: Italia Profunda + Base Única Paros (7n)
+            </button>
             <button id="map-btn-global" class="map-toggle-btn" onclick="switchMapRoute('global')">
               ✈️ Vuelo Transatlántico (Ezeiza ↔ Europa)
             </button>
@@ -4854,6 +5136,66 @@
             <div class="stage-main">
               <div class="stage-header-line"><span class="stage-route-title">Santorini ➔ Atenas Final & EZE</span><span class="stage-type-badge stage-badge-flight">Vuelo Interno + 2 Noches</span></div>
               <div class="stage-meta"><strong>6 al 8 de Mayo:</strong> Vuelo interno de 45 min. 48 hs de margen y vuelo de regreso el Sáb 8 May 19:30 PM.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== ETAPAS OPCIÓN 4 (BASE ÚNICA PAROS 7n) ==================== -->
+        <div id="stages-opcion4" class="stages-grid" style="display: none;">
+          <div class="stage-card">
+            <div class="stage-badge-num">1</div>
+            <div class="stage-main">
+              <div class="stage-header-line"><span class="stage-route-title">EZE ➔ Roma (FCO)</span><span class="stage-type-badge stage-badge-flight">Vuelo Internacional</span></div>
+              <div class="stage-meta"><strong>Sábado 17 de Abril:</strong> Salida 00:50 AM, llegada 18:40 PM a Fiumicino.</div>
+            </div>
+          </div>
+          <div class="stage-card">
+            <div class="stage-badge-num">2</div>
+            <div class="stage-main">
+              <div class="stage-header-line"><span class="stage-route-title">Roma Profunda</span><span class="stage-type-badge stage-badge-stay">5 Noches</span></div>
+              <div class="stage-meta"><strong>17 al 22 de Abril:</strong> Coliseo, Foro, Moisés, Vaticano (lunes), Panteón, Fontana di Trevi y Trastevere.</div>
+            </div>
+          </div>
+          <div class="stage-card">
+            <div class="stage-badge-num">3</div>
+            <div class="stage-main">
+              <div class="stage-header-line"><span class="stage-route-title">Roma ➔ Nápoles</span><span class="stage-type-badge stage-badge-train">Tren Alta Velocidad</span></div>
+              <div class="stage-meta"><strong>Jueves 22 de Abril:</strong> Frecciarossa 12:30 PM (1h 10m) directo a Napoli Centrale.</div>
+            </div>
+          </div>
+          <div class="stage-card">
+            <div class="stage-badge-num">4</div>
+            <div class="stage-main">
+              <div class="stage-header-line"><span class="stage-route-title">Nápoles, Maradona, Pompeya & Amalfi</span><span class="stage-type-badge stage-badge-stay">4 Noches</span></div>
+              <div class="stage-meta"><strong>22 al 26 de Abril:</strong> Circuito Maradoniano, Spaccanapoli, Pompeya (35m) y Costa Amalfitana en barco (Salerno-Positano-Amalfi).</div>
+            </div>
+          </div>
+          <div class="stage-card">
+            <div class="stage-badge-num">5</div>
+            <div class="stage-main">
+              <div class="stage-header-line"><span class="stage-route-title">Italia ➔ Atenas</span><span class="stage-type-badge stage-badge-flight">Vuelo + 3 Noches</span></div>
+              <div class="stage-meta"><strong>26 al 29 de Abril:</strong> Acrópolis y museos mar 27 y mié 28 con todo 100% abierto antes de Pascua.</div>
+            </div>
+          </div>
+          <div class="stage-card">
+            <div class="stage-badge-num">6</div>
+            <div class="stage-main">
+              <div class="stage-header-line"><span class="stage-route-title">Atenas ➔ Paros (Base Única)</span><span class="stage-type-badge stage-badge-ferry">Ferry + 7 Noches</span></div>
+              <div class="stage-meta"><strong>29 Abr al 6 May:</strong> Ferry Pireo ➔ Parikia (3h - 4h 20m). Desempacan una sola vez en Paros y pasan Pascua Ortodoxa allí.</div>
+            </div>
+          </div>
+          <div class="stage-card">
+            <div class="stage-badge-num">7</div>
+            <div class="stage-main">
+              <div class="stage-header-line"><span class="stage-route-title">3 Excursiones Radiales sin Valijas</span><span class="stage-type-badge stage-badge-stay">Desde Paros</span></div>
+              <div class="stage-meta"><strong>3 al 5 de Mayo:</strong> Antíparos (7m ferry), Naxos (35-45m ferry) y Delos + Mykonos en barco turístico, volviendo a dormir a Paros.</div>
+            </div>
+          </div>
+          <div class="stage-card">
+            <div class="stage-badge-num">8</div>
+            <div class="stage-main">
+              <div class="stage-header-line"><span class="stage-route-title">Paros ➔ Atenas Final & EZE</span><span class="stage-type-badge stage-badge-flight">Vuelo 40m + 2 Noches</span></div>
+              <div class="stage-meta"><strong>6 al 8 de Mayo:</strong> Vuelo corto PAS ➔ ATH (40 min). 48 hs de margen y vuelo de regreso el Sáb 8 May 19:30 PM.</div>
             </div>
           </div>
         </div>
@@ -7354,6 +7696,27 @@
       { coords: [[36.3932, 25.4615], [37.15, 24.55], [37.9753, 23.7261]], color: "#10b981", weight: 4, dash: "5, 7", label: "Vuelo Interno Santorini ➔ Atenas (45 min)" }
     ];
 
+    // OPCIÓN 4 (BASE ÚNICA EN PAROS 7n): ROMA (5n), NÁPOLES & AMALFI (4n), ATENAS (3n), PAROS HUB (7n + EXCURSIONES A ANTÍPAROS, NAXOS, DELOS & MYKONOS), ATENAS (2n)
+    const europeStopsOpcion4 = [
+      { name: "Roma (5n)", coords: [41.9028, 12.4964], icon: "🏛️", desc: "<strong>🏛️ Roma (5 noches | 17 - 22 Abr)</strong><br>Coliseo, Moisés, Vaticano, Panteón, Fontana di Trevi y Trastevere.<br><span style='color:#ef4444;font-weight:700;'>🚆 Siguiente: Frecciarossa a Nápoles (1h 10m)</span>" },
+      { name: "Nápoles & Amalfi (4n)", coords: [40.8518, 14.2681], icon: "🌋", desc: "<strong>🌋 Nápoles, Maradona & Amalfi (4 noches | 22 - 26 Abr)</strong><br>Circuito Maradoniano, Pompeya y Costa Amalfitana.<br><span style='color:#8b5cf6;font-weight:700;'>✈️ Siguiente: Vuelo a Atenas (Lun 26 Abr)</span>" },
+      { name: "Atenas (3n + 2n)", coords: [37.9753, 23.7261], icon: "🏛️", desc: "<strong>🏛️ Atenas (3n iniciales + 2n finales)</strong><br>Acrópolis y Museos mar 27 y mié 28 antes de Pascua.<br><span style='color:#0284c7;font-weight:700;'>🚢 Siguiente: Ferry Pireo ➔ Paros (Jue 29 Abr)</span>" },
+      { name: "Paros Hub (7n)", coords: [37.0853, 25.1522], icon: "⛵", desc: "<strong>⛵ Paros — Base Única (7 noches | 29 Abr - 6 May)</strong><br>Parikia & Naoussa, Pascua Ortodoxa y 3 excursiones por el día sin valijas.<br><span style='color:#10b981;font-weight:700;'>✈️ Siguiente: Vuelo Paros (PAS) ➔ Atenas (40m)</span>" },
+      { name: "Antíparos (Día)", coords: [37.0408, 25.0811], icon: "🏖️", desc: "<strong>🏖️ Excursión: Antíparos</strong><br>Bus a Pounta (15m) + ferry peatonal (7m, €2). Chora y Cueva." },
+      { name: "Naxos (Día)", coords: [37.1062, 25.3768], icon: "🏝️", desc: "<strong>🏝️ Excursión: Naxos</strong><br>Ferry directo 35-45m desde Parikia. Portara, Kastro y playas." },
+      { name: "Delos & Mykonos (Día)", coords: [37.4467, 25.3289], icon: "🌬️", desc: "<strong>🌬️ Excursión: Delos & Mykonos</strong><br>Barco turístico de día completo desde Paros (sitio UNESCO + molinos)." }
+    ];
+
+    const europeLegsOpcion4 = [
+      { coords: [[41.9028, 12.4964], [40.8518, 14.2681]], color: "#ef4444", weight: 5, label: "Tren Bala Frecciarossa Roma ➔ Nápoles (1h 10m)" },
+      { coords: [[40.8518, 14.2681], [39.0, 19.5], [37.9753, 23.7261]], color: "#8b5cf6", weight: 4, dash: "6, 8", label: "Vuelo Italia ➔ Atenas (Lun 26 Abr)" },
+      { coords: [[37.9429, 23.6469], [37.5, 24.4], [37.0853, 25.1522]], color: "#0284c7", weight: 4, dash: "4, 6", label: "Ferry Pireo ➔ Paros (3h - 4h 20m)" },
+      { coords: [[37.0853, 25.1522], [37.0408, 25.0811]], color: "#0d9488", weight: 3, dash: "3, 5", label: "Excursión a Antíparos (7m ferry)" },
+      { coords: [[37.0853, 25.1522], [37.1062, 25.3768]], color: "#0d9488", weight: 3, dash: "3, 5", label: "Excursión a Naxos (35-45m ferry)" },
+      { coords: [[37.0853, 25.1522], [37.39, 25.27], [37.4467, 25.3289]], color: "#0d9488", weight: 3, dash: "3, 5", label: "Excursión en barco a Delos & Mykonos" },
+      { coords: [[37.0853, 25.1522], [37.5, 24.45], [37.9753, 23.7261]], color: "#10b981", weight: 4, dash: "5, 7", label: "Vuelo Interno Paros (PAS) ➔ Atenas (40 min)" }
+    ];
+
     const routeData = {
       opcion1: {
         bounds: [[35.8, 11.8], [42.6, 26.6]],
@@ -7369,6 +7732,11 @@
         bounds: [[35.8, 11.8], [42.6, 26.6]],
         stops: [ezeStop, ...europeStopsOpcion3],
         legs: [...transatlanticLegs, ...europeLegsOpcion3]
+      },
+      opcion4: {
+        bounds: [[35.8, 11.8], [42.6, 26.6]],
+        stops: [ezeStop, ...europeStopsOpcion4],
+        legs: [...transatlanticLegs, ...europeLegsOpcion4]
       },
       global: {
         bounds: [[-36.5, -63.0], [46.5, 28.5]],
@@ -7436,7 +7804,7 @@
 
     function switchMapRoute(mode) {
       document.querySelectorAll('.map-toggle-btn').forEach(b => b.classList.remove('active'));
-      const btnId = mode === 'opcion1' ? 'map-btn-opcion1' : (mode === 'opcion2' ? 'map-btn-opcion2' : (mode === 'opcion3' ? 'map-btn-opcion3' : 'map-btn-global'));
+      const btnId = mode === 'opcion1' ? 'map-btn-opcion1' : (mode === 'opcion2' ? 'map-btn-opcion2' : (mode === 'opcion3' ? 'map-btn-opcion3' : (mode === 'opcion4' ? 'map-btn-opcion4' : 'map-btn-global')));
       const activeBtn = document.getElementById(btnId);
       if (activeBtn) activeBtn.classList.add('active');
 
@@ -7444,12 +7812,14 @@
       const stages1 = document.getElementById('stages-opcion1');
       const stages2 = document.getElementById('stages-opcion2');
       const stages3 = document.getElementById('stages-opcion3');
+      const stages4 = document.getElementById('stages-opcion4');
       const badge = document.getElementById('stages-indicator-badge');
 
       if (mode === 'opcion2') {
         if (stages1) stages1.style.display = 'none';
         if (stages2) stages2.style.display = 'grid';
         if (stages3) stages3.style.display = 'none';
+        if (stages4) stages4.style.display = 'none';
         if (badge) {
           badge.textContent = 'Mostrando: 🏛️ Opción 2 (Alternativa Sur & Puglia)';
           badge.style.background = '#f1f5f9';
@@ -7460,16 +7830,29 @@
         if (stages1) stages1.style.display = 'none';
         if (stages2) stages2.style.display = 'none';
         if (stages3) stages3.style.display = 'grid';
+        if (stages4) stages4.style.display = 'none';
         if (badge) {
           badge.textContent = 'Mostrando: ✨ Opción 3 (Roma 5n, Nápoles & Amalfi 4n + Pascua Segura)';
           badge.style.background = '#f3e8ff';
           badge.style.color = '#6d28d9';
           badge.style.borderColor = '#d8b4fe';
         }
+      } else if (mode === 'opcion4') {
+        if (stages1) stages1.style.display = 'none';
+        if (stages2) stages2.style.display = 'none';
+        if (stages3) stages3.style.display = 'none';
+        if (stages4) stages4.style.display = 'grid';
+        if (badge) {
+          badge.textContent = 'Mostrando: ⛵ Opción 4 (Base Única Paros 7n · Cero Mudanzas)';
+          badge.style.background = '#ccfbf1';
+          badge.style.color = '#0f766e';
+          badge.style.borderColor = '#99f6e4';
+        }
       } else {
         if (stages1) stages1.style.display = 'grid';
         if (stages2) stages2.style.display = 'none';
         if (stages3) stages3.style.display = 'none';
+        if (stages4) stages4.style.display = 'none';
         if (badge) {
           badge.textContent = 'Mostrando: ⭐ Opción 1 (Recomendada · Milos & Cícladas)';
           badge.style.background = '#dcfce7';
